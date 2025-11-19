@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jeu du nombre mystère (JS)</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 600px; margin: 40px auto; }
+    .box { border: 1px solid #ddd; padding: 16px; border-radius: 8px; }
+    input { padding: 8px; width: 160px; }
+    button { padding: 8px 12px; margin-left: 8px; }
+    .msg { margin-top: 12px; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <h1>Jeu du nombre mystère 🎮</h1>
+  <div class="box">
+    <p>Devine le nombre entre 1 et 100.</p>
+    <input id="entree" type="number" min="1" max="100" placeholder="Ton essai" />
+    <button id="btn">Vérifier</button>
+    <div id="msg" class="msg"></div>
+  </div>
+
+  <script>
+    let secret = Math.floor(Math.random() * 100) + 1;
+    let essais = 0;
+
+    document.getElementById("btn").addEventListener("click", () => {
+      const msg = document.getElementById("msg");
+      const val = parseInt(document.getElementById("entree").value, 10);
+
+      if (Number.isNaN(val)) { msg.textContent = "Entre un nombre valide."; return; }
+      essais++;
+      if (val < secret) msg.textContent = "C'est plus grand !";
+      else if (val > secret) msg.textContent = "C'est plus petit !";
+      else {
+        msg.textContent = `Bravo 🎉 trouvé en ${essais} essais !`;
+        secret = Math.floor(Math.random() * 100) + 1; // rejouer
+        essais = 0;
+      }
+    });
+  </script>
+</body>
+</html>

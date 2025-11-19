@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANTON NELCON Steve - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="steve.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 id="header-name">ANTON NELCON Steve</h1>
+            <p id="header-title">Etudiant en Big Data  </p>
+            
+            <div class="controls">
+                <button id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <div class="language-selector">
+                    <button class="lang-btn active" data-lang="fr">🇫🇷</button> 
+                    <button class="lang-btn" data-lang="en">🇬🇧</button>
+                    <button class="lang-btn" data-lang="es">🇪🇸</button>
+                    <button class="lang-btn" data-lang="ta">🇱🇰</button>
+                </div>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#about" data-translate="nav_about">À propos</a></li>
+                    <li><a href="#experience" data-translate="nav_experience">Expériences</a></li>
+                    <li><a href="#projects" data-translate="nav_projects">Projets</a></li>
+                    <li><a href="#education" data-translate="nav_education">Formations</a></li>
+                    <li><a href="#skills" data-translate="nav_skills">Compétences</a></li>
+                    <li><a href="#contact" data-translate="nav_contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="about" class="section">
+            <h2 data-translate="about_title">À propos</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p data-translate="about_text">
+                        Étudiant passionné par le développement web et mobile et Big Data.
+                    </p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> <span>06 52 04 59 92</span></p>
+                        <p><i class="fas fa-envelope"></i> <span>antonsteve05@gmail.com</span></p>
+                        <p><i class="fas fa-map-marker-alt"></i> <span>Paris, Île-de-France</span></p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/ansteve" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/an-Steve" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="about-image">
+                        <img id="profile-img" src="images/PhotoSteve.jpg" alt="Photo de Steve">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <h2 data-translate="experience_title">Expérience professionnelle</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-date">2025 (2 mois)</div>
+                    <div class="timeline-content">
+                        <h3 data-translate="exp1_title">Développeur de site web et d'application (Stage L3 ISEI)</h3>
+                        <p class="company" data-translate="exp1_company">TiqTec - LaCourneuve</p>
+                        <ul class="timeline-list">
+                            <li data-translate="exp1_point1">Développement d'un site web vitrine avec WordPress et Laragon</li>
+                            <li data-translate="exp1_point2">Développement d'une application Android avec Kotlin pour l'entreprise</li>
+                            <li data-translate="exp1_point3">Tests de fonctionnalités en tant que testeur de logiciel</li>
+                            <li data-translate="exp1_point4">Gestion de la base de données PhpMyAdmin de MySQL</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right">
+                    <div class="timeline-date">2023 (6 semaines)</div>
+                    <div class="timeline-content">
+                        <h3 data-translate="exp2_title">Développeur informatique (Stage BTS)</h3>
+                        <p class="company" data-translate="exp2_company">StreamVision - Paris</p>
+                        <ul class="timeline-list">
+                            <li data-translate="exp2_point1">Création d'un affichage dynamique pour un hôtel pendant les JO 2024</li>
+                            <li data-translate="exp2_point2">Développement d'une interface interactive (HTML, CSS, JavaScript)</li>
+                            <li data-translate="exp2_point3">Intégration d'un compte à rebours animé en JavaScript</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item left">
+                    <div class="timeline-date">2022- Actuel</div>
+                    <div class="timeline-content">
+                        <h3 data-translate="exp3_title">Préparateur de commandes (Intérim)</h3>
+                        <p class="company" data-translate="exp3_company">Carrefour SupplyChain - Lacourneuve</p>
+                        <ul class="timeline-list">
+                            <li data-translate="exp3_point1">Préparation des commandes des magasins</li>
+                            <li data-translate="exp3_point2">Construction de palettes selon les normes</li>
+                            <li data-translate="exp3_point3">CACES obtenu en juillet 2022</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2 data-translate="projects_title">Projets académiques</h2>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3 data-translate="project1_title">Capteur à ultrasons avec interface Arduino</h3>
+                    <p class="project-desc" data-translate="project1_desc">
+                        Détection d'obstacles et affichage de la distance en temps réel. Transmission des données vers une interface web et une application mobile.
+                    </p>
+                    <div class="project-tech">
+                        <span>C++</span>
+                        <span>Arduino</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <h3 data-translate="project2_title">Jeu d'arcade en 2D/3D</h3>
+                    <p class="project-desc" data-translate="project2_desc">
+                        Jeu Mario avec obstacles à éviter, pièces à ramasser, et carapaces à lancer. Fonctions : mouvements, collisions, audio, double langue, mode clair/sombre.
+                    </p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Unsina</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <h3 data-translate="project3_title">Application Android de restauration</h3>
+                    <p class="project-desc" data-translate="project3_desc">
+                        Conception et développement d'une application de commande sur mobile/tablette. Gestion d'une base de données utilisateurs et commandes.
+                    </p>
+                    <div class="project-tech">
+                        <span>QML</span>
+                        <span>SQL</span>
+                        <span>C++</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <h3 data-translate="project4_title">Site web pour un commerce en ligne</h3>
+                    <p class="project-desc" data-translate="project4_desc">
+                        Conception d'un site informatif pour un commerce en ligne.
+                    </p>
+                    <div class="project-tech">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="section">
+            <h2 data-translate="education_title">Formation</h2>
+            
+            <div class="education-timeline">
+                <div class="education-item">
+                    <div class="education-year">2025-2027</div>
+                    <div class="education-content">
+                        <h3 data-translate="edu1_title">Master Informatique et Big Data</h3>
+                        <p class="institution" data-translate="edu1_school">Université Paris & Vincennes - Saint-Denis</p>
+                        <p data-translate="edu1_desc">Intelligence artificielle et bases de données</p>
+                    </div>
+                </div>
+                
+                <div class="education-item">
+                    <div class="education-year">2024-2025</div>
+                    <div class="education-content">
+                        <h3 data-translate="edu2_title">Licence 3 Informatique des systèmes embarqués et interactifs</h3>
+                        <p class="institution" data-translate="edu2_school">Université Paris & Vincennes - Saint-Denis</p>
+                        <p data-translate="edu2_desc">Programmation : C, C++, Java, Python. Architectures embarquées : microcontrôleurs. Développement mobile Android et iOS. Bases de données et bus de communication.</p>
+                    </div>
+                </div>
+                
+                <div class="education-item">
+                    <div class="education-year">2022-2024</div>
+                    <div class="education-content">
+                        <h3 data-translate="edu3_title">BTS Système Numérique option Informatique et réseaux</h3>
+                        <p class="institution" data-translate="edu3_school">Lycée Paul Éluard, Saint Denis</p>
+                        <p data-translate="edu3_desc">Programmation : HTML, CSS, Javascript, QML. Réseaux : IP4, IPv6. Bases de données : SQL, PHPMyAdmin.</p>
+                    </div>
+                </div>
+                
+                <div class="education-item">
+                    <div class="education-year">2021</div>
+                    <div class="education-content">
+                        <h3 data-translate="edu3_title">Baccalauréat sciences et technologies de l'industrie et du développement durable</h3>
+                        <p class="institution" data-translate="edu3_school">Lycée Paul LeRolland</p>
+                        <p data-translate="edu3_desc">Programmation : HTML, CSS</p>
+                    </div>
+                </div>
+                
+                <div class="education-item">
+                    <div class="education-year">2018</div>
+                    <div class="education-content">
+                        <h3 data-translate="edu3_title">Diplome National du Brevet</h3>
+                        <p class="institution" data-translate="edu3_school">Collège Paul Langevin</p>
+                        <p data-translate="edu3_desc"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <h2 data-translate="skills_title">Compétences</h2>
+            
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3 data-translate="skills_web">Développement Web</h3>
+                    <div class="skills-list">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>PHP</span>
+                        <span>C</span>
+                        <span>C++</span>
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3 data-translate="skills_app">Développement d'application</h3>
+                    <div class="skills-list">
+                        <span>QML</span>
+                        <span>Kotlin</span>
+                        <span>Python</span>
+                        <span>Swift</span>
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3 data-translate="skills_db">Bases de Données</h3>
+                    <div class="skills-list">
+                        <span>SQL</span>
+                        <span>PHPMyAdmin</span>
+                        <span>Laragon</span>
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3 data-translate="skills_network">Réseaux et Routage</h3>
+                    <div class="skills-list">
+                        <span>Réseaux</span>
+                        <span>Routage</span>
+                        <span>IPv4</span>
+                        <span>IPv6</span>
+                        <span>Cisco</span>
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3 data-translate="skills_hardware">Matériels</h3>
+                    <div class="skills-list">
+                        <span>Arduino</span>
+                        <span>Microcontrôleurs</span>
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3 data-translate="skills_cms">CMS</h3>
+                    <div class="skills-list">
+                        <span>WordPress</span>
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3 data-translate="skills_lang">Langues</h3>
+                    <div class="skills-list">
+                        <span data-translate="lang_fr">Français (Langue maternelle)</span>
+                        <span data-translate="lang_en">Anglais (B1 - TOEIC, KET)</span>
+                        <span data-translate="lang_tm">Tamoul (Langue maternelle)</span>
+                        <span data-translate="lang_es">Espagnol (A1)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2 data-translate="contact_title">Contact</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name" data-translate="contact_name">Nom</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" data-translate="contact_email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject" data-translate="contact_subject">Sujet</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message" data-translate="contact_message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                
+                <button type="submit" data-translate="contact_submit">Envoyer</button>
+            </form>
+            
+            <div id="contact-info">
+                <p><i class="fas fa-phone"></i> <span>06 52 04 59 92</span></p>
+                <p><i class="fas fa-envelope"></i> <span>antonsteve05@gmail.com</span></p>
+                <p><i class="fas fa-map-marker-alt"></i> <span>Paris, Île-de-France</span></p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/ansteve" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/an-Steve" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> ANTON NELCON Steve. <span data-translate="footer_rights">Tous droits réservés.</span></p>
+            <a href="Steve" download> Télécharger le jeu Python </a> <br>
+            <a href="jeu.html" target="_blank" rel="noopener">Jouer au nombre mystère</a>
+
+        </div>
+    </footer>
+    <script src="steve.js"></script>
+</body>
+</html>

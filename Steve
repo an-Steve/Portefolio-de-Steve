@@ -1,0 +1,27 @@
+import random
+
+def jeu_nombre_mystere():
+    print("Bienvenue dans le jeu du nombre mystère !")
+    print("Je pense à un nombre entre 1 et 100...")
+
+    # L'ordinateur choisit un nombre aléatoire
+    nombre_secret = random.randint(1, 100)
+    essais = 0
+    trouve = False
+
+    while not trouve:
+        # Le joueur propose un nombre
+        choix = int(input("Devine le nombre : "))
+        essais += 1
+
+        if choix < nombre_secret:
+            print("C'est plus grand !")
+        elif choix > nombre_secret:
+            print("C'est plus petit !")
+        else:
+            print(f"Bravo 🎉 ! Tu as trouvé en {essais} essais.")
+            trouve = True
+
+
+# Lancer le jeu
+jeu_nombre_mystere()
