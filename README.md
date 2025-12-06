@@ -2,6 +2,8 @@
 
 Bienvenue sur mon portfolio personnel !  
 
+Lien vers mon portefolio : https://an-steve.github.io/Portefolio-de-Steve/ et sur ce lien : https://portefoliosteve.netlify.app/
+
 ---
 
 ## 🚀 Technologies utilisées
