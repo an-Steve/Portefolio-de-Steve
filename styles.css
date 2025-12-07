@@ -258,6 +258,26 @@ section {
     padding-left: 3rem;
 }
 
+.timeline-content {
+    position: relative; /* nécessaire pour positionner le badge */
+}
+
+.timeline-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(30, 144, 255, 0.25); 
+    color: white;          
+    font-weight: bold;
+    font-size: 0.8rem;       
+    padding: 5px 12px;       
+    border-radius: 25px;     
+    border: 1.5px solid rgba(30, 144, 255, 0.5); 
+    backdrop-filter: blur(2px); 
+    box-shadow: 0 0 6px rgba(30, 144, 255, 0.2); 
+}
+
+
 .timeline::before {
     content: '';
     position: absolute;
