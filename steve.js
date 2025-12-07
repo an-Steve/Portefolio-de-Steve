@@ -140,6 +140,35 @@ document.querySelectorAll('.project-card').forEach(card => {
     });
 });
 
+document.querySelectorAll('.about-wrapper').forEach(block => {
+    block.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px) scale(1.02)';
+        this.style.transition = 'transform 0.3s ease';
+    });
+    
+    block.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1) rotateZ(0deg)';
+    });
+});
+
+// Sélectionne l'image dans la zone photo
+const photo = document.querySelector('.about-photo img');
+
+if (photo) {
+  photo.addEventListener('mouseenter', function() {
+    this.style.transform = 'scale(1.05)'; // zoom léger
+    this.style.boxShadow = '0 8px 20px rgba(0,0,0,0.4)'; // ombre plus forte
+    this.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
+  });
+
+  photo.addEventListener('mouseleave', function() {
+    this.style.transform = 'scale(1)'; // retour normal
+    this.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)'; // ombre normale
+  });
+  
+}
+
+
 // Effet parallaxe sur hero
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;

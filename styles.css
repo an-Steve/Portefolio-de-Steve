@@ -180,6 +180,48 @@ section {
     background-clip: text;
 }
 
+/* Gros bloc englobant */
+.about-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 30px;              /* espace entre photo et infos */
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* dégradé violet/bleu */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Zone photo */
+.about-photo img {
+  width: 220px;           /* taille de la photo */
+  border-radius: 12px;    /* arrondi */
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  border: 4px solid #fff; /* contour blanc pour contraste */
+}
+
+/* Zone infos */
+.about-grid {
+  flex: 1;                /* occupe tout l’espace restant */
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* deux colonnes */
+  gap: 20px;
+}
+.about-name {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+
+  /* Dégradé appliqué au texte */
+  background: linear-gradient(135deg, #facc15, #f59e0b, #d97706);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* About Section */
 .about-grid {
     display: grid;
@@ -189,7 +231,7 @@ section {
 }
 
 .about-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255,255,255,0.1); /* semi-transparent */
     border: 1px solid rgba(99, 102, 241, 0.2);
     border-radius: 20px;
     padding: 2rem;
@@ -207,6 +249,7 @@ section {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: var(--primary);
+    color: #ffeb3b; /* jaune vif pour les titres */
 }
 
 /* Experience Timeline */
