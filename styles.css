@@ -375,6 +375,26 @@ section {
     border: 1px solid rgba(99, 102, 241, 0.3);
 }
 
+.github-link {
+    color: purple;              
+    font-weight: bold;          
+    background: linear-gradient(135deg, #fffacd, #ffd700);
+    border: 2px solid yellow;   
+    border-radius: 12px;        
+    padding: 6px 12px;          
+    text-decoration: none;      
+    display: inline-block;
+    margin-top: 15px;       
+}
+
+/* Optionnel : effet au survol */
+.github-link:hover {
+    background: linear-gradient(135deg, #ffd700, #fffacd);
+    color: #4b0082;                        
+    border-color: #daa520;
+}
+
+
 /* Skills Grid */
 .skills-grid {
     display: grid;
