@@ -823,3 +823,53 @@ footer {
         font-size: 1.8rem;
     }
 }
+
+/* Animation pour Big Data */
+@keyframes moveBigData {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100vw);
+    }
+}
+
+.big-data-text {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    font-size: 4rem;
+    font-weight: bold;
+    color: red;
+    opacity: 0.3;
+    z-index: 0;
+    pointer-events: none;
+    animation: moveBigData 10s linear infinite;
+    transform: translateY(-50%);
+    white-space: nowrap;
+}
+
+/* Animation pour Big Data */
+@keyframes moveBigData {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100vw);
+    }
+}
+
+.big-data-text {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    font-size: 4rem;
+    font-weight: bold;
+    color: red;
+    opacity: 0.3;
+    z-index: 0;
+    pointer-events: none;
+    animation: moveBigData 10s linear infinite;
+    transform: translateY(-50%);
+    white-space: nowrap;
+}
