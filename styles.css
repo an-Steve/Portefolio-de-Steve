@@ -873,3 +873,171 @@ footer {
     transform: translateY(-50%);
     white-space: nowrap;
 }
+
+/* Carte pour LinkedIn avec fond transparent */
+.info-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+/* Bouton Plus */
+.plus-button {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    position: relative;
+    right: -20px;  
+    top: 10px;    
+}
+
+.plus-button:hover {
+    transform: scale(1.1) rotate(90deg);
+    box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4);
+}
+
+.plus-button:active {
+    transform: scale(0.95);
+}
+
+/* Section d'informations supplémentaires */
+.more-info-section {
+    max-height: 0; 
+    overflow: hidden;
+    transition: max-height 0.5s ease, margin-top 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    margin-top: 0;
+    background: rgba(39, 0, 0, 0.05);
+    border-radius: 10px;
+    padding: 0 20px;
+    width: 100%;  /* Ajouté - prend toute la largeur */
+    max-width: none;  /* Ajouté - enlève la limitation de largeur */
+}
+
+.more-info-section.active {
+    max-height: 800px;  /* Ajouté - hauteur maximale quand ouvert */
+    opacity: 1;
+    margin-top: 20px;
+    padding: 25px 40px;  /* Ajouté - plus d'espace horizontal (40px au lieu de 20px) */
+}
+
+.more-info-section h4 {
+    color: #976325;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.more-info-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.more-info-section ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    line-height: 1.6;
+}
+
+.more-info-section ul li:last-child {
+    border-bottom: none;
+}
+
+.more-info-section ul li strong {
+    color: #667eea;
+}
+
+/* Bouton Plus */
+.plus-button {
+    position: relative;
+    right: -110px;  
+    top:80px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.plus-button:hover {
+    transform: scale(1.1) rotate(90deg);
+    box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4);
+}
+
+.plus-button:active {
+    transform: scale(0.95);
+}
+
+/* Section d'informations supplémentaires */
+.more-info-section {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, margin-top 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    margin-top: 0;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 0 20px;
+}
+
+.more-info-section.active {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.more-info-section h4 {
+    color: #667eea;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.more-info-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.more-info-section ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    line-height: 1.6;
+}
+
+.more-info-section ul li:last-child {
+    border-bottom: none;
+}
+
+.more-info-section ul li strong {
+    color: #667eea;
+}

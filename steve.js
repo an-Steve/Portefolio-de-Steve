@@ -662,6 +662,28 @@ class ThemeToggle {
   }
 }
 
+
+// Fonctionnalité du bouton "Plus d'informations"
+document.addEventListener('DOMContentLoaded', function() {
+    const moreInfoBtn = document.getElementById('moreInfoBtn');
+    const moreInfoSection = document.getElementById('moreInfoSection');
+    
+    if (moreInfoBtn && moreInfoSection) {
+        moreInfoBtn.addEventListener('click', function() {
+            moreInfoSection.classList.toggle('active');
+            
+            // Change le symbole du bouton
+            if (moreInfoSection.classList.contains('active')) {
+                moreInfoBtn.textContent = '−';
+                moreInfoBtn.style.transform = 'rotate(180deg)';
+            } else {
+                moreInfoBtn.textContent = '+';
+                moreInfoBtn.style.transform = 'rotate(0deg)';
+            }
+        });
+    }
+});
+
 // ========================================
 // INITIALISATION
 // ========================================
