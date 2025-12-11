@@ -157,7 +157,7 @@ Le portfolio est automatiquement déployé sur deux plateformes :
 Pour toute question ou collaboration, n'hésitez pas à me contacter via :
 
 - 📧 **Email** : Via le formulaire de contact du portfolio
-- 💼 **LinkedIn** : [Votre profil LinkedIn]
+- 💼 **LinkedIn** : [www.linkedin.com/in/ansteve]
 - 🐙 **GitHub** : [@an-Steve](https://github.com/an-Steve)
 
 ---
