@@ -30,6 +30,12 @@ body {
     z-index: 0;
     pointer-events: none;
 }
+#navbar .logo {
+    width: 30px;  
+    height: auto;
+}
+
+
 
 /* Navigation */
 nav {
@@ -609,58 +615,7 @@ section {
 }
 
 
-/* Skills Grid */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
 
-.skill-category {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(99, 102, 241, 0.2);
-    border-radius: 20px;
-    padding: 2rem;
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-}
-
-.skill-category:hover {
-    border-color: var(--primary);
-    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.2);
-}
-
-.skill-category h3 {
-    color: var(--accent);
-    margin-bottom: 1.5rem;
-    font-size: 1.3rem;
-}
-
-.skill-item {
-    margin-bottom: 1.5rem;
-}
-
-.skill-name {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.5rem;
-    font-size: 0.95rem;
-}
-
-.skill-bar {
-    height: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.skill-progress {
-    height: 100%;
-    background: var(--gradient);
-    border-radius: 10px;
-    transition: width 1s ease;
-    width: 0;
-}
 
 /* Contact Section */
 .contact-grid {
@@ -1040,4 +995,167 @@ footer {
 
 .more-info-section ul li strong {
     color: #667eea;
+}
+
+/*****************************
+   VARIABLES (couleurs du portfolio de Steve)
+******************************/
+:root {
+    --primary: #3b82f6;       /* Bleu principal */
+    --accent: #06b6d4;        /* Cyan d'accent */
+    --background: #0f172a;    /* Fond principal sombre */
+    --surface: rgba(30, 41, 59, 0.7); /* Surface des cartes */
+    --text: #f8fafc;          /* Texte principal */
+    --text-secondary: #cbd5e1; /* Texte secondaire */
+}
+
+/*****************************
+   SECTION COMPÉTENCES (sans fond spécifique)
+******************************/
+#skills {
+    /* PAS de background-color ici - utilise le fond global de la page */
+    color: var(--text-secondary);
+    padding: 5rem 1rem;
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Conteneur des particules */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#skills .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+#skills .section-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    color: var(--text);
+    position: relative;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+#skills .section-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    margin: 1rem auto 0;
+    border-radius: 3px;
+}
+
+/*****************************
+   GRILLE DES COMPÉTENCES (TON CODE)
+******************************/
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.skill-category:hover {
+    border-color: var(--primary);
+    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.2);
+}
+
+.skill-category h3 {
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.skill-item {
+    margin-bottom: 1.5rem;
+}
+
+.skill-name {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+/*****************************
+   STYLE DES NOMS DE COMPÉTENCES
+******************************/
+.skill-name span {
+    color: var(--text);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.skill-name span::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--accent);
+}
+
+/*****************************
+   RESPONSIVE
+******************************/
+@media (max-width: 1024px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .skill-category {
+        padding: 1.5rem;
+    }
+    
+    #skills .section-title {
+        font-size: 2.5rem;
+    }
+    
+    #skills {
+        padding: 3rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #skills .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .skill-category h3 {
+        font-size: 1.2rem;
+    }
 }
