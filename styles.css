@@ -402,10 +402,13 @@ section {
     transform: translateY(-5px);
 }
 
-
-
-.timeline-content {
-    position: relative; /* nécessaire pour positionner le badge */
+.experience-icon {
+    width: 100px;    
+    height: 100px;   
+    object-fit: contain;
+    float: right;
+    margin-left: 15px;
+    margin-top: 25px;
 }
 
 .timeline-badge {
