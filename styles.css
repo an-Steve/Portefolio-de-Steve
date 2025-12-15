@@ -310,6 +310,8 @@ nav a:hover::before {
     animation: fadeInUp 1s ease 0.3s forwards;
 }
 
+
+
 .cta-buttons {
     display: flex;
     gap: 1rem;

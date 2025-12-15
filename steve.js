@@ -214,6 +214,38 @@ function typeWriter() {
     }
 }
 
+// EFFET HOVER SUR LE TITRE - à ajouter après ton effet typeWriter
+
+function addHoverEffect() {
+    const heroTitle = document.querySelector('.hero h1, .hero-title, h1.text-4xl');
+    
+    if (!heroTitle) {
+        console.log("Titre non trouvé pour hover effect");
+        setTimeout(addHoverEffect, 500);
+        return;
+    }
+    
+    // Effet au survol
+    heroTitle.addEventListener('mouseenter', function() {
+        this.style.color = '#00ffff';
+        this.style.textShadow = '0 0 15px #00ffff, 0 0 30px #00ffff';
+        this.style.transform = 'scale(1.05)';
+        this.style.transition = 'all 0.3s ease';
+    });
+    
+    // Effet quand la souris quitte
+    heroTitle.addEventListener('mouseleave', function() {
+        this.style.color = ''; // Retour à la couleur originale
+        this.style.textShadow = '';
+        this.style.transform = '';
+    });
+    
+    console.log("✅ Effet hover ajouté au titre");
+}
+
+// Démarrer l'effet hover
+setTimeout(addHoverEffect, 1000); // Attendre que la page soit chargée
+
 // ========================================
 // MODE CLAIR (ORIGINAL) / SOMBRE VERT
 // ========================================
