@@ -86,6 +86,195 @@ nav a::before {
 nav a:hover::before {
     width: 100%;
 }
+.nav-home {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Texte visible par défaut */
+.nav-home .text {
+  display: inline;
+}
+
+/* Icône cachée par défaut */
+.nav-home .icon {
+  display: none;
+  font-size: 18px;
+}
+
+/* AU SURVOL */
+.nav-home:hover .text {
+  display: none;
+}
+
+.nav-home:hover .icon {
+  display: inline;
+}
+
+.nav-contact {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Texte visible par défaut */
+.nav-contact .text {
+  display: inline;
+}
+
+/* Icône cachée */
+.nav-contact .icon {
+  display: none;
+  font-size: 18px;
+}
+
+/* Hover */
+.nav-contact:hover .text {
+  display: none;
+}
+
+.nav-contact:hover .icon {
+  display: inline;
+}
+.nav-about {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Texte visible */
+.nav-about .text {
+  display: inline;
+}
+
+/* Icône cachée */
+.nav-about .icon {
+  display: none;
+  font-size: 18px;
+}
+
+/* Hover */
+.nav-about:hover .text {
+  display: none;
+}
+
+.nav-about:hover .icon {
+  display: inline;
+}
+
+.nav-formations {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Texte visible */
+.nav-formations .text {
+  display: inline;
+}
+
+/* Icône cachée */
+.nav-formations .icon {
+  display: none;
+  font-size: 18px;
+}
+
+/* Hover */
+.nav-formations:hover .text {
+  display: none;
+}
+
+.nav-formations:hover .icon {
+  display: inline;
+}
+
+.nav-experience {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Texte visible */
+.nav-experience .text {
+  display: inline;
+}
+
+/* Icône cachée */
+.nav-experience .icon {
+  display: none;
+  font-size: 18px;
+}
+
+/* Hover */
+.nav-experience:hover .text {
+  display: none;
+}
+
+.nav-experience:hover .icon {
+  display: inline;
+}
+
+.nav-projects {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Texte visible */
+.nav-projects .text {
+  display: inline;
+}
+
+/* Icône cachée */
+.nav-projects .icon {
+  display: none;
+  font-size: 18px;
+}
+
+/* Hover */
+.nav-projects:hover .text {
+  display: none;
+}
+
+.nav-projects:hover .icon {
+  display: inline;
+}
+
+
+.nav-skills {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Texte visible */
+.nav-skills .text {
+  display: inline;
+}
+
+/* Icône cachée */
+.nav-skills .icon {
+  display: none;
+  font-size: 18px;
+}
+
+/* Hover */
+.nav-skills:hover .text {
+  display: none;
+}
+
+.nav-skills:hover .icon {
+  display: inline;
+}
+
 
 /* Hero Section */
 .hero {
