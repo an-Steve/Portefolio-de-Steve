@@ -243,6 +243,33 @@ function addHoverEffect() {
     console.log("✅ Effet hover ajouté au titre");
 }
 
+// EFFET HOVER SUR LE PARAGRAPHE - GLOW
+function addParagraphHoverEffect() {
+    const heroParagraph = document.querySelector('.hero p');
+    
+    if (!heroParagraph) {
+        setTimeout(addParagraphHoverEffect, 500);
+        return;
+    }
+    
+    heroParagraph.addEventListener('mouseenter', function() {
+        this.style.color = '#0ea5e9';
+        this.style.textShadow = '0 0 10px #0ea5e9, 0 0 20px #0ea5e9';
+        this.style.transform = 'scale(1.05)';
+        this.style.transition = 'all 0.3s ease';
+        this.style.letterSpacing = '1px';
+    });
+    
+    heroParagraph.addEventListener('mouseleave', function() {
+        this.style.color = '';
+        this.style.textShadow = '';
+        this.style.transform = '';
+        this.style.letterSpacing = '';
+    });
+}
+
+setTimeout(addParagraphHoverEffect, 1000);
+
 // Démarrer l'effet hover
 setTimeout(addHoverEffect, 1000); // Attendre que la page soit chargée
 
