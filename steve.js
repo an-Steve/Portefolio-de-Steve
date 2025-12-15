@@ -743,6 +743,34 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+document.getElementById("linkedin-btn").addEventListener("click", () => {
+    window.open(
+        "https://www.linkedin.com/in/ansteve",
+        "_blank"
+    );
+});
+
+const githubBtn = document.createElement("a");
+githubBtn.id = "github-btn";
+githubBtn.href = "https://github.com/an-steve";
+githubBtn.target = "_blank";
+githubBtn.setAttribute("aria-label", "GitHub");
+
+githubBtn.innerHTML = '<i class="fab fa-github"></i>';
+
+document.body.appendChild(githubBtn);
+
+const mailBtn = document.createElement("a");
+mailBtn.id = "mail-btn";
+mailBtn.href = "mailto:antonsteve05@gmail.com";
+mailBtn.setAttribute("aria-label", "Email");
+
+mailBtn.innerHTML = '<i class="fas fa-envelope"></i>';
+
+document.body.appendChild(mailBtn);
+
+
+
 // ========================================
 // INITIALISATION
 // ========================================
