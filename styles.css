@@ -655,6 +655,8 @@ section {
     box-shadow: 0 0 20px var(--primary);
 }
 
+
+
 #education .timeline-item {
     position: relative;
     display: flex;
@@ -707,6 +709,129 @@ section {
     color: var(--accent);
     font-weight: 600;
     margin-bottom: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px 6px 40px; /* Plus de padding à gauche pour l'icône */
+    background: rgba(236, 72, 153, 0.1); 
+    border-radius: 20px;
+    border: 2px solid var(--accent);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    min-height: 36px;
+}
+
+/* Icône Font Awesome calendrier */
+.timeline-content .date::before {
+    content: '\f073'; /* fa-calendar-alt */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: var(--accent);
+    transition: all 0.2s ease;
+}
+
+/* Effet hover optionnel */
+.timeline-content .date:hover::before {
+    transform: translateY(-50%) scale(1.1);
+}
+
+.timeline-content .date:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(236, 72, 153, 0.2);
+    transition: all 0.3s ease;
+}
+
+.timeline-content .lieu {
+    color: #0e7f96;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 10px 5px 32px; /* Ajusté pour l'icône */
+    background: rgba(16, 185, 129, 0.08);
+    border-radius: 6px;
+    border: 1px dashed rgba(11, 108, 199, 0.4);
+    font-style: italic;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    position: relative;
+    min-height: 30px;
+}
+
+/* Icône Font Awesome pour lieu */
+.timeline-content .lieu::before {
+    content: '\f3c5'; /* fa-map-marker-alt */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #0e7f96;
+    transition: all 0.2s ease;
+}
+
+.timeline-content .lieu:hover {
+    background: rgba(16, 185, 129, 0.12);
+    border-color: #10b981;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content .lieu:hover::before {
+    color: #10b981;
+    transform: translateY(-50%) scale(1.1);
+}
+
+
+.timeline-content .entreprise {
+    color: #2563eb; /* Bleu légèrement plus foncé */
+    font-weight: 500;
+    margin-bottom: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 10px 4px 36px; /* Plus de padding à gauche pour l'icône */
+    background: rgba(37, 99, 235, 0.06);
+    border-radius: 6px;
+    border: 1px dotted rgba(37, 99, 235, 0.4); /* Pointillés au lieu de tirets */
+    font-style: normal; /* Pas d'italique pour plus de formalité */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    font-family: 'Segoe UI', sans-serif;
+    position: relative;
+    min-height: 32px;
+}
+
+/* Icône Font Awesome bâtiment */
+.timeline-content .entreprise::before {
+    content: '\f1ad'; 
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #2563eb;
+    transition: all 0.2s ease;
+}
+
+.timeline-content .entreprise:hover::before {
+    color: #1d4ed8;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.timeline-content .entreprise:hover {
+    background: rgba(37, 99, 235, 0.1);
+    border-color: #2563eb;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .timeline-content ul {
