@@ -1,22 +1,7 @@
-Accès au portfolio
+# 👨‍💻 Portfolio de ANTON NELCON  Steve
 
-GitHub Pages : https://an-steve.github.io/Portefolio-de-Steve/
-Netlify : https://portefoliosteve.netlify.app/
----
+Accès au portfolio : https://an-steve.github.io/Portefolio-de-Steve/ & Netlify : https://portefoliosteve.netlify.app/
 
-<div align="center">
-  <sub>Développé avec ❤️ par Steve</sub>
-</div>
-```
-# 👨‍💻 Portfolio Développeur Web - Steve
-
-**Bienvenue sur le code source de mon portfolio professionnel !**  
-Ce site présente mes compétences, mes projets et mon parcours dans le domaine du développement web. Il est conçu pour être moderne, responsive et performant.
-
-[![Site en ligne](https://img.shields.io/badge/🌐-Visiter_le_site_portfolio-blue?style=for-the-badge)](https://an-steve.github.io/Portefolio-de-Steve/)
-[![Licence](https://img.shields.io/badge/📝-Licence_MIT-green?style=for-the-badge)](LICENSE)
-
-![Aperçu du Portfolio]([LIEN_VERS_UNE_BONNE_IMAGE_OU_GIF_D_APERCU]) <!-- Remplace par un vrai lien ! -->
 
 ## ✨ Fonctionnalités
 
@@ -45,21 +30,24 @@ Ce projet a été construit avec les technologies fondamentales du web front-end
 
 Suis ces étapes pour exécuter une copie du projet sur ta machine :
 
-1.  **Cloner le dépôt :**
+0. **Accès au portfolio :**
+    ```bash
+   https://an-steve.github.io/Portefolio-de-Steve/
+```
+   Netlify : https://portefoliosteve.netlify.app/
+```
+
+
+2.  **Cloner le dépôt :**
     ```bash
     git clone https://github.com/an-Steve/Portefolio-de-Steve.git
     ```
-2.  **Se déplacer dans le dossier :**
+3.  **Se déplacer dans le dossier :**
     ```bash
     cd Portefolio-de-Steve
     ```
-3.  **Ouvrir le fichier principal :**
+4.  **Ouvrir le fichier principal :**
     *   Ouvre simplement le fichier `index.html` dans ton navigateur web.
-    *   **Ou**, pour une meilleure expérience (sans restrictions CORS), utilise un serveur local léger. Avec Python :
-        ```bash
-        # Pour Python 3
-        python3 -m http.server 8000
-        ```
-        Puis visite `http://localhost:8000` dans ton navigateur.
+  
 
 ## 📂 Structure du Projet
