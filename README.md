@@ -3,7 +3,7 @@
 Accès au portfolio : https://an-steve.github.io/Portefolio-de-Steve/ & Netlify : https://portefoliosteve.netlify.app/
 
 
-## ✨ Fonctionnalités
+## →  Fonctionnalités
 
 *   **Design Moderne & Responsive** : S'adapte parfaitement à tous les écrans (ordinateur, tablette, mobile).
 *   **Navigation Fluide** : Interface intuitive avec une barre de navigation fixe et des ancres.
@@ -16,7 +16,7 @@ Accès au portfolio : https://an-steve.github.io/Portefolio-de-Steve/ & Netlify 
 *   **Performances Optimisées** : Code structuré et assets optimisés pour un chargement rapide.
 *   **Formulaire de Contact Actif** : Permet de recevoir des messages directement.
 
-## 🛠️ Technologies Utilisées
+## → Technologies Utilisées
 
 Ce projet a été construit avec les technologies fondamentales du web front-end :
 
@@ -31,12 +31,11 @@ Ce projet a été construit avec les technologies fondamentales du web front-end
 Suis ces étapes pour exécuter une copie du projet sur ta machine :
 
 0. **Accès au portfolio :**
-    ```bash
+    ```
    https://an-steve.github.io/Portefolio-de-Steve/
-```
+   ```
    Netlify : https://portefoliosteve.netlify.app/
-```
-
+   ```
 
 2.  **Cloner le dépôt :**
     ```bash
@@ -47,7 +46,26 @@ Suis ces étapes pour exécuter une copie du projet sur ta machine :
     cd Portefolio-de-Steve
     ```
 4.  **Ouvrir le fichier principal :**
+       ```
     *   Ouvre simplement le fichier `index.html` dans ton navigateur web.
-  
+      ```
+
+### →  Me Contacter
+
+Tu peux me joindre via :
+*   **Le formulaire de contact** sur [mon portfolio](https://an-steve.github.io/Portefolio-de-Steve/).
+*   **Mon profil GitHub** : [@an-Steve](https://github.com/an-Steve) (n'hésite pas à explorer mes autres projets !).
+*   **Mon profil LinkedIn** : www.linkedin.com/in/ansteve
+
+Merci de ta visite et de l'intérêt porté à mon travail ! 👋
+
+---
+*Dernière mise à jour : Décembre 2025
+
+
+
+
+       
+
 
 ## 📂 Structure du Projet
