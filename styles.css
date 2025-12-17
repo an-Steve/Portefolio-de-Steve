@@ -1739,6 +1739,77 @@ footer {
   opacity: 0.95;
 }
 
+/* Style de base commun pour tous les boutons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 28px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    text-align: center;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Bouton Principal */
+.btn-primary {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: white;
+    border: 2px solid transparent;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #4338ca, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.3);
+}
+
+/* Bouton Secondaire */
+.btn-secondary {
+    background: transparent;
+    color: #4f46e5;
+    border: 2px solid #4f46e5;
+}
+
+.btn-secondary:hover {
+    background: rgba(79, 70, 229, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.2);
+}
+
+/* Bouton Télécharger CV */
+.btn-download {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    border: 2px solid transparent;
+}
+
+.btn-download:hover {
+    background: linear-gradient(135deg, #0da271, #047857);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);
+}
+
+.btn-download i {
+    font-size: 18px;
+}
+
+/* Responsive pour les boutons */
+@media (max-width: 768px) {
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+        width: 100%;
+        justify-content: center;
+    }
+}
 
 /*****************************
    GRILLE DES COMPÉTENCES (TON CODE)
