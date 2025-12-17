@@ -794,3 +794,4 @@ setTimeout(() => {
 }, 1000);
 
 setTimeout(typeWriter, 500);
+

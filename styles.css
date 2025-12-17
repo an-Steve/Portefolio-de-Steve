@@ -1380,6 +1380,336 @@ footer {
     border-radius: 3px;
 }
 
+/* ===== AMÉLIORATIONS RESPONSIVE POUR LA SECTION ABOUT ===== */
+
+/* Sur mobile - cacher les boutons flottants pour éviter les chevauchements */
+@media (max-width: 768px) {
+    #linkedin-btn,
+    #github-btn,
+    #mail-btn {
+        display: none; /* Cache les boutons sur mobile */
+    }
+}
+
+/* Section About sur mobile */
+@media (max-width: 768px) {
+    .about-wrapper {
+        flex-direction: column; /* Empile photo au-dessus des infos */
+        padding: 25px 20px;
+        gap: 25px;
+        
+        /* FOND TRANSPARENT/BLUR COMME SUR PC - MAIS ADAPTÉ MOBILE */
+        background: rgba(15, 23, 42, 0.7); /* Semi-transparent */
+        backdrop-filter: blur(15px) saturate(180%); /* Effet blur comme PC */
+        -webkit-backdrop-filter: blur(15px) saturate(180%);
+        
+        border: 1px solid rgba(99, 102, 241, 0.25); /* Bordure subtile */
+        border-radius: 20px; /* Coins arrondis comme sur PC */
+        
+        max-width: 95%;
+        margin: 0 auto;
+        box-shadow: 
+            0 20px 60px rgba(0, 0, 0, 0.4), /* Ombre extérieure */
+            inset 0 1px 0 rgba(255, 255, 255, 0.1); /* Lumière intérieure subtile */
+        
+        /* Effet de brillance sur les bords */
+        position: relative;
+        overflow: hidden;
+    }
+    
+    /* Effet de surbrillance sur les bords (optionnel) */
+    .about-wrapper::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, 
+            transparent, 
+            rgba(99, 102, 241, 0.4), 
+            transparent
+        );
+        z-index: 1;
+    }
+    
+    /* Photo sur mobile */
+    .about-photo {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .about-photo img {
+        width: 200px; /* Légèrement plus grand pour mobile */
+        height: 200px;
+        
+        /* Style cohérent avec PC */
+        border: 3px solid rgba(99, 102, 241, 0.4);
+        border-radius: 16px; /* Arrondi légèrement plus prononcé */
+        
+        box-shadow: 
+            0 15px 35px rgba(99, 102, 241, 0.2),
+            0 5px 15px rgba(0, 0, 0, 0.3),
+            inset 0 2px 0 rgba(255, 255, 255, 0.1);
+        
+        /* Effet de brillance sur la photo */
+        position: relative;
+        overflow: hidden;
+    }
+    
+    /* Effet de réflexion sur la photo */
+    .about-photo img::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 30%;
+        background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.1),
+            transparent
+        );
+        border-radius: 16px 16px 0 0;
+    }
+    
+    /* Grille d'informations sur mobile */
+    .about-grid {
+        grid-template-columns: 1fr; /* 1 seule colonne sur mobile */
+        gap: 18px;
+        width: 100%;
+        position: relative;
+        z-index: 2;
+    }
+    
+    /* Style pour chaque carte d'information - TRANSPARENT/BLUR */
+    .about-grid > div {
+        background: rgba(30, 41, 59, 0.6); /* Fond semi-transparent */
+        backdrop-filter: blur(10px); /* Effet blur */
+        -webkit-backdrop-filter: blur(10px);
+        
+        border: 1px solid rgba(99, 102, 241, 0.2);
+        border-radius: 12px; /* Coins arrondis comme PC */
+        
+        padding: 18px 20px;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+        
+        /* Ombre intérieure pour effet "profondeur" */
+        box-shadow: 
+            inset 0 2px 4px rgba(0, 0, 0, 0.1),
+            0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .about-grid > div:hover {
+        border-color: var(--primary);
+        transform: translateY(-5px);
+        box-shadow: 
+            inset 0 2px 4px rgba(0, 0, 0, 0.1),
+            0 15px 30px rgba(99, 102, 241, 0.25);
+        background: rgba(30, 41, 59, 0.8);
+    }
+    
+    /* Icônes pour chaque ligne (optionnel mais joli) */
+    .about-grid > div {
+        position: relative;
+        padding-left: 50px; /* Espace pour l'icône */
+    }
+    
+    .about-grid > div::before {
+        content: '';
+        position: absolute;
+        left: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 24px;
+        height: 24px;
+        background: var(--primary);
+        border-radius: 8px;
+        opacity: 0.2;
+    }
+    
+    /* Titres des informations */
+    .about-grid > div strong {
+        display: block;
+        color: var(--primary);
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        opacity: 0.9;
+    }
+    
+    /* Contenu des informations */
+    .about-grid > div span,
+    .about-grid > div a {
+        color: var(--text-secondary);
+        font-size: 1rem;
+        line-height: 1.5;
+        word-break: break-word;
+        display: block;
+    }
+    
+    /* Liens avec style moderne */
+    .about-grid > div a {
+        color: #8b5cf6;
+        text-decoration: none;
+        display: inline-block;
+        padding: 4px 0;
+        position: relative;
+        transition: all 0.3s ease;
+        font-weight: 500;
+    }
+    
+    .about-grid > div a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #8b5cf6, #ec4899);
+        transition: width 0.3s ease;
+    }
+    
+    .about-grid > div a:hover {
+        color: var(--accent);
+    }
+    
+    .about-grid > div a:hover::after {
+        width: 100%;
+    }
+    
+    /* Nom en bas - style amélioré */
+    .about-name {
+        grid-column: 1 / -1;
+        text-align: center;
+        margin-top: 30px;
+        padding-top: 20px;
+        
+        /* Ligne de séparation avec effet gradient */
+        border-top: 1px solid;
+        border-image: linear-gradient(90deg, 
+            transparent, 
+            rgba(99, 102, 241, 0.5), 
+            transparent
+        ) 1;
+        
+        font-size: 1.3rem;
+        font-weight: 800;
+        padding: 15px 25px;
+        
+        /* Dégradé amélioré */
+        background: linear-gradient(135deg, 
+            #facc15 0%, 
+            #f59e0b 25%, 
+            #d97706 50%, 
+            #b45309 75%, 
+            #92400e 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        
+        /* Effet d'ombre sur le texte */
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Pour les très petits écrans (≤480px) */
+@media (max-width: 480px) {
+    .about-wrapper {
+        padding: 20px 15px;
+        border-radius: 18px;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+    
+    .about-photo img {
+        width: 170px;
+        height: 170px;
+        border-radius: 14px;
+    }
+    
+    .about-grid > div {
+        padding: 16px 18px 16px 50px;
+        border-radius: 10px;
+    }
+    
+    .about-grid > div::before {
+        left: 16px;
+        width: 20px;
+        height: 20px;
+    }
+    
+    .about-grid > div strong {
+        font-size: 0.8rem;
+    }
+    
+    .about-grid > div span,
+    .about-grid > div a {
+        font-size: 0.95rem;
+    }
+    
+    .about-name {
+        font-size: 1.1rem;
+        padding: 12px 20px;
+        margin-top: 25px;
+    }
+}
+
+/* Pour tablette (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .about-wrapper {
+        gap: 30px;
+        padding: 30px;
+        
+        /* Conserve le style PC mais adapté */
+        background: rgba(15, 23, 42, 0.8);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        
+        border: 1px solid rgba(99, 102, 241, 0.3);
+        border-radius: 24px;
+        
+        max-width: 90%;
+        box-shadow: 
+            0 25px 50px rgba(0, 0, 0, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    }
+    
+    .about-photo img {
+        width: 220px;
+        height: 220px;
+        border-radius: 18px;
+        border: 4px solid rgba(99, 102, 241, 0.5);
+    }
+    
+    .about-grid {
+        gap: 20px;
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur tablette */
+    }
+    
+    .about-grid > div {
+        padding: 20px 25px 20px 60px;
+    }
+    
+    .about-grid > div::before {
+        left: 20px;
+        width: 28px;
+        height: 28px;
+    }
+    
+    .about-name {
+        grid-column: 1 / -1;
+        font-size: 1.4rem;
+        margin-top: 35px;
+        padding-top: 25px;
+    }
+}
 /*****************************
    GRILLE DES COMPÉTENCES (TON CODE)
 ******************************/
@@ -1580,7 +1910,7 @@ footer {
 }
 
 /*****************************
-   FRISE CHRONOLOGIQUE - CORRIGÉ
+   FRISE CHRONOLOGIQUE 
 ******************************/
 
 #formations {
@@ -1729,11 +2059,11 @@ footer {
     .timeline-horizontal {
         flex-direction: column;
         align-items: center;
-        padding: 40px 0 40px 0;
+        padding: 0px 0 0px 0;
     }
     
     .timeline-horizontal::before {
-        top: 20px; /* Ajusté */
+        top:-50px; /* Ajusté */
         left: 50%;
         width: 6px;
         height: calc(100% - 40px);
@@ -1792,3 +2122,168 @@ footer {
         width: calc(100% - 35px);
     }
 }
+/* ============ MOBILE SEULEMENT (≤768px) ============ */
+@media (max-width: 768px) {
+    /* Surcharger uniquement pour mobile */
+    #formations {
+        padding: 3rem 0.5rem 4rem 0.5rem;
+    }
+    
+    .timeline-horizontal {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 60px 15px 40px 15px;
+        max-width: 100%;
+    }
+    
+    /* Ligne VERTICALE - MOBILE */
+    .timeline-horizontal::before {
+        top: 0;
+        left: 30px;
+        right: auto;
+        width: 6px;
+        height: calc(100% - 80px);
+        transform: none;
+        background: linear-gradient(to bottom, #6366f1, #8b5cf6, #ec4899);
+    }
+    
+    /* Points - MOBILE */
+    .timeline-horizontal .timeline-item {
+        width: 100%;
+        margin-bottom: 40px;
+        padding-left: 60px;
+        padding-right: 0;
+        padding-top: 0;
+        text-align: left;
+        flex: none;
+    }
+    
+    .timeline-horizontal .timeline-item::before {
+        top: 0;
+        left: 24px;
+        transform: none;
+        width: 18px;
+        height: 18px;
+        border: 3px solid #0f172a;
+    }
+    
+    /* Cacher la ligne de connexion desktop sur mobile */
+    .timeline-horizontal .timeline-item::after {
+        display: none;
+    }
+    
+    /* Cartes - MOBILE */
+    .timeline-horizontal .timeline-content {
+        margin-top: 0;
+        margin-left: 0;
+        width: 100%;
+        min-height: auto;
+        padding: 15px;
+        background: rgba(30, 41, 59, 0.9);
+        border-radius: 12px;
+    }
+    
+    /* Titres - MOBILE */
+    .timeline-horizontal .formation-title {
+        font-size: 1.1rem;
+        line-height: 1.3;
+        margin-bottom: 8px;
+        word-break: break-word;
+        text-align: left;
+    }
+    
+    /* Dates - MOBILE */
+    .timeline-horizontal .date {
+        font-size: 0.9rem;
+        padding: 5px 10px;
+        margin: 5px 0;
+        display: inline-block;
+        text-align: left;
+        justify-content: flex-start;
+    }
+    
+    /* Lieu - MOBILE */
+    .timeline-horizontal .lieu {
+        font-size: 0.9rem;
+        padding: 5px 10px;
+        margin: 5px 0;
+        display: inline-block;
+        text-align: left;
+    }
+}
+
+/* ============ PETIT MOBILE (≤480px) ============ */
+@media (max-width: 480px) {
+    .timeline-horizontal {
+        padding: 50px 10px 30px 10px;
+    }
+    
+    .timeline-horizontal::before {
+        left: 25px;
+        height: calc(100% - 60px);
+    }
+    
+    .timeline-horizontal .timeline-item {
+        padding-left: 50px;
+        margin-bottom: 35px;
+    }
+    
+    .timeline-horizontal .timeline-item::before {
+        left: 19px;
+        width: 16px;
+        height: 16px;
+    }
+    
+    .timeline-horizontal .timeline-content {
+        padding: 12px;
+    }
+    
+    .timeline-horizontal .formation-title {
+        font-size: 1rem;
+    }
+    
+    .timeline-horizontal .date,
+    .timeline-horizontal .lieu {
+        font-size: 0.85rem;
+        padding: 4px 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .timeline-horizontal .date {
+        position: relative;
+        padding-left: 40px !important;
+        gap: 0; /* Supprime l'espace flex */
+    }
+    
+    .timeline-horizontal .date::before {
+        content: '\f073'; /* Font Awesome calendar icon */
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 0.9rem;
+        color: #ec4899;
+    }
+    
+    .timeline-horizontal .lieu {
+        position: relative;
+        padding-left: 40px !important;
+        gap: 0;
+    }
+    
+    .timeline-horizontal .lieu::before {
+        content: '\f3c5'; /* Font Awesome map marker */
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 0.9rem;
+        color: #06b6d4;
+    }
+}
+
