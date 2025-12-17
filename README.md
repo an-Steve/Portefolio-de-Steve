@@ -61,11 +61,3 @@ Merci de ta visite et de l'intérêt porté à mon travail ! 👋
 
 ---
 *Dernière mise à jour : Décembre 2025
-
-
-
-
-       
-
-
-## 📂 Structure du Projet
