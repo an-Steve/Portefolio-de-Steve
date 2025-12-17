@@ -1578,3 +1578,217 @@ footer {
     transform: scale(1.1);
     box-shadow: 0 0 12px rgba(212, 70, 56, 0.6);
 }
+
+/*****************************
+   FRISE CHRONOLOGIQUE - CORRIGÉ
+******************************/
+
+#formations {
+    padding: 4rem 2rem 6rem 2rem; /* Réduit le padding en haut */
+    position: relative;
+    z-index: 1;
+    background: rgba(15, 23, 42, 0.7);
+}
+
+#formations .section-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    text-align: center;
+    margin-bottom: 3rem; /* Réduit la marge */
+    background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Timeline horizontale */
+.timeline-horizontal {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 40px 0 60px 0; /* RÉDUIT : 40px au lieu de 100px */
+}
+
+/* Ligne horizontale centrale - REMONTÉE */
+.timeline-horizontal::before {
+    content: "";
+    position: absolute;
+    top: 0px; /* frise*/
+    left: 5%;
+    right: 5%;
+    width: 90%;
+    height: 6px;
+    background: linear-gradient(to right, #6366f1, #8b5cf6, #ec4899);
+    border-radius: 3px;
+    z-index: 1;
+}
+
+/* Chaque item */
+.timeline-horizontal .timeline-item {
+    position: relative;
+    flex: 1;
+    text-align: center;
+    padding: 0 15px;
+}
+
+/* Point sur la ligne - REMONTÉ */
+.timeline-horizontal .timeline-item::before {
+    content: '';
+    position: absolute;
+    top: -55px; /* REMONTÉ : points */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #6366f1;
+    border: 4px solid #0f172a;
+    box-shadow: 
+        0 0 20px rgba(99, 102, 241, 0.8),
+        0 0 0 4px rgba(99, 102, 241, 0.3);
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+/* Ligne de connexion point -> carte */
+.timeline-horizontal .timeline-item::after {
+    content: '';
+    position: absolute;
+    top: -20px; /* 27px + 24px */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 40px; 
+    background: linear-gradient(to bottom, rgba(99, 102, 241, 0.8), rgba(139, 92, 246, 0.4));
+    z-index: 1;
+}
+
+/* Contenu - REMONTÉ */
+.timeline-horizontal .timeline-content {
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+    margin-top: 0px; /* RÉDUIT : 90px au lieu de 130px */
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.timeline-horizontal .timeline-content:hover {
+    transform: translateY(-10px);
+    border-color: #8b5cf6;
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+}
+
+/* Titre de formation */
+.timeline-horizontal .formation-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #8b5cf6;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+/* Dates */
+.timeline-horizontal .date {
+    color: #ec4899;
+    font-weight: 600;
+    margin: 10px 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: rgba(236, 72, 153, 0.1);
+    border-radius: 20px;
+    border: 2px solid rgba(236, 72, 153, 0.3);
+}
+
+/* Lieu */
+.timeline-horizontal .lieu {
+    color: #06b6d4;
+    font-weight: 500;
+    margin-top: 10px;
+    font-style: italic;
+    padding: 4px 20px;
+    background: rgba(6, 182, 212, 0.1);
+    border-radius: 6px;
+    border: 1px dashed rgba(6, 182, 212, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .timeline-horizontal {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 0 40px 0;
+    }
+    
+    .timeline-horizontal::before {
+        top: 20px; /* Ajusté */
+        left: 50%;
+        width: 6px;
+        height: calc(100% - 40px);
+        transform: translateX(-50%);
+        background: linear-gradient(to bottom, #6366f1, #8b5cf6, #ec4899);
+    }
+    
+    .timeline-horizontal .timeline-item {
+        width: 80%;
+        margin-bottom: 40px;
+        padding: 0;
+    }
+    
+    /* Points en version mobile */
+    .timeline-horizontal .timeline-item::before {
+        top: 20px; /* Ajusté */
+        left: -13px;
+        transform: translateX(-50%);
+        width: 24px;
+        height: 24px;
+    }
+    
+    /* Ligne de connexion en mobile */
+    .timeline-horizontal .timeline-item::after {
+        top: 20px;
+        left: -13px;
+        transform: translateX(-50%);
+        width: 30px;
+        height: 2px;
+        background: linear-gradient(to right, rgba(99, 102, 241, 0.8), rgba(139, 92, 246, 0.4));
+    }
+    
+    .timeline-horizontal .timeline-content {
+        margin-top: 0;
+        margin-left: 40px;
+        min-height: auto;
+        width: calc(100% - 40px);
+    }
+}
+
+@media (max-width: 768px) {
+    #formations {
+        padding: 3rem 1rem 4rem 1rem;
+    }
+    
+    .timeline-horizontal .timeline-item {
+        width: 95%;
+    }
+    
+    .timeline-horizontal .formation-title {
+        font-size: 1.1rem;
+    }
+    
+    .timeline-horizontal .timeline-content {
+        margin-left: 35px;
+        width: calc(100% - 35px);
+    }
+}
