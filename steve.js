@@ -769,8 +769,34 @@ mailBtn.innerHTML = '<i class="fas fa-envelope"></i>';
 
 document.body.appendChild(mailBtn);
 
+// Bouton rond avec changement de drapeau
+const langBtn = document.getElementById('languageToggle');
+const flagIcon = document.querySelector('.flag-icon');
+let isFrench = true;
 
-
+if (langBtn) {
+    langBtn.addEventListener('click', function() {
+        // Animation de changement
+        this.classList.add('changing');
+        
+        // Changer le drapeau
+        if (isFrench) {
+            flagIcon.textContent = '🇬🇧'; // Drapeau anglais
+            this.setAttribute('aria-label', 'Switch to French');
+        } else {
+            flagIcon.textContent = '🇫🇷'; // Drapeau français
+            this.setAttribute('aria-label', 'Switch to English');
+        }
+        
+        // Inverser l'état
+        isFrench = !isFrench;
+        
+        // Retirer la classe d'animation
+        setTimeout(() => {
+            this.classList.remove('changing');
+        }, 600);
+    });
+}
 // ========================================
 // INITIALISATION
 // ========================================
