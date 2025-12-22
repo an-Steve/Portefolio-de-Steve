@@ -797,6 +797,161 @@ if (langBtn) {
         }, 600);
     });
 }
+
+// ========================================
+// SYSTÈME DE CHANGEMENT DE LANGUE
+// ========================================
+
+// Objet contenant toutes les traductions
+const translations = {
+    fr: {
+        // Navigation
+        'nav-home': 'Accueil',
+        'nav-about': 'À propos',
+        'nav-formations': 'Formations',
+        'nav-experience': 'Expériences',
+        'nav-projects': 'Projets',
+        'nav-skills': 'Compétences',
+        'nav-contact': 'Contact',
+        
+        // Hero section
+        'hero-title': 'Steve ANTON NELCON',
+        'hero-subtitle': 'Étudiant en Big Data & IA',
+        'btn-projects': 'Voir mes projets',
+        'btn-contact': 'Me contacter',
+        'btn-cv': 'Télécharger mon CV',
+        
+        // Sections
+        'section-about': 'À propos',
+        'section-formations': 'Formations Scolaires',
+        'section-experience': 'Expériences Professionnelles',
+        'section-projects': 'Projets Académiques',
+        'section-skills': 'Compétences',
+        'section-contact': 'Contact',
+        
+        // About
+        'about-location': '📍 Localisation',
+        'about-email': '📧 Email',
+        'about-phone': '📱 Téléphone',
+        'about-formation': '🎓 Formation',
+        'about-formation-value': 'Master Informatique et Big Data',
+        
+        // Contact
+        'contact-name': 'Nom',
+        'contact-email': 'Email',
+        'contact-subject': 'Sujet',
+        'contact-message': 'Message',
+        'contact-send': 'Envoyer',
+        'contact-form-btn': 'Ouvrir le formulaire',
+        
+        // Footer
+        'footer-text': '© 2025 Steve ANTON NELCON. Tous droits réservés.',
+    },
+    
+    en: {
+        // Navigation
+        'nav-home': 'Home',
+        'nav-about': 'About',
+        'nav-formations': 'Education',
+        'nav-experience': 'Experience',
+        'nav-projects': 'Projects',
+        'nav-skills': 'Skills',
+        'nav-contact': 'Contact',
+        
+        // Hero section
+        'hero-title': 'Steve ANTON NELCON',
+        'hero-subtitle': 'Big Data & AI Student',
+        'btn-projects': 'View my projects',
+        'btn-contact': 'Contact me',
+        'btn-cv': 'Download my CV',
+        
+        // Sections
+        'section-about': 'About',
+        'section-formations': 'Education',
+        'section-experience': 'Professional Experience',
+        'section-projects': 'Academic Projects',
+        'section-skills': 'Skills',
+        'section-contact': 'Contact',
+        
+        // About
+        'about-location': '📍 Location',
+        'about-email': '📧 Email',
+        'about-phone': '📱 Phone',
+        'about-formation': '🎓 Education',
+        'about-formation-value': 'Master in Computer Science and Big Data',
+        
+        // Contact
+        'contact-name': 'Name',
+        'contact-email': 'Email',
+        'contact-subject': 'Subject',
+        'contact-message': 'Message',
+        'contact-send': 'Send',
+        'contact-form-btn': 'Open form',
+        
+        // Footer
+        'footer-text': '© 2025 Steve ANTON NELCON. All rights reserved.',
+    }
+};
+
+// Langue par défaut
+let currentLang = localStorage.getItem('language') || 'fr';
+
+// Fonction pour changer la langue
+function changeLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('language', lang);
+    
+    // Mettre à jour tous les éléments avec data-translate
+    document.querySelectorAll('[data-translate]').forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[lang][key]) {
+            // Pour les inputs et textareas, changer le placeholder
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                element.placeholder = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        }
+    });
+    
+    // Changer l'icône du drapeau
+    const flagIcon = document.querySelector('#languageToggle .flag-icon');
+    if (flagIcon) {
+        flagIcon.textContent = lang === 'fr' ? '🇫🇷' : '🇬🇧';
+    }
+    
+    // Ajouter classe d'animation
+    document.getElementById('languageToggle').classList.add('changing');
+    setTimeout(() => {
+        document.getElementById('languageToggle').classList.remove('changing');
+    }, 600);
+}
+
+// Initialiser la langue au chargement de la page
+document.addEventListener('DOMContentLoaded', () => {
+    changeLanguage(currentLang);
+    
+    // Event listener pour le bouton de langue
+    const langBtn = document.getElementById('languageToggle');
+    if (langBtn) {
+        langBtn.addEventListener('click', () => {
+            const newLang = currentLang === 'fr' ? 'en' : 'fr';
+            changeLanguage(newLang);
+        });
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
 // ========================================
 // INITIALISATION
 // ========================================
