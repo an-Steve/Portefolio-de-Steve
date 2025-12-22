@@ -831,18 +831,149 @@ const translations = {
         
         // About
         'about-location': '📍 Localisation',
+        'about-location-value': 'Paris, Île-de-France',
         'about-email': '📧 Email',
         'about-phone': '📱 Téléphone',
         'about-formation': '🎓 Formation',
         'about-formation-value': 'Master Informatique et Big Data',
+        'about-github': '🔗 Github',
+        'about-linkedin': '🔗 LinkedIn',
+        'about-more-info': '📋 Informations supplémentaires',
+        'about-interests': '→ Centres d\'intérêt :',
+        'about-interests-value': 'Bénévolat',
+        'about-languages': '→ Langues :',
+        'about-languages-value': 'Français - Anglais - Espagnol - Tamoul',
+        'about-qualities': '→ Qualités :',
+        'about-qualities-value': 'Ponctuel, Travail en équipe, Motivé',
+        'about-certifications': '→ Certifications :',
+        'about-certifications-value': 'CACES, PIX, TOEIC, KET',
+        
+        // Formations
+        'formation-dnb': 'Diplôme National du Brevet',
+        'formation-dnb-school': 'Collège Paul Langevin',
+        'formation-bac': 'Baccalauréat STI2D',
+        'formation-bac-school': 'Lycée Paul LeRolland',
+        'formation-bts': 'BTS Systèmes Numériques',
+        'formation-bts-school': 'Lycée Paul Eluard - Saint Denis',
+        'formation-licence': 'Licence Informatique des systèmes embarqués et interactif',
+        'formation-licence-school': 'Université Paris 8',
+        'formation-master': 'Master Informatique et Big Data',
+        'formation-master-school': 'Université Paris 8',
+        
+        // Expériences
+        'exp-subtitle-stages': 'Stages Académiques',
+        'exp-subtitle-pro': 'Parcours professionnel',
+        'exp-subtitle-benevole': 'Bénévolat',
+        
+        // Stage TiqTec
+        'exp-tiqtec-badge': 'Stage académique Licence 3',
+        'exp-tiqtec-title': 'Développeur Web & Application',
+        'exp-tiqtec-date': '12 mai au 04 juillet 2025',
+        'exp-tiqtec-company': 'TiqTec',
+        'exp-tiqtec-location': 'La Courneuve',
+        'exp-tiqtec-task1': 'Développement site web WordPress avec Laragon',
+        'exp-tiqtec-task2': 'Application Android en Kotlin',
+        'exp-tiqtec-task3': 'Tests et gestion base de données MySQL',
+        
+        // Stage StreamVision
+        'exp-stream-badge': 'Stage académique BTS',
+        'exp-stream-title': 'Développeur Informatique',
+        'exp-stream-date': '29 mai au 04 juillet 2023',
+        'exp-stream-company': 'StreamVision',
+        'exp-stream-location': 'Paris',
+        'exp-stream-task1': 'Affichage dynamique pour hôtel JO 2024',
+        'exp-stream-task2': 'Interface interactive (HTML, CSS, JavaScript)',
+        'exp-stream-task3': 'Compte à rebours animé en JavaScript',
+        
+        // Stage 3ème
+        'exp-3eme-badge': 'Stage académique 3ème',
+        'exp-3eme-title': 'Stage d\'observations de 3ème',
+        'exp-3eme-date': '29 mai au 04 juillet 2023',
+        'exp-3eme-company': 'Ecole Maternelle Paul Langevin',
+        'exp-3eme-location': 'Drancy',
+        
+        // Carrefour
+        'exp-carrefour-badge': 'Intérim',
+        'exp-carrefour-title': 'Préparateur de Commandes',
+        'exp-carrefour-date': 'juillet 2022 - Actuel',
+        'exp-carrefour-company': 'Carrefour Supply Chain',
+        'exp-carrefour-location': 'La Courneuve',
+        'exp-carrefour-task1': 'Préparation commandes magasins',
+        'exp-carrefour-task2': 'Construction palettes selon normes',
+        'exp-carrefour-task3': 'CACES obtenu juillet 2022',
+        
+        // Diocèse
+        'exp-diocese-badge': 'Bénévolat',
+        'exp-diocese-title': 'Animateur',
+        'exp-diocese-date': 'Septembre 2024 - Actuel',
+        'exp-diocese-company': 'Diocèse de Saint Denis',
+        'exp-diocese-location': 'Saint Denis',
+        'exp-diocese-task1': 'Animation et encadrement d\'activités pour enfants',
+        'exp-diocese-task2': 'Organisation d\'événements',
+        
+        // Projets
+        'project-ml-badge': 'Machine Learning',
+        'project-ml-title': 'Prédiction des taux de natalité mondiaux par Machine Learning',
+        'project-ml-desc1': '→ Collecte et prétraitement des données (fertility_rate, 187 pays, 1960–2020).',
+        'project-ml-desc2': '→ Implémentation et comparaison de modèles de régression (Random Forest).',
+        'project-ml-desc3': '→ Validation croisée et évaluation des performances (R², RMSE, MAE).',
+        'project-ml-desc4': '→ Segmentation des pays par profils démographiques via clustering (K-Means)',
+        'project-ml-desc5': '→ Génération de prédictions pour la décennie 2021–2030',
+        'project-ml-link': 'Accéder au Github',
+        
+        'project-dl-badge': 'Deep Learning',
+        'project-dl-title': 'Reconnaissance d\'émotions faciales par Deep Learning',
+        'project-dl-desc1': '→ Conception et entraînement d\'un modèle CNN (Convolutional Neural Network)',
+        'project-dl-desc2': '→ Réalisation de prédictions sur des émotions telles que joie, colère, tristesse etc',
+        'project-dl-desc3': '→ Visualisation des prédictions et vérités dans une grille',
+        'project-dl-desc4': '→ Analyse des erreurs du modèle',
+        'project-dl-link': 'Accéder au Github',
+        
+        'project-game-badge': 'Jeux Python',
+        'project-game-title': 'Jeu d\'arcade en 2D/3D',
+        'project-game-desc1': '→ Jeu Mario avec obstacles à éviter, pièces à ramasser, et carapaces à lancer',
+        'project-game-desc2': '→ Fonctions : mouvements, collisions, audio, double langue, mode clair/sombre',
+        'project-game-link': 'Accéder au Github',
+        
+        'project-web-badge': 'Site Web',
+        'project-web-title': 'Site Web E-Commerce',
+        'project-web-desc': '→ Site web informatif pour commerce en ligne avec interface moderne et responsive.',
+        'project-web-link': 'Accéder au Github',
+        
+        'project-android-badge': 'Application Android',
+        'project-android-title': 'Application Android de réservation de vol d\'avion',
+        'project-android-desc': '→ Recherche de vols par destination, date et compagnie aérienne.',
+        'project-android-link': 'Accéder au Github',
+        
+        'github-btn': 'Accéder à mon GitHub',
+        
+        // Skills
+        'skill-web': 'Développement Web',
+        'skill-app': 'Développement d\'application',
+        'skill-ai': 'Intelligence Artificielle',
+        'skill-db': 'Bases de Données',
+        'skill-network': 'Réseaux et Routage',
+        'skill-system': 'Programmation Système',
+        'skill-hardware': 'Matériels',
+        'skill-cms': 'CMS',
+        'skill-os': 'Système d\'exploitation',
+        'skill-ide': 'IDE',
         
         // Contact
         'contact-name': 'Nom',
+        'contact-name-placeholder': 'Votre nom',
         'contact-email': 'Email',
+        'contact-email-placeholder': 'votre@email.com',
         'contact-subject': 'Sujet',
+        'contact-subject-placeholder': 'Sujet du message',
         'contact-message': 'Message',
+        'contact-message-placeholder': 'Votre message...',
         'contact-send': 'Envoyer',
         'contact-form-btn': 'Ouvrir le formulaire',
+        'contact-info-email': 'Email',
+        'contact-info-phone': 'Téléphone',
+        'contact-info-location': 'Localisation',
+        'contact-info-linkedin': 'LinkedIn',
         
         // Footer
         'footer-text': '© 2025 Steve ANTON NELCON. Tous droits réservés.',
@@ -875,18 +1006,149 @@ const translations = {
         
         // About
         'about-location': '📍 Location',
+        'about-location-value': 'Paris, Île-de-France',
         'about-email': '📧 Email',
         'about-phone': '📱 Phone',
         'about-formation': '🎓 Education',
         'about-formation-value': 'Master in Computer Science and Big Data',
+        'about-github': '🔗 Github',
+        'about-linkedin': '🔗 LinkedIn',
+        'about-more-info': '📋 Additional Information',
+        'about-interests': '→ Interests:',
+        'about-interests-value': 'Volunteering',
+        'about-languages': '→ Languages:',
+        'about-languages-value': 'French - English - Spanish - Tamil',
+        'about-qualities': '→ Qualities:',
+        'about-qualities-value': 'Punctual, Teamwork, Motivated',
+        'about-certifications': '→ Certifications:',
+        'about-certifications-value': 'CACES, PIX, TOEIC, KET',
+        
+        // Formations
+        'formation-dnb': 'National Diploma of the Brevet',
+        'formation-dnb-school': 'Paul Langevin Middle School',
+        'formation-bac': 'STI2D Baccalaureate',
+        'formation-bac-school': 'Paul LeRolland High School',
+        'formation-bts': 'Digital Systems BTS',
+        'formation-bts-school': 'Paul Eluard High School - Saint Denis',
+        'formation-licence': 'Bachelor in Embedded and Interactive Systems',
+        'formation-licence-school': 'Paris 8 University',
+        'formation-master': 'Master in Computer Science and Big Data',
+        'formation-master-school': 'Paris 8 University',
+        
+        // Expériences
+        'exp-subtitle-stages': 'Academic Internships',
+        'exp-subtitle-pro': 'Professional Experience',
+        'exp-subtitle-benevole': 'Volunteering',
+        
+        // Stage TiqTec
+        'exp-tiqtec-badge': 'Bachelor 3 Academic Internship',
+        'exp-tiqtec-title': 'Web & Application Developer',
+        'exp-tiqtec-date': 'May 12 to July 4, 2025',
+        'exp-tiqtec-company': 'TiqTec',
+        'exp-tiqtec-location': 'La Courneuve',
+        'exp-tiqtec-task1': 'WordPress website development with Laragon',
+        'exp-tiqtec-task2': 'Android application in Kotlin',
+        'exp-tiqtec-task3': 'Testing and MySQL database management',
+        
+        // Stage StreamVision
+        'exp-stream-badge': 'BTS Academic Internship',
+        'exp-stream-title': 'IT Developer',
+        'exp-stream-date': 'May 29 to July 4, 2023',
+        'exp-stream-company': 'StreamVision',
+        'exp-stream-location': 'Paris',
+        'exp-stream-task1': 'Dynamic display for 2024 Olympics hotel',
+        'exp-stream-task2': 'Interactive interface (HTML, CSS, JavaScript)',
+        'exp-stream-task3': 'Animated countdown in JavaScript',
+        
+        // Stage 3ème
+        'exp-3eme-badge': '9th Grade Academic Internship',
+        'exp-3eme-title': '9th Grade Observation Internship',
+        'exp-3eme-date': 'december 17 to december 23, 2017',
+        'exp-3eme-company': 'Paul Langevin Kindergarten',
+        'exp-3eme-location': 'Drancy',
+        
+        // Carrefour
+        'exp-carrefour-badge': 'Temporary Work',
+        'exp-carrefour-title': 'Order Picker',
+        'exp-carrefour-date': 'July 2022 - Present',
+        'exp-carrefour-company': 'Carrefour Supply Chain',
+        'exp-carrefour-location': 'La Courneuve',
+        'exp-carrefour-task1': 'Store order preparation',
+        'exp-carrefour-task2': 'Pallet construction according to standards',
+        'exp-carrefour-task3': 'CACES obtained July 2022',
+        
+        // Diocèse
+        'exp-diocese-badge': 'Volunteering',
+        'exp-diocese-title': 'Activity Leader',
+        'exp-diocese-date': 'September 2024 - Present',
+        'exp-diocese-company': 'Diocese of Saint Denis',
+        'exp-diocese-location': 'Saint Denis',
+        'exp-diocese-task1': 'Children\'s activity facilitation and supervision',
+        'exp-diocese-task2': 'Event organization',
+        
+        // Projets
+        'project-ml-badge': 'Machine Learning',
+        'project-ml-title': 'Global Birth Rate Prediction by Machine Learning',
+        'project-ml-desc1': '→ Data collection and preprocessing (fertility_rate, 187 countries, 1960–2020).',
+        'project-ml-desc2': '→ Implementation and comparison of regression models (Random Forest).',
+        'project-ml-desc3': '→ Cross-validation and performance evaluation (R², RMSE, MAE).',
+        'project-ml-desc4': '→ Country segmentation by demographic profiles via clustering (K-Means)',
+        'project-ml-desc5': '→ Prediction generation for the decade 2021–2030',
+        'project-ml-link': 'Access Github',
+        
+        'project-dl-badge': 'Deep Learning',
+        'project-dl-title': 'Facial Emotion Recognition by Deep Learning',
+        'project-dl-desc1': '→ Design and training of a CNN model (Convolutional Neural Network)',
+        'project-dl-desc2': '→ Prediction of emotions such as joy, anger, sadness, etc.',
+        'project-dl-desc3': '→ Visualization of predictions and ground truth in a grid',
+        'project-dl-desc4': '→ Model error analysis',
+        'project-dl-link': 'Access Github',
+        
+        'project-game-badge': 'Python Games',
+        'project-game-title': '2D/3D Arcade Game',
+        'project-game-desc1': '→ Mario game with obstacles to avoid, coins to collect, and shells to throw',
+        'project-game-desc2': '→ Features: movements, collisions, audio, bilingual, light/dark mode',
+        'project-game-link': 'Access Github',
+        
+        'project-web-badge': 'Website',
+        'project-web-title': 'E-Commerce Website',
+        'project-web-desc': '→ Informative website for online commerce with modern and responsive interface.',
+        'project-web-link': 'Access Github',
+        
+        'project-android-badge': 'Android Application',
+        'project-android-title': 'Flight Booking Android Application',
+        'project-android-desc': '→ Flight search by destination, date and airline.',
+        'project-android-link': 'Access Github',
+        
+        'github-btn': 'Access my GitHub',
+        
+        // Skills
+        'skill-web': 'Web Development',
+        'skill-app': 'Application Development',
+        'skill-ai': 'Artificial Intelligence',
+        'skill-db': 'Databases',
+        'skill-network': 'Networks and Routing',
+        'skill-system': 'System Programming',
+        'skill-hardware': 'Hardware',
+        'skill-cms': 'CMS',
+        'skill-os': 'Operating Systems',
+        'skill-ide': 'IDE',
         
         // Contact
         'contact-name': 'Name',
+        'contact-name-placeholder': 'Your name',
         'contact-email': 'Email',
+        'contact-email-placeholder': 'your@email.com',
         'contact-subject': 'Subject',
+        'contact-subject-placeholder': 'Message subject',
         'contact-message': 'Message',
+        'contact-message-placeholder': 'Your message...',
         'contact-send': 'Send',
         'contact-form-btn': 'Open form',
+        'contact-info-email': 'Email',
+        'contact-info-phone': 'Phone',
+        'contact-info-location': 'Location',
+        'contact-info-linkedin': 'LinkedIn',
         
         // Footer
         'footer-text': '© 2025 Steve ANTON NELCON. All rights reserved.',
