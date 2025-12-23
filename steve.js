@@ -850,9 +850,9 @@ const translations = {
         
         // Formations
         'formation-dnb': 'Diplôme National du Brevet',
-        'formation-dnb-school': 'Collège Paul Langevin',
+        'formation-dnb-school': 'Collège Paul Langevin - Drancy (93) ',
         'formation-bac': 'Baccalauréat STI2D',
-        'formation-bac-school': 'Lycée Paul LeRolland',
+        'formation-bac-school': 'Lycée Paul LeRolland - Drancy (93)',
         'formation-bts': 'BTS Systèmes Numériques',
         'formation-bts-school': 'Lycée Paul Eluard - Saint Denis',
         'formation-licence': 'Licence Informatique des systèmes embarqués et interactif',
@@ -1025,9 +1025,9 @@ const translations = {
         
         // Formations
         'formation-dnb': 'National Diploma of the Brevet',
-        'formation-dnb-school': 'Paul Langevin Middle School',
+        'formation-dnb-school': 'Paul Langevin Middle School -Drancy',
         'formation-bac': 'STI2D Baccalaureate',
-        'formation-bac-school': 'Paul LeRolland High School',
+        'formation-bac-school': 'Paul LeRolland High School - Drancy',
         'formation-bts': 'Digital Systems BTS',
         'formation-bts-school': 'Paul Eluard High School - Saint Denis',
         'formation-licence': 'Bachelor in Embedded and Interactive Systems',
@@ -1087,7 +1087,7 @@ const translations = {
         'exp-diocese-task2': 'Event organization',
         
         // Projets
-        
+
         'project-ml-badge': 'Machine Learning',
         'project-ml-title': 'Global Birth Rate Prediction by Machine Learning',
         'project-ml-desc1': '→ Data collection and preprocessing (fertility_rate, 187 countries, 1960–2020).',
