@@ -1087,6 +1087,7 @@ const translations = {
         'exp-diocese-task2': 'Event organization',
         
         // Projets
+        
         'project-ml-badge': 'Machine Learning',
         'project-ml-title': 'Global Birth Rate Prediction by Machine Learning',
         'project-ml-desc1': '→ Data collection and preprocessing (fertility_rate, 187 countries, 1960–2020).',

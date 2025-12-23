@@ -578,6 +578,16 @@ section {
     transition: color 0.3s ease;
 }
 
+#experience .section-title::after {
+    content: '';
+    display: block;
+    width: 750px;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    margin: 1rem auto 0;
+    border-radius: 3px;
+}
+
 
 /* Contenu des cartes */
 .timeline-content {
@@ -847,6 +857,16 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
+}
+
+#projects .section-title::after {
+    content: '';
+    display: block;
+    width: 550px; 
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    margin: 1rem auto 0;
+    border-radius: 3px;
 }
 
 .project-card {
@@ -1373,7 +1393,7 @@ footer {
 #skills .section-title::after {
     content: '';
     display: block;
-    width: 100px;
+    width: 300px;
     height: 5px;
     background: linear-gradient(90deg, var(--primary), var(--accent));
     margin: 1rem auto 0;
