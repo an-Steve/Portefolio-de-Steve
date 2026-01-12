@@ -830,22 +830,22 @@ const translations = {
         'section-contact': 'Contact',
         
         // About
-        'about-location': '📍 Localisation',
+        'about-location': '<i class="fas fa-map-marker-alt"></i> Localisation',
         'about-location-value': 'Paris, Île-de-France',
-        'about-email': '📧 Email',
-        'about-phone': '📱 Téléphone',
-        'about-formation': '🎓 Formation',
+        'about-email': '<i class="fas fa-envelope"></i> Email',
+        'about-phone': '<i class="fas fa-phone"></i> Téléphone',
+        'about-formation': '<i class="fas fa-graduation-cap"></i> Formation',
         'about-formation-value': 'Master Informatique et Big Data',
         'about-github': '🔗 Github',
         'about-linkedin': '🔗 LinkedIn',
         'about-more-info': '📋 Informations supplémentaires',
-        'about-interests': '→ Centres d\'intérêt :',
+        'about-interests': ' Centres d\'intérêt ',
         'about-interests-value': 'Bénévolat',
-        'about-languages': '→ Langues :',
-        'about-languages-value': 'Français - Anglais - Espagnol - Tamoul',
-        'about-qualities': '→ Qualités :',
+        'about-languages': ' Langues ',
+        'about-languages-value': 'Français  Anglais  Espagnol  Tamoul',
+        'about-qualities': ' Qualités ',
         'about-qualities-value': 'Ponctuel, Travail en équipe, Motivé',
-        'about-certifications': '→ Certifications :',
+        'about-certifications': ' Certifications ',
         'about-certifications-value': 'CACES, PIX, TOEIC, KET',
         
         // Formations
@@ -1008,22 +1008,22 @@ const translations = {
         'section-contact': 'Contact',
         
         // About
-        'about-location': '📍 Location',
+        'about-location': '<i class="fas fa-map-marker-alt"></i> Location',
         'about-location-value': 'Paris, Île-de-France',
-        'about-email': '📧 Email',
-        'about-phone': '📱 Phone',
-        'about-formation': '🎓 Education',
+        'about-email': '<i class="fas fa-envelope"></i> Email',
+        'about-phone': '<i class="fas fa-phone"></i>Phone',
+        'about-formation': '<i class="fas fa-graduation-cap"></i>Formation',
         'about-formation-value': 'Master in Computer Science and Big Data',
         'about-github': '🔗 Github',
         'about-linkedin': '🔗 LinkedIn',
         'about-more-info': '📋 Additional Information',
-        'about-interests': '→ Interests:',
+        'about-interests': ' Interests',
         'about-interests-value': 'Volunteering',
-        'about-languages': '→ Languages:',
-        'about-languages-value': 'French - English - Spanish - Tamil',
-        'about-qualities': '→ Qualities:',
+        'about-languages': ' Languages',
+        'about-languages-value': 'French  English  Spanish  Tamil',
+        'about-qualities': ' Qualities',
         'about-qualities-value': 'Punctual, Teamwork, Motivated',
-        'about-certifications': '→ Certifications:',
+        'about-certifications': ' Certifications',
         'about-certifications-value': 'CACES, PIX, TOEIC, KET',
         
         // Formations
@@ -1180,7 +1180,7 @@ function changeLanguage(lang) {
             if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                 element.placeholder = translations[lang][key];
             } else {
-                element.textContent = translations[lang][key];
+                element.innerHTML = translations[lang][key];
             }
         }
     });
