@@ -976,7 +976,7 @@ const translations = {
         'contact-info-linkedin': 'LinkedIn',
         
         // Footer
-        'footer-text': '© 2025 Steve ANTON NELCON. Tous droits réservés.',
+        'footer-text': '© 2026 Steve ANTON NELCON.',
     },
     
     en: {
@@ -1152,7 +1152,7 @@ const translations = {
         'contact-info-linkedin': 'LinkedIn',
         
         // Footer
-        'footer-text': '© 2025 Steve ANTON NELCON. All rights reserved.',
+        'footer-text': '© 2026 Steve ANTON NELCON.',
     }
 };
 
