@@ -1213,16 +1213,115 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Ajouter ce script dans ton fichier JS ou avant la balise </body>
+document.addEventListener('DOMContentLoaded', function() {
+    // Mapping des compétences vers leurs icônes Font Awesome
+    const iconMap = {
+        // Développement Web
+        'HTML': 'fab fa-html5',
+        'CSS': 'fab fa-css3-alt',
+        'JavaScript': 'fab fa-js',
+        'TypeScript': 'fab fa-js',
+        'React': 'fab fa-react',
+        'Next.js': 'fab fa-react',
+        'Node.js': 'fab fa-node-js',
+        'PHP': 'fab fa-php',
+        'Laravel': 'fab fa-laravel',
+        'Symfony': 'fab fa-symfony',
+        
+        // Développement d'application
+        'React Native': 'fab fa-react',
+        'Flutter': 'fas fa-mobile-alt',
+        'Android': 'fab fa-android',
+        'Java': 'fab fa-java',
+        'Kotlin': 'fab fa-android',
+        'Swift': 'fab fa-swift',
+        'QML': 'fas fa-cubes'
+,
+        
+        // Intelligence Artificielle
+        'Python': 'fab fa-python',
+        'Machine Learning': 'fas fa-brain',
+        'Deep Learning': 'fas fa-brain',
+        'Scikit-learn': 'fab fa-python',
+        'OpenCV': 'fas fa-camera',
+        
+        // Bases de Données
+        'SQL': 'fas fa-database',
+        'PostgreSQL': 'fas fa-database',
+        'MongoDB': 'fas fa-database',
+        'Redis': 'fas fa-database',
+        'SQLite': 'fas fa-database',
+        'Laragon': 'fas fa-dragon',
+        'phpMyAdmin': 'fas fa-database',
 
 
+        
+        // Réseaux
+        'Cisco': 'fas fa-network-wired',
+        'IPv4': 'fas fa-network-wired',
+        'IPv6': 'fas fa-network-wired',
+        'OSPF': 'fas fa-network-wired',
+        'BGP': 'fas fa-network-wired',
+        
+        // Programmation Système
+        'C': 'fas fa-code',
+        'C++': 'fas fa-code',
+        'Bash': 'fas fa-terminal',
+        'Assembly': 'fas fa-microchip',
+        
+        // Matériels
+        'Arduino': 'fas fa-microchip',
+        'Raspberry Pi': 'fab fa-raspberry-pi',
+        'STM32': 'fas fa-microchip',
+        'ESP32': 'fas fa-microchip',
+        'Microcontrôleur': 'fas fa-microchip',
 
+        
+        // CMS
+        'WordPress': 'fab fa-wordpress',
+        'Joomla': 'fab fa-joomla',
+        'Drupal': 'fab fa-drupal',
+        
+        // Système d'exploitation
+        'Linux': 'fab fa-linux',
+        'Ubuntu': 'fab fa-ubuntu',
+        'Windows': 'fab fa-windows',
+        'macOS': 'fab fa-apple',
+        'Debian': 'fab fa-linux',
+        
+        // IDE et Outils
+        'Visual Studio Code': 'fas fa-code',
+        'IntelliJ': 'fas fa-code',
+        'Eclipse': 'fas fa-code',
+        'Git': 'fab fa-git-alt',
+        'GitHub': 'fab fa-github',
+        'GitLab': 'fab fa-gitlab',
+        'Docker': 'fab fa-docker',
+        'Kubernetes': 'fas fa-dharmachakra',
+        'Android Studio': 'fab fa-android',
+        'Qt Creator': 'fas fa-cubes',
 
-
-
-
-
-
-
+    };
+    
+    // Parcourir tous les skill-items
+    document.querySelectorAll('.skill-item').forEach(item => {
+        const skillName = item.querySelector('.skill-name span');
+        if (skillName) {
+            const text = skillName.textContent.trim();
+            
+            // Chercher une correspondance dans le mapping
+            if (iconMap[text]) {
+                // Créer l'icône
+                const icon = document.createElement('i');
+                icon.className = iconMap[text] + ' skill-icon';
+                
+                // Ajouter l'icône dans le skill-name
+                item.querySelector('.skill-name').appendChild(icon);
+            }
+        }
+    });
+});
 
 // ========================================
 // INITIALISATION

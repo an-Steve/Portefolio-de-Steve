@@ -2142,6 +2142,203 @@ li[data-translate^="exp-diocese-task"]::before {
     font-size: 0.95rem;
 }
 
+/* ========================================
+   SECTION COMPÉTENCES - Animations grille
+   Icônes spécifiques par compétence
+   ======================================== */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 50px;
+}
+
+/* Catégorie de compétence */
+.skill-category {
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.skill-category:hover::before {
+    transform: scaleX(1);
+}
+
+/* Titre de catégorie */
+.skill-category h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Items de compétence */
+.skill-item {
+    margin: 12px 0;
+    position: relative;
+}
+
+.skill-name {
+    padding: 12px 18px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 500;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-name span {
+    z-index: 2;
+    position: relative;
+}
+
+/* Effet de fond au survol */
+.skill-name::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transition: left 0.4s ease;
+    z-index: 1;
+}
+
+.skill-item:hover .skill-name::before {
+    left: 0;
+}
+
+/* Style de l'icône ajoutée par JavaScript */
+.skill-icon {
+    font-size: 1.3rem;
+    opacity: 0;
+    transform: translateX(-20px) scale(0.5);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 2;
+    position: relative;
+}
+
+/* Effet au survol */
+.skill-item:hover .skill-name {
+    transform: translateX(8px);
+    border-color: #667eea;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.skill-item:hover .skill-name span {
+    color: #fff;
+}
+
+.skill-item:hover .skill-icon {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    color: #fff;
+}
+
+/* Animation de pulsation */
+@keyframes pulse-icon {
+    0%, 100% {
+        transform: translateX(0) scale(1);
+    }
+    50% {
+        transform: translateX(0) scale(1.15);
+    }
+}
+
+.skill-item:hover .skill-icon {
+    animation: pulse-icon 0.8s ease-in-out;
+}
+
+/* Animation d'apparition */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.skill-category {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.skill-category:nth-child(1) { animation-delay: 0.1s; }
+.skill-category:nth-child(2) { animation-delay: 0.2s; }
+.skill-category:nth-child(3) { animation-delay: 0.3s; }
+.skill-category:nth-child(4) { animation-delay: 0.4s; }
+.skill-category:nth-child(5) { animation-delay: 0.5s; }
+.skill-category:nth-child(6) { animation-delay: 0.6s; }
+.skill-category:nth-child(7) { animation-delay: 0.7s; }
+.skill-category:nth-child(8) { animation-delay: 0.8s; }
+.skill-category:nth-child(9) { animation-delay: 0.9s; }
+.skill-category:nth-child(10) { animation-delay: 1s; }
+
+/* Style responsive */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .skill-category {
+        padding: 20px;
+    }
+    
+    .skill-category h3 {
+        font-size: 1.1rem;
+    }
+    
+    .skill-name {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-grid {
+        margin-top: 30px;
+    }
+}
+
 /*****************************
    STYLE DES NOMS DE COMPÉTENCES
 ******************************/
