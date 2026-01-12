@@ -2605,6 +2605,7 @@ li[data-translate^="exp-diocese-task"]::before {
     opacity: 0;
 }
 
+
 /* Responsive */
 @media (max-width: 768px) {
     #languageToggle {
@@ -2629,3 +2630,4 @@ li[data-translate^="exp-diocese-task"]::before {
     transform: scale(1.02);
     border-radius: 16px;
 }
+
