@@ -874,7 +874,9 @@ const translations = {
         'exp-tiqtec-task1': 'Développement site web WordPress avec Laragon',
         'exp-tiqtec-task2': 'Application Android en Kotlin',
         'exp-tiqtec-task3': 'Tests et gestion base de données MySQL',
-        
+        'exp-tiqtec-report-text': 'Voir le rapport de projet',
+        'exp-streamvision-report-text': 'Voir le rapport de projet',
+
         // Stage StreamVision
         'exp-stream-badge': 'Stage académique BTS',
         'exp-stream-title': 'Développeur Informatique',
@@ -1049,6 +1051,10 @@ const translations = {
         'exp-tiqtec-task1': 'WordPress website development with Laragon',
         'exp-tiqtec-task2': 'Android application in Kotlin',
         'exp-tiqtec-task3': 'Testing and MySQL database management',
+        'exp-tiqtec-report-text': 'View project report',
+        'exp-streamvision-report-text': 'View project report',
+
+
         
         // Stage StreamVision
         'exp-stream-badge': 'BTS Academic Internship',
