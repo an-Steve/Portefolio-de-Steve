@@ -1831,6 +1831,26 @@ footer {
     }
 }
 
+/* Flèche bleue pour toutes les tâches des expériences */
+li[data-translate^="exp-tiqtec-task"],
+li[data-translate^="exp-stream-task"],
+li[data-translate^="exp-carrefour-task"],
+li[data-translate^="exp-diocese-task"] {
+    list-style: none;
+    padding-left: 0;
+}
+
+li[data-translate^="exp-tiqtec-task"]::before,
+li[data-translate^="exp-stream-task"]::before,
+li[data-translate^="exp-carrefour-task"]::before,
+li[data-translate^="exp-diocese-task"]::before {
+    content: "→ ";
+    color: #3498db;
+    font-weight: bold;
+    font-size: 1.3em;
+    margin-right: 8px;
+}
+
 /*****************************
    GRILLE DES COMPÉTENCES (TON CODE)
 ******************************/
