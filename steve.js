@@ -937,6 +937,7 @@ const translations = {
         'project-game-desc1': '→ Jeu Mario avec obstacles à éviter, pièces à ramasser, et carapaces à lancer',
         'project-game-desc2': '→ Fonctions : mouvements, collisions, audio, double langue, mode clair/sombre',
         'project-game-link': 'Accéder au Github',
+        'jeupython-report-text': 'Voir le rapport de projet',
         
         'project-web-badge': 'Site Web',
         'project-web-title': 'Site Web E-Commerce',
@@ -1095,7 +1096,6 @@ const translations = {
         'exp-diocese-task2': 'Event organization',
         
         // Projets
-
         'project-ml-badge': 'Machine Learning',
         'project-ml-title': 'Global Birth Rate Prediction by Machine Learning',
         'project-ml-desc1': '→ Data collection and preprocessing (fertility_rate, 187 countries, 1960–2020).',
@@ -1118,6 +1118,7 @@ const translations = {
         'project-game-desc1': '→ Mario game with obstacles to avoid, coins to collect, and shells to throw',
         'project-game-desc2': '→ Features: movements, collisions, audio, bilingual, light/dark mode',
         'project-game-link': 'Access Github',
+        'jeupython-report-text': 'View project report',
         
         'project-web-badge': 'Website',
         'project-web-title': 'E-Commerce Website',

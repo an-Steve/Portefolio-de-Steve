@@ -1034,22 +1034,29 @@ section {
 }
 
 .github-link {
-    color: purple;              
+    color: white;
     font-weight: bold;          
-    background: linear-gradient(135deg, #fffacd, #ffd700);
-    border: 2px solid yellow;   
-    border-radius: 12px;        
+    background: linear-gradient(135deg, #2196F3, #1976D2);  /* Bleu Material Design */
+    border: 2px solid #2196F3;
+    border-radius: 25px;
     padding: 6px 12px;          
     text-decoration: none;      
     display: inline-block;
-    margin-top: 15px;       
+    margin-top: 15px;
+    transition: all 0.3s ease;       
 }
-
-/* Optionnel : effet au survol */
 .github-link:hover {
-    background: linear-gradient(135deg, #ffd700, #fffacd);
-    color: #4b0082;                        
-    border-color: #daa520;
+    background: linear-gradient(135deg, #42a5f5, #1565C0);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
+}
+/* Effet au survol */
+.github-link:hover {
+    background: linear-gradient(135deg, #00008b, #87ceeb);  /* Inverse le dégradé */
+    color: #ffffff;                        /* Texte blanc */
+    border-color: #1e90ff;                 /* Bordure bleu dodger */
+    transform: translateY(-2px);           /* Léger soulèvement */
+    box-shadow: 0 4px 12px rgba(0, 0, 139, 0.4);  /* Ombre bleue */
 }
 
 
@@ -2294,6 +2301,30 @@ li[data-translate^="exp-diocese-task"]::before {
     box-shadow: 0 0 12px rgba(212, 70, 56, 0.6);
 }
 
+/* Bouton lien vers le rapport de projet */
+.report-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #ff6b6b 0%, #8b0000 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px; /* Bouton bien arrondi */
+    font-size: 14px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    border: none;
+}
+
+.report-link:hover {
+    background: linear-gradient(135deg, #ff5252 0%, #650000 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 0, 0, 0.4);
+}
+
+.report-link i {
+    margin-right: 8px;
+}
 /*****************************
    FRISE CHRONOLOGIQUE 
 ******************************/
