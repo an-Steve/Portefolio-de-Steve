@@ -903,6 +903,7 @@ const translations = {
         'exp-carrefour-task1': 'Préparation commandes magasins',
         'exp-carrefour-task2': 'Construction palettes selon normes',
         'exp-carrefour-task3': 'CACES obtenu juillet 2022',
+        'project-ml-video': '▶ Regarder la vidéo',
         
         // Diocèse
         'exp-diocese-badge': 'Bénévolat',
@@ -1082,6 +1083,7 @@ const translations = {
         'exp-carrefour-task1': 'Store order preparation',
         'exp-carrefour-task2': 'Pallet construction according to standards',
         'exp-carrefour-task3': 'CACES obtained July 2022',
+        'project-ml-video': '▶ Watch the video',
         
         // Diocèse
         'exp-diocese-badge': 'Volunteering',
