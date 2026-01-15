@@ -3256,6 +3256,26 @@ li[data-translate^="exp-diocese-task"]::before {
     border-radius: 12px;
     max-width: 70%;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    line-height: 1.6;
+}
+
+.message-content strong {
+    font-weight: 700;
+    color: inherit;
+}
+
+.message-content br {
+    display: block;
+    content: "";
+    margin: 4px 0;
+}
+
+.bot-message .message-content strong {
+    color: #ffffff;
+}
+
+.user-message .message-content strong {
+    color: #1f2937;
 }
 
 .bot-message .message-content {
@@ -3366,3 +3386,55 @@ li[data-translate^="exp-diocese-task"]::before {
     }
 }
 
+/* Style pour les QCM */
+.qcm-content {
+    max-width: 85% !important;
+}
+
+.qcm-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.qcm-option {
+    background: white;
+    color: #1f2937;
+    border: 2px solid #fca5a5; /* Rouge plus clair */
+    padding: 10px 16px;
+    border-radius: 20px; /* Boutons bien arrondis */
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.qcm-option:hover {
+    background: #fca5a5; /* Rouge plus clair au survol */
+    color: #1f2937;
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(252, 165, 165, 0.4);
+}
+
+.qcm-option:active {
+    transform: translateX(3px) scale(0.98);
+    background: #f87171; /* Rouge légèrement plus foncé au clic */
+}
+
+/* Style pour la date et l'heure */
+.message-timestamp {
+    font-size: 10px;
+    opacity: 0.7;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.bot-message .message-timestamp {
+    color: #ffffff;
+}
+
+.user-message .message-timestamp {
+    color: #6b7280;
+}

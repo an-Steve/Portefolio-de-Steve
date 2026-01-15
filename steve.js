@@ -750,7 +750,7 @@ document.getElementById("linkedin-btn").addEventListener("click", () => {
     );
 });
 
-//chatbox  avec avatar
+//chatbox avec avatar, intelligence améliorée et QCM
 // Récupération des éléments
 const chatboxToggle = document.getElementById('chatboxToggle');
 const chatboxClose = document.getElementById('chatboxClose');
@@ -769,6 +769,283 @@ let initialY;
 let xOffset = 0;
 let yOffset = 0;
 
+// Base de connaissances sur le portfolio
+const knowledgeBase = {
+    nom: "Steve",
+    profession: "Etudiant en Big Data & Développeur Web/Mobile",
+    site: "https://an-steve.github.io/Portefolio-de-Steve/",
+    
+    competences: [
+        "HTML5", "CSS3", "JavaScript", 
+        "React", "Node.js", "Git",
+        "Responsive Design", "UI/UX", "MongoDB", "Express.js"
+    ],
+    
+    contact: {
+        email: "antonsteve05@gmail.com",
+        github: "an-steve",
+        linkedin: "www.linkedin.com/in/ansteve"
+    },
+    
+    sections: [
+        "Accueil",
+        "À propos",
+        "Compétences",
+        "Projets",
+        "Contact"
+    ],
+    
+    projets: [
+        "Sites web responsive",
+        "Applications web dynamiques",
+        "Interfaces utilisateur modernes",
+        "Intégrations API"
+    ]
+};
+
+// QCM disponibles
+const qcmQuestions = {
+    decouverte: {
+        question: "Que souhaitez-vous découvrir en priorité ?",
+        options: [
+            { text: "Ses compétences techniques", response: "competences" },
+            { text: "Ses projets réalisés", response: "projets" },
+            { text: "Comment le contacter", response: "contact" },
+            { text: "Son parcours", response: "parcours" }
+        ]
+    },
+    aide: {
+        question: "Comment puis-je vous aider ?",
+        options: [
+            { text: "Explorer le portfolio", response: "explorer" },
+            { text: "Voir les technologies", response: "competences" },
+            { text: "Informations de contact", response: "contact" },
+            { text: "Discuter d'un projet", response: "projet-discussion" }
+        ]
+    },
+    navigation: {
+        question: "Où voulez-vous aller ?",
+        options: [
+            { text: "Accueil", response: "accueil" },
+            { text: "À propos", response: "apropos" },
+            { text: "Compétences", response: "competences" },
+            { text: "Projets", response: "projets" }
+        ]
+    },
+    services: {
+        question: "Quel type de service recherchez-vous ?",
+        options: [
+            { text: "Création de site web", response: "site-web" },
+            { text: "Application mobile", response: "app-mobile" },
+            { text: "Design UI/UX", response: "design" },
+            { text: "Maintenance/Amélioration", response: "maintenance" }
+        ]
+    }
+};
+
+// Réponses aux choix QCM
+const qcmResponses = {
+    competences: `<strong>${knowledgeBase.nom}</strong> maîtrise plusieurs technologies :<br><br><strong>Frontend :</strong> HTML5, CSS3, JavaScript, React<br><strong>Backend :</strong> Node.js, Express.js, MongoDB<br><strong>Outils :</strong> Git, Responsive Design, UI/UX<br><br>Voulez-vous en savoir plus sur une technologie spécifique ?`,
+    
+    projets: `Voici les types de projets réalisés par <strong>${knowledgeBase.nom}</strong> :<br><br>${knowledgeBase.projets.map(p => `• ${p}`).join('<br>')}<br><br>Consultez la section <strong>"Projets"</strong> pour voir le portfolio complet !`,
+    
+    contact: `Pour contacter <strong>${knowledgeBase.nom}</strong> :<br><br><strong>Email :</strong> ${knowledgeBase.contact.email}<br><strong>LinkedIn :</strong> ${knowledgeBase.contact.linkedin}<br><strong>GitHub :</strong> github.com/${knowledgeBase.contact.github}<br><br>Rendez-vous dans la section <strong>"Contact"</strong> pour le formulaire !`,
+    
+    parcours: `<strong>${knowledgeBase.nom}</strong> est un <strong>${knowledgeBase.profession}</strong> passionné par le développement web moderne.<br><br>Retrouvez son parcours complet dans la section <strong>"À propos"</strong><br>Consultez ses réalisations dans <strong>"Projets"</strong><br><br>Que voulez-vous savoir d'autre ?`,
+    
+    explorer: `Explorons le portfolio ensemble !<br><br>Vous pouvez :<br>• Découvrir les compétences techniques<br>• Voir les projets réalisés<br>• En apprendre plus sur le parcours<br>• Obtenir les coordonnées<br><br>Par quoi voulez-vous commencer ?`,
+    
+    accueil: `Pour retourner à l'<strong>accueil</strong> :<br><br>• Cliquez sur le logo en haut<br>• Ou sur <strong>"Accueil"</strong> dans le menu<br><br>C'est la page principale du portfolio !`,
+    
+    apropos: `La section <strong>"À propos"</strong> contient :<br><br>• Le parcours de ${knowledgeBase.nom}<br>• Ses motivations<br>• Sa vision du développement web<br><br>Cliquez sur <strong>"À propos"</strong> dans le menu pour y accéder !`,
+    
+    "site-web": `<strong>${knowledgeBase.nom}</strong> crée des sites web :<br><br>• Responsive et modernes<br>• Optimisés pour le SEO<br>• Performance optimale<br>• Design sur mesure<br><br>Contactez-le pour discuter de votre projet !`,
+    
+    "app-mobile": `Développement d'applications web progressives <strong>(PWA)</strong> qui fonctionnent comme des apps mobiles !<br><br>• Expérience mobile fluide<br>• Performances optimales<br>• Fonctionnement offline<br><br>Intéressé ? Contactez <strong>${knowledgeBase.nom}</strong> !`,
+    
+    design: `<strong>Design UI/UX professionnel :</strong><br><br>• Interfaces modernes et intuitives<br>• Design system cohérent<br>• Animations fluides<br>• Mobile-first approach<br><br>Discutons de votre vision !`,
+    
+    maintenance: `<strong>Services de maintenance et amélioration :</strong><br><br>• Corrections de bugs<br>• Optimisation des performances<br>• Nouvelles fonctionnalités<br>• Sécurité renforcée<br><br>Parlons de vos besoins !`,
+    
+    "projet-discussion": `Excellent ! Pour discuter de votre projet :<br><br><strong>1.</strong> Rendez-vous dans la section <strong>"Contact"</strong><br><strong>2.</strong> Remplissez le formulaire<br><strong>3.</strong> Décrivez votre projet<br><strong>4.</strong> ${knowledgeBase.nom} vous répondra rapidement !<br><br>Ou utilisez les coordonnées pour un contact direct !`
+};
+
+// Fonction pour créer un QCM
+function createQCM(qcmKey) {
+    const qcm = qcmQuestions[qcmKey];
+    if (!qcm) return;
+    
+    const qcmDiv = document.createElement('div');
+    qcmDiv.className = 'message bot-message qcm-message';
+    
+    const avatar = document.createElement('div');
+    avatar.className = 'message-avatar';
+    avatar.textContent = '🤖';
+    
+    const content = document.createElement('div');
+    content.className = 'message-content qcm-content';
+    
+    const questionText = document.createElement('p');
+    questionText.textContent = qcm.question;
+    questionText.style.marginBottom = '10px';
+    questionText.style.fontWeight = '600';
+    content.appendChild(questionText);
+    
+    const optionsContainer = document.createElement('div');
+    optionsContainer.className = 'qcm-options';
+    
+    qcm.options.forEach(option => {
+        const button = document.createElement('button');
+        button.className = 'qcm-option';
+        button.textContent = option.text;
+        button.onclick = () => handleQCMResponse(option.response, option.text);
+        optionsContainer.appendChild(button);
+    });
+    
+    content.appendChild(optionsContainer);
+    qcmDiv.appendChild(avatar);
+    qcmDiv.appendChild(content);
+    
+    chatboxMessages.appendChild(qcmDiv);
+    chatboxMessages.scrollTop = chatboxMessages.scrollHeight;
+}
+
+// Gérer la réponse au QCM
+function handleQCMResponse(responseKey, selectedText) {
+    // Afficher le choix de l'utilisateur
+    addMessage(selectedText, true);
+    
+    // Répondre selon le choix
+    setTimeout(() => {
+        const response = qcmResponses[responseKey];
+        if (response) {
+            addMessage(response, false);
+        }
+    }, 500);
+}
+
+// Fonction pour analyser et répondre intelligemment
+function getBotResponse(userMessage) {
+    const message = userMessage.toLowerCase();
+    
+    // Salutations variées
+    if (message.match(/\b(bonjour|salut|hello|hey|hi|coucou|bonsoir)\b/)) {
+        const salutations = [
+            `<strong>Bonjour !</strong><br><br>Ravi de vous accueillir sur le portfolio de <strong>${knowledgeBase.nom}</strong>.<br><br>Comment puis-je vous aider aujourd'hui ?`,
+            `<strong>Salut !</strong><br><br>Bienvenue ! Je suis là pour vous guider sur le portfolio de <strong>${knowledgeBase.nom}</strong>.<br><br>Une question ?`,
+            `<strong>Hello !</strong><br><br>Enchanté de vous voir ici !<br><br>Que souhaitez-vous découvrir sur <strong>${knowledgeBase.nom}</strong> ?`
+        ];
+        const randomGreeting = salutations[Math.floor(Math.random() * salutations.length)];
+        setTimeout(() => createQCM('decouverte'), 1000);
+        return randomGreeting;
+    }
+    
+    // Questions sur l'identité
+    if (message.match(/\b(qui es-tu|qui êtes-vous|c'est quoi|qu'est-ce)\b/)) {
+        return `Je suis l'<strong>assistant virtuel intelligent</strong> de ${knowledgeBase.nom} !<br><br>Je suis ici pour vous aider à :<br>• Naviguer sur son portfolio<br>• Répondre à vos questions<br>• Vous guider<br><br>N'hésitez pas à me solliciter !`;
+    }
+    
+    // Questions sur Steve - plus détaillées
+    if (message.match(/\b(qui est steve|parle.*steve|présente.*steve)\b/)) {
+        setTimeout(() => createQCM('decouverte'), 1000);
+        return `<strong>${knowledgeBase.nom}</strong> est un <strong>${knowledgeBase.profession}</strong> créatif et passionné !<br><br>• Il crée des expériences web modernes et performantes<br>• Spécialisé en développement frontend et backend<br>• Toujours à la pointe des nouvelles technologies<br><br>Que voulez-vous savoir de plus ?`;
+    }
+    
+    // Compétences détaillées
+    if (message.match(/\b(compétence|skill|technologie|langage|maîtrise|outil|framework)\b/)) {
+        setTimeout(() => createQCM('navigation'), 1200);
+        return `<strong>${knowledgeBase.nom}</strong> possède un large éventail de compétences !<br><br><strong>Frontend :</strong> HTML5, CSS3, JavaScript, React<br><strong>Backend :</strong> Node.js, Express.js, MongoDB<br><strong>Outils :</strong> Git, Responsive Design, UI/UX<br><br>Rendez-vous dans <strong>"Compétences"</strong> pour plus de détails !`;
+    }
+    
+    // Projets
+    if (message.match(/\b(projet|réalisation|travaux|portfolio|création|exemple)\b/)) {
+        setTimeout(() => createQCM('navigation'), 1000);
+        return `<strong>${knowledgeBase.nom}</strong> a réalisé de nombreux projets passionnants !<br><br>${knowledgeBase.projets.map(p => `• ${p}`).join('<br>')}<br><br>Découvrez son portfolio complet dans la section <strong>"Projets"</strong> !`;
+    }
+    
+    // Contact détaillé
+    if (message.match(/\b(contact|email|joindre|contacter|écrire|appeler|parler)\b/)) {
+        return `Plusieurs façons de contacter <strong>${knowledgeBase.nom}</strong> !<br><br><strong>Email :</strong> ${knowledgeBase.contact.email}<br><strong>LinkedIn :</strong> ${knowledgeBase.contact.linkedin}<br><strong>GitHub :</strong> github.com/${knowledgeBase.contact.github}<br><br>Ou utilisez le formulaire dans <strong>"Contact"</strong> !`;
+    }
+    
+    // GitHub
+    if (message.match(/\b(github|code|repos|repository|git)\b/)) {
+        return `Retrouvez le code source et les projets de <strong>${knowledgeBase.nom}</strong> sur GitHub !<br><br><strong>Lien :</strong> github.com/${knowledgeBase.contact.github}<br><br>Vous y trouverez ses repositories publics et contributions !`;
+    }
+    
+    // CV / Téléchargement
+    if (message.match(/\b(cv|curriculum|télécharger|download|pdf)\b/)) {
+        return `Le <strong>CV</strong> de ${knowledgeBase.nom} est disponible !<br><br>Vous pouvez le télécharger dans les sections :<br>• <strong>"À propos"</strong><br>• <strong>"Contact"</strong><br><br>Format PDF prêt à l'emploi !`;
+    }
+    
+    // Services proposés
+    if (message.match(/\b(service|offre|proposer|développer|créer|faire)\b/)) {
+        setTimeout(() => createQCM('services'), 800);
+        return `<strong>${knowledgeBase.nom}</strong> propose plusieurs services de développement web !<br><br>Quel type de projet vous intéresse ?`;
+    }
+    
+    // Tarifs / Prix
+    if (message.match(/\b(prix|tarif|coût|combien|budget)\b/)) {
+        return `Les tarifs dépendent de votre projet !<br><br><strong>Pour un devis personnalisé :</strong><br>• Contactez ${knowledgeBase.nom}<br>• Décrivez votre projet<br>• Recevez une estimation<br><br>Chaque projet est unique !`;
+    }
+    
+    // Délais
+    if (message.match(/\b(délai|temps|durée|combien de temps|rapide)\b/)) {
+        return `Les délais varient selon la complexité du projet !<br><br><strong>Petits projets :</strong> 1-2 semaines<br><strong>Projets moyens :</strong> 3-6 semaines<br><strong>Grands projets :</strong> sur mesure<br><br>Contactez <strong>${knowledgeBase.nom}</strong> pour une estimation précise !`;
+    }
+    
+    // Disponibilité
+    if (message.match(/\b(disponible|dispo|libre|quand)\b/)) {
+        return `<strong>${knowledgeBase.nom}</strong> est actuellement actif !<br><br><strong>Pour connaître sa disponibilité exacte :</strong><br>• Envoyez un message via le formulaire<br>• Il répond généralement sous 24-48h<br><br>N'hésitez pas à le contacter !`;
+    }
+    
+    // Navigation - Accueil
+    if (message.match(/\b(accueil|home|retour|début)\b/)) {
+        return `Pour retourner à l'<strong>accueil</strong> :<br><br>• Cliquez sur le logo en haut<br>• Ou sur <strong>"Accueil"</strong> dans le menu<br><br>C'est la page principale du portfolio !`;
+    }
+    
+    // Navigation - À propos
+    if (message.match(/\b(à propos|about|parcours|bio|profil)\b/)) {
+        return `La section <strong>"À propos"</strong> contient :<br><br>• Le parcours de ${knowledgeBase.nom}<br>• Sa vision du développement<br>• Ses objectifs professionnels<br>• Son CV à télécharger<br><br>Cliquez sur <strong>"À propos"</strong> dans le menu !`;
+    }
+    
+    // Expérience
+    if (message.match(/\b(expérience|emploi|travail|poste|années)\b/)) {
+        return `<strong>${knowledgeBase.nom}</strong> a une solide expérience en développement web !<br><br>Retrouvez son parcours détaillé dans la section <strong>"À propos"</strong> :<br>• Formations<br>• Expériences professionnelles<br>• Projets personnels<br><br>Consultez son profil complet !`;
+    }
+    
+    // Technologies spécifiques
+    if (message.match(/\b(react|node|javascript|html|css|mongodb)\b/)) {
+        return `Excellente question !<br><br><strong>${knowledgeBase.nom}</strong> travaille avec ces technologies modernes !<br><br>La section <strong>"Compétences"</strong> détaille :<br>• Niveau de maîtrise<br>• Projets utilisant chaque techno<br>• Certifications éventuelles<br><br>Allez-y pour en savoir plus !`;
+    }
+    
+    // Navigation générale
+    if (message.match(/\b(section|page|menu|naviguer|aller)\b/)) {
+        setTimeout(() => createQCM('navigation'), 600);
+        return `Le portfolio comporte plusieurs sections !<br><br>${knowledgeBase.sections.map(s => `• ${s}`).join('<br>')}<br><br>Où voulez-vous aller ?`;
+    }
+    
+    // Aide générale
+    if (message.match(/\b(aide|help|comment|perdu|\?)\b/)) {
+        setTimeout(() => createQCM('aide'), 800);
+        return `Pas de souci, je suis là pour vous aider !<br><br>Je peux vous renseigner sur tout ce qui concerne <strong>${knowledgeBase.nom}</strong> et son portfolio.<br><br>Que cherchez-vous ?`;
+    }
+    
+    // Remerciements
+    if (message.match(/\b(merci|thanks|thank you|cool|super|génial|parfait)\b/)) {
+        return `<strong>Avec plaisir !</strong><br><br>C'est un plaisir de vous aider.<br><br>N'hésitez pas si vous avez d'autres questions sur le portfolio de <strong>${knowledgeBase.nom}</strong> !`;
+    }
+    
+    // Au revoir
+    if (message.match(/\b(au revoir|bye|adieu|à bientôt|ciao|salut)\b/)) {
+        return `<strong>Au revoir !</strong><br><br>Merci de votre visite !<br><br>N'hésitez pas à revenir pour explorer le portfolio de <strong>${knowledgeBase.nom}</strong>.<br><br>À très bientôt !`;
+    }
+    
+    // Question non reconnue - proposer le QCM
+    setTimeout(() => createQCM('aide'), 1000);
+    return `Hmm, je ne suis pas sûr de bien comprendre votre question...<br><br>Mais je peux vous aider !<br><br>Choisissez une option ci-dessous :`;
+}
+
 // Ouvrir/Fermer la chatbox
 chatboxToggle.addEventListener('click', () => {
     chatbox.classList.toggle('hidden');
@@ -781,7 +1058,6 @@ chatboxClose.addEventListener('click', () => {
 // Fonctions de déplacement
 function dragStart(e) {
     if (e.target === chatboxHeader || e.target.closest('.chatbox-header')) {
-        // Ignorer si c'est le bouton de fermeture
         if (e.target === chatboxClose || e.target.closest('.close-button')) {
             return;
         }
@@ -793,7 +1069,6 @@ function dragStart(e) {
             initialX = e.clientX - xOffset;
             initialY = e.clientY - yOffset;
         }
-
         isDragging = true;
         chatboxHeader.style.cursor = 'grabbing';
     }
@@ -810,10 +1085,8 @@ function drag(e) {
             currentX = e.clientX - initialX;
             currentY = e.clientY - initialY;
         }
-
         xOffset = currentX;
         yOffset = currentY;
-
         setTranslate(currentX, currentY, chatbox);
     }
 }
@@ -836,15 +1109,13 @@ chatboxHeader.addEventListener('mousedown', dragStart);
 document.addEventListener('mousemove', drag);
 document.addEventListener('mouseup', dragEnd);
 
-// Support tactile (mobile)
 chatboxHeader.addEventListener('touchstart', dragStart);
 document.addEventListener('touchmove', drag);
 document.addEventListener('touchend', dragEnd);
 
-// Indicateur visuel que le header est déplaçable
 chatboxHeader.style.cursor = 'grab';
 
-// Fonction pour ajouter un message
+// Fonction pour ajouter un message (modifiée pour supporter HTML)
 function addMessage(text, isUser = false) {
     const messageDiv = document.createElement('div');
     messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
@@ -855,7 +1126,7 @@ function addMessage(text, isUser = false) {
     
     const content = document.createElement('div');
     content.className = 'message-content';
-    content.textContent = text;
+    content.innerHTML = text; // Changé de textContent à innerHTML pour supporter le HTML
     
     messageDiv.appendChild(avatar);
     messageDiv.appendChild(content);
@@ -871,10 +1142,10 @@ function sendMessage() {
         addMessage(message, true);
         chatInput.value = '';
         
-        // Simuler une réponse du bot
         setTimeout(() => {
-            addMessage('Merci pour votre message ! Un agent va vous répondre bientôt.');
-        }, 1000);
+            const response = getBotResponse(message);
+            addMessage(response, false);
+        }, 800);
     }
 }
 
@@ -886,8 +1157,41 @@ chatInput.addEventListener('keypress', (e) => {
     }
 });
 
-
-
+// Fonction pour ajouter un message avec date et heure
+function addMessage(text, isUser = false) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
+    
+    const avatar = document.createElement('div');
+    avatar.className = 'message-avatar';
+    avatar.textContent = isUser ? '👤' : '🤖';
+    
+    const content = document.createElement('div');
+    content.className = 'message-content';
+    
+    // Ajouter la date et l'heure
+    const timestamp = document.createElement('div');
+    timestamp.className = 'message-timestamp';
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const year = now.getFullYear();
+    timestamp.textContent = `${day}/${month}/${year} - ${hours}:${minutes}`;
+    
+    content.appendChild(timestamp);
+    
+    const messageText = document.createElement('div');
+    messageText.innerHTML = text;
+    content.appendChild(messageText);
+    
+    messageDiv.appendChild(avatar);
+    messageDiv.appendChild(content);
+    
+    chatboxMessages.appendChild(messageDiv);
+    chatboxMessages.scrollTop = chatboxMessages.scrollHeight;
+}
 
 // Boutons flottants GitHub et Email
 const githubBtn = document.createElement("a");
