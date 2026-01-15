@@ -60,8 +60,46 @@
                 <i class="fa-solid fa-envelope icon"></i>
                 </a>
             </li>
+            <li>
+                <button id="chatboxToggle" class="chat-button">
+                    <img src="robotIA.png" alt="Chat icon">
+                </button>
+            </li>
         </ul>
     </nav>
+
+    <li>
+    <button id="chatboxToggle" class="chat-button">
+        <img src="chemin/vers/votre-image.png" alt="Chat icon">
+    </button>
+</li>
+
+<!-- Fenêtre chatbox -->
+<div id="chatbox" class="chatbox-container hidden">
+    <div class="chatbox-header">
+        <h3>Chat Support</h3>
+        <button id="chatboxClose" class="close-button">×</button>
+    </div>
+    
+    <div class="chatbox-messages" id="chatboxMessages">
+        <div class="message bot-message">
+            <div class="message-avatar">🤖</div>
+            <div class="message-content">
+                Bonjour ! Comment puis-je vous aider ?
+            </div>
+        </div>
+    </div>
+    
+    <div class="chatbox-input">
+        <input type="text" id="chatInput" placeholder="Tapez votre message..." />
+        <button id="sendButton" class="send-button">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+        </button>
+    </div>
+</div>
 
     <section class="hero" id="home">
         <div class="hero-content">

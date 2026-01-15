@@ -1,0 +1,543 @@
+"""
+DÉTECTEUR DE DOIGTS AVEC CNN - VERSION COMPLÈTE TOUT-EN-UN
+============================================================
+Ce script contient tout : collecte de données, entraînement et détection en temps réel
+
+Utilisation :
+    python detecteur_doigts_complet.py
+
+Auteur : Projet CNN Deep Learning
+"""
+
+import cv2
+import numpy as np
+import os
+import sys
+from datetime import datetime
+
+# Vérifier et installer TensorFlow si nécessaire
+try:
+    import tensorflow as tf
+    from tensorflow import keras
+    from tensorflow.keras import layers
+    from tensorflow.keras.preprocessing.image import ImageDataGenerator
+    import matplotlib.pyplot as plt
+except ImportError:
+    print("❌ TensorFlow n'est pas installé!")
+    print("📦 Installation: pip install tensorflow opencv-python numpy matplotlib")
+    sys.exit(1)
+
+# ============================================================================
+# CONFIGURATION GLOBALE
+# ============================================================================
+IMG_SIZE = 128
+BATCH_SIZE = 32
+EPOCHS = 30
+DATASET_PATH = "hand_dataset"
+MODEL_PATH = "finger_detector_model.h5"
+IMAGES_PER_CLASS = 250
+
+# ============================================================================
+# PARTIE 1 : COLLECTE DE DONNÉES
+# ============================================================================
+def collecter_donnees():
+    """Collecte des images de mains via webcam"""
+    print("\n" + "=" * 70)
+    print("ÉTAPE 1 : COLLECTE DE DONNÉES")
+    print("=" * 70)
+    print("\n📸 Instructions:")
+    print("  • Montrez vos doigts dans le cadre vert")
+    print("  • Appuyez sur 0-5 pour capturer avec ce nombre de doigts")
+    print("  • Variez les positions, angles et éclairages")
+    print("  • Objectif: {} images par classe".format(IMAGES_PER_CLASS))
+    print("  • Appuyez sur 'q' pour terminer la collecte")
+    print("=" * 70)
+    
+    input("\n⏸️  Appuyez sur ENTRÉE pour démarrer la collecte...")
+    
+    # Créer les dossiers
+    for i in range(6):
+        os.makedirs(f"{DATASET_PATH}/{i}", exist_ok=True)
+    
+    # Initialiser la webcam
+    cap = cv2.VideoCapture(0)
+    cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+    cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+    
+    if not cap.isOpened():
+        print("❌ Erreur: Impossible d'ouvrir la webcam!")
+        return False
+    
+    # Compteurs
+    counters = {i: len(os.listdir(f"{DATASET_PATH}/{i}")) for i in range(6)}
+    
+    print("\n🎥 Webcam activée! La fenêtre va s'ouvrir...")
+    
+    while True:
+        ret, frame = cap.read()
+        if not ret:
+            break
+        
+        frame = cv2.flip(frame, 1)
+        h, w = frame.shape[:2]
+        
+        # Zone de capture
+        size = 300
+        x1, y1 = (w - size) // 2, (h - size) // 2
+        x2, y2 = x1 + size, y1 + size
+        roi = frame[y1:y2, x1:x2]
+        
+        # Dessiner le cadre
+        cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 3)
+        
+        # Instructions
+        cv2.putText(frame, "Montrez vos doigts dans le cadre", 
+                    (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 255), 2)
+        cv2.putText(frame, "Appuyez sur 0-5 pour capturer | 'q' pour quitter", 
+                    (10, 60), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 2)
+        
+        # Compteurs
+        y_offset = 100
+        for i in range(6):
+            count = counters[i]
+            color = (0, 255, 0) if count >= IMAGES_PER_CLASS else (0, 165, 255)
+            progress = min(100, int(count / IMAGES_PER_CLASS * 100))
+            text = f"{i} doigts: {count}/{IMAGES_PER_CLASS} ({progress}%)"
+            cv2.putText(frame, text, (10, y_offset + i * 30), 
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.6, color, 2)
+        
+        cv2.imshow('Collecte de Donnees - Detecteur de Doigts', frame)
+        
+        key = cv2.waitKey(1) & 0xFF
+        
+        # Capturer l'image
+        if key in [ord(str(i)) for i in range(6)]:
+            finger_count = int(chr(key))
+            roi_resized = cv2.resize(roi, (IMG_SIZE, IMG_SIZE))
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
+            filename = f"{DATASET_PATH}/{finger_count}/img_{timestamp}.jpg"
+            cv2.imwrite(filename, roi_resized)
+            counters[finger_count] += 1
+            print(f"✓ Capturé: {finger_count} doigt{'s' if finger_count > 1 else ''} (Total: {counters[finger_count]})")
+            
+            # Flash visuel
+            cv2.rectangle(frame, (x1, y1), (x2, y2), (255, 255, 255), -1)
+            cv2.imshow('Collecte de Donnees - Detecteur de Doigts', frame)
+            cv2.waitKey(100)
+        
+        elif key == ord('q'):
+            break
+    
+    cap.release()
+    cv2.destroyAllWindows()
+    
+    # Résumé
+    print("\n" + "=" * 70)
+    print("📊 RÉSUMÉ DE LA COLLECTE")
+    print("=" * 70)
+    total = 0
+    for i in range(6):
+        count = counters[i]
+        total += count
+        print(f"  {i} doigt{'s' if i > 1 else ' '}: {count} images")
+    print(f"\n  TOTAL: {total} images collectées")
+    print("=" * 70)
+    
+    if total < 600:
+        print("\n⚠️  Attention: Moins de 600 images au total.")
+        print("   Pour de meilleurs résultats, collectez plus de données!")
+    
+    return total > 0
+
+# ============================================================================
+# PARTIE 2 : ENTRAÎNEMENT DU MODÈLE
+# ============================================================================
+def entrainer_modele():
+    """Entraîne le modèle CNN sur les données collectées"""
+    print("\n" + "=" * 70)
+    print("ÉTAPE 2 : ENTRAÎNEMENT DU MODÈLE CNN")
+    print("=" * 70)
+    
+    # Vérifier que les données existent
+    if not os.path.exists(DATASET_PATH):
+        print("\n❌ Erreur: Aucune donnée trouvée!")
+        print("   Veuillez d'abord collecter des données (option 1)")
+        return False
+    
+    print("\n🔍 Chargement des données...")
+    
+    # Data augmentation
+    train_datagen = ImageDataGenerator(
+        rescale=1./255,
+        rotation_range=20,
+        width_shift_range=0.2,
+        height_shift_range=0.2,
+        shear_range=0.2,
+        zoom_range=0.2,
+        horizontal_flip=True,
+        fill_mode='nearest',
+        validation_split=0.2
+    )
+    
+    # Générateurs
+    train_generator = train_datagen.flow_from_directory(
+        DATASET_PATH,
+        target_size=(IMG_SIZE, IMG_SIZE),
+        batch_size=BATCH_SIZE,
+        class_mode='categorical',
+        subset='training'
+    )
+    
+    validation_generator = train_datagen.flow_from_directory(
+        DATASET_PATH,
+        target_size=(IMG_SIZE, IMG_SIZE),
+        batch_size=BATCH_SIZE,
+        class_mode='categorical',
+        subset='validation'
+    )
+    
+    print(f"\n✅ Données chargées:")
+    print(f"   • Entraînement: {train_generator.samples} images")
+    print(f"   • Validation: {validation_generator.samples} images")
+    print(f"   • Classes: {list(train_generator.class_indices.keys())}")
+    
+    # Construction du modèle CNN
+    print("\n🏗️  Construction du modèle CNN...")
+    
+    model = keras.Sequential([
+        # Bloc 1
+        layers.Conv2D(32, (3, 3), activation='relu', input_shape=(IMG_SIZE, IMG_SIZE, 3)),
+        layers.BatchNormalization(),
+        layers.MaxPooling2D((2, 2)),
+        
+        # Bloc 2
+        layers.Conv2D(64, (3, 3), activation='relu'),
+        layers.BatchNormalization(),
+        layers.MaxPooling2D((2, 2)),
+        
+        # Bloc 3
+        layers.Conv2D(128, (3, 3), activation='relu'),
+        layers.BatchNormalization(),
+        layers.MaxPooling2D((2, 2)),
+        
+        # Bloc 4
+        layers.Conv2D(128, (3, 3), activation='relu'),
+        layers.BatchNormalization(),
+        layers.MaxPooling2D((2, 2)),
+        
+        # Couches denses
+        layers.Flatten(),
+        layers.Dense(256, activation='relu'),
+        layers.Dropout(0.5),
+        layers.Dense(128, activation='relu'),
+        layers.Dropout(0.3),
+        layers.Dense(6, activation='softmax')
+    ])
+    
+    # Compilation
+    model.compile(
+        optimizer='adam',
+        loss='categorical_crossentropy',
+        metrics=['accuracy']
+    )
+    
+    print("\n📋 Architecture du modèle:")
+    model.summary()
+    
+    # Callbacks
+    callbacks = [
+        keras.callbacks.EarlyStopping(
+            monitor='val_loss',
+            patience=5,
+            restore_best_weights=True,
+            verbose=1
+        ),
+        keras.callbacks.ReduceLROnPlateau(
+            monitor='val_loss',
+            factor=0.5,
+            patience=3,
+            verbose=1,
+            min_lr=1e-7
+        ),
+        keras.callbacks.ModelCheckpoint(
+            MODEL_PATH,
+            monitor='val_accuracy',
+            save_best_only=True,
+            verbose=1
+        )
+    ]
+    
+    # Entraînement
+    print("\n" + "=" * 70)
+    print("🚀 DÉBUT DE L'ENTRAÎNEMENT")
+    print("=" * 70)
+    print(f"Époques: {EPOCHS} | Batch size: {BATCH_SIZE}")
+    print("Cela peut prendre plusieurs minutes...")
+    print("=" * 70 + "\n")
+    
+    history = model.fit(
+        train_generator,
+        epochs=EPOCHS,
+        validation_data=validation_generator,
+        callbacks=callbacks,
+        verbose=1
+    )
+    
+    # Évaluation finale
+    val_loss, val_accuracy = model.evaluate(validation_generator, verbose=0)
+    
+    print("\n" + "=" * 70)
+    print("✅ ENTRAÎNEMENT TERMINÉ!")
+    print("=" * 70)
+    print(f"📈 Précision finale: {val_accuracy*100:.2f}%")
+    print(f"📉 Perte finale: {val_loss:.4f}")
+    print(f"💾 Modèle sauvegardé: {MODEL_PATH}")
+    print("=" * 70)
+    
+    # Graphiques
+    try:
+        plt.figure(figsize=(12, 4))
+        
+        plt.subplot(1, 2, 1)
+        plt.plot(history.history['accuracy'], label='Train')
+        plt.plot(history.history['val_accuracy'], label='Validation')
+        plt.title('Précision du modèle')
+        plt.xlabel('Époque')
+        plt.ylabel('Précision')
+        plt.legend()
+        plt.grid(True)
+        
+        plt.subplot(1, 2, 2)
+        plt.plot(history.history['loss'], label='Train')
+        plt.plot(history.history['val_loss'], label='Validation')
+        plt.title('Perte du modèle')
+        plt.xlabel('Époque')
+        plt.ylabel('Perte')
+        plt.legend()
+        plt.grid(True)
+        
+        plt.tight_layout()
+        plt.savefig('training_history.png', dpi=150)
+        print("📊 Graphiques sauvegardés: training_history.png")
+    except:
+        print("⚠️  Impossible de créer les graphiques (matplotlib)")
+    
+    return True
+
+# ============================================================================
+# PARTIE 3 : DÉTECTION EN TEMPS RÉEL
+# ============================================================================
+def detection_temps_reel():
+    """Détection en temps réel du nombre de doigts"""
+    print("\n" + "=" * 70)
+    print("ÉTAPE 3 : DÉTECTION EN TEMPS RÉEL")
+    print("=" * 70)
+    
+    # Vérifier que le modèle existe
+    if not os.path.exists(MODEL_PATH):
+        print("\n❌ Erreur: Modèle introuvable!")
+        print("   Veuillez d'abord entraîner le modèle (option 2)")
+        return False
+    
+    print("\n🔍 Chargement du modèle...")
+    model = keras.models.load_model(MODEL_PATH)
+    print("✅ Modèle chargé avec succès!")
+    
+    print("\n📸 Instructions:")
+    print("  • Montrez vos doigts dans le cadre")
+    print("  • Le modèle détectera automatiquement le nombre")
+    print("  • Appuyez sur 'q' pour quitter")
+    print("=" * 70)
+    
+    input("\n⏸️  Appuyez sur ENTRÉE pour démarrer la détection...")
+    
+    # Initialiser la webcam
+    cap = cv2.VideoCapture(0)
+    cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+    cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+    
+    if not cap.isOpened():
+        print("❌ Erreur: Impossible d'ouvrir la webcam!")
+        return False
+    
+    # Couleurs
+    COLORS = {
+        0: (255, 0, 0),
+        1: (255, 165, 0),
+        2: (0, 255, 255),
+        3: (0, 255, 0),
+        4: (255, 0, 255),
+        5: (0, 0, 255)
+    }
+    
+    # Buffer pour lisser les prédictions
+    prediction_buffer = []
+    BUFFER_SIZE = 5
+    
+    print("\n🎥 Détection activée! La fenêtre va s'ouvrir...")
+    
+    while True:
+        ret, frame = cap.read()
+        if not ret:
+            break
+        
+        frame = cv2.flip(frame, 1)
+        h, w = frame.shape[:2]
+        
+        # Zone de capture
+        size = 300
+        x1, y1 = (w - size) // 2, (h - size) // 2
+        x2, y2 = x1 + size, y1 + size
+        roi = frame[y1:y2, x1:x2]
+        
+        # Prétraitement
+        roi_resized = cv2.resize(roi, (IMG_SIZE, IMG_SIZE))
+        roi_normalized = roi_resized / 255.0
+        roi_input = np.expand_dims(roi_normalized, axis=0)
+        
+        # Prédiction
+        predictions = model.predict(roi_input, verbose=0)[0]
+        predicted_class = np.argmax(predictions)
+        confidence = predictions[predicted_class] * 100
+        
+        # Lissage
+        prediction_buffer.append(predicted_class)
+        if len(prediction_buffer) > BUFFER_SIZE:
+            prediction_buffer.pop(0)
+        smoothed_prediction = max(set(prediction_buffer), key=prediction_buffer.count)
+        
+        # Couleur
+        color = COLORS.get(smoothed_prediction, (255, 255, 255))
+        
+        # Dessiner
+        cv2.rectangle(frame, (x1, y1), (x2, y2), color, 3)
+        
+        # Résultat principal
+        text = f"{smoothed_prediction} DOIGT{'S' if smoothed_prediction > 1 else ''}"
+        font_scale = 2.0
+        thickness = 4
+        (text_width, text_height), _ = cv2.getTextSize(text, cv2.FONT_HERSHEY_BOLD, font_scale, thickness)
+        cv2.rectangle(frame, (10, 10), (20 + text_width, 20 + text_height), (0, 0, 0), -1)
+        cv2.putText(frame, text, (15, 15 + text_height), 
+                    cv2.FONT_HERSHEY_BOLD, font_scale, color, thickness)
+        
+        # Confiance
+        conf_text = f"Confiance: {confidence:.1f}%"
+        cv2.putText(frame, conf_text, (15, 70), 
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 255), 2)
+        
+        # Probabilités
+        y_offset = 120
+        cv2.putText(frame, "Probabilites:", (15, y_offset), 
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 2)
+        
+        for i in range(6):
+            prob = predictions[i] * 100
+            bar_length = int(prob * 2)
+            y_pos = y_offset + 30 + i * 40
+            cv2.rectangle(frame, (15, y_pos), (15 + bar_length, y_pos + 20), COLORS[i], -1)
+            text = f"{i}: {prob:.1f}%"
+            cv2.putText(frame, text, (220, y_pos + 15), 
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)
+        
+        # Instructions
+        cv2.putText(frame, "Appuyez sur 'q' pour quitter", (15, h - 20), 
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 2)
+        
+        cv2.imshow('Detection en Temps Reel - CNN', frame)
+        
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+    
+    cap.release()
+    cv2.destroyAllWindows()
+    
+    print("\n✅ Détection terminée!")
+    return True
+
+# ============================================================================
+# MENU PRINCIPAL
+# ============================================================================
+def afficher_menu():
+    """Affiche le menu principal"""
+    print("\n" + "=" * 70)
+    print(" " * 15 + "🖐️  DÉTECTEUR DE DOIGTS AVEC CNN 🖐️")
+    print("=" * 70)
+    print("\n📋 MENU PRINCIPAL:")
+    print("  1. Collecter des données (webcam)")
+    print("  2. Entraîner le modèle CNN")
+    print("  3. Détection en temps réel")
+    print("  4. Pipeline complet (1+2+3)")
+    print("  5. Quitter")
+    print("\n" + "=" * 70)
+
+def main():
+    """Fonction principale"""
+    print("\n" + "=" * 70)
+    print(" " * 10 + "BIENVENUE DANS LE DÉTECTEUR DE DOIGTS CNN!")
+    print("=" * 70)
+    print("\n🎯 Ce programme utilise un réseau de neurones convolutionnel (CNN)")
+    print("   pour détecter le nombre de doigts que vous montrez.")
+    print("\n📝 Étapes:")
+    print("   1. Collecter des images de vos mains (0-5 doigts)")
+    print("   2. Entraîner un modèle CNN sur ces images")
+    print("   3. Utiliser le modèle pour la détection en temps réel")
+    print("\n💡 Conseil: Collectez au moins 200-300 images par classe!")
+    print("=" * 70)
+    
+    while True:
+        afficher_menu()
+        choix = input("\n👉 Votre choix (1-5): ").strip()
+        
+        if choix == '1':
+            collecter_donnees()
+        
+        elif choix == '2':
+            entrainer_modele()
+        
+        elif choix == '3':
+            detection_temps_reel()
+        
+        elif choix == '4':
+            print("\n🚀 PIPELINE COMPLET")
+            print("=" * 70)
+            print("Exécution des 3 étapes automatiquement...")
+            print("=" * 70)
+            
+            # Étape 1
+            if not collecter_donnees():
+                print("\n❌ Collecte annulée ou échouée.")
+                continue
+            
+            # Étape 2
+            input("\n⏸️  Appuyez sur ENTRÉE pour commencer l'entraînement...")
+            if not entrainer_modele():
+                print("\n❌ Entraînement échoué.")
+                continue
+            
+            # Étape 3
+            input("\n⏸️  Appuyez sur ENTRÉE pour lancer la détection...")
+            detection_temps_reel()
+        
+        elif choix == '5':
+            print("\n" + "=" * 70)
+            print("👋 Merci d'avoir utilisé le détecteur de doigts!")
+            print("   À bientôt! 🚀")
+            print("=" * 70 + "\n")
+            break
+        
+        else:
+            print("\n❌ Choix invalide! Veuillez choisir entre 1 et 5.")
+
+# ============================================================================
+# POINT D'ENTRÉE
+# ============================================================================
+if __name__ == "__main__":
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\n\n⚠️  Programme interrompu par l'utilisateur.")
+        print("👋 Au revoir!\n")
+    except Exception as e:
+        print(f"\n❌ Erreur inattendue: {e}")
+        print("Veuillez vérifier votre installation et réessayer.\n")

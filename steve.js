@@ -750,6 +750,146 @@ document.getElementById("linkedin-btn").addEventListener("click", () => {
     );
 });
 
+//chatbox  avec avatar
+// Récupération des éléments
+const chatboxToggle = document.getElementById('chatboxToggle');
+const chatboxClose = document.getElementById('chatboxClose');
+const chatbox = document.getElementById('chatbox');
+const chatInput = document.getElementById('chatInput');
+const sendButton = document.getElementById('sendButton');
+const chatboxMessages = document.getElementById('chatboxMessages');
+const chatboxHeader = document.querySelector('.chatbox-header');
+
+// Variables pour le déplacement
+let isDragging = false;
+let currentX;
+let currentY;
+let initialX;
+let initialY;
+let xOffset = 0;
+let yOffset = 0;
+
+// Ouvrir/Fermer la chatbox
+chatboxToggle.addEventListener('click', () => {
+    chatbox.classList.toggle('hidden');
+});
+
+chatboxClose.addEventListener('click', () => {
+    chatbox.classList.add('hidden');
+});
+
+// Fonctions de déplacement
+function dragStart(e) {
+    if (e.target === chatboxHeader || e.target.closest('.chatbox-header')) {
+        // Ignorer si c'est le bouton de fermeture
+        if (e.target === chatboxClose || e.target.closest('.close-button')) {
+            return;
+        }
+        
+        if (e.type === "touchstart") {
+            initialX = e.touches[0].clientX - xOffset;
+            initialY = e.touches[0].clientY - yOffset;
+        } else {
+            initialX = e.clientX - xOffset;
+            initialY = e.clientY - yOffset;
+        }
+
+        isDragging = true;
+        chatboxHeader.style.cursor = 'grabbing';
+    }
+}
+
+function drag(e) {
+    if (isDragging) {
+        e.preventDefault();
+        
+        if (e.type === "touchmove") {
+            currentX = e.touches[0].clientX - initialX;
+            currentY = e.touches[0].clientY - initialY;
+        } else {
+            currentX = e.clientX - initialX;
+            currentY = e.clientY - initialY;
+        }
+
+        xOffset = currentX;
+        yOffset = currentY;
+
+        setTranslate(currentX, currentY, chatbox);
+    }
+}
+
+function dragEnd(e) {
+    if (isDragging) {
+        initialX = currentX;
+        initialY = currentY;
+        isDragging = false;
+        chatboxHeader.style.cursor = 'grab';
+    }
+}
+
+function setTranslate(xPos, yPos, el) {
+    el.style.transform = `translate(${xPos}px, ${yPos}px)`;
+}
+
+// Événements de déplacement
+chatboxHeader.addEventListener('mousedown', dragStart);
+document.addEventListener('mousemove', drag);
+document.addEventListener('mouseup', dragEnd);
+
+// Support tactile (mobile)
+chatboxHeader.addEventListener('touchstart', dragStart);
+document.addEventListener('touchmove', drag);
+document.addEventListener('touchend', dragEnd);
+
+// Indicateur visuel que le header est déplaçable
+chatboxHeader.style.cursor = 'grab';
+
+// Fonction pour ajouter un message
+function addMessage(text, isUser = false) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
+    
+    const avatar = document.createElement('div');
+    avatar.className = 'message-avatar';
+    avatar.textContent = isUser ? '👤' : '🤖';
+    
+    const content = document.createElement('div');
+    content.className = 'message-content';
+    content.textContent = text;
+    
+    messageDiv.appendChild(avatar);
+    messageDiv.appendChild(content);
+    
+    chatboxMessages.appendChild(messageDiv);
+    chatboxMessages.scrollTop = chatboxMessages.scrollHeight;
+}
+
+// Envoyer un message
+function sendMessage() {
+    const message = chatInput.value.trim();
+    if (message) {
+        addMessage(message, true);
+        chatInput.value = '';
+        
+        // Simuler une réponse du bot
+        setTimeout(() => {
+            addMessage('Merci pour votre message ! Un agent va vous répondre bientôt.');
+        }, 1000);
+    }
+}
+
+// Événements d'envoi
+sendButton.addEventListener('click', sendMessage);
+chatInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        sendMessage();
+    }
+});
+
+
+
+
+// Boutons flottants GitHub et Email
 const githubBtn = document.createElement("a");
 githubBtn.id = "github-btn";
 githubBtn.href = "https://github.com/an-steve";
