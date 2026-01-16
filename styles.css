@@ -3438,3 +3438,191 @@ li[data-translate^="exp-diocese-task"]::before {
 .user-message .message-timestamp {
     color: #6b7280;
 }
+
+/* ====================================
+   🎨 CSS POUR LE BOUTON "TOUS MES PROJETS"
+   ==================================== */
+
+/* Ajoutez ce CSS dans votre fichier styles.css */
+
+/* Container pour les boutons (chatbox et tous mes projets) */
+#navbar ul {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Petit espace entre les boutons */
+}
+
+/* Bouton "Tous mes projets" - PETIT BOUTON ROND BLEU */
+.all-projects-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;  /* Même taille que le chatbox */
+    height: 50px; /* Même taille que le chatbox */
+    background: linear-gradient(135deg, #0066FF 0%, #0047CC 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 50%; /* Parfaitement rond */
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 102, 255, 0.4);
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+/* Cache le texte (on garde juste l'icône) */
+.all-projects-button .button-text {
+    display: none;
+}
+
+/* Effet de brillance au survol */
+.all-projects-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.all-projects-button:hover::before {
+    left: 100%;
+}
+
+/* Hover effect */
+.all-projects-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 102, 255, 0.6);
+    border-color: #0066FF;
+    background: linear-gradient(135deg, #3385FF 0%, #0066FF 100%);
+}
+
+/* Active effect (quand on clique) */
+.all-projects-button:active {
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 0 4px 15px rgba(0, 102, 255, 0.5);
+}
+
+/* Icône GitHub */
+.all-projects-button i {
+    font-size: 1.5rem; /* Taille de l'icône */
+    animation: pulse 2s ease-in-out infinite;
+    margin: 0;
+}
+
+/* Animation de pulsation pour l'icône */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Animation d'entrée */
+.all-projects-button {
+    animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ====================================
+   📱 RESPONSIVE DESIGN
+   ==================================== */
+
+/* Le bouton garde la même taille sur tous les écrans */
+@media (max-width: 1024px) {
+    .all-projects-button {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .all-projects-button i {
+        font-size: 1.3rem;
+    }
+}
+
+/* Pour les mobiles */
+@media (max-width: 768px) {
+    .all-projects-button {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .all-projects-button i {
+        font-size: 1.2rem;
+    }
+}
+
+/* Pour très petits écrans */
+@media (max-width: 480px) {
+    .all-projects-button {
+        width: 38px;
+        height: 38px;
+    }
+    
+    .all-projects-button i {
+        font-size: 1.1rem;
+    }
+}
+
+
+
+.all-projects-button {
+    background: transparent;
+    border: 2px solid #0066FF;
+    color: #0066FF;
+    box-shadow: none;
+}
+
+.all-projects-button:hover {
+    background: #0066FF;
+    color: white;
+    border-color: #0066FF;
+}
+
+
+/* ====================================
+   🌙 MODE SOMBRE 
+   ==================================== */
+
+body.dark-mode .all-projects-button {
+    background: linear-gradient(135deg, #3385FF 0%, #0066FF 100%);
+    box-shadow: 0 4px 15px rgba(0, 102, 255, 0.5);
+}
+
+body.dark-mode .all-projects-button:hover {
+    box-shadow: 0 8px 30px rgba(0, 102, 255, 0.7);
+}
+
+
+/* ====================================
+   ✨ EFFET BRILLANT SUPPLÉMENTAIRE
+   ==================================== */
+
+/* Ajoute un effet de lueur qui clignote doucement */
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(0, 102, 255, 0.4),
+                    0 0 20px rgba(0, 102, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 15px rgba(0, 102, 255, 0.6),
+                    0 0 30px rgba(0, 102, 255, 0.5);
+    }
+}
+
