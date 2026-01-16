@@ -1767,6 +1767,46 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const zoomButton = document.getElementById('zoomText');
+    // Cible les principales sections de texte de VOTRE site
+    const textContainers = [
+        document.querySelector('#about'),
+        document.querySelector('#formations'),
+        document.querySelector('#experience'),
+        document.querySelector('#projects'),
+        document.querySelector('#skills'),
+        document.querySelector('#contact')
+    ].filter(section => section !== null); // Filtre les sections existantes
+
+    let isZoomed = false;
+
+    zoomButton.addEventListener('click', function() {
+        isZoomed = !isZoomed; // Bascule l'état
+
+        // Applique ou retire la classe 'text-zoomed' sur chaque section
+        textContainers.forEach(section => {
+            if (section) {
+                section.classList.toggle('text-zoomed', isZoomed);
+            }
+        });
+
+        // Change l'icône et l'état ARIA pour le feedback
+        const icon = this.querySelector('i');
+        if (isZoomed) {
+            icon.classList.remove('fa-magnifying-glass-plus');
+            icon.classList.add('fa-magnifying-glass-minus');
+            this.setAttribute('aria-label', 'Réduire le texte du site');
+            this.setAttribute('aria-pressed', 'true');
+        } else {
+            icon.classList.remove('fa-magnifying-glass-minus');
+            icon.classList.add('fa-magnifying-glass-plus');
+            this.setAttribute('aria-label', 'Agrandir le texte du site');
+            this.setAttribute('aria-pressed', 'false');
+        }
+    });
+});
+
 // ========================================
 // INITIALISATION
 // ========================================

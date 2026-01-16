@@ -3626,3 +3626,161 @@ body.dark-mode .all-projects-button:hover {
     }
 }
 
+/* Bouton accessibilité */
+.accessibility-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff8c00, #ff5e00);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    margin-left: 10px;
+    position: relative;
+    overflow: visible;
+}
+
+/* Effet au survol */
+.accessibility-button:hover {
+    background: linear-gradient(135deg, #ff5e00, #ff3d00);
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Effet au clic */
+.accessibility-button:active {
+    transform: scale(0.95);
+}
+
+/* État actif quand le texte est agrandi */
+.accessibility-button.active {
+    background: linear-gradient(135deg, #ff3d00, #cc0000);
+    box-shadow: 0 0 0 3px rgba(255, 92, 0, 0.5);
+}
+
+/* Icône loupe */
+.accessibility-button i {
+    font-size: 20px;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+/* Animation de la loupe au survol */
+.accessibility-button:hover i {
+    transform: scale(1.2);
+}
+
+/* Tooltip */
+.accessibility-button .tooltip {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+}
+
+.accessibility-button .tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+.accessibility-button:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Styles pour le texte agrandi */
+.text-large {
+    font-size: 1.25rem !important;
+    line-height: 1.6 !important;
+}
+
+.text-xlarge {
+    font-size: 1.5rem !important;
+    line-height: 1.8 !important;
+}
+
+/* Animation de pulsation */
+@keyframes pulse {
+    0% { box-shadow: 0 4px 8px rgba(255, 92, 0, 0.2); }
+    50% { box-shadow: 0 4px 12px rgba(255, 92, 0, 0.4); }
+    100% { box-shadow: 0 4px 8px rgba(255, 92, 0, 0.2); }
+}
+
+.accessibility-button {
+    animation: pulse 3s infinite;
+}
+
+/* Styles pour les éléments spécifiques quand le texte est agrandi */
+.text-large .text,
+.text-large .button-text,
+.text-large .nav-link span {
+    font-size: 1.1em !important;
+}
+
+.text-xlarge .text,
+.text-xlarge .button-text,
+.text-xlarge .nav-link span {
+    font-size: 1.25em !important;
+}
+
+/* Style du bouton d'accessibilité */
+.accessibility-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff8c00, #ff5e00);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    margin-left: 10px;
+    position: relative;
+}
+
+.accessibility-button:hover {
+    background: linear-gradient(135deg, #ff5e00, #ff3d00);
+    transform: scale(1.05);
+}
+
+.accessibility-button i {
+    font-size: 1.2rem;
+    color: white;
+}
+
+/* Style appliqué aux sections de texte quand zoomé */
+.text-zoomed {
+    font-size: 1.2em !important; /* Agrandit la taille de la police */
+    line-height: 1.6 !important; /* Améliore l'espacement pour la lisibilité */
+}
+
+/* Pour cibler plus spécifiquement le texte à l'intérieur si nécessaire */
+.text-zoomed p,
+.text-zoomed li,
+.text-zoomed .text {
+    font-size: inherit;
+    line-height: inherit;
+}
+
