@@ -1393,8 +1393,12 @@ const translations = {
         'project-android-title': 'Application Android de réservation de vol d\'avion',
         'project-android-desc': '→ Recherche de vols par destination, date et compagnie aérienne.',
         'project-android-link': 'Accéder au Github',
+
+        "project-meteo-title": 'Météo - Site de Prévisions Météorologiques',
+        'project-meteo-desc': '→ Application web affichant les prévisions météo en temps réel pour n\'importe quelle ville.',
         
         'github-btn': 'Accéder à mon GitHub',
+        'meteosite-btn': 'Accéder au site météo',
         
         // Skills
         'skill-web': 'Développement Web',
@@ -1604,6 +1608,10 @@ const translations = {
         'project-android-link': 'Access Github',
         
         'github-btn': 'Access my GitHub',
+        'meteosite-btn': 'Access the Weather Site',
+
+         "project-meteo-title": 'Weather - Weather Forecasting Website',
+        'project-meteo-desc': '→ Web application displaying real-time weather forecasts for any city.',
         
         // Skills
         'skill-web': 'Web Development',
