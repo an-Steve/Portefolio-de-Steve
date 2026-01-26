@@ -1427,7 +1427,7 @@ const translations = {
         
         'cert-toeic': 'TOEIC',
         'cert-toeic-issuer': 'Test of English for International Communication',
-        'cert-toeic-date': 'Obtenu en 2024',
+        'cert-toeic-date': 'Obtenu en 2022',
         'cert-toeic-desc': 'Certification du niveau d\'anglais professionnel',
         
         'cert-ket': 'KET',
@@ -1636,7 +1636,7 @@ const translations = {
         
         'cert-toeic': 'TOEIC',
         'cert-toeic-issuer': 'Test of English for International Communication',
-        'cert-toeic-date': 'Obtained in 2024',
+        'cert-toeic-date': 'Obtained in 2022',
         'cert-toeic-desc': 'Professional English level certification',
         
         'cert-ket': 'KET',
