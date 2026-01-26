@@ -1272,6 +1272,7 @@ const translations = {
         'section-projects': 'Projets Académiques',
         'section-skills': 'Compétences',
         'section-contact': 'Contact',
+        'section-certifications': 'Certifications',
         
         // About
         'about-location': '<i class="fas fa-map-marker-alt"></i> Localisation',
@@ -1407,6 +1408,33 @@ const translations = {
         'skill-os': 'Système d\'exploitation',
         'skill-ide': 'IDE',
         
+        // Certifications
+        'cert-child-protection': 'Protéger l\'enfance',
+        'cert-child-protection-issuer': 'Diocèse de Saint Denis - MOOCit',
+        'cert-child-protection-date': 'Obtenu le 5 juin 2025',
+        'cert-child-protection-desc': 'Formation à la prévention des abus sur mineurs pour les personnes en mission auprès des mineurs',
+        'cert-view-link': 'Voir le certificat',
+        
+        'cert-caces': 'CACES',
+        'cert-caces-issuer': 'Certificat d\'Aptitude à la Conduite en Sécurité',
+        'cert-caces-date': 'Obtenu en juillet 2022',
+        'cert-caces-desc': 'Catégorie R489 - Chariots de manutention automoteurs',
+        
+        'cert-pix': 'PIX',
+        'cert-pix-issuer': 'Certification des compétences numériques',
+        'cert-pix-date': 'Obtenu en 2024',
+        'cert-pix-desc': 'Compétences numériques validées selon le référentiel européen DigComp',
+        
+        'cert-toeic': 'TOEIC',
+        'cert-toeic-issuer': 'Test of English for International Communication',
+        'cert-toeic-date': 'Obtenu en 2024',
+        'cert-toeic-desc': 'Certification du niveau d\'anglais professionnel',
+        
+        'cert-ket': 'KET',
+        'cert-ket-issuer': 'Key English Test - Cambridge',
+        'cert-ket-date': 'Obtenu en 2018',
+        'cert-ket-desc': 'Niveau A2 du CECRL - Compétences de base en anglais',
+        
         // Contact
         'contact-name': 'Nom',
         'contact-name-placeholder': 'Votre nom',
@@ -1451,6 +1479,7 @@ const translations = {
         'section-projects': 'Academic Projects',
         'section-skills': 'Skills',
         'section-contact': 'Contact',
+        'section-certifications': 'Certifications',
         
         // About
         'about-location': '<i class="fas fa-map-marker-alt"></i> Location',
@@ -1587,6 +1616,33 @@ const translations = {
         'skill-cms': 'CMS',
         'skill-os': 'Operating Systems',
         'skill-ide': 'IDE',
+        
+        // Certifications
+        'cert-child-protection': 'Child Protection',
+        'cert-child-protection-issuer': 'Diocese of Saint Denis - MOOCit',
+        'cert-child-protection-date': 'Obtained on June 5, 2025',
+        'cert-child-protection-desc': 'Training in the prevention of child abuse for people working with minors',
+        'cert-view-link': 'View certificate',
+        
+        'cert-caces': 'CACES',
+        'cert-caces-issuer': 'Safety Driving Aptitude Certificate',
+        'cert-caces-date': 'Obtained in July 2022',
+        'cert-caces-desc': 'Category R489 - Self-propelled handling trucks',
+        
+        'cert-pix': 'PIX',
+        'cert-pix-issuer': 'Digital Skills Certification',
+        'cert-pix-date': 'Obtained in 2024',
+        'cert-pix-desc': 'Digital skills validated according to the European DigComp framework',
+        
+        'cert-toeic': 'TOEIC',
+        'cert-toeic-issuer': 'Test of English for International Communication',
+        'cert-toeic-date': 'Obtained in 2024',
+        'cert-toeic-desc': 'Professional English level certification',
+        
+        'cert-ket': 'KET',
+        'cert-ket-issuer': 'Key English Test - Cambridge',
+        'cert-ket-date': 'Obtained in 2018',
+        'cert-ket-desc': 'CEFR Level A2 - Basic English skills',
         
         // Contact
         'contact-name': 'Name',

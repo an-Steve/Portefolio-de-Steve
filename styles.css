@@ -2409,6 +2409,198 @@ li[data-translate^="exp-diocese-task"]::before {
     }
 }
 
+/* ===============================================
+   SECTION CERTIFICATIONS - Styles
+   =============================================== */
+
+.certifications {
+    padding: 80px 0;
+    background: transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.certifications .container {
+    position: relative;
+    z-index: 1;
+}
+
+.certifications h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #764ba2;
+    margin-bottom: 60px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.certification-card {
+    background: linear-gradient(135deg, #f5f0ff 0%, #e8dcff 100%);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(118, 75, 162, 0.15);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(118, 75, 162, 0.1);
+}
+
+.certification-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.certification-card:hover::before {
+    left: 100%;
+}
+
+.certification-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(118, 75, 162, 0.25);
+    background: linear-gradient(135deg, #f0e6ff 0%, #dcc9ff 100%);
+}
+
+.certification-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.certification-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.certification-issuer {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.certification-date {
+    font-size: 0.9rem;
+    color: #764ba2;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.certification-description {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.certification-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.certification-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.certification-link i {
+    margin-right: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .certifications {
+        padding: 60px 0;
+    }
+    
+    .certifications h2 {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+    
+    .certifications-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 20px;
+    }
+    
+    .certification-card {
+        padding: 25px;
+    }
+    
+    .certification-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}
+
+/* Animation au scroll */
+.certification-card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.certification-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.certification-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.certification-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.certification-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.certification-card:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 #contact button {
     background: linear-gradient(45deg, #007bff, #8a2be2); /* dégradé bleu → violet */
