@@ -2602,6 +2602,20 @@ li[data-translate^="exp-diocese-task"]::before {
     }
 }
 
+.certification-card {
+    position: relative; /* indispensable */
+}
+
+.certification-img-top {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50px;       /* ajuste la taille */
+    height: auto;
+    border-radius: 6px; /* optionnel */
+}
+
+
 #contact button {
     background: linear-gradient(45deg, #007bff, #8a2be2); /* dégradé bleu → violet */
     color: white;
