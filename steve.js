@@ -1399,6 +1399,7 @@ const translations = {
         
         'github-btn': 'Accéder à mon GitHub',
         'meteosite-btn': 'Accéder au site météo',
+        'project-meteo-badge' : 'API Météo',
         
         // Skills
         'skill-web': 'Développement Web',
@@ -1612,6 +1613,8 @@ const translations = {
 
          "project-meteo-title": 'Weather - Weather Forecasting Website',
         'project-meteo-desc': '→ Web application displaying real-time weather forecasts for any city.',
+        'project-meteo-badge' : 'API Meteo',
+
         
         // Skills
         'skill-web': 'Web Development',
