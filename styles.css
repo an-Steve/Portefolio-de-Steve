@@ -168,6 +168,7 @@ nav a:hover::before {
 .nav-formations .icon,
 .nav-experience .icon,
 .nav-projects .icon,
+.nav-interests .icon,
 .nav-skills .icon {
   display: none;
   font-size: 18px;
@@ -180,6 +181,7 @@ nav a:hover::before {
 .nav-formations:hover,
 .nav-experience:hover,
 .nav-projects:hover,
+.nav-interests:hover,
 .nav-skills:hover {
   color: #4ade80; /* Vert clair */
   background-color: rgba(74, 222, 128, 0.1); /* Fond vert clair transparent */
@@ -192,6 +194,7 @@ nav a:hover::before {
 .nav-formations:hover .text,
 .nav-experience:hover .text,
 .nav-projects:hover .text,
+.nav-interests:hover .text,
 .nav-skills:hover .text {
   display: none;
 }
@@ -202,6 +205,7 @@ nav a:hover::before {
 .nav-formations:hover .icon,
 .nav-experience:hover .icon,
 .nav-projects:hover .icon,
+.nav-interests:hover .icon,
 .nav-skills:hover .icon {
   display: inline;
 }
