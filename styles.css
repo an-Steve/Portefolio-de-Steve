@@ -3826,17 +3826,40 @@ body.dark-mode .all-projects-button:hover {
 
 .interests-section {
     padding: 80px 0;
-    background: transparent;
+    background-color: #FFFEF0; /* Jaune très clair */
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(255, 215, 100, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 215, 100, 0.1) 0%, transparent 50%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Effet de particules légères */
+.interests-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255, 245, 200, 0.3) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(255, 245, 200, 0.3) 0%, transparent 20%);
+    pointer-events: none;
 }
 
 .interests-section .section-title {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     color: #2c3e50;
-    margin-bottom: 50px;
-    font-weight: 700;
+    margin-bottom: 60px;
+    font-weight: 800;
     position: relative;
-    padding-bottom: 20px;
+    padding-bottom: 25px;
+    background: linear-gradient(135deg, #2c3e50 0%, #667eea 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .interests-section .section-title::after {
@@ -3845,109 +3868,230 @@ body.dark-mode .all-projects-button:hover {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-    border-radius: 2px;
+    width: 100px;
+    height: 5px;
+    background: linear-gradient(90deg, #FFD700 0%, #FFA500 100%); /* Dégradé doré */
+    border-radius: 3px;
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
 }
 
 .interests-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+    max-width: 1300px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 25px;
+    position: relative;
+    z-index: 1;
 }
 
 .interest-card {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.08),
+        0 2px 8px rgba(0, 0, 0, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     text-align: center;
     border: 2px solid transparent;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Effet de brillance au survol */
+.interest-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.3) 50%,
+        transparent 70%
+    );
+    transform: rotate(45deg);
+    transition: transform 0.6s ease;
+    opacity: 0;
+}
+
+.interest-card:hover::before {
+    opacity: 1;
+    transform: rotate(45deg) translate(20%, 20%);
 }
 
 .interest-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-    border-color: #667eea;
-    background: rgba(255, 255, 255, 1);
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 
+        0 20px 50px rgba(102, 126, 234, 0.15),
+        0 8px 24px rgba(0, 0, 0, 0.1);
+    border-color: #FFD700;
+    background: rgba(255, 255, 255, 0.98);
 }
 
 .interest-icon {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto 20px;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 25px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    border: 3px solid #667eea;
-    transition: all 0.3s ease;
-    background: white;
-    padding: 15px;
+    border: 4px solid transparent;
+    background: linear-gradient(135deg, white, white) padding-box,
+                linear-gradient(135deg, #FFD700, #FFA500) border-box;
+    transition: all 0.4s ease;
+    padding: 18px;
+    position: relative;
+}
+
+.interest-icon::after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    opacity: 0.2;
+    z-index: -1;
+    transition: opacity 0.3s ease;
 }
 
 .interest-icon img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
 }
 
 .interest-card:hover .interest-icon {
-    transform: scale(1.1);
-    border-color: #764ba2;
+    transform: scale(1.12) rotate(5deg);
+    box-shadow: 0 15px 30px rgba(255, 215, 0, 0.2);
+}
+
+.interest-card:hover .interest-icon::after {
+    opacity: 0.4;
 }
 
 .interest-card:hover .interest-icon img {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
 .interest-card h3 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: #2c3e50;
-    margin-bottom: 15px;
-    font-weight: 600;
+    margin-bottom: 18px;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+.interest-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.interest-card:hover h3::after {
+    width: 70px;
 }
 
 .interest-card p {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.6;
+    font-size: 1.05rem;
+    color: #4a5568;
+    line-height: 1.7;
     margin: 0;
+    padding: 0 10px;
 }
 
 /* Highlight pour les dates et périodes */
 .highlight-date {
     color: #667eea;
-    font-weight: 600;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block;
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .interests-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        padding: 0 20px;
+    }
+}
+
 @media (max-width: 768px) {
     .interests-section {
-        padding: 50px 0;
+        padding: 60px 0;
     }
     
     .interests-section .section-title {
-        font-size: 2rem;
-        margin-bottom: 30px;
+        font-size: 2.3rem;
+        margin-bottom: 40px;
     }
     
     .interests-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 0 15px;
+        max-width: 500px;
+        gap: 25px;
     }
     
     .interest-card {
-        padding: 25px;
+        padding: 30px;
+    }
+    
+    .interest-icon {
+        width: 140px;
+        height: 140px;
+        padding: 15px;
+    }
+    
+    .interest-card h3 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .interests-section {
+        padding: 50px 20px;
+    }
+    
+    .interests-section .section-title {
+        font-size: 2rem;
+        padding-bottom: 20px;
+    }
+    
+    .interests-section .section-title::after {
+        width: 80px;
+        height: 4px;
+    }
+    
+    .interest-card {
+        padding: 25px 20px;
     }
     
     .interest-icon {
@@ -3961,46 +4105,50 @@ body.dark-mode .all-projects-button:hover {
     }
     
     .interest-card p {
-        font-size: 0.95rem;
+        font-size: 1rem;
+        padding: 0;
     }
 }
 
-@media (max-width: 480px) {
-    .interests-section .section-title {
-        font-size: 1.8rem;
-    }
-    
-    .interest-card {
-        padding: 20px;
-    }
-    
-    .interest-icon {
-        width: 100px;
-        height: 100px;
-        padding: 10px;
-    }
-}
-
-/* Animation d'apparition */
+/* Animations améliorées */
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(40px) scale(0.95);
     }
     to {
         opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
         transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
     }
 }
 
 .interest-card {
-    animation: fadeInUp 0.6s ease-out backwards;
+    animation: fadeInUp 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) backwards;
 }
 
 .interest-card:nth-child(1) { animation-delay: 0.1s; }
 .interest-card:nth-child(2) { animation-delay: 0.2s; }
 .interest-card:nth-child(3) { animation-delay: 0.3s; }
+.interest-card:nth-child(4) { animation-delay: 0.4s; }
 
+/* Animation de flottement au survol */
+.interest-card:hover {
+    animation: float 2s ease-in-out infinite;
+}
+
+/* Transition pour le contenu */
+.interest-card * {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
 /* ====================================
    ✨ EFFET BRILLANT SUPPLÉMENTAIRE
    ==================================== */
