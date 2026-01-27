@@ -3817,6 +3817,187 @@ body.dark-mode .all-projects-button:hover {
 
 
 /* ====================================
+   SECTION CENTRES D'INTÉRÊT / INTERESTS
+   ==================================== */
+
+.interests-section {
+    padding: 80px 0;
+    background: transparent;
+}
+
+.interests-section .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 50px;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.interests-section .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+}
+
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.interest-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+    border: 2px solid transparent;
+    backdrop-filter: blur(10px);
+}
+
+.interest-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    border-color: #667eea;
+    background: rgba(255, 255, 255, 1);
+}
+
+.interest-icon {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 3px solid #667eea;
+    transition: all 0.3s ease;
+    background: white;
+    padding: 15px;
+}
+
+.interest-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.interest-card:hover .interest-icon {
+    transform: scale(1.1);
+    border-color: #764ba2;
+}
+
+.interest-card:hover .interest-icon img {
+    transform: scale(1.05);
+}
+
+.interest-card h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.interest-card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Highlight pour les dates et périodes */
+.highlight-date {
+    color: #667eea;
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .interests-section {
+        padding: 50px 0;
+    }
+    
+    .interests-section .section-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    
+    .interests-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
+    }
+    
+    .interest-card {
+        padding: 25px;
+    }
+    
+    .interest-icon {
+        width: 120px;
+        height: 120px;
+        padding: 12px;
+    }
+    
+    .interest-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .interest-card p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .interests-section .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .interest-card {
+        padding: 20px;
+    }
+    
+    .interest-icon {
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+    }
+}
+
+/* Animation d'apparition */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.interest-card {
+    animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.interest-card:nth-child(1) { animation-delay: 0.1s; }
+.interest-card:nth-child(2) { animation-delay: 0.2s; }
+.interest-card:nth-child(3) { animation-delay: 0.3s; }
+
+/* ====================================
    ✨ EFFET BRILLANT SUPPLÉMENTAIRE
    ==================================== */
 
