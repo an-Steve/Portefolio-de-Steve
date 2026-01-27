@@ -1257,6 +1257,8 @@ const translations = {
         'nav-projects': 'Projets',
         'nav-skills': 'Compétences',
         'nav-contact': 'Contact',
+        'nav-interests': 'Centres d\'intérêt',
+        'nav-certifications': 'Certifications',
         
         // Hero section
         'hero-title': 'Steve ANTON NELCON',
@@ -1439,6 +1441,16 @@ const translations = {
         'cert-ket-issuer': 'Key English Test - Cambridge',
         'cert-ket-date': 'Obtenu en 2018',
         'cert-ket-desc': 'Niveau A2 du CECRL - Compétences de base en anglais',
+
+        // Centres d'intérêt
+        'interest-volunteering-title': 'Bénévolat',
+        'interest-volunteering-desc': 'Animation et encadrement d\'activités pour enfants au sein du Diocèse de Saint Denis depuis septembre 2024.',
+        
+        'interest-videogames-title': 'Jeux vidéo',
+        'interest-videogames-desc': 'Passion pour les jeux vidéo (Mario)',
+        
+        'interest-sports-title': 'Sport',
+        'interest-sports-desc': 'Pratique du tennis en club associatif du CE2 à la 6ème, puis du badminton de la 5ème à la 3ème.',
         
         // Contact
         'contact-name': 'Nom',
@@ -1469,6 +1481,8 @@ const translations = {
         'nav-projects': 'Projects',
         'nav-skills': 'Skills',
         'nav-contact': 'Contact',
+        'nav-interests': 'Interests',
+        'nav-certifications': 'Certifications',
         
         // Hero section
         'hero-title': 'Steve ANTON NELCON',
@@ -1654,6 +1668,16 @@ const translations = {
         'cert-ket-issuer': 'Key English Test - Cambridge',
         'cert-ket-date': 'Obtained in 2018',
         'cert-ket-desc': 'CEFR Level A2 - Basic English skills',
+
+        // Centres d'intérêt
+        'interest-volunteering-title': 'Volunteering',
+        'interest-volunteering-desc': 'Animation and supervision of activities for children at the Diocese of Saint Denis since September 2024.',
+        
+        'interest-videogames-title': 'Video Games',
+        'interest-videogames-desc': 'Passion for video games (Mario, etc.).',
+        
+        'interest-sports-title': 'Sports',
+        'interest-sports-desc': 'Tennis practice in a club from CE2 to 6ème, then badminton from 5ème to 3ème.',
         
         // Contact
         'contact-name': 'Name',
