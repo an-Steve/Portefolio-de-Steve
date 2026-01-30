@@ -1448,6 +1448,7 @@ const translations = {
         'cert-ket-desc': 'Niveau A2 du CECRL - Compétences de base en anglais',
 
         // Centres d'intérêt
+        'section-interests': 'Centres d\'intérêt',
         'interest-volunteering-title': 'Bénévolat',
         'interest-volunteering-desc': 'Animation et encadrement d\'activités pour enfants au sein du Diocèse de Saint Denis depuis septembre 2024.',
         
@@ -1681,6 +1682,7 @@ const translations = {
         'cert-ket-desc': 'CEFR Level A2 - Basic English skills',
 
         // Centres d'intérêt
+        'section-interests': 'Interests',
         'interest-volunteering-title': 'Volunteering',
         'interest-volunteering-desc': 'Animation and supervision of activities for children at the Diocese of Saint Denis since September 2024.',
         
