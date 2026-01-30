@@ -1416,12 +1416,11 @@ const translations = {
         'skill-ide': 'IDE',
         
         // Certifications
-
         'cert-permis-b': 'Permis B',
         "cert-permis-b-issuer": "Permis de conduire catégorie B",
         "cert-permis-b-date": "Obtenu en 2026",
         "cert-permis-b-desc": "Titulaire du permis B depuis 2026",
-        
+
         'cert-child-protection': 'Protéger l\'enfance',
         'cert-child-protection-issuer': 'Diocèse de Saint Denis - MOOCit',
         'cert-child-protection-date': 'Obtenu le 5 juin 2025',
