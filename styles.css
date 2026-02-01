@@ -936,9 +936,64 @@ section {
     width: 100px;    
     height: 100px;   
     object-fit: contain;
+    object-position: center;
+    border-radius: 50%;
     float: right;
     margin-left: 15px;
     margin-top: 25px;
+    padding: 10px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f5ff 100%); /* Dégradé subtil violet très clair */
+    border: 3px solid #b19cd9;
+    box-shadow: 0 4px 12px rgba(177, 156, 217, 0.25);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Courbe d'animation plus fluide */
+    position: relative; /* Pour d'éventuels effets supplémentaires */
+}
+
+.experience-icon:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 24px rgba(177, 156, 217, 0.45); /* Ombre encore plus prononcée */
+    border-color: #9370db;
+    background: linear-gradient(135deg, #ffffff 0%, #f0ebff 100%); /* Dégradé légèrement plus prononcé au survol */
+}
+
+/* Effet de brillance subtile (optionnel) */
+.experience-icon::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 40%;
+    height: 40%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none; /* Pour ne pas bloquer les clics */
+    opacity: 0.5;
+}
+
+/* Animation subtile au chargement  */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.experience-icon {
+    animation: fadeInScale 0.5s ease-out; /* L'icône apparaît en douceur */
+}
+
+/* Responsive : réduction de taille sur petits écrans */
+@media (max-width: 768px) {
+    .experience-icon {
+        width: 80px;
+        height: 80px;
+        margin-top: 15px;
+        margin-left: 10px;
+    }
 }
 
 .timeline-badge {
