@@ -1261,77 +1261,373 @@ section {
     margin-bottom: 0.5rem;
 }
 
-/* Projects Grid */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+/* ===== CAROUSEL DE PROJETS - NAVIGATION PROJET PAR PROJET ===== */
+
+/* Container principal du carousel */
+#projects .container {
+    position: relative;
+    padding: 0 120px; /* Plus d'espace pour les flèches */
+    max-width: 900px; /* Limiter la largeur pour un meilleur centrage */
+    margin: 0 auto;
 }
 
-#projects .section-title::after {
-    content: '';
-    display: block;
-    width: 550px; 
-    height: 5px;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    margin: 1rem auto 0;
-    border-radius: 3px;
-}
-
-.project-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(99, 102, 241, 0.2);
-    border-radius: 20px;
+/* Wrapper pour le carousel */
+.projects-carousel-wrapper {
+    position: relative;
     overflow: hidden;
-    transition: all 0.3s ease;
-    cursor: pointer;
+    width: 100%;
+    border-radius: 20px;
+    padding: 20px 0;
+}
+
+/* Grid avec défilement - 1 projet centré à la fois */
+.projects-grid {
+    display: flex;
+    gap: 2rem; /* Gap réduit car on ne voit qu'un projet à la fois */
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-card {
-    position: relative; 
+    min-width: 100%; /* Chaque projet prend 100% de la largeur */
+    max-width: 100%;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border: 2px solid rgba(102, 126, 234, 0.3);
+    border-radius: 25px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+.project-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    border-color: #764ba2;
+    box-shadow: 0 25px 60px rgba(118, 75, 162, 0.5),
+                0 0 40px rgba(102, 126, 234, 0.3);
 }
 
 .project-badge {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: rgba(255, 105, 180, 0.25); /* rose transparent */
-    color: #c71585;           /* texte rose foncé */
-    font-weight: bold;
-    font-size: 0.75rem;       
-    padding: 4px 10px;        
-    border-radius: 20px;      
-    border: 1px solid rgba(255, 105, 180, 0.5); /* contour rose doux */
-    backdrop-filter: blur(2px);
-    box-shadow: 0 0 6px rgba(255, 182, 193, 0.2); /* ombre légère */
-}
-
-.project-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    border-color: var(--accent);
-    box-shadow: 0 20px 50px rgba(236, 72, 153, 0.3);
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
+    color: white;
+    font-weight: 700;
+    font-size: 0.75rem;
+    padding: 8px 16px;
+    border-radius: 25px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 2;
 }
 
 .project-card-content {
-    padding: 2rem;
+    padding: 2.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.project-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05);
 }
 
 .project-card h3 {
-    color: var(--primary);
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 1.2rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.4;
 }
 
 .project-card p {
-    line-height: 1.6;
-    margin-bottom: 1rem;
+    line-height: 1.8;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
 }
 
 .project-tags {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.7rem;
     flex-wrap: wrap;
-    margin-top: 1rem;
+    margin: 1.5rem 0;
+}
+
+.tag {
+    background: rgba(102, 126, 234, 0.25);
+    color: #a8b3ff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(102, 126, 234, 0.4);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    background: rgba(102, 126, 234, 0.4);
+    border-color: rgba(102, 126, 234, 0.6);
+    transform: translateY(-2px);
+}
+
+.github-link, .report-link {
+    display: inline-block;
+    color: #a8b3ff;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    margin-right: 1rem;
+    padding: 10px 20px;
+    border: 2px solid rgba(102, 126, 234, 0.4);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.github-link:hover, .report-link:hover {
+    background: rgba(102, 126, 234, 0.2);
+    border-color: #667eea;
+    transform: translateX(5px);
+}
+
+/* Flèches de navigation */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 30px rgba(102, 126, 234, 0.4),
+                0 0 0 0 rgba(102, 126, 234, 0.6);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 8px 30px rgba(102, 126, 234, 0.4),
+                    0 0 0 0 rgba(102, 126, 234, 0.6);
+    }
+    50% {
+        box-shadow: 0 8px 30px rgba(102, 126, 234, 0.6),
+                    0 0 0 10px rgba(102, 126, 234, 0);
+    }
+}
+
+.carousel-arrow:hover {
+    transform: translateY(-50%) scale(1.15);
+    background: linear-gradient(135deg, #764ba2 0%, #ec4899 100%);
+    box-shadow: 0 12px 40px rgba(236, 72, 153, 0.6);
+    animation: none;
+}
+
+.carousel-arrow:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-arrow.left {
+    left: 20px;
+}
+
+.carousel-arrow.right {
+    right: 20px;
+}
+
+.carousel-arrow i {
+    color: white;
+    font-size: 1.8rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.carousel-arrow.left.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-50%) translateX(-20px);
+}
+
+.carousel-arrow.right.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-50%) translateX(20px);
+}
+
+/* Indicateurs (points) - 6 points, 1 seul actif à la fois */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 4rem;
+    padding: 25px 0;
+    flex-wrap: wrap;
+}
+
+.indicator-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(99, 102, 241, 0.3);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.indicator-dot::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(102, 126, 234, 0.4);
+    transition: all 0.4s ease;
+}
+
+.indicator-dot:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.3);
+    border-color: rgba(102, 126, 234, 0.6);
+}
+
+.indicator-dot:hover::before {
+    width: 30px;
+    height: 30px;
+}
+
+/* UN SEUL point actif à la fois */
+.indicator-dot.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-color: #764ba2;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.8),
+                0 0 40px rgba(118, 75, 162, 0.4);
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(102, 126, 234, 0.8),
+                    0 0 40px rgba(118, 75, 162, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(102, 126, 234, 1),
+                    0 0 60px rgba(118, 75, 162, 0.6);
+    }
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    #projects .container {
+        padding: 0 100px;
+        max-width: 800px;
+    }
+    
+    .carousel-arrow {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+@media (max-width: 768px) {
+    #projects .container {
+        padding: 0 70px;
+        max-width: 100%;
+    }
+    
+    .carousel-arrow {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .carousel-arrow i {
+        font-size: 1.5rem;
+    }
+    
+    .project-card {
+        min-width: 100%;
+    }
+    
+    .carousel-indicators {
+        gap: 10px;
+    }
+    
+    .indicator-dot {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .indicator-dot.active {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    #projects .container {
+        padding: 0 60px;
+    }
+    
+    .carousel-arrow {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .carousel-arrow.left {
+        left: 10px;
+    }
+    
+    .carousel-arrow.right {
+        right: 10px;
+    }
+    
+    .carousel-arrow i {
+        font-size: 1.3rem;
+    }
+    
+    .project-card-content {
+        padding: 1.5rem;
+    }
 }
 
 .tag {
