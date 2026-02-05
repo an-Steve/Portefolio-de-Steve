@@ -1404,6 +1404,7 @@ const translations = {
         'project-meteo-badge' : 'API Météo',
         
         // Skills
+        'skill-data': 'Visualisation de données',
         'skill-web': 'Développement Web',
         'skill-app': 'Développement d\'application',
         'skill-ai': 'Intelligence Artificielle',
@@ -1637,6 +1638,7 @@ const translations = {
 
         
         // Skills
+        'skill-data': 'Data Visualization',
         'skill-web': 'Web Development',
         'skill-app': 'Application Development',
         'skill-ai': 'Artificial Intelligence',
