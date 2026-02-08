@@ -1398,6 +1398,16 @@ const translations = {
 
         "project-meteo-title": 'Météo - Site de Prévisions Météorologiques',
         'project-meteo-desc': '→ Application web affichant les prévisions météo en temps réel pour n\'importe quelle ville.',
+
+        'project-auth-badge': 'Base de données',
+        'project-auth-title': 'Formulaire d’Authentification Sécurisé',
+        'project-auth-desc1': '→ Création d’un formulaire sécurisé pour la connexion et l’inscription des utilisateurs',
+        'project-auth-desc2': '→ Gestion des sessions et sécurisation des mots de passe',
+        'project-auth-desc3': '→ Mode sombre et clair et changement de langue français/anglais',
+        'project-auth-desc4': '→ Validation des champs côté client et côté serveur',
+        'project-auth-link': 'Accéder au Github',
+        'project-auth-report-text': 'Voir le site',
+
         
         'github-btn': 'Accéder à mon GitHub',
         'meteosite-btn': 'Accéder au site météo',
@@ -1635,6 +1645,15 @@ const translations = {
          "project-meteo-title": 'Weather - Weather Forecasting Website',
         'project-meteo-desc': '→ Web application displaying real-time weather forecasts for any city.',
         'project-meteo-badge' : 'API Meteo',
+
+        'project-auth-badge': 'Database',
+        'project-auth-title': 'Secure Authentication Form',
+        'project-auth-desc1': '→ Creation of a secure form for user login and registration',
+        'project-auth-desc2': '→ Session management and password security',
+        'project-auth-desc3': '→ Light/dark mode and French/English language switch',
+        'project-auth-desc4': '→ Client-side and server-side field validation',
+        'project-auth-link': 'Access Github',
+        'project-auth-report-text': 'View website',
 
         
         // Skills
