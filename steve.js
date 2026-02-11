@@ -1167,6 +1167,16 @@ const translations = {
         'exp-diocese-task2': 'Organisation d\'événements',
         
         // Projets
+
+        // Projet Analyse Espérance de Vie
+        "project-life-title": "Analyse Mondiale de l'Espérance de Vie et des Maladies",
+        "project-life-desc1": "→ Analyse exploratoire de données sur l'espérance de vie de 193 pays (2000-2015).",
+        "project-life-desc2": "→ Étude des corrélations entre facteurs socio-économiques et santé publique.",
+        "project-life-desc3": "→ Visualisations interactives des tendances démographiques mondiales.",
+        "project-life-desc4": "→ Identification des facteurs clés influençant la longévité.",
+        "project-life-desc5": "→ Comparaison des systèmes de santé entre pays développés et en développement.",
+        "project-life-link": "Accéder au Github",
+
         'project-ml-badge': 'Machine Learning',
         'project-ml-title': 'Prédiction des taux de natalité mondiaux par Machine Learning',
         'project-ml-desc1': '→ Collecte et prétraitement des données (fertility_rate, 187 pays, 1960–2020).',
@@ -1409,6 +1419,15 @@ const translations = {
         'exp-diocese-task2': 'Event organization',
         
         // Projets
+
+        "project-life-title": "Global Analysis of Life Expectancy and Diseases",
+        "project-life-desc1": "→ Exploratory data analysis on life expectancy across 193 countries (2000-2015).",
+        "project-life-desc2": "→ Study of correlations between socio-economic factors and public health.",
+        "project-life-desc3": "→ Interactive visualizations of global demographic trends.",
+        "project-life-desc4": "→ Identification of key factors influencing longevity.",
+        "project-life-desc5": "→ Comparison of healthcare systems between developed and developing countries.",
+        "project-life-link": "Access Github",
+        
         'project-ml-badge': 'Machine Learning',
         'project-ml-title': 'Global Birth Rate Prediction by Machine Learning',
         'project-ml-desc1': '→ Data collection and preprocessing (fertility_rate, 187 countries, 1960–2020).',
