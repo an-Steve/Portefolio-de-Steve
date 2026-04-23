@@ -1223,6 +1223,16 @@ const translations = {
         'project-auth-link': 'Accéder au Github',
         'project-auth-report-text': 'Voir le site',
 
+        // Dashboards
+        'dashboards-title':       'Dashboards Interactifs',
+        'dashboards-subtitle':    'Visualisations de données réalisées avec HTML, JS & Chart.js',
+        'dashboards-badge':       'Visualisation de données',
+        'dashboard-cta':          'Voir le dashboard ↗',
+        'dashboard-emploi-title': 'Emploi Tech & IA',
+        'dashboard-emploi-desc':  'Marché mondial 2024 : salaires, compétences, géographie et évolution des offres IA.',
+        'dashboard-sante-title':  'Santé Mondiale',
+        'dashboard-sante-desc':   'Espérance de vie, mortalité infantile et dépenses santé par pays (2023).',
+
         
         'github-btn': 'Accéder à mon GitHub',
         'meteosite-btn': 'Accéder au site météo',
@@ -1477,6 +1487,16 @@ const translations = {
         'project-auth-desc4': '→ Client-side and server-side field validation',
         'project-auth-link': 'Access Github',
         'project-auth-report-text': 'View website',
+
+        // Dashboards
+        'dashboards-title':       'Interactive Dashboards',
+        'dashboards-subtitle':    'Data visualizations built with HTML, JS & Chart.js',
+        'dashboards-badge':       'Data Visualization',
+        'dashboard-cta':          'View dashboard ↗',
+        'dashboard-emploi-title': ' Tech & AI Jobs',
+        'dashboard-emploi-desc':  'Global market 2024: salaries, top skills, geography and AI job trends.',
+        'dashboard-sante-title':  ' Global Health',
+        'dashboard-sante-desc':   'Life expectancy, infant mortality and health spending by country (2023).',
 
         
         // Skills
