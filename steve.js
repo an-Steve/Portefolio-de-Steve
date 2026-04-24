@@ -1234,6 +1234,8 @@ const translations = {
         'dashboard-sante-desc':   'Espérance de vie, mortalité infantile et dépenses santé par pays (2023).',
         'dashboard-economie-title': 'Economie Mondiale',
         'dashboard-economie-desc':   'PIB par région, Chômage moyen , Inflation moyenne.',
+        'dashboard-astro-title': 'Explorateur d Habitabilité Exoplanétaire',
+        'dashboard-astro-desc': ' Comparaison Terre vs Exoplanètes · Oxygène, Eau, Gravité, Température · Indice ESI · Système Solaire.',
 
         
         'github-btn': 'Accéder à mon GitHub',
@@ -1501,6 +1503,9 @@ const translations = {
         'dashboard-sante-desc':   'Life expectancy, infant mortality and health spending by country (2023).',
         'dashboard-economie-title': 'Global Economy',
         'dashboard-economie-desc': 'GDP by region, Average unemployment, Average inflation.', 
+        'dashboard-astro-title': 'Exoplanet Habitability Explorer',
+        'dashboard-astro-desc': ' Earth vs Exoplanets comparison · Oxygen, Water, Gravity, Temperature · ESI Index · Solar System data.',
+
 
         
         // Skills
