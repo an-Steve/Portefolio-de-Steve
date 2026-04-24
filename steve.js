@@ -1223,7 +1223,7 @@ const translations = {
         'project-auth-link': 'Accéder au Github',
         'project-auth-report-text': 'Voir le site',
 
-        // Dashboards
+        // Dashboards 
         'dashboards-title':       'Dashboards Interactifs',
         'dashboards-subtitle':    'Visualisations de données réalisées avec HTML, JS & Chart.js',
         'dashboards-badge':       'Visualisation de données',
@@ -1232,6 +1232,8 @@ const translations = {
         'dashboard-emploi-desc':  'Marché mondial 2024 : salaires, compétences, géographie et évolution des offres IA.',
         'dashboard-sante-title':  'Santé Mondiale',
         'dashboard-sante-desc':   'Espérance de vie, mortalité infantile et dépenses santé par pays (2023).',
+        'dashboard-economie-title': 'Economie Mondiale',
+        'dashboard-economie-desc':   'PIB par région, Chômage moyen , Inflation moyenne.',
 
         
         'github-btn': 'Accéder à mon GitHub',
@@ -1497,6 +1499,8 @@ const translations = {
         'dashboard-emploi-desc':  'Global market 2024: salaries, top skills, geography and AI job trends.',
         'dashboard-sante-title':  ' Global Health',
         'dashboard-sante-desc':   'Life expectancy, infant mortality and health spending by country (2023).',
+        'dashboard-economie-title': 'Global Economy',
+        'dashboard-economie-desc': 'GDP by region, Average unemployment, Average inflation.', 
 
         
         // Skills
