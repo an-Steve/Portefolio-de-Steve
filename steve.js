@@ -1256,12 +1256,16 @@ const translations = {
         'skill-ide': 'IDE',
         
         // Certifications
-
-            // Certification Cisco
         'cert-cisco-ai-title': 'Introduction à l’IA moderne',
         'cert-cisco-ai-issuer': 'Cisco Networking Academy',
         'cert-cisco-ai-date': 'Obtenu en avril 2026',
         'cert-cisco-ai-desc': '• Fondamentaux de l’IA<br>• Machine Learning et Deep Learning<br>• Réseaux de neurones et modèles génératifs<br>• Applications pratiques de l’IA<br>• Éthique et responsabilité en IA',
+        'cert-view-link': 'Voir le certificat',
+
+        'cert-cisco-data-title': 'Fondamentaux de l’analyse de données',
+        'cert-cisco-data-issuer': 'Cisco Networking Academy',
+        'cert-cisco-data-date': 'Obtenu en avril 2026',
+        'cert-cisco-data-desc': '• Collecte et préparation des données<br>• Analyse et interprétation des données<br>• Visualisation et présentation des résultats<br>• Outils et techniques d’analyse de données<br>• Prise de décision basée sur les données',
         'cert-view-link': 'Voir le certificat',
 
         'cert-permis-b': 'Permis B',
@@ -1536,6 +1540,12 @@ const translations = {
         'cert-cisco-ai-issuer': 'Cisco Networking Academy',
         'cert-cisco-ai-date': 'Issued in April 2026',
         'cert-cisco-ai-desc': '• AI fundamentals<br>• Machine Learning and Deep Learning<br>• Neural networks and generative models<br>• Practical AI applications<br>• Ethics and responsibility in AI',
+        'cert-view-link': 'View certificate',
+
+        'cert-cisco-data-title': 'Data Analytics Essentials',
+        'cert-cisco-data-issuer': 'Cisco Networking Academy',
+        'cert-cisco-data-date': 'Issued in April 2026',
+        'cert-cisco-data-desc': '• Data collection and preparation<br>• Data analysis and interpretation<br>• Data visualization and presentation<br>• Data analysis tools and techniques<br>• Data-driven decision making',
         'cert-view-link': 'View certificate',
 
 
