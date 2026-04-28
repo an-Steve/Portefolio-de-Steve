@@ -1268,6 +1268,12 @@ const translations = {
         'cert-cisco-data-desc': '• Collecte et préparation des données<br>• Analyse et interprétation des données<br>• Visualisation et présentation des résultats<br>• Outils et techniques d’analyse de données<br>• Prise de décision basée sur les données',
         'cert-view-link': 'Voir le certificat',
 
+        'cert-cisco-datascience-title': 'Introduction à la Data Science',
+        'cert-cisco-datascience-issuer': 'Cisco Networking Academy',
+        'cert-cisco-datascience-date': 'Obtenu en avril 2026',
+        'cert-cisco-datascience-desc': '• Collecte et nettoyage de données<br>• Analyse exploratoire des données<br>• Visualisation et interprétation<br>• Outils et méthodologies de la Data Science<br>• Applications concrètes de la Data Science',
+        'cert-view-link': 'Voir le certificat',
+
         'cert-permis-b': 'Permis B',
         "cert-permis-b-issuer": "Permis de conduire catégorie B",
         "cert-permis-b-date": "Obtenu en 2026",
@@ -1546,6 +1552,12 @@ const translations = {
         'cert-cisco-data-issuer': 'Cisco Networking Academy',
         'cert-cisco-data-date': 'Issued in April 2026',
         'cert-cisco-data-desc': '• Data collection and preparation<br>• Data analysis and interpretation<br>• Data visualization and presentation<br>• Data analysis tools and techniques<br>• Data-driven decision making',
+        'cert-view-link': 'View certificate',
+
+        'cert-cisco-datascience-title': 'Introduction to Data Science',
+        'cert-cisco-datascience-issuer': 'Cisco Networking Academy',
+        'cert-cisco-datascience-date': 'Issued in April 2026',
+        'cert-cisco-datascience-desc': '• Data collection and cleaning<br>• Exploratory data analysis<br>• Data visualization and interpretation<br>• Data Science tools and methodologies<br>• Practical applications of Data Science',
         'cert-view-link': 'View certificate',
 
 
