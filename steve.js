@@ -1256,6 +1256,14 @@ const translations = {
         'skill-ide': 'IDE',
         
         // Certifications
+
+            // Certification Cisco
+        'cert-cisco-ai-title': 'Introduction à l’IA moderne',
+        'cert-cisco-ai-issuer': 'Cisco Networking Academy',
+        'cert-cisco-ai-date': 'Obtenu en avril 2026',
+        'cert-cisco-ai-desc': '• Fondamentaux de l’IA<br>• Machine Learning et Deep Learning<br>• Réseaux de neurones et modèles génératifs<br>• Applications pratiques de l’IA<br>• Éthique et responsabilité en IA',
+        'cert-view-link': 'Voir le certificat',
+
         'cert-permis-b': 'Permis B',
         "cert-permis-b-issuer": "Permis de conduire catégorie B",
         "cert-permis-b-date": "Obtenu en 2026",
@@ -1522,6 +1530,14 @@ const translations = {
         'skill-ide': 'IDE',
         
         // Certifications
+
+        // Cisco Certification
+        'cert-cisco-ai-title': 'Introduction to Modern AI',
+        'cert-cisco-ai-issuer': 'Cisco Networking Academy',
+        'cert-cisco-ai-date': 'Issued in April 2026',
+        'cert-cisco-ai-desc': '• AI fundamentals<br>• Machine Learning and Deep Learning<br>• Neural networks and generative models<br>• Practical AI applications<br>• Ethics and responsibility in AI',
+        'cert-view-link': 'View certificate',
+
 
         "cert-permis-b": "Driving License B",
         "cert-permis-b-issuer": "Category B Driving License",
