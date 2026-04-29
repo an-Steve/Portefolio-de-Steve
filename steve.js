@@ -1274,6 +1274,12 @@ const translations = {
         'cert-cisco-datascience-desc': '• Collecte et nettoyage de données<br>• Analyse exploratoire des données<br>• Visualisation et interprétation<br>• Outils et méthodologies de la Data Science<br>• Applications concrètes de la Data Science',
         'cert-view-link': 'Voir le certificat',
 
+        'cert-cisco-python-title': 'Les bases de Python',
+        'cert-cisco-python-issuer': 'Cisco Networking Academy',
+        'cert-cisco-python-date': 'Obtenu en avril 2026',
+        'cert-cisco-python-desc': '• Syntaxe et structures de contrôle Python<br>• Fonctions, modules et packages<br>• Programmation orientée objet (POO)<br>• Gestion des exceptions et des erreurs<br>• Manipulation des fichiers et des données',
+        'cert-view-link': 'Voir le certificat',
+
         'cert-permis-b': 'Permis B',
         "cert-permis-b-issuer": "Permis de conduire catégorie B",
         "cert-permis-b-date": "Obtenu en 2026",
@@ -1558,6 +1564,12 @@ const translations = {
         'cert-cisco-datascience-issuer': 'Cisco Networking Academy',
         'cert-cisco-datascience-date': 'Issued in April 2026',
         'cert-cisco-datascience-desc': '• Data collection and cleaning<br>• Exploratory data analysis<br>• Data visualization and interpretation<br>• Data Science tools and methodologies<br>• Practical applications of Data Science',
+        'cert-view-link': 'View certificate',
+
+        'cert-cisco-python-title': 'Python Essentials',
+        'cert-cisco-python-issuer': 'Cisco Networking Academy',
+        'cert-cisco-python-date': 'Issued in April 2026',
+        'cert-cisco-python-desc': '• Python syntax and control structures<br>• Functions, modules, and packages<br>• Object-oriented programming (OOP)<br>• Exception and error handling<br>• File and data handling',
         'cert-view-link': 'View certificate',
 
 
