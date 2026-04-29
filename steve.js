@@ -1311,6 +1311,12 @@ const translations = {
         'cert-ket-date': 'Obtenu en 2018',
         'cert-ket-desc': 'Niveau A2 du CECRL - Compétences de base en anglais',
 
+        'cert-excel-title': 'Maîtrise d’Excel',
+        'cert-excel-issuer': 'OpenClassrooms',
+        'cert-excel-date': 'Obtenu en 2026',
+        'cert-excel-desc': '• Création et gestion de tableaux Excel<br>• Formules et fonctions avancées<br>• Analyse de données avec Excel<br>• Tableaux croisés dynamiques<br>• Visualisation de données et graphiques',
+        'cert-view-link': 'Voir le certificat',
+
         // Centres d'intérêt
         'section-interests': 'Centres d\'intérêt',
         'interest-volunteering-title': 'Bénévolat',
@@ -1570,6 +1576,12 @@ const translations = {
         'cert-cisco-python-issuer': 'Cisco Networking Academy',
         'cert-cisco-python-date': 'Issued in April 2026',
         'cert-cisco-python-desc': '• Python syntax and control structures<br>• Functions, modules, and packages<br>• Object-oriented programming (OOP)<br>• Exception and error handling<br>• File and data handling',
+        'cert-view-link': 'View certificate',
+
+        'cert-excel-title': 'Excel Proficiency',
+        'cert-excel-issuer': 'OpenClassrooms',
+        'cert-excel-date': 'Issued in 2026',
+        'cert-excel-desc': '• Creating and managing Excel spreadsheets<br>• Advanced formulas and functions<br>• Data analysis with Excel<br>• Pivot tables<br>• Data visualization and charts',
         'cert-view-link': 'View certificate',
 
 
