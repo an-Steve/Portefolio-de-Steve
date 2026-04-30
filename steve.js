@@ -1212,7 +1212,7 @@ const translations = {
         'project-android-link': 'Accéder au Github',
 
         "project-meteo-title": 'Météo - Site de Prévisions Météorologiques',
-        'project-meteo-desc': '→ Application web affichant les prévisions météo en temps réel pour n\'importe quelle ville.',
+        'project-meteo-desc': '→ Un dashboard météo complet et interactif permettant de consulter les conditions actuelles, les prévisions heure par heure et sur 7 jours pour n importe quelle ville dans le monde. Heure locale automatique, boussole de vent animée et 4 graphiques dynamiques.',
 
         'project-auth-badge': 'Base de données',
         'project-auth-title': 'Formulaire d\'Authentification Sécurisé',
@@ -1315,6 +1315,12 @@ const translations = {
         'cert-excel-issuer': 'OpenClassrooms',
         'cert-excel-date': 'Obtenu en 2026',
         'cert-excel-desc': '• Création et gestion de tableaux Excel<br>• Formules et fonctions avancées<br>• Analyse de données avec Excel<br>• Tableaux croisés dynamiques<br>• Visualisation de données et graphiques',
+        'cert-view-link': 'Voir le certificat',
+
+        'cert-sql-title': 'Requêtez une base de données avec SQL',
+        'cert-sql-issuer': 'OpenClassrooms',
+        'cert-sql-date': 'Obtenu en 2026',
+        'cert-sql-desc': '• Introduction à SQL et aux bases de données relationnelles<br>• Création et gestion de bases de données<br>• Requêtes SQL pour l\'extraction de données<br>• Manipulation des données avec SQL<br>• Optimisation des requêtes SQL',
         'cert-view-link': 'Voir le certificat',
 
         // Centres d'intérêt
@@ -1509,8 +1515,8 @@ const translations = {
         'github-btn': 'Access my GitHub',
         'meteosite-btn': 'Access the Weather Site',
 
-         "project-meteo-title": 'Weather - Weather Forecasting Website',
-        'project-meteo-desc': '→ Web application displaying real-time weather forecasts for any city.',
+        "project-meteo-title": 'Weather - Weather Forecasting Website',
+        'project-meteo-desc': '→ A complete and interactive weather dashboard that allows users to view current conditions, hourly forecasts, and a 7-day forecast for any city in the world. Features include automatic local time detection, an animated wind compass, and four dynamic charts.',
         'project-meteo-badge' : 'API Meteo',
 
         'project-auth-badge': 'Database',
@@ -1583,6 +1589,11 @@ const translations = {
         'cert-excel-date': 'Issued in 2026',
         'cert-excel-desc': '• Creating and managing Excel spreadsheets<br>• Advanced formulas and functions<br>• Data analysis with Excel<br>• Pivot tables<br>• Data visualization and charts',
         'cert-view-link': 'View certificate',
+
+        'cert-sql-title': 'Querying a Database with SQL',
+        'cert-sql-issuer': 'OpenClassrooms',
+        'cert-sql-date': 'Issued in 2026',
+        'cert-sql-desc': '• Advanced SQL queries<br>• Database management<br>• Performance optimization<br>• Data security',
 
 
         "cert-permis-b": "Driving License B",
