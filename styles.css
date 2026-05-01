@@ -65,6 +65,8 @@ body {
     .name-title { white-space: normal; text-align: center; }
 }
 
+
+
 /* Canvas pour particules */
 #particles {
     position: fixed;
@@ -442,9 +444,7 @@ nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button):hov
 }
 
 .hero-content {
-    text-align: center;
-    z-index: 1;
-    padding: 2rem;
+  position: relative;
 }
 
 .hero h1 {
@@ -5606,4 +5606,52 @@ body.dark-mode .all-projects-button:hover {
   width: 16px;
   height: 16px;
   object-fit: contain;
+}
+
+.skills-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  position: absolute;
+  left: 48.5%;
+  top: 41%;
+  transform: translateY(-50%) scale(0.35);
+  transform-origin: left center;
+}
+
+
+
+.chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+}
+
+.chart-legend .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  margin-right: 5px;
+}
+
+.chart-wrapper {
+  position: relative;
+  width: 220px;
+  height: 220px;
+}
+
+.chart-center-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+  pointer-events: none;
 }

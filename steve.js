@@ -873,6 +873,8 @@ if (chatboxClose && chatbox) {
     });
 }
 
+
+
 // Fonctions de déplacement pour la chatbox
 function dragStart(e) {
     if (chatboxHeader && (e.target === chatboxHeader || e.target.closest('.chatbox-header'))) {
