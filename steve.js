@@ -1113,10 +1113,24 @@ const translations = {
         'formation-master-school': 'Université Paris 8',
         
         // Expériences
+        "tech-tools": "Outils & technologies",
         'exp-subtitle-stages': 'Stages Académiques',
         'exp-subtitle-pro': 'Parcours professionnel',
         'exp-subtitle-benevole': 'Bénévolat',
-        
+        "skills-acquired": "Compétences acquises",
+        "stress": "🧘 Gestion du stress",
+        "caces": "🚜 CACES",
+        "rigor": "⏱️ Rigueur & rapidité",
+        "teamwork": "🤝 Travail en équipe",
+        "night": "🌙 Travail de nuit",
+        "leadership": "🧭 Leadership",
+        "skill-animation": "🎯 Animation",
+        "skill-encadrement": "👶 Encadrement enfants",
+        "skill-organisation": "📅 Organisation d'événements",
+        "skill-communication": "🗣️ Communication",
+        "skill-creativite": "💡 Créativité",
+        "skill-equipe": "🤝 Esprit d'équipe",
+
         // Stage TiqTec
         'exp-tiqtec-badge': 'Stage académique Licence 3',
         'exp-tiqtec-title': 'Développeur Web & Application',
@@ -1414,10 +1428,25 @@ const translations = {
         'formation-master-school': 'Paris 8 University',
         
         // Expériences
+        "tech-tools": "Tools & technologies",
         'exp-subtitle-stages': 'Academic Internships',
         'exp-subtitle-pro': 'Professional Experience',
         'exp-subtitle-benevole': 'Volunteering',
-        
+        "skills-acquired": "Acquired skills",
+         "leadership": "🧭 Leadership",
+        "stress": "🧘 Stress management",
+        "caces":"🚜 Forklift certification",
+        "rigor": "⏱️ Accuracy & speed",
+        "teamwork": "🤝 Teamwork",
+        "night": "🌙 Night shift work",
+        "skill-animation": "🎯 Animation",
+        "skill-encadrement": "👶 Child supervision",
+        "skill-organisation": "📅 Event organization",
+        "skill-communication": "🗣️ Communication",
+        "skill-creativite": "💡 Creativity",
+        "skill-equipe": "🤝 Team spirit",
+
+
         // Stage TiqTec
         'exp-tiqtec-badge': 'Bachelor 3 Academic Internship',
         'exp-tiqtec-title': 'Web & Application Developer',
