@@ -20,6 +20,51 @@ body {
     overflow-x: hidden;
 }
 
+/* Empêche le nom de revenir à la ligne */
+.name-title {
+    white-space: nowrap; 
+    font-size: 3.5rem; /* Ajuste la taille si c'est trop gros pour ton écran */
+    margin-bottom: 10px;
+}
+
+/* Conteneur élargi pour laisser de la place aux graphiques */
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Pousse les barres sur les bords */
+    width: 95%;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: 400px; /* Donne de l'espace vertical */
+}
+
+/* Graphiques plus larges */
+.bar-group {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    height: 200px; /* Zone plus haute pour les grandes barres */
+}
+
+.bar {
+    width: 25px; /* Barres plus épaisses */
+    border-radius: 10px 10px 2px 2px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Ajoute un peu de relief */
+}
+
+/* Adaptation mobile : On réduit la taille au lieu de supprimer */
+@media (max-width: 1024px) {
+    .name-title { font-size: 2.5rem; }
+    .bar { width: 15px; }
+    .bar-group { gap: 5px; }
+}
+
+@media (max-width: 768px) {
+    .hero-container { flex-direction: column; }
+    .bar-group { display: none; } /* On cache sur petit téléphone */
+    .name-title { white-space: normal; text-align: center; }
+}
+
 /* Canvas pour particules */
 #particles {
     position: fixed;
