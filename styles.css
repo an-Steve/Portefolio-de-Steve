@@ -5620,6 +5620,109 @@ body.dark-mode .all-projects-button:hover {
   transform-origin: left center;
 }
 
+/* --- Styles pour le diagramme circulaire spécifique --- */
+
+.skills-chart-specific {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 0 40px; /* Espace pour les étiquettes externes */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.skills-chart-specific {
+    position: absolute; 
+    top: 266px;          
+    right: 16%;         
+    
+    width: 75px; 
+    height: 75px;
+    z-index: 1;         
+}
+
+.pie-chart-main {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(
+        #2d2d7a 0% 45%, 
+        #a582f7 45% 73.5%, 
+        #3ac4e1 73.5% 100%
+    );
+}
+
+
+/* Base pour les appels */
+.callout {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    pointer-events: none; /* Ne pas bloquer les clics */
+    z-index: 1; /* Derrière le cercle pour s'ancrer */
+}
+
+.callout-line {
+    background-color: #666; /* Couleur de la ligne d'appel */
+    height: 1px; /* Épaisseur de la ligne */
+}
+
+.callout-text {
+    font-size: 0.8rem;
+    color: #fff; /* Couleur du texte (pour fond sombre) */
+    font-family: sans-serif;
+    white-space: nowrap;
+}
+
+/* --- Positionnement de l'appel "Paseo" (Haut-Droit) --- */
+.callout-paseo {
+    top: 5px;   /* Position verticale */
+    left: 200px; /* Position horizontale */
+    flex-direction: row-reverse; /* Ligne à gauche du texte */
+}
+
+.callout-paseo .callout-line {
+    width: 30px; /* Longueur de la ligne */
+    transform: rotate(45deg); /* Angle de la ligne */
+    margin-right: 5px; /* Espace texte-ligne */
+}
+
+/* --- Positionnement de l'appel "M (28.5%)" (Bas-Gauche) --- */
+.callout-m {
+    bottom: -20px; /* Position verticale */
+    right: 200px;  /* Position horizontale */
+    flex-direction: row; /* Ligne à droite du texte */
+}
+
+.callout-m .callout-line {
+    width: 30px; /* Longueur de la ligne */
+    transform: rotate(-135deg); /* Angle de la ligne */
+    margin-left: 5px; /* Espace texte-ligne */
+}
+
+/* Légende simple pour la 3ème couleur */
+.chart-legend-bottom {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
 
 
 .chart-legend {
