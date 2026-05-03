@@ -43,7 +43,7 @@ body {
     display: flex;
     align-items: flex-end;
     gap: 12px;
-    height: 200px; /* Zone plus haute pour les grandes barres */
+    height: 250px; /* Zone plus haute pour les grandes barres */
 }
 
 .bar {
@@ -468,12 +468,55 @@ nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button):hov
 
 
 .cta-buttons {
+    position: relative; /* IMPORTANT */
     display: flex;
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
     opacity: 0;
     animation: fadeInUp 1s ease 0.6s forwards;
+    padding: 15px;
+    border-radius: 12px;
+    z-index: 1;
+    border: 1.5px solid rgba(255, 165, 0, 0.6);
+}
+
+.cta-buttons {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    padding: 8px 12px;
+    border-radius: 10px;
+    width: fit-content;
+    margin: 0 auto;
+
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* fond qui se remplit */
+.cta-buttons::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    width: var(--fill-width, 0%);
+    background: rgba(255, 165, 0, 0.25); /* couleur remplissage */
+    
+    transition: width 0.4s ease;
+    z-index: -1;
+}
+
+@keyframes borderProgress {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 300% 50%;
+    }
 }
 
 .btn {
@@ -5615,7 +5658,7 @@ body.dark-mode .all-projects-button:hover {
   gap: 12px;
   position: absolute;
   left: 48.5%;
-  top: 41%;
+  top: 40%;
   transform: translateY(-50%) scale(0.35);
   transform-origin: left center;
 }
@@ -5635,7 +5678,7 @@ body.dark-mode .all-projects-button:hover {
 
 .skills-chart-specific {
     position: absolute; 
-    top: 266px;          
+    top: 256px;          
     right: 16%;         
     
     width: 75px; 
@@ -5653,7 +5696,6 @@ body.dark-mode .all-projects-button:hover {
         #3ac4e1 73.5% 100%
     );
 }
-
 
 /* Base pour les appels */
 .callout {
