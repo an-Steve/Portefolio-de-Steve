@@ -1270,6 +1270,7 @@ const translations = {
         'skill-cms': 'CMS',
         'skill-os': 'Système d\'exploitation',
         'skill-ide': 'IDE',
+        "skill-personal": "Compétences personnelles",
         
         // Certifications
         'cert-cisco-ai-title': 'Introduction à l’IA moderne',
@@ -1587,6 +1588,7 @@ const translations = {
         'skill-cms': 'CMS',
         'skill-os': 'Operating Systems',
         'skill-ide': 'IDE',
+        "skill-personal": "Personal Skills",
         
         // Certifications
 
@@ -1737,6 +1739,7 @@ document.addEventListener('DOMContentLoaded', () => {
         langBtn.addEventListener('click', () => {
             const newLang = currentLang === 'fr' ? 'en' : 'fr';
             changeLanguage(newLang);
+            drawRadar();
         });
     }
 });
@@ -2084,3 +2087,81 @@ if (document.readyState === 'loading') {
   window.themeToggle = new ThemeToggle();
 }
 
+function drawRadar() {
+    const canvas = document.getElementById("radarChart");
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    const lang = document.documentElement.lang || "fr"; // ← lu à chaque appel
+    const labelsMap = {
+        fr: ["Ponctualité", "Rigueur", "Travail d'équipe", "Autonomie", "Adaptabilité", "Créativité"],
+        en: ["Punctuality", "Thoroughness", "Teamwork", "Autonomy", "Adaptability", "Creativity"]
+    };
+    const labels = labelsMap[lang] || labelsMap["fr"];
+    const values = [100, 90, 85, 95, 88, 80];
+    const total = labels.length;
+    const cx = canvas.width / 2;
+    const cy = canvas.height / 2;
+    const radius = 100;
+    const levels = 5;
+
+    function angleOf(i) { return (Math.PI * 2 * i) / total - Math.PI / 2; }
+    function point(i, r) {
+        return { x: cx + r * Math.cos(angleOf(i)), y: cy + r * Math.sin(angleOf(i)) };
+    }
+
+    ctx.strokeStyle = "rgba(255,255,255,0.1)";
+    ctx.lineWidth = 1;
+    for (let l = 1; l <= levels; l++) {
+        const r = (radius / levels) * l;
+        ctx.beginPath();
+        for (let i = 0; i < total; i++) {
+            const p = point(i, r);
+            i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y);
+        }
+        ctx.closePath();
+        ctx.stroke();
+    }
+
+    for (let i = 0; i < total; i++) {
+        const p = point(i, radius);
+        ctx.beginPath();
+        ctx.moveTo(cx, cy);
+        ctx.lineTo(p.x, p.y);
+        ctx.stroke();
+    }
+
+    ctx.beginPath();
+    for (let i = 0; i < total; i++) {
+        const r = (values[i] / 100) * radius;
+        const p = point(i, r);
+        i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y);
+    }
+    ctx.closePath();
+    ctx.fillStyle = "rgba(99, 179, 237, 0.25)";
+    ctx.fill();
+    ctx.strokeStyle = "rgba(99, 179, 237, 0.85)";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    for (let i = 0; i < total; i++) {
+        const r = (values[i] / 100) * radius;
+        const p = point(i, r);
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 4, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(99, 179, 237, 1)";
+        ctx.fill();
+    }
+
+    ctx.fillStyle = "#ffffff";
+    ctx.font = "11px sans-serif";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    for (let i = 0; i < total; i++) {
+        const p = point(i, radius + 22);
+        ctx.fillText(labels[i], p.x, p.y);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", drawRadar);

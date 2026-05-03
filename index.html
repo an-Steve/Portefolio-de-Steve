@@ -879,6 +879,11 @@
                 <div class="skill-item"><div class="skill-name"><span>Android Studio</span></div></div>
             </div>
 
+            <div class="skill-category">
+                <h3 data-translate="skill-personal">Compétences personnelles</h3>
+                <canvas id="radarChart" width="280" height="260"></canvas>
+            </div>
+
         </div>
     </div>
 </section>
@@ -1172,17 +1177,20 @@
         </div>
     </section>
 
-    <footer>
-        <p data-translate="footer-text">© 2026 Steve ANTON NELCON.</p>
-        <button id="linkedin-btn" aria-label="LinkedIn">
+<footer>
+    <div class="footer-bar-viz">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <p data-translate="footer-text">© 2026 Steve ANTON NELCON.</p>
+    <button id="linkedin-btn" aria-label="LinkedIn">
         <i class="fab fa-linkedin-in"></i>
-
         <button id="languageToggle" class="lang-round-btn" aria-label="Changer langue">
-             <span class="flag-icon">🇫🇷</span>
+            <span class="flag-icon">🇫🇷</span>
         </button>
-
     </button>
-    </footer>
+</footer>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
     <script>
     new Chart(document.getElementById('skillsDonut'), {
