@@ -181,6 +181,7 @@ nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button):hov
 .nav-experience,
 .nav-projects,
 .nav-skills,
+.nav-certifications,
 .nav-interests {
     position: relative;
     display: inline-flex;
@@ -215,6 +216,7 @@ nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button):hov
 .nav-experience .icon,
 .nav-projects .icon,
 .nav-skills .icon,
+.nav-certifications .icon,
 .nav-interests .icon {
     position: absolute;
     display: none;
@@ -233,6 +235,7 @@ nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button):hov
 .nav-experience:hover,
 .nav-projects:hover,
 .nav-skills:hover,
+.nav-certifications:hover,
 .nav-interests:hover {
     color: #4ade80;
     background: linear-gradient(135deg, rgba(74, 222, 128, 0.15), rgba(99, 102, 241, 0.1));
@@ -248,6 +251,7 @@ nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button):hov
 .nav-experience:hover .text,
 .nav-projects:hover .text,
 .nav-skills:hover .text,
+.nav-certifications:hover .text,
 .nav-interests:hover .text {
     opacity: 0;
     transform: translateY(10px);
@@ -261,6 +265,7 @@ nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button):hov
 .nav-experience:hover .icon,
 .nav-projects:hover .icon,
 .nav-skills:hover .icon,
+.nav-certifications:hover .icon,
 .nav-interests:hover .icon {
     display: inline-block;
     opacity: 1;
