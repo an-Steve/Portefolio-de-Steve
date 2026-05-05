@@ -202,131 +202,134 @@
         <h3 class="about-name">ANTON NELCON Steve</h3>
       </div>
 
-      <!-- Zone infos -->
+<!-- Zone infos -->
       <div class="about-grid">
         <div class="about-card">
           <h3 data-translate="about-location">
             <i class="fas fa-map-marker-alt"></i> Localisation
-            </h3>
+          </h3>
           <p>Paris, Île-de-France</p>
         </div>
 
         <div class="about-card">
           <h3 data-translate="about-email">
             <i class="fas fa-envelope"></i> Email
-        </h3>
+          </h3>
           <p>antonsteve05@gmail.com</p>
         </div>
 
         <div class="about-card">
           <h3 data-translate="about-phone">
-        <i class="fas fa-phone"></i> Téléphone
-        </h3>
+            <i class="fas fa-phone"></i> Téléphone
+          </h3>
           <p>06 52 04 59 92</p>
         </div>
 
         <div class="about-card">
           <h3 data-translate="about-formation">
             <i class="fas fa-graduation-cap"></i> Formation
-            </h3>
+          </h3>
           <p>Master Informatique et Big Data</p>
         </div>
 
         <div class="about-card">
-            <h3>
+          <h3>
             <i class="fab fa-github"></i> Github
-            </h3>
+          </h3>
           <p><a href="https://github.com/an-Steve" target="_blank">github.com/an-Steve</a></p>
         </div>
 
-    <div class="info-card">
-        <div style="display: flex; align-items: center; gap: 10px;">
+        <div class="info-card">
+          <div style="display: flex; align-items: center; gap: 10px;">
             <div>
-                <h3>
+              <h3>
                 <i class="fab fa-linkedin"></i> LinkedIn
-                </h3><br>
-                <a href="https://www.linkedin.com/in/ansteve" target="_blank">linkedin.com/in/ansteve</a>
+              </h3><br>
+              <a href="https://www.linkedin.com/in/ansteve" target="_blank">linkedin.com/in/ansteve</a>
+            </div>
+            <button id="moreInfoBtn" class="plus-button" title="Plus d'informations">+</button>
+          </div>
         </div>
-        <button id="moreInfoBtn" class="plus-button" title="Plus d'informations">+</button>
-    </div>
-</div>
-
-<!-- Section cachée avec plus d'informations -->
-<div id="moreInfoSection" class="more-info-section">
-    <h4 data-translate="about-more-info">📋 Informations supplémentaires</h4>
-    <ul>
-    <li><strong data-translate="about-interests"> → Centres d'intérêt :</strong> <span data-translate="about-interests-value">Bénévolat</span></li>
-<li>
-  <strong data-translate="about-languages"> → Langues :</strong>
-  <div class="languages">
-
-    <div class="language">
-      <span data-translate="lang-fr">Français</span>
-      <div class="progress-bar">
-        <div class="progress fr">C2</div>
       </div>
-    </div>
 
-    <div class="language">
-      <span data-translate="lang-en">Anglais</span>
-      <div class="progress-bar">
-        <div class="progress en">B1</div>
+      <!-- Panneau dépliable : infos supp + GitHub stats côte à côte -->
+      <div id="moreInfoSection" class="more-info-section">
+
+        <!-- Colonne gauche : Informations supplémentaires -->
+        <div class="more-info-left">
+          <h4 data-translate="about-more-info">📋 Informations supplémentaires</h4>
+          <ul>
+            <li><strong data-translate="about-interests"> → Centres d'intérêt :</strong> <span data-translate="about-interests-value">Bénévolat</span></li>
+            <li>
+              <strong data-translate="about-languages"> → Langues :</strong>
+              <div class="languages">
+                <div class="language">
+                  <span data-translate="lang-fr">Français</span>
+                  <div class="progress-bar">
+                    <div class="progress fr">C2</div>
+                  </div>
+                </div>
+                <div class="language">
+                  <span data-translate="lang-en">Anglais</span>
+                  <div class="progress-bar">
+                    <div class="progress en">B1</div>
+                  </div>
+                </div>
+                <div class="language">
+                  <span data-translate="lang-es">Espagnol</span>
+                  <div class="progress-bar">
+                    <div class="progress es">A1</div>
+                  </div>
+                </div>
+                <div class="language">
+                  <span data-translate="lang-ta">Tamoul</span>
+                  <div class="progress-bar">
+                    <div class="progress ta">C2</div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li><strong data-translate="about-qualities"> → Qualités :</strong> <span data-translate="about-qualities-value">Ponctuel, Travail en équipe, Motivé</span></li>
+            <li><strong data-translate="about-certifications"> → Certifications :</strong> <span data-translate="about-certifications-value">CACES, PIX, TOEIC, KET</span></li>
+          </ul>
+        </div>
+
+        <!-- Colonne droite : GitHub Stats -->
+        <div class="more-info-right">
+          <h4> GitHub Stats</h4>
+          <div class="stats-cards">
+            <div class="stat-card">
+              <span class="stat-label" style="color: orange;">Projets</span>
+              <span class="stat-value" style="color: orange;">51</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label" style="color: orange;">Langages</span>
+              <span class="stat-value" style="color: orange;">14</span>
+            </div>
+          </div>
+          <div class="donut-wrapper">
+            <div class="tech-badges">
+              <span class="badge html">HTML (19)</span>
+              <span class="badge python">Python (12)</span>
+              <span class="badge jupyter">Jupyter (9)</span>
+              <span class="badge kotlin">Kotlin (3)</span>
+              <span class="badge php">PHP (2)</span>
+              <span class="badge css">CSS (1)</span>
+              <span class="badge java">Java (1)</span>
+              <span class="badge js">JS (1)</span>
+              <span class="badge dart">Dart (1)</span>
+              <span class="badge cpp">C++ (1)</span>
+              <span class="badge qml">QML (1)</span>
+              <span class="badge swift">Swift (1)</span>
+              <span class="badge hack">Hack (1)</span>
+              <span class="badge scilab">Scilab (1)</span>
+            </div>
+            <canvas id="donutChart" style="max-height:220px; margin-top: 20px;"></canvas>
+          </div>
+        </div>
+
       </div>
-    </div>
 
-    <div class="language">
-      <span data-translate="lang-es">Espagnol</span>
-      <div class="progress-bar">
-        <div class="progress es">A1</div>
-      </div>
-    </div>
-
-    <div class="language">
-      <span data-translate="lang-ta">Tamoul</span>
-      <div class="progress-bar">
-        <div class="progress ta">C2</div>
-      </div>
-    </div>
-
-  </div>
-</li>    <li><strong data-translate="about-qualities"> → Qualités :</strong> <span data-translate="about-qualities-value">Ponctuel, Travail en équipe, Motivé</span></li>
-     <li><strong data-translate="about-certifications"> → Certifications :</strong> <span data-translate="about-certifications-value">CACES, PIX, TOEIC, KET</span></li>
-    </ul>
-</div>
-<div class="github-stats-section">
-  <h4>GitHub Stats</h4>
-
-  <div class="stats-cards">
-    <div class="stat-card">
-    <span class="stat-label" style="color: orange;">Projets</span>
-    <span class="stat-value" style="color: orange;">51</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-label" style="color: orange;">Langages</span>
-      <span class="stat-value">14</span> 
-    </div>
-  </div>
-
-  <div class="donut-wrapper">
-    <div class="tech-badges">
-      <span class="badge html">HTML (19)</span>
-      <span class="badge python">Python (12)</span>
-      <span class="badge jupyter">Jupyter (9)</span>
-      <span class="badge kotlin">Kotlin (3)</span>
-      <span class="badge php">PHP (2)</span>
-      <span class="badge css">CSS (1)</span>
-      <span class="badge java">Java (1)</span>
-      <span class="badge js">JS (1)</span>
-      <span class="badge dart">Dart (1)</span>
-      <span class="badge cpp">C++ (1)</span>
-      <span class="badge qml">QML (1)</span>
-      <span class="badge swift">Swift (1)</span>
-      <span class="badge hack">Hack (1)</span>
-      <span class="badge scilab">Scilab (1)</span>
-    </div>
-    <canvas id="donutChart" style="max-height:220px; margin-top: 20px;"></canvas>
-  </div>
-</div>
 </section>
 
 <section id="formations">
