@@ -2085,6 +2085,54 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+
+const data = [
+  { label: 'HTML',       count: 19, color: '#378ADD' },
+  { label: 'Python',     count: 12, color: '#1D9E75' },
+  { label: 'Jupyter',    count: 9,  color: '#EF9F27' },
+  { label: 'Kotlin',     count: 3,  color: '#A855F7' },
+  { label: 'PHP',        count: 2,  color: '#7F77DD' },
+  { label: 'CSS',        count: 1,  color: '#D4537E' },
+  { label: 'Java',       count: 1,  color: '#F59E0B' },
+  { label: 'JavaScript', count: 1,  color: '#84CC16' },
+  { label: 'Dart',       count: 1,  color: '#06B6D4' },
+  { label: 'C++',        count: 1,  color: '#EC4899' },
+  { label: 'QML',        count: 1,  color: '#888780' },
+  { label: 'Swift',      count: 1,  color: '#F97316' },
+  { label: 'Hack',       count: 1,  color: '#6B7280' },
+  { label: 'Scilab',     count: 1,  color: '#E24B4A' },
+  { label: 'C',          count: 1,  color: '#9CA3AF' },
+];
+
+// Couleurs extraites de l'image
+const colors = [
+    '#3b82f6', '#10b981', '#f59e0b', '#a855f7', '#6366f1', 
+    '#ec4899', '#f97316', '#84cc16', '#06b6d4', '#db2777', 
+    '#94a3b8', '#ea580c', '#64748b', '#ef4444', '#9ca3af'
+];
+
+new Chart(document.getElementById('donutChart'), {
+    type: 'doughnut',
+    data: {
+        labels: ['HTML','Python','Jupyter','Kotlin','PHP','CSS','Java','JavaScript','Dart','C++','QML','Swift','Hack','Scilab','C'],
+        datasets: [{ 
+            data: [19, 12, 9, 3, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 
+            backgroundColor: colors, 
+            borderWidth: 0, 
+            hoverOffset: 6 
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        cutout: '70%',
+        plugins: {
+            legend: { display: false },
+            tooltip: { callbacks: { label: ctx => ` ${ctx.label}: ${ctx.raw} projets` } }
+        }
+    }
+});
+
 // ========================================
 // INITIALISATION
 // ========================================

@@ -2065,13 +2065,32 @@ footer p:hover {
 }
 
 .more-info-section.active {
-    max-height: 900px; /* AUGMENTÉ de 700px à 900px */
-    max-width: 700px;
+    max-height: 1200px; 
+    max-width: 1200px;
     opacity: 1;
     margin-top: 30px;
     padding: 35px 50px;
     border-color: rgba(251, 191, 36, 0.6);
     box-shadow: 0 12px 40px rgba(251, 191, 36, 0.2);
+}
+
+/* Conteneur flexible pour la mise en page à deux colonnes */
+.more-info-flex-container {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Colonne de gauche - Informations personnelles */
+.more-info-left {
+    flex: 1;
+    min-width: 280px;
+}
+
+/* Colonne de droite - GitHub Stats */
+.more-info-right {
+    flex: 1;
+    min-width: 300px;
 }
 
 .more-info-section h4 {
@@ -2101,25 +2120,30 @@ footer p:hover {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px 40px; /* AUGMENTÉ le gap vertical de 25px à 30px */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 /* Taille du texte général dans les cartes */
 .more-info-section li {
-    font-size: 0.75rem; /* ← TAILLE DU TEXTE GÉNÉRAL */
-    line-height: 1.4; /* ← ESPACEMENT ENTRE LES LIGNES */
+    font-size: 0.75rem;
+    line-height: 1.4;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(251, 191, 36, 0.2);
 }
 
 /* Taille du texte des TITRES (strong) */
 .more-info-section li strong {
-    font-size: 0.75rem; /* ← TAILLE DU TITRE (Centres d'intérêt, Langues, etc.) */
+    font-size: 0.75rem;
 }
 
 /* Taille du texte du CONTENU (span) */
 .more-info-section li span {
-    font-size: 0.75rem; /* ← TAILLE DU CONTENU (Bénévolat, Français, etc.) */
+    font-size: 0.75rem;
 }
 
 .more-info-section li:hover {
@@ -2139,6 +2163,7 @@ footer p:hover {
     font-size: 0.95rem;
     white-space: normal;
     flex-wrap: wrap;
+    margin-bottom: 10px;
 }
 
 .more-info-section li strong svg {
@@ -2194,15 +2219,189 @@ footer p:hover {
     }
 }
 
+/* GitHub Stats Section */
+.github-stats-section {
+    flex: 1;
+    min-width: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+}
+
+/* Style du titre GitHub Stats pour correspondre au thème */
+.more-info-right h4 {
+    font-size: 1.6rem;
+    color: #fbbf24;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    text-shadow: 0 2px 8px rgba(251, 191, 36, 0.3);
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(251, 191, 36, 0.3);
+}
+
+.stats-cards {
+    display: flex;
+    gap: 12px;
+}
+
+.stat-card {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    border-radius: 12px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    border-color: rgba(251, 191, 36, 0.6);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(251, 191, 36, 0.2);
+}
+
+.stat-label { 
+    font-size: 12px; 
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.stat-value {  
+    font-size: 26px; 
+    font-weight: 500;
+    color: #fbbf24;
+}
+
+.donut-wrapper { 
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    border-radius: 12px; 
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+
+.donut-wrapper:hover {
+    border-color: rgba(251, 191, 36, 0.6);
+}
+
+.tech-badges { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 6px; 
+    margin-bottom: 12px; 
+}
+
+.badge { 
+    font-size: 11px; 
+    padding: 3px 10px; 
+    border-radius: 8px; 
+    transition: all 0.3s ease;
+}
+
+.badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.badge.html    { background:#E6F1FB; color:#0C447C; }
+.badge.python  { background:#E1F5EE; color:#085041; } 
+.badge.jupyter { background:#FFF9E6; color:#856404; }
+.badge.kotlin  { background:#F3E5F5; color:#4A148C; }
+.badge.php     { background:#FAECE7; color:#712B13; }
+.badge.css     { background:#FCE4EC; color:#880E4F; }
+.badge.java    { background:#FFF3E0; color:#E65100; }
+.badge.js      { background:#F1F8E9; color:#1B5E20; }
+.badge.dart    { background:#E0F7FA; color:#006064; }
+.badge.cpp     { background:#FCE4EC; color:#880E4F; }
+.badge.qml     { background:#EEEEEE; color:#424242; }
+.badge.swift   { background:#FBE9E7; color:#BF360C; }
+.badge.hack    { background:#ECEFF1; color:#263238; }
+.badge.scilab  { background:#FFEBEE; color:#B71C1C; }
+.badge.c       { background:#E8EAF6; color:#1A237E; }
+
+/* Language progress bars styles */
+.languages {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.language {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.language span {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.progress-bar {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    height: 30px;
+    position: relative;
+}
+
+.progress {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 0.8rem;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+.progress.fr {
+    background: linear-gradient(90deg, #fbbf24, #f59e0b);
+    width: 100%;
+}
+
+.progress.en {
+    background: linear-gradient(90deg, #3b82f6, #2563eb);
+    width: 50%;
+}
+
+.progress.es {
+    background: linear-gradient(90deg, #10b981, #059669);
+    width: 25%;
+}
+
+.progress.ta {
+    background: linear-gradient(90deg, #8b5cf6, #7c3aed);
+    width: 100%;
+}
 
 /* Responsive */
 @media (max-width: 968px) {
-    .more-info-section ul {
-        grid-template-columns: 1fr;
+    .more-info-flex-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .more-info-left,
+    .more-info-right {
+        width: 100%;
     }
     
     .more-info-section.active {
-        max-height: 1200px; /* AUGMENTÉ de 900px à 1200px */
+        max-height: 2000px;
+        max-width: 700px;
+    }
+    
+    .more-info-section ul {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -2222,7 +2421,7 @@ footer p:hover {
     
     .more-info-section.active {
         padding: 25px;
-        max-height: 1800px; /* AUGMENTÉ de 1400px à 1800px */
+        max-height: 2200px;
     }
     
     .more-info-section h4 {
@@ -2231,14 +2430,11 @@ footer p:hover {
     }
     
     .more-info-section ul {
-        grid-template-columns: 1fr;
-        gap: 25px; /* AUGMENTÉ de 20px à 25px */
+        gap: 25px;
     }
     
     .more-info-section li {
-        padding: 25px 18px; /* AUGMENTÉ de 20px 16px à 25px 18px */
-        font-size: 0.9rem;
-        min-height: 260px; /* AUGMENTÉ de 220px à 260px */
+        padding: 20px 15px;
     }
     
     .more-info-section li strong {
@@ -2249,7 +2445,16 @@ footer p:hover {
         width: 16px;
         height: 16px;
     }
+    
+    .more-info-flex-container {
+        gap: 25px;
+    }
+    
+    .stats-cards {
+        flex-direction: column;
+    }
 }
+
 /*****************************
    VARIABLES (couleurs du portfolio de Steve)
 ******************************/
