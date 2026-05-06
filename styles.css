@@ -635,6 +635,17 @@ nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button):hov
     box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
+.badge-delegue {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 5px 10px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
 section {
     padding: 6rem 2rem;
     position: relative;
@@ -2251,8 +2262,10 @@ footer p:hover {
   gap: 16px;
 }
 .stats-cards {
-  display: flex;
-  gap: 12px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    gap: 8px;
 }
 .stat-card {
   flex: 1;

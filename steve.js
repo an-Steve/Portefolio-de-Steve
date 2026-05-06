@@ -1108,6 +1108,7 @@ const translations = {
         'formation-licence-school': 'Université Paris 8',
         'formation-master': 'Master Informatique et Big Data',
         'formation-master-school': 'Université Paris 8',
+        "delegue-classe": "Délégué de Classe",
         
         // Expériences
         "tech-tools": "Outils & technologies",
@@ -1429,6 +1430,7 @@ const translations = {
         'formation-licence-school': 'Paris 8 University',
         'formation-master': 'Master in Computer Science and Big Data',
         'formation-master-school': 'Paris 8 University',
+        "delegue-classe": "Class Representative",
         
         // Expériences
         "tech-tools": "Tools & technologies",
