@@ -1129,6 +1129,11 @@ const translations = {
         "skill-creativite": "💡 Créativité",
         "skill-equipe": "🤝 Esprit d'équipe",
 
+
+        //Stage Capgemini
+        'exp-capgemini-badge' : 'Stage académique Master 1',
+        'exp-capgemini-date': '1er juin au 31 août 2026',
+
         // Stage TiqTec
         'exp-tiqtec-badge': 'Stage académique Licence 3',
         'exp-tiqtec-title': 'Développeur Web & Application',
@@ -1463,6 +1468,10 @@ const translations = {
         'exp-tiqtec-task3': 'Testing and MySQL database management',
         'exp-tiqtec-report-text': 'View project report',
         'exp-streamvision-report-text': 'View project report',
+
+        //Stage Capgemini
+        'exp-capgemini-badge' : 'Master 1 Academic Intership',
+        'exp-capgemini-date': 'June 1st to August 31, 2026',
 
         
         // Stage StreamVision

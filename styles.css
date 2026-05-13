@@ -2840,6 +2840,7 @@ footer p:hover {
 }
 
 /* Flèche bleue pour toutes les tâches des expériences */
+li[data-translate^="exp-capgemini-task"],
 li[data-translate^="exp-tiqtec-task"],
 li[data-translate^="exp-stream-task"],
 li[data-translate^="exp-carrefour-task"],
@@ -2848,6 +2849,7 @@ li[data-translate^="exp-diocese-task"] {
     padding-left: 0;
 }
 
+li[data-translate^="exp-capgemini-task"]::before,
 li[data-translate^="exp-tiqtec-task"]::before,
 li[data-translate^="exp-stream-task"]::before,
 li[data-translate^="exp-carrefour-task"]::before,
@@ -2858,6 +2860,7 @@ li[data-translate^="exp-diocese-task"]::before {
     font-size: 1.3em;
     margin-right: 8px;
 }
+
 
 /* Bouton voir le rapport de projet */
 .report-btn {
