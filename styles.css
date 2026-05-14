@@ -615,6 +615,37 @@ nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button):hov
     margin-bottom: 8px;
 }
 
+.formation-image{
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 22px;
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.25),
+        0 0 18px rgba(0, 170, 255, 0.18);
+
+    margin-bottom: 18px;
+
+    transition: all 0.3s ease;
+    backdrop-filter: blur(6px);
+}
+
+.formation-image:hover{
+    transform: translateY(-5px) scale(1.06);
+
+    box-shadow:
+        0 10px 28px rgba(0, 0, 0, 0.35),
+        0 0 24px rgba(0, 170, 255, 0.35);
+
+    border-color: rgba(0, 170, 255, 0.55);
+}
+
 /* Dates */
 .timeline-horizontal .date {
     font-size: 0.9rem;
@@ -3679,7 +3710,7 @@ li[data-translate^="exp-diocese-task"]::before {
 .timeline-horizontal::after {
     content: "";
     position: absolute;
-    top: 55px;
+    top: 70px;
     right: 4%;
     width: 0;
     height: 0;
