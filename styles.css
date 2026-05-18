@@ -85,6 +85,48 @@ body {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.footer-logo {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Logo footer propre sans fond noir */
+.footer-logo img {
+    width: 46px;
+    height: 46px;
+    object-fit: cover;
+    border-radius: 14px;
+
+    /* uniquement effet léger */
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.25));
+
+    transition: transform 0.25s ease, filter 0.25s ease;
+    cursor: pointer;
+}
+
+/* hover clean */
+.footer-logo img:hover {
+    transform: scale(1.08);
+    filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.35));
+}
+
+/* Vague au-dessus du texte */
+.footer-bar-viz {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+/* Texte */
+footer p {
+    margin: 0;
+}
+
+
+
+
 #navbar .logo:hover {
     transform: scale(1.1) rotate(5deg);
     filter: brightness(0) invert(0.9) sepia(1) saturate(5) hue-rotate(120deg);
