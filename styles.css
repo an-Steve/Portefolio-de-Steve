@@ -377,6 +377,102 @@ nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button):hov
     background: linear-gradient(135deg, #34d399, #6ee7b7);
 }
 
+/* Bouton CV - même style que le bouton langue */
+#cv-btn {
+    background: linear-gradient(135deg, #f5c518 0%, #e6a817 100%);
+    color: #1a1a1a;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.5em;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(245, 197, 24, 0.4), 
+                0 4px 8px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    position: fixed;
+    top: 100px; /* juste au-dessus du bouton langue */
+    right: 5px;
+    z-index: 1000;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Effet de brillance */
+#cv-btn::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.15),
+        transparent
+    );
+    transform: rotate(45deg);
+    transition: all 0.5s;
+}
+#cv-btn:hover::before {
+    left: 100%;
+}
+
+/* Effet au survol */
+#cv-btn:hover {
+    transform: translateY(-3px) scale(1.08) rotate(-5deg);
+    box-shadow: 0 12px 28px rgba(245, 197, 24, 0.55),
+                0 6px 12px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    background: linear-gradient(135deg, #e6a817 0%, #f5c518 100%);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Effet de clic */
+#cv-btn:active {
+    transform: translateY(-1px) scale(0.98);
+    box-shadow: 0 4px 12px rgba(245, 197, 24, 0.3),
+                inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.1s ease;
+}
+
+/* Animation de l'icône */
+#cv-btn i {
+    display: inline-block;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+#cv-btn:hover i {
+    transform: scale(1.2) translateY(-2px);
+}
+
+/* Effet de vague au clic */
+#cv-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s, opacity 0.6s;
+    opacity: 0;
+}
+#cv-btn:active::after {
+    width: 120px;
+    height: 120px;
+    opacity: 0;
+}
+
 /* Bouton accessibilité - Version originale corrigée */
 .accessibility-button {
     background: linear-gradient(135deg, #f59e0b, #fbbf24);
@@ -4377,7 +4473,7 @@ li[data-translate^="exp-diocese-task"]::before {
                 inset 0 1px 0 rgba(255, 255, 255, 0.2);
     position: fixed;
     top: 530px;  /* Position en haut */
-    right: 30px;
+    right: 5px;
     z-index: 1000;
     margin: 0;
     overflow: hidden;

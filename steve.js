@@ -1921,6 +1921,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (projectsSection) {
         projectsSection.appendChild(indicators);
     }
+
+    document.getElementById('cv-btn').addEventListener('click', () => {
+    window.open('CV ANTON NELCON Steve M1IBD 2026.pdf', '_blank'); // CV Master Javascript
+
+});
     
     // Fonction pour mettre à jour le carousel
     function updateCarousel() {
