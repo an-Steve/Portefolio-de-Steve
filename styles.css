@@ -92,6 +92,10 @@ body {
     transform: translateY(-50%);
 }
 
+.experience-subtitle .icon {
+  margin-right: 6px;
+}
+
 /* Logo footer propre sans fond noir */
 .footer-logo img {
     width: 46px;

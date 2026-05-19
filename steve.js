@@ -1159,7 +1159,7 @@ const translations = {
         // Stage 3ème
         'exp-3eme-badge': 'Stage académique 3ème',
         'exp-3eme-title': 'Stage d\'observations de 3ème',
-        'exp-3eme-date': '29 mai au 04 juillet 2023',
+        'exp-3eme-date': '17 décembre au 23 décembre 2017',
         'exp-3eme-company': 'Ecole Maternelle Paul Langevin',
         'exp-3eme-location': 'Drancy',
         
