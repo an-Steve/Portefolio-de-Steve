@@ -1104,6 +1104,27 @@ h3[data-translate="project-auth-title"]{
     text-decoration: underline;
 }
 
+/* Texte des titre stages*/
+h3[data-translate="exp-tiqtec-title"] {
+    text-decoration: underline;
+}
+
+h3[data-translate="exp-stream-title"] {
+    text-decoration: underline;
+}
+
+h3[data-translate="exp-3eme-title"] {
+    text-decoration: underline;
+}
+
+h3[data-translate="exp-carrefour-title"] {
+    text-decoration: underline;
+}
+
+h3[data-translate="exp-diocese-title"] {
+    text-decoration: underline;
+}
+
 .about-card h3 svg {
   flex-shrink: 0;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
