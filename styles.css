@@ -5462,6 +5462,56 @@ body.dark-mode .all-projects-button:hover {
     }
 }
 
+.game-icon {
+    margin-top: 12px;
+    text-align: center;
+}
+
+.game-icon i {
+    font-size: 32px;
+    color: #0b1f5e; /* bleu foncé */
+    transition: 0.3s ease;
+}
+
+.game-icon i:hover {
+    transform: scale(1.15);
+    color: #163b9a;
+}
+
+
+.sport-icon {
+    margin-top: 12px;
+    text-align: center;
+}
+
+.sport-icon i {
+    font-size: 34px;
+    color: #0b1f5e; /* bleu foncé */
+    transition: 0.3s ease;
+}
+
+.sport-icon i:hover {
+    transform: scale(1.15);
+    color: #1d4ed8;
+}
+
+
+.volunteer-icon {
+    margin-top: 12px;
+    text-align: center;
+}
+
+.volunteer-icon i {
+    font-size: 34px;
+    color: #0b1f5e; /* bleu foncé */
+    transition: 0.3s ease;
+}
+
+.volunteer-icon i:hover {
+    transform: scale(1.15);
+    color: #1d4ed8;
+}
+
 .interest-card {
     animation: fadeInUp 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) backwards;
 }
