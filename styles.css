@@ -1031,6 +1031,79 @@ section {
   font-weight: 600;
 }
 
+/* Titre des projets*/
+h3[data-translate="project-life-title"] {
+    color: purple;
+    display: inline-block; /* pour que le cadre épouse le texte */
+    padding: 8px 15px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 8px;
+    text-decoration: underline;
+}
+
+h3[data-translate="project-ml-title"] {
+    color: purple;
+    display: inline-block;
+    padding: 8px 15px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 8px;
+    text-decoration: underline;
+}
+
+h3[data-translate="project-dl-title"] {
+    color: purple;
+    display: inline-block;
+    padding: 8px 15px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 8px;
+    text-decoration: underline;
+}
+
+h3[data-translate="project-game-title"] {
+    color: purple;
+    display: inline-block;
+    padding: 8px 15px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 8px;
+    text-decoration: underline;
+}
+
+h3[data-translate="project-web-title"] {
+    color: purple;
+    display: inline-block;
+    padding: 8px 15px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 8px;
+    text-decoration: underline;
+}
+
+h3[data-translate="project-android-title"]{
+    color: purple;
+    display: inline-block;
+    padding: 8px 15px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 8px;
+    text-decoration: underline;
+}
+
+h3[data-translate="project-meteo-title"]{
+    color: purple;
+    display: inline-block;
+    padding: 8px 15px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 8px;
+    text-decoration: underline;
+}
+
+h3[data-translate="project-auth-title"]{
+    color: purple;
+    display: inline-block;
+    padding: 8px 15px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 8px;
+    text-decoration: underline;
+}
+
 .about-card h3 svg {
   flex-shrink: 0;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
