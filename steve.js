@@ -1133,6 +1133,10 @@ const translations = {
         //Stage Capgemini
         'exp-capgemini-badge' : 'Stage académique Master 1',
         'exp-capgemini-date': '1er juin au 31 août 2026',
+        'exp-capgemini-title' : 'Ingénieur Data & Automatisation IA ',
+        'exp-capgemini-task1': 'Conception et déploiement de flux d\'automatisation des processus métiers via la suite Microsoft Power Platform (Power Automate, Power Apps).',
+        'exp-capgemini-task2': 'Intégration de solutions d\'Intelligence Artificielle pour optimiser et rendre intelligents les workflows.',
+        'exp-capgemini-task3': 'Migration et centralisation des données critiques afin de réduire l\'utilisation des fichiers Excel obsolètes au profit de bases de données sécurisées.',
 
         // Stage TiqTec
         'exp-tiqtec-badge': 'Stage académique Licence 3',
@@ -1472,8 +1476,11 @@ const translations = {
         //Stage Capgemini
         'exp-capgemini-badge' : 'Master 1 Academic Intership',
         'exp-capgemini-date': 'June 1st to August 31, 2026',
+        'exp-capgemini-title' : 'Data & IA Automation Engineer',
+        'exp-capgemini-task1': 'Design and deployment of business process automation flows using the Microsoft Power Platform suite (Power Automate, Power Apps).',
+        'exp-capgemini-task2': 'Integration of AI solutions to optimize and make intelligent workflows.',
+        'exp-capgemini-task3': 'Migration and centralization of critical data to reduce the use of obsolete Excel files in favor of secure databases.',
 
-        
         // Stage StreamVision
         'exp-stream-badge': 'BTS Academic Internship',
         'exp-stream-title': 'IT Developer',
