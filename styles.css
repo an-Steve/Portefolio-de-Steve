@@ -1345,6 +1345,34 @@ h3[data-translate="exp-diocese-title"] {
     position: relative; /* Pour d'éventuels effets supplémentaires */
 }
 
+.experience-icon-square {
+    width: 130px;
+    height: 130px;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 100%; 
+
+    float: right;
+
+    position: relative;
+    top: 205px;
+    right: -120px;
+
+    margin-left: 15px;
+    margin-top: 15px;
+
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    overflow: hidden; /* 👈 essentiel pour garantir le cercle parfait */
+
+    transition: all 0.3s ease;
+}
+
 .experience-icon:hover {
     transform: translateY(-5px) scale(1.05);
     box-shadow: 0 8px 24px rgba(177, 156, 217, 0.45); /* Ombre encore plus prononcée */

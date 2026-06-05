@@ -1106,7 +1106,8 @@ const translations = {
         'formation-bts-school': 'Lycée Paul Eluard - Saint Denis',
         'formation-licence': 'Licence Informatique des systèmes embarqués et interactif',
         'formation-licence-school': 'Université Paris 8',
-        'formation-master': 'Master Informatique et Big Data',
+        'formation-master': 'Master  Informatique  Big Data et Ingenierie en Intelligence Artificielle',
+        'formation-master2': 'Master 2 Ingénierie en Intelligence Artificielle',
         'formation-master-school': 'Université Paris 8',
         "delegue-classe": "Délégué de Classe",
         
@@ -1437,7 +1438,8 @@ const translations = {
         'formation-bts-school': 'Paul Eluard High School - Saint Denis',
         'formation-licence': 'Bachelor in Embedded and Interactive Systems',
         'formation-licence-school': 'Paris 8 University',
-        'formation-master': 'Master in Computer Science and Big Data',
+        'formation-master': 'Master 1  in Computer Science  Big Data and Artificial Intelligence Engineering',
+        'formation-master2': 'Master 2 in Artificial Intelligence Engineering',
         'formation-master-school': 'Paris 8 University',
         "delegue-classe": "Class Representative",
         
