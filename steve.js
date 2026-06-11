@@ -1133,7 +1133,7 @@ const translations = {
 
         //Stage Capgemini
         'exp-capgemini-badge' : 'Stage académique Master 1',
-        'exp-capgemini-date': '1er juin au 31 août 2026',
+        'exp-capgemini-date': '8 juin au 8 septembre 2026',
         'exp-capgemini-title' : 'Ingénieur Data & Automatisation IA ',
         'exp-capgemini-task1': 'Conception et déploiement de flux d\'automatisation des processus métiers via la suite Microsoft Power Platform (Power Automate, Power Apps).',
         'exp-capgemini-task2': 'Intégration de solutions d\'Intelligence Artificielle pour optimiser et rendre intelligents les workflows.',
@@ -1477,7 +1477,7 @@ const translations = {
 
         //Stage Capgemini
         'exp-capgemini-badge' : 'Master 1 Academic Intership',
-        'exp-capgemini-date': 'June 1st to August 31, 2026',
+        'exp-capgemini-date': 'June 8 to september 8, 2026',
         'exp-capgemini-title' : 'Data & IA Automation Engineer',
         'exp-capgemini-task1': 'Design and deployment of business process automation flows using the Microsoft Power Platform suite (Power Automate, Power Apps).',
         'exp-capgemini-task2': 'Integration of AI solutions to optimize and make intelligent workflows.',
