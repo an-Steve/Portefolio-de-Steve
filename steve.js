@@ -1190,6 +1190,15 @@ const translations = {
         
         // Projets
 
+        // Projet Agent IA
+        "project-agentIA-title": "Agent IA",
+        "project-agentIA-desc1": "→ CapG est une interface d'agent IA avancée connectée en temps réel.",
+        "project-agentIA-desc2": "→ CapG est capable de répondre à des questions complexes grâce à l'intelligence artificielle.",
+        "project-agentIA-desc3": "→ Accès à des informations actualisées et interactions dynamiques.",
+        "project-agentIA-desc4": "→ Interface intuitive conçue pour améliorer la productivité et l'assistance utilisateur.",
+        "project-agentIA-desc5": "→ Utilisation d'API et de modèles d'IA pour fournir des réponses pertinentes et contextualisées.",
+        "project-agentIA-link": "Accéder au site",
+
         // Projet Analyse Espérance de Vie
         "project-life-title": "Analyse Mondiale de l'Espérance de Vie et des Maladies",
         "project-life-desc1": "→ Analyse exploratoire de données sur l'espérance de vie de 193 pays (2000-2015).",
@@ -1521,6 +1530,15 @@ const translations = {
         'exp-diocese-task2': 'Event organization',
         
         // Projets
+
+        // AI Agent Project
+        "project-agentIA-title": "AI Agent",
+        "project-agentIA-desc1": "→ CapG is an advanced AI agent interface connected in real time.",
+        "project-agentIA-desc2": "→ CapG can answer complex questions using artificial intelligence.",
+        "project-agentIA-desc3": "→ Access to up-to-date information and dynamic interactions.",
+        "project-agentIA-desc4": "→ Intuitive interface designed to improve productivity and user assistance.",
+        "project-agentIA-desc5": "→ Uses APIs and AI models to provide relevant and contextualized responses.",
+        "project-agentIA-link": "Visit the website",
 
         "project-life-title": "Global Analysis of Life Expectancy and Diseases",
         "project-life-desc1": "→ Exploratory data analysis on life expectancy across 193 countries (2000-2015).",

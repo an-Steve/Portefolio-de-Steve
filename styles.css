@@ -1041,6 +1041,15 @@ h3[data-translate="project-life-title"] {
     text-decoration: underline;
 }
 
+/* Titre des projets*/
+h3[data-translate="project-agentIA-title"] {
+    color: purple;
+    display: inline-block; /* pour que le cadre épouse le texte */
+    padding: 8px 15px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 8px;
+    text-decoration: underline;
+}
 h3[data-translate="project-ml-title"] {
     color: purple;
     display: inline-block;
@@ -1085,6 +1094,7 @@ h3[data-translate="project-android-title"]{
     border-radius: 8px;
     text-decoration: underline;
 }
+
 
 h3[data-translate="project-meteo-title"]{
     color: purple;
