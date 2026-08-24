@@ -20,11 +20,74 @@ body {
     overflow-x: hidden;
 }
 
+/* Simple splash styles */
+#simple-splash {
+        position: fixed;
+        inset: 0;
+        background: linear-gradient(180deg,#c0392b 0%, #a93226 70%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 99999;
+        color: #fff;
+}
+.simple-splash-content {
+        text-align: center;
+        padding: 28px;
+        animation: simpleSplashIn 480ms cubic-bezier(0.2,0.8,0.2,1) both;
+}
+.simple-splash-photo {
+                width: 140px; height:140px; border-radius:50%; object-fit:cover; display:block; margin:0 auto 18px;
+                box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+                border:4px solid rgba(255,255,255,0.12);
+                /* subtle float + pulse animation */
+                animation: splashPhotoFloat 6s ease-in-out infinite, splashPhotoPulse 3.6s ease-in-out 0.2s infinite;
+}
+
+@keyframes splashPhotoFloat {
+    0% { transform: translateY(0) translateZ(0); }
+    50% { transform: translateY(-8px) translateZ(0); }
+    100% { transform: translateY(0) translateZ(0); }
+}
+
+@keyframes splashPhotoPulse {
+    0% { box-shadow: 0 10px 22px rgba(0,0,0,0.28); transform: scale(1); }
+    50% { box-shadow: 0 18px 36px rgba(0,0,0,0.32); transform: scale(1.03); }
+    100% { box-shadow: 0 10px 22px rgba(0,0,0,0.28); transform: scale(1); }
+}
+.simple-splash-text { margin-top:8px; opacity:0.95 }
+.simple-enter { margin-top:18px; padding:10px 20px; border-radius:999px; border:none; background:#fff; color:#c0392b; font-weight:700; cursor:pointer }
+.simple-enter:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,0.32) }
+
+@keyframes simpleSplashIn{
+    0%{opacity:0; transform: scale(0.96) translateY(8px)}
+    60%{opacity:1; transform: scale(1.02) translateY(-4px)}
+    100%{opacity:1; transform: scale(1) translateY(0)}
+}
+
+/* exit animation when hide class is applied */
+#simple-splash.hide .simple-splash-content{ animation: simpleSplashOut 320ms cubic-bezier(0.4,0,1,1) both }
+@keyframes simpleSplashOut{
+    from{opacity:1; transform: scale(1) translateY(0)}
+    to{opacity:0; transform: scale(0.96) translateY(8px)}
+}
+
 /* Empêche le nom de revenir à la ligne */
 .name-title {
-    white-space: nowrap; 
-    font-size: 3.5rem; /* Ajuste la taille si c'est trop gros pour ton écran */
+    white-space: nowrap;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(3rem, 7vw, 7rem); /* larger responsive size */
     margin-bottom: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+.about-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--light);
 }
 
 /* Conteneur élargi pour laisser de la place aux graphiques */

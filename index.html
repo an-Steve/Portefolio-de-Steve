@@ -7,9 +7,20 @@
     <link rel="icon" type="image/png" href="logosite.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    
+    <!-- Simple splash d'accueil (fond rouge) -->
+    <div id="simple-splash" role="dialog" aria-modal="true" aria-label="Bienvenue">
+        <div class="simple-splash-content">
+            <img class="simple-splash-photo" src="PhotoSteveIA.jpg" alt="Photo de Steve">
+            <h1>Bienvenue sur le portfolio de ANTON NELCON Steve</h1>
+            <p class="simple-splash-text">Étudiant en Big Data & Intelligence Artificielle</p>
+            <button id="simpleEnter" class="simple-enter">Entrer</button>
+        </div>
+    </div>
     <canvas id="particles"></canvas>
     <div class="big-data-text">Big Data</div>
 
@@ -140,7 +151,7 @@
 
         <!-- Contenu central avec forçage de ligne unique -->
         <div class="hero-content">
-            <h1 class="name-title">Steve ANT&nbsp;&nbsp;&nbsp;N NELC&nbsp;&nbsp;&nbsp;N</h1>            
+            <h1 class="name-title" tabindex="-1">Steve ANT&nbsp;&nbsp;&nbsp;N NELC&nbsp;&nbsp;&nbsp;N</h1>            
             <p data-translate="hero-subtitle" style="text-align: center; width: 100%;">Étudiant en Big Data & IA</p>
             <div class="cta-buttons">
                 <a href="#projects" class="btn btn-primary" data-translate="btn-projects">Voir mes projets</a>
@@ -197,10 +208,10 @@
     <div class="about-wrapper">
       
       <!-- Zone photo -->
-      <div class="about-photo">
-        <img src="photoStevean.png" alt="Photo de Steve">
-        <h3 class="about-name">ANTON NELCON Steve</h3>
-      </div>
+            <div class="about-photo">
+                <img src="PhotoSteveIA.jpg" alt="Photo de Steve">
+                <h3 class="about-name">ANTON NELCON Steve</h3>
+            </div>
 
 <!-- Zone infos -->
       <div class="about-grid">

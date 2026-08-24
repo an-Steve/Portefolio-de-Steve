@@ -271,6 +271,30 @@ function addParagraphHoverEffect() {
 setTimeout(addParagraphHoverEffect, 1000);
 setTimeout(addHoverEffect, 1000);
 
+// Simple splash close logic (minimal JS)
+(() => {
+    const simpleSplash = document.getElementById('simple-splash');
+    const simpleEnter = document.getElementById('simpleEnter');
+    if (!simpleSplash || !simpleEnter) return;
+
+    // prevent scrolling while splash visible
+    document.body.style.overflow = 'hidden';
+
+    simpleEnter.addEventListener('click', () => {
+        // play exit animation then hide
+        simpleSplash.classList.add('hide');
+        const content = simpleSplash.querySelector('.simple-splash-content');
+        const onEnd = () => {
+            simpleSplash.style.display = 'none';
+            document.body.style.overflow = '';
+            const hero = document.querySelector('.name-title');
+            if (hero) hero.focus();
+            content.removeEventListener('animationend', onEnd);
+        };
+        content.addEventListener('animationend', onEnd);
+    });
+})();
+
 // ========================================
 // MODE CLAIR / SOMBRE SIMPLE (NOIR)
 // ========================================
