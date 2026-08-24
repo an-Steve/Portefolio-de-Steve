@@ -8,8 +8,8 @@
     --primary: #6366f1;
     --secondary: #8b5cf6;
     --accent: #ec4899;
-    --dark: #0f172a;
-    --light: #f8fafc;
+    --dark: linear-gradient(135deg,#c0392b,#a93226);
+    --light: #000000;
     --gradient: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
 }
 
@@ -287,7 +287,7 @@ nav li {
 
 /* Liens de navigation standards */
 nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button) {
-    color: #e2e8f0;
+    color: #000000;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -305,7 +305,7 @@ nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button)::be
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(74, 222, 128, 0.1));
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(192, 57, 43, 0.1));
     opacity: 0;
     transition: opacity 0.3s ease;
     border-radius: 8px;
@@ -322,7 +322,7 @@ nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button)::af
     left: 50%;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #6366f1, #4ade80);
+    background: linear-gradient(90deg, #6366f1, #c0392b);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transform: translateX(-50%);
 }
@@ -382,7 +382,7 @@ nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button):hov
     opacity: 0;
     transform: translateY(-10px);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    color: #4ade80;
+    color: #c0392b; /* icônes : vert -> rouge */
 }
 
 /* Hover state - Animation icône */
@@ -395,10 +395,10 @@ nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button):hov
 .nav-skills:hover,
 .nav-certifications:hover,
 .nav-interests:hover {
-    color: #4ade80;
-    background: linear-gradient(135deg, rgba(74, 222, 128, 0.15), rgba(99, 102, 241, 0.1));
+    color: #000; /* texte en noir au survol */
+    background: linear-gradient(135deg, rgba(192, 57, 43, 0.15), rgba(99, 102, 241, 0.1));
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(74, 222, 128, 0.15);
+    box-shadow: 0 6px 20px rgba(192, 57, 43, 0.15);
 }
 
 /* Au survol : texte disparaît, icône apparaît */
@@ -463,7 +463,7 @@ nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button):hov
 
 /* Bouton chat - Version originale corrigée */
 .chat-button {
-    background: linear-gradient(135deg, #10b981, #34d399);
+    background: linear-gradient(135deg, #c0392b, #e74c3c);
     border: none;
     border-radius: 8px;
     padding: 0.6rem;
@@ -472,7 +472,7 @@ nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button):hov
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 10px rgba(16, 185, 129, 0.2);
+    box-shadow: 0 2px 10px rgba(192, 57, 43, 0.2);
     width: 40px;
     height: 40px;
 }
@@ -485,8 +485,8 @@ nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button):hov
 
 .chat-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
-    background: linear-gradient(135deg, #34d399, #6ee7b7);
+    box-shadow: 0 4px 15px rgba(192, 57, 43, 0.4);
+    background: linear-gradient(135deg, #e74c3c, #f9735f);
 }
 
 /* Bouton CV - même style que le bouton langue */
@@ -690,6 +690,73 @@ nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button):hov
         width: 18px;
         height: 18px;
     }
+}
+
+/* --- FORCE PALETTE: RED + WHITE + BLACK --- */
+:root {
+    --site-red: #c0392b;
+    --site-red-soft: #e74c3c;
+    --site-black: #000000;
+    --site-white: #ffffff;
+}
+
+/* Global site: black background, white text, red accents */
+html, body {
+    background: var(--site-black) !important;
+    color: var(--site-white) !important;
+}
+
+body, body * {
+    color: var(--site-white) !important;
+}
+
+a, a:visited {
+    color: var(--site-white) !important;
+}
+
+button, .btn, .all-projects-button, .chat-button, .accessibility-button, #cv-btn {
+    background: var(--site-red) !important;
+    color: var(--site-white) !important;
+    border-color: rgba(255,255,255,0.12) !important;
+    box-shadow: 0 6px 20px rgba(192,57,43,0.22) !important;
+}
+
+nav, .hero, .hero-container, .hero-content, footer, .cards, .card, .contact-card, .hero-section {
+    background: var(--site-black) !important;
+    color: var(--site-white) !important;
+}
+
+nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button)::after {
+    background: linear-gradient(90deg, var(--site-red), var(--site-red-soft)) !important;
+}
+
+svg, svg * {
+    fill: var(--site-red) !important;
+    stroke: var(--site-red) !important;
+}
+
+#simple-splash, #simple-splash * {
+    color: var(--site-white) !important;
+    background: var(--site-black) !important;
+}
+
+#simple-splash .splash-name {
+    color: var(--site-red) !important;
+}
+
+.simple-splash-photo, .footer-logo img {
+    border-color: rgba(255,255,255,0.08) !important;
+}
+
+.name-title, .hero h1 {
+    -webkit-text-fill-color: var(--site-white) !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+}
+
+*[style*="#34d399"], *[style*="#4ade80"], *[style*="#6366f1"], *[style*="#8b5cf6"], *[style*="#f5c518"] {
+    box-shadow: none !important;
+    background: var(--site-black) !important;
 }
 
 /* Hero Section */
