@@ -22,14 +22,17 @@ body {
 
 /* Simple splash styles */
 #simple-splash {
-        position: fixed;
-        inset: 0;
-        background: linear-gradient(180deg,#c0392b 0%, #a93226 70%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 99999;
-        color: #fff;
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(180deg,#c0392b 0%, #a93226 70%);
+    /* animated background shift */
+    background-size: 400% 400%;
+    animation: splashBgShift 12s ease-in-out infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    color: #fff;
 }
 .simple-splash-content {
         text-align: center;
@@ -59,6 +62,15 @@ body {
 .simple-enter { margin-top:18px; padding:10px 20px; border-radius:999px; border:none; background:#fff; color:#c0392b; font-weight:700; cursor:pointer }
 .simple-enter:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,0.32) }
 
+/* name inside splash */
+.splash-name {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    color: #5a0b0d;
+    margin-left: 6px;
+}
+
 @keyframes simpleSplashIn{
     0%{opacity:0; transform: scale(0.96) translateY(8px)}
     60%{opacity:1; transform: scale(1.02) translateY(-4px)}
@@ -72,15 +84,52 @@ body {
     to{opacity:0; transform: scale(0.96) translateY(8px)}
 }
 
+@keyframes splashBgShift {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+/* SVG illustration animations */
+.splash-illustration { margin-top: 10px; }
+.splash-illustration svg { display:block; margin: 8px auto; }
+.splash-illustration .link { stroke-dasharray: 260; stroke-dashoffset: 260; animation: drawLine 1.8s ease forwards; stroke-opacity:0.12 }
+.splash-illustration .l1 { animation-delay: 0.15s }
+.splash-illustration .l2 { animation-delay: 0.35s }
+.splash-illustration .l3 { animation-delay: 0.55s }
+
+@keyframes drawLine {
+    to { stroke-dashoffset: 0; stroke-opacity: 0.25; }
+}
+
+.splash-illustration .node { transform-origin: center center; opacity: 0.98; animation: nodePulse 2.4s ease-in-out infinite; fill: #fff }
+.splash-illustration .n1 { animation-delay: 0s }
+.splash-illustration .n2 { animation-delay: 0.2s }
+.splash-illustration .n3 { animation-delay: 0.4s }
+.splash-illustration .n4 { animation-delay: 0.6s }
+.splash-illustration .n5 { animation-delay: 0.8s }
+.splash-illustration .n6 { animation-delay: 1s }
+
+@keyframes nodePulse {
+    0% { transform: scale(1); opacity: 0.95 }
+    50% { transform: scale(1.25); opacity: 1 }
+    100% { transform: scale(1); opacity: 0.95 }
+}
+
 /* Empêche le nom de revenir à la ligne */
 .name-title {
     white-space: nowrap;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: clamp(3rem, 7vw, 7rem); /* larger responsive size */
     margin-bottom: 10px;
     font-weight: 800;
     letter-spacing: 1px;
     line-height: 1;
+    /* use gradient clip like .hero h1 */
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .about-name {
