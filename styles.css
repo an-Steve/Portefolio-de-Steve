@@ -312,14 +312,11 @@ body {
 
 /* Logo footer propre sans fond noir */
 .footer-logo img {
-    width: 46px;
-    height: 46px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     border-radius: 14px;
-
-    /* uniquement effet léger */
     filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.25));
-
     transition: transform 0.25s ease, filter 0.25s ease;
     cursor: pointer;
 }
