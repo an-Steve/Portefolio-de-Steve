@@ -178,16 +178,17 @@ body {
 .name-title {
     white-space: nowrap;
     font-family: 'Montserrat', sans-serif;
-    font-size: clamp(3rem, 7vw, 7rem); /* larger responsive size */
+    font-size: clamp(3rem, 7vw, 7rem);
     margin-bottom: 10px;
     font-weight: 800;
     letter-spacing: 1px;
     line-height: 1;
-    /* use gradient clip like .hero h1 */
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #ffffff;
+    text-shadow:
+        0 0 10px rgba(255, 77, 77, 0.9),
+        0 0 20px rgba(255, 77, 77, 0.7),
+        0 0 40px rgba(192, 57, 43, 0.6),
+        0 0 80px rgba(122, 0, 0, 0.5);
 }
 
 .about-name {
@@ -787,6 +788,16 @@ button, .btn, .all-projects-button, .chat-button, .accessibility-button, #cv-btn
 nav {
     background: #4a0000 !important;
     color: var(--site-white) !important;
+}
+
+.name-title, .hero h1 {
+    -webkit-text-fill-color: var(--site-white) !important;
+    background: none !important;
+    text-shadow:
+        0 0 10px rgba(255, 77, 77, 0.9),
+        0 0 20px rgba(255, 77, 77, 0.7),
+        0 0 40px rgba(192, 57, 43, 0.6),
+        0 0 80px rgba(122, 0, 0, 0.5) !important;
 }
 
 footer {
@@ -5970,18 +5981,19 @@ body.dark-mode .all-projects-button:hover {
   padding: 0 10px;
 }
 
-/* Grand rectangle orangé conteneur */
+/* Grand rectangle rouge clair conteneur */
 .dashboards-wrapper {
-  background: linear-gradient(135deg, rgba(230, 126, 34, 0.18) 0%, rgba(211, 84, 0, 0.22) 100%);
-  border: 1.5px solid rgba(230, 126, 34, 0.5);
+  background: linear-gradient(135deg, rgba(229, 115, 115, 0.18) 0%, rgba(211, 84, 84, 0.22) 100%);
+  border: 1.5px solid rgba(229, 115, 115, 0.5);
   border-radius: 20px;
   padding: 30px 28px 28px;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  box-shadow: 0 4px 28px rgba(230, 126, 34, 0.12), inset 0 0 60px rgba(230, 126, 34, 0.04);
+  box-shadow: 0 4px 28px rgba(229, 115, 115, 0.12), inset 0 0 60px rgba(229, 115, 115, 0.04);
   position: relative;
   overflow: hidden;
 }
+
 
 /* Décoration de fond */
 .dashboards-wrapper::before {
@@ -6108,7 +6120,7 @@ body.dark-mode .all-projects-button:hover {
 .dashboard-preview-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(211, 84, 0, 0.65);
+  background: rgba(139, 30, 30, 0.65);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6119,6 +6131,7 @@ body.dark-mode .all-projects-button:hover {
   letter-spacing: 0.3px;
   color: #fff;
 }
+
 
 .dashboard-card:hover .dashboard-preview-overlay {
   opacity: 1;
