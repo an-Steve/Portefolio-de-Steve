@@ -125,8 +125,42 @@ body {
     display: inline-block;
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
-    color: #5a0b0d;
+    color: #8B0000 !important;
     margin-left: 6px;
+}
+#simple-splash .splash-name {
+    color: #8B0000 !important;
+}
+
+
+.simple-enter { 
+    margin-top:18px; 
+    padding:10px 20px; 
+    border-radius:999px; 
+    border:none; 
+    background:#fff; 
+    color:#c0392b; 
+    font-weight:700; 
+    cursor:pointer;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+.simple-enter:hover { 
+    background: #000000;
+    color: #ff4d4d;
+    transform: translateY(-3px); 
+    box-shadow: 0 10px 24px rgba(0,0,0,0.32);
+}
+
+.simple-splash-text { 
+    margin-top:8px; 
+    opacity:0.95;
+    color: #000000;
+    font-weight: 700;
+}
+
+#simple-splash .splash-highlight {
+    color: #8B0000 !important;
+    font-weight: 800;
 }
 
 @keyframes simpleSplashIn{
@@ -1382,6 +1416,10 @@ h3[data-translate="project-auth-title"]{
 }
 
 /* Texte des titre stages*/
+
+h3[data-translate="exp-capgemini-title"] {
+    text-decoration: underline;
+}
 h3[data-translate="exp-tiqtec-title"] {
     text-decoration: underline;
 }
@@ -1553,15 +1591,15 @@ h3[data-translate="exp-diocese-title"] {
 
 /* Effet au survol */
 .experience-subtitle:hover {
-    color: #60a5fa;
+    color: #ff6b6b;
     letter-spacing: 3px;
     transform: translateX(5px);
 }
 
 .experience-subtitle:hover::after {
     width: 110%;
-    background: linear-gradient(90deg, #60a5fa, #3b82f6, #1e3a8a);
-    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+    background: linear-gradient(90deg, #ff6b6b, #c0392b, #7a0000);
+    box-shadow: 0 0 10px rgba(192, 57, 43, 0.5);
 }
 
 /* Animation d'apparition au scroll */
@@ -1796,7 +1834,7 @@ h3[data-translate="exp-diocese-title"] {
 }
 
 .timeline-content h3 {
-    color: var(--primary);
+    color: #c0392b !important;
     margin-bottom: 0.5rem;
 }
 
@@ -4208,11 +4246,13 @@ li[data-translate^="exp-diocese-task"]::before {
 #formations .section-title {
     font-size: clamp(2rem, 5vw, 3.5rem);
     text-align: center;
-    margin-bottom: 3rem; /* Réduit la marge */
-    background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, #ff6b6b 0%, #e74c3c 30%, #c0392b 60%, #7a0000 100%);
+    background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: gradientShift 8s ease infinite;
 }
 
 /* ============================================
