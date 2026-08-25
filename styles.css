@@ -24,8 +24,7 @@ body {
 #simple-splash {
     position: fixed;
     inset: 0;
-    background: linear-gradient(180deg,#c0392b 0%, #a93226 70%);
-    /* animated background shift */
+    background: linear-gradient(180deg, red, darkred);    /* animated background shift */
     background-size: 400% 400%;
     animation: splashBgShift 12s ease-in-out infinite;
     display: flex;
@@ -721,8 +720,13 @@ button, .btn, .all-projects-button, .chat-button, .accessibility-button, #cv-btn
     box-shadow: 0 6px 20px rgba(192,57,43,0.22) !important;
 }
 
-nav, .hero, .hero-container, .hero-content, footer, .cards, .card, .contact-card, .hero-section {
+.hero, .hero-container, .hero-content, footer, .cards, .card, .contact-card, .hero-section {
     background: var(--site-black) !important;
+    color: var(--site-white) !important;
+}
+
+nav {
+    background: #4a0000 !important;
     color: var(--site-white) !important;
 }
 
@@ -737,7 +741,7 @@ svg, svg * {
 
 #simple-splash, #simple-splash * {
     color: var(--site-white) !important;
-    background: var(--site-black) !important;
+    background: #4a0000 !important;
 }
 
 #simple-splash .splash-name {
