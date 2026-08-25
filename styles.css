@@ -291,13 +291,20 @@ body {
     z-index: 0;
     pointer-events: none;
 }
+
 #navbar .logo {
-    width: 32px;
-    height: 32px;
+    position: absolute;
+    left: -150px;
+    top: -60px;
+
+    width: 150px;
+    height: 150px;
+
     object-fit: contain;
-    filter: brightness(0) invert(1);
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.25));
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 
 .footer-logo {
     position: absolute;
@@ -360,6 +367,7 @@ nav {
     border-bottom: 1px solid rgba(99, 102, 241, 0.25);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
 }
 
 nav.scrolled {
