@@ -857,7 +857,7 @@ svg, svg * {
 
 
 .cta-buttons {
-    position: relative; /* IMPORTANT */
+    position: relative;
     display: flex;
     gap: 1rem;
     justify-content: center;
@@ -867,23 +867,18 @@ svg, svg * {
     padding: 15px;
     border-radius: 12px;
     z-index: 1;
-    border: 1.5px solid rgba(255, 165, 0, 0.6);
+    border: 1.5px solid rgba(192, 57, 43, 0.6);
+    background: transparent;
 }
 
-.cta-buttons {
-    position: relative;
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    padding: 8px 12px;
-    border-radius: 10px;
-    width: fit-content;
-    margin: 0 auto;
-
-    overflow: hidden;
-    z-index: 1;
+.cta-buttons::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: var(--fill-width, 0%);
+    background: rgba(192, 57, 43, 0.2);
+    transition: width 0.4s ease;
+    z-index: -1;
 }
 
 /* fond qui se remplit */
@@ -6403,16 +6398,18 @@ body.dark-mode .all-projects-button:hover {
 }
 
 .skills-chart {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-  position: absolute;
-  left: 48.5%;
-  top: 40%;
-  transform: translateY(-50%) scale(0.35);
-  transform-origin: left center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    position: absolute;
+    left: 52.5%;
+    top: 38%;
+    transform: translateY(-50%) scale(0.35);
+    transform-origin: left center;
 }
+
+
 
 /* --- Styles pour le diagramme circulaire spécifique --- */
 
@@ -6429,8 +6426,8 @@ body.dark-mode .all-projects-button:hover {
 
 .skills-chart-specific {
     position: absolute; 
-    top: 256px;          
-    right: 16%;         
+    top: 246px;
+    right: 110px;
     
     width: 75px; 
     height: 75px;
@@ -6442,9 +6439,9 @@ body.dark-mode .all-projects-button:hover {
     height: 100%;
     border-radius: 50%;
     background: conic-gradient(
-        #2d2d7a 0% 45%, 
-        #a582f7 45% 73.5%, 
-        #3ac4e1 73.5% 100%
+        #2a0000 0% 45%, 
+        #7a0000 45% 73.5%, 
+        #ff4d4d 73.5% 100%
     );
 }
 

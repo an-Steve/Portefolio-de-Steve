@@ -151,13 +151,12 @@
     <div class="hero-container">
         <!-- Groupe de barres à gauche (Agrandies) -->
         <div class="bar-group left">
-            <div class="bar" style="height: 80px; background: #a582f7;"></div>
-            <div class="bar" style="height: 140px; background: #63e2ff;"></div>
-            <div class="bar" style="height: 90px; background: #5d83f1;"></div>
-            <div class="bar" style="height: 180px; background: #63e2ff;"></div>
-            <div class="bar" style="height: 110px; background: #a582f7;"></div>
+            <div class="bar" style="height: 80px; background: linear-gradient(180deg, #ff6b6b, #7a0000);"></div>
+            <div class="bar" style="height: 140px; background: linear-gradient(180deg, #ff4d4d, #7a0000);"></div>
+            <div class="bar" style="height: 90px; background: linear-gradient(180deg, #e74c3c, #4a0000);"></div>
+            <div class="bar" style="height: 180px; background: linear-gradient(180deg, #ff4d4d, #7a0000);"></div>
+            <div class="bar" style="height: 110px; background: linear-gradient(180deg, #ff6b6b, #7a0000);"></div>
         </div>
-
         <!-- Contenu central avec forçage de ligne unique -->
         <div class="hero-content">
             <h1 class="name-title" tabindex="-1">Steve ANT&nbsp;&nbsp;&nbsp;N NELC&nbsp;&nbsp;&nbsp;N</h1>            
@@ -201,10 +200,10 @@
 
         <!-- Groupe de barres à droite -->
         <div class="bar-group right">
-            <div class="bar" style="height: 110px; background: #63e2ff;"></div>
-            <div class="bar" style="height: 160px; background: #5d83f1;"></div>
-            <div class="bar" style="height: 95px; background: #a582f7;"></div>
-            <div class="bar" style="height: 130px; background: #63e2ff;"></div>
+            <div class="bar" style="height: 110px; background: linear-gradient(180deg, #ff4d4d, #7a0000);"></div>
+            <div class="bar" style="height: 160px; background: linear-gradient(180deg, #e74c3c, #4a0000);"></div>
+            <div class="bar" style="height: 95px; background: linear-gradient(180deg, #ff6b6b, #7a0000);"></div>
+            <div class="bar" style="height: 130px; background: linear-gradient(180deg, #ff4d4d, #7a0000);"></div>
         </div>
     </div>
 </section>
@@ -1497,17 +1496,18 @@
 </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
-    <script>
-    new Chart(document.getElementById('skillsDonut'), {
+   
+   <script>
+new Chart(document.getElementById('skillsDonut'), {
     type: 'doughnut',
     data: {
         labels: ['Python / ML','Big Data','SQL / NoSQL','Visualisation','Cloud / DevOps'],
         datasets: [{
-        data: [30, 25, 20, 15, 10],
-        backgroundColor: ['#B88EE8', '#5DADE2', '#FFB6C1', '#87CEEB',' #4B0082'],
-        borderColor: '#1A1A2E',
-        borderWidth: 3,
-        hoverOffset: 8
+            data: [30, 25, 20, 15, 10],
+            backgroundColor: ['#ff8a8a', '#ff4d4d', '#e74c3c', '#c0392b', '#7a0000'],
+            borderColor: '#000000',
+            borderWidth: 3,
+            hoverOffset: 8
         }]
     },
     options: {
@@ -1516,7 +1516,7 @@
         cutout: '65%',
         plugins: { legend: { display: false } }
     }
-    });
+});
     </script>
     
 
