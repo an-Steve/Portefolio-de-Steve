@@ -779,12 +779,17 @@ button, .btn, .all-projects-button, .chat-button, .accessibility-button, #cv-btn
     box-shadow: 0 6px 20px rgba(192,57,43,0.22) !important;
 }
 
-.hero, .hero-container, .hero-content, footer, .cards, .card, .contact-card, .hero-section {
+.hero, .hero-container, .hero-content, .cards, .card, .contact-card, .hero-section {
     background: var(--site-black) !important;
     color: var(--site-white) !important;
 }
 
 nav {
+    background: #4a0000 !important;
+    color: var(--site-white) !important;
+}
+
+footer {
     background: #4a0000 !important;
     color: var(--site-white) !important;
 }
