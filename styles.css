@@ -6677,3 +6677,11 @@ body.dark-mode .all-projects-button:hover {
     from { transform: scaleY(0); }
     to   { transform: scaleY(1); }
   }
+
+
+/* Cacher les boutons flottants tant que le splash est visible */
+#simple-splash:not(.hide) ~ #linkedin-btn,
+#simple-splash:not(.hide) ~ #github-btn,
+#simple-splash:not(.hide) ~ #mail-btn {
+    display: none;
+}

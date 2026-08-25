@@ -280,13 +280,18 @@ setTimeout(addHoverEffect, 1000);
     // prevent scrolling while splash visible
     document.body.style.overflow = 'hidden';
 
+    // cacher le bouton LinkedIn tant que le splash est visible
+    const linkedinBtnStatic = document.getElementById('linkedin-btn');
+    if (linkedinBtnStatic) linkedinBtnStatic.style.display = 'none';
+
     simpleEnter.addEventListener('click', () => {
-        // play exit animation then hide
         simpleSplash.classList.add('hide');
         const content = simpleSplash.querySelector('.simple-splash-content');
         const onEnd = () => {
             simpleSplash.style.display = 'none';
             document.body.style.overflow = '';
+            // réafficher le bouton LinkedIn une fois le splash fermé
+            if (linkedinBtnStatic) linkedinBtnStatic.style.display = '';
             const hero = document.querySelector('.name-title');
             if (hero) hero.focus();
             content.removeEventListener('animationend', onEnd);
