@@ -25,15 +25,15 @@ body {
 /* Logo en grand filigrane derrière le contenu du splash */
 .simple-splash-logo {
     position: absolute;
-    top: 50%;
+    top: 75%;
     left: 50%;
-    width: 70vw;
-    max-width: 900px;
+    width: 90vw;
+    max-width: 1400px;
     height: auto;
     transform: translate(-50%, -50%);
     object-fit: contain;
     opacity: 0.08;
-    filter: grayscale(100%) brightness(3);
+    /*filter: grayscale(100%) brightness(3);*/
     z-index: 0;
     pointer-events: none;
     margin: 0;
