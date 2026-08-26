@@ -155,7 +155,6 @@ body {
     100% { box-shadow: 0 10px 22px rgba(0,0,0,0.28); transform: scale(1); }
 }
 .simple-splash-text { margin-top:8px; opacity:0.95 }
-.simple-enter { margin-top:18px; padding:10px 20px; border-radius:999px; border:none; background:#fff; color:#c0392b; font-weight:700; cursor:pointer }
 .simple-enter:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,0.32) }
 
 /* name inside splash */
@@ -930,6 +929,31 @@ svg, svg * {
 
 .simple-splash-photo, .footer-logo img {
     border-color: rgba(255,255,255,0.08) !important;
+}
+
+#simple-splash .simple-enter {
+    background: #ffffff !important;
+    color: #c0392b !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+#simple-splash .simple-enter-fill {
+    background: #ffffff !important;
+}
+
+#simple-splash .simple-enter:hover {
+    background: #4a0000 !important;
+    color: #000000 !important;
+}
+
+#simple-splash .simple-enter-fill {
+    background: linear-gradient(90deg, #ff6b6b, #7a0000) !important;
+}
+
+#simple-splash .simple-enter:hover {
+    background: #000000 !important;
+    color: #ff4d4d !important;
 }
 
 .name-title, .hero h1 {
