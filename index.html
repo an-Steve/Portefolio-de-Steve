@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steve ANTON NELCON - Portfolio</title>
     <link rel="icon" type="image/png" href="newlogosteve.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -160,7 +159,7 @@
             <div class="cta-buttons">
                 <a href="#projects" class="btn btn-primary" data-translate="btn-projects">Voir mes projets</a>
                 <a href="#contact" class="btn btn-secondary" data-translate="btn-contact">Me contacter</a>
-                <a href="CV ANTON NELCON Steve M1IBD 2026.pdf" class="btn btn-download" download="CV_ANTONNELCON_Steve.pdf">
+                <a href="CV ANTON NELCON Steve-28.pdf" class="btn btn-download" download="CV_ANTONNELCON_Steve.pdf">
                     <i class="fas fa-download"></i>
                     <span data-translate="btn-cv">Télécharger mon CV</span>
                 </a>
@@ -255,95 +254,115 @@
         </div>
 
         <div class="info-card">
-          <div style="display: flex; align-items: center; gap: 10px;">
-            <div>
-              <h3>
-                <i class="fab fa-linkedin"></i> LinkedIn
-              </h3><br>
-              <a href="https://www.linkedin.com/in/ansteve" target="_blank">linkedin.com/in/ansteve</a>
-            </div>
-            <button id="moreInfoBtn" class="plus-button" title="Plus d'informations">+</button>
-          </div>
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <div>
+            <h3><i class="fab fa-linkedin"></i> LinkedIn</h3><br>
+            <a href="https://www.linkedin.com/in/ansteve" target="_blank">linkedin.com/in/ansteve</a>
         </div>
-      </div>
+        <button id="moreInfoBtn" class="plus-button" title="Plus d'informations">+</button>
+    </div>
+</div>
 
-      <!-- Panneau dépliable : infos supp + GitHub stats côte à côte -->
-      <div id="moreInfoSection" class="more-info-section">
+<div id="moreInfoSection" class="more-info-section">
 
-        <!-- Colonne gauche : Informations supplémentaires -->
-        <div class="more-info-left">
-          <h4 data-translate="about-more-info">📋 Informations supplémentaires</h4>
-          <ul>
-            <li><strong data-translate="about-interests"> → Centres d'intérêt :</strong> <span data-translate="about-interests-value">Bénévolat</span></li>
-            <li>
-              <strong data-translate="about-languages"> → Langues :</strong>
-              <div class="languages">
-                <div class="language">
-                  <span data-translate="lang-fr">Français</span>
-                  <div class="progress-bar">
-                    <div class="progress fr">C2</div>
-                  </div>
-                </div>
-                <div class="language">
-                  <span data-translate="lang-en">Anglais</span>
-                  <div class="progress-bar">
-                    <div class="progress en">B1</div>
-                  </div>
-                </div>
-                <div class="language">
-                  <span data-translate="lang-es">Espagnol</span>
-                  <div class="progress-bar">
-                    <div class="progress es">A1</div>
-                  </div>
-                </div>
-                <div class="language">
-                  <span data-translate="lang-ta">Tamoul</span>
-                  <div class="progress-bar">
-                    <div class="progress ta">C2</div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li><strong data-translate="about-qualities"> → Qualités :</strong> <span data-translate="about-qualities-value">Ponctuel, Travail en équipe, Motivé</span></li>
-            <li><strong data-translate="about-certifications"> → Certifications :</strong> <span data-translate="about-certifications-value">CACES, PIX, TOEIC, KET</span></li>
-          </ul>
+    <div class="more-info-left">
+        <h4><i class="fa-solid fa-address-card"></i> Informations supplémentaires</h4>
+
+        <div class="info-block">
+            <span class="info-block-label"><i class="fa-solid fa-heart"></i> Centres d'intérêt</span>
+            <p class="info-block-value">Bénévolat</p>
         </div>
 
-        <!-- Colonne droite : GitHub Stats -->
-        <div class="more-info-right">
-          <h4> GitHub Stats</h4>
-          <div class="stats-cards">
+        <div class="info-block">
+            <span class="info-block-label"><i class="fa-solid fa-language"></i> Langues</span>
+            <div class="languages">
+                <div class="language">
+                    <div class="language-header">
+                        <span>Français</span>
+                        <span class="language-level">C2</span>
+                    </div>
+                    <div class="progress-bar"><div class="progress" style="width: 100%;"></div></div>
+                </div>
+                <div class="language">
+                    <div class="language-header">
+                        <span>Anglais</span>
+                        <span class="language-level">B1</span>
+                    </div>
+                    <div class="progress-bar"><div class="progress" style="width: 55%;"></div></div>
+                </div>
+                <div class="language">
+                    <div class="language-header">
+                        <span>Espagnol</span>
+                        <span class="language-level">A1</span>
+                    </div>
+                    <div class="progress-bar"><div class="progress" style="width: 20%;"></div></div>
+                </div>
+                <div class="language">
+                    <div class="language-header">
+                        <span>Tamoul</span>
+                        <span class="language-level">C2</span>
+                    </div>
+                    <div class="progress-bar"><div class="progress" style="width: 100%;"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-block">
+            <span class="info-block-label"><i class="fa-solid fa-star"></i> Qualités</span>
+            <div class="tag-list">
+                <span class="tag-pill">Ponctuel</span>
+                <span class="tag-pill">Travail en équipe</span>
+                <span class="tag-pill">Motivé</span>
+            </div>
+        </div>
+
+        <div class="info-block">
+            <span class="info-block-label"><i class="fa-solid fa-award"></i> Certifications</span>
+            <div class="tag-list">
+                <span class="tag-pill">CACES</span>
+                <span class="tag-pill">PIX</span>
+                <span class="tag-pill">TOEIC</span>
+                <span class="tag-pill">KET</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="more-info-right">
+        <h4><i class="fab fa-github"></i> GitHub Stats</h4>
+
+        <div class="stats-cards">
             <div class="stat-card">
-              <span class="stat-label" style="color: orange;">Projets</span>
-              <span class="stat-value" style="color: orange;">51</span>
+                <span class="stat-value">51</span>
+                <span class="stat-label">Projets</span>
             </div>
             <div class="stat-card">
-              <span class="stat-label" style="color: orange;">Langages</span>
-              <span class="stat-value" style="color: orange;">14</span>
+                <span class="stat-value">14</span>
+                <span class="stat-label">Langages</span>
             </div>
-          </div>
-          <div class="donut-wrapper">
+        </div>
+
+        <div class="donut-wrapper">
             <div class="tech-badges">
-              <span class="badge html">HTML (19)</span>
-              <span class="badge python">Python (12)</span>
-              <span class="badge jupyter">Jupyter (9)</span>
-              <span class="badge kotlin">Kotlin (3)</span>
-              <span class="badge php">PHP (2)</span>
-              <span class="badge css">CSS (1)</span>
-              <span class="badge java">Java (1)</span>
-              <span class="badge js">JS (1)</span>
-              <span class="badge dart">Dart (1)</span>
-              <span class="badge cpp">C++ (1)</span>
-              <span class="badge qml">QML (1)</span>
-              <span class="badge swift">Swift (1)</span>
-              <span class="badge hack">Hack (1)</span>
-              <span class="badge scilab">Scilab (1)</span>
+                <span class="badge">HTML (19)</span>
+                <span class="badge">Python (12)</span>
+                <span class="badge">Jupyter (9)</span>
+                <span class="badge">Kotlin (3)</span>
+                <span class="badge">PHP (2)</span>
+                <span class="badge">CSS (1)</span>
+                <span class="badge">Java (1)</span>
+                <span class="badge">JS (1)</span>
+                <span class="badge">Dart (1)</span>
+                <span class="badge">C++ (1)</span>
+                <span class="badge">QML (1)</span>
+                <span class="badge">Swift (1)</span>
+                <span class="badge">Hack (1)</span>
+                <span class="badge">Scilab (1)</span>
             </div>
             <canvas id="donutChart" style="max-height:220px; margin-top: 20px;"></canvas>
-          </div>
         </div>
+    </div>
 
-      </div>
+</div>
 
 </section>
 
@@ -671,7 +690,6 @@
             <div class="timeline-item">
                 <div class="timeline-content">
                     <img src="carrefour.jpg" alt="Icône entreprise" class="experience-icon">
-                    <img src="steveprepa.png" alt="Icône entreprise 2" class="experience-icon-square">
                     <span class="timeline-badge" data-translate="exp-carrefour-badge">Intérim</span>
                     <h3 data-translate="exp-carrefour-title">Préparateur de Commandes</h3>
                     <div class="date-container">
