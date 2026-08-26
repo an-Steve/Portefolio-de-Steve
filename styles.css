@@ -2615,20 +2615,7 @@ footer p:hover {
 }
 
 
-.big-data-text {
-    position: fixed;
-    top: 50%;
-    left: 0;
-    font-size: 4rem;
-    font-weight: bold;
-    color: red;
-    opacity: 0.3;
-    z-index: 0;
-    pointer-events: none;
-    animation: moveBigData 10s linear infinite;
-    transform: translateY(-50%);
-    white-space: nowrap;
-}
+
 
 /* Carte pour LinkedIn avec fond transparent */
 .info-card {
@@ -6576,6 +6563,19 @@ body.dark-mode .all-projects-button:hover {
     font-size: 0.85rem;
     color: #fff;
     white-space: nowrap;
+}
+
+.chart-slot {
+    position: relative;
+    display: inline-block;
+}
+
+.chart-slot .skills-chart,
+.chart-slot .skills-chart-specific {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .dot {
