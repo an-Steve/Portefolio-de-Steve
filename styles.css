@@ -932,10 +932,14 @@ svg, svg * {
 }
 
 #simple-splash .simple-enter {
-    background: #ffffff !important;
-    color: #c0392b !important;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: #7a0000 !important;
+    color: #000000 !important;
     border: none !important;
     box-shadow: none !important;
+    border-radius: 999px !important;
 }
 
 #simple-splash .simple-enter-fill {
@@ -945,15 +949,6 @@ svg, svg * {
 #simple-splash .simple-enter:hover {
     background: #4a0000 !important;
     color: #000000 !important;
-}
-
-#simple-splash .simple-enter-fill {
-    background: linear-gradient(90deg, #ff6b6b, #7a0000) !important;
-}
-
-#simple-splash .simple-enter:hover {
-    background: #000000 !important;
-    color: #ff4d4d !important;
 }
 
 .name-title, .hero h1 {
