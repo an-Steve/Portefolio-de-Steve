@@ -171,22 +171,50 @@ body {
 }
 
 
-.simple-enter { 
-    margin-top:18px; 
-    padding:10px 20px; 
-    border-radius:999px; 
-    border:none; 
-    background:#fff; 
-    color:#c0392b; 
-    font-weight:700; 
-    cursor:pointer;
+.simple-enter {
+    position: relative;
+    overflow: hidden;
+    margin-top: 18px;
+    padding: 10px 20px;
+    border-radius: 999px;
+    border: none;
+    background: #fff;
+    color: #c0392b;
+    font-weight: 700;
+    cursor: pointer;
     transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
-.simple-enter:hover { 
+
+.simple-enter:hover {
     background: #000000;
     color: #ff4d4d;
-    transform: translateY(-3px); 
+    transform: translateY(-3px);
     box-shadow: 0 10px 24px rgba(0,0,0,0.32);
+}
+
+.simple-enter-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #ff6b6b, #7a0000);
+    z-index: 0;
+    animation: fillButton 3.5s ease forwards;
+}
+
+.simple-enter-label {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes fillButton {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+
+.simple-enter:disabled {
+    cursor: not-allowed;
 }
 
 .simple-splash-text { 
