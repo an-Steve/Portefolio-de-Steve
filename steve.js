@@ -277,6 +277,13 @@ setTimeout(addHoverEffect, 1000);
     const simpleEnter = document.getElementById('simpleEnter');
     if (!simpleSplash || !simpleEnter) return;
 
+    // Active le bouton "Entrer" une fois la barre de progression terminée
+    setTimeout(() => {
+        if (simpleEnter) {
+            simpleEnter.disabled = false;
+        }
+    }, 3500);
+
     // prevent scrolling while splash visible
     document.body.style.overflow = 'hidden';
 
@@ -575,6 +582,14 @@ if (moreInfoBtn && moreInfoSection) {
     const isVisible = moreInfoSection.classList.toggle('visible');
     moreInfoBtn.textContent = isVisible ? '−' : '+';
     moreInfoBtn.title = isVisible ? 'Réduire' : 'Plus d\'informations';
+
+    if (isVisible) {
+      setTimeout(() => {
+        if (window.donutChartInstance) {
+          window.donutChartInstance.resize();
+        }
+      }, 350);
+    }
   });
 }
 
@@ -2169,14 +2184,14 @@ const data = [
 ];
 
 // Couleurs extraites de l'image
+// Couleurs du thème rouge/dark red
 const colors = [
-    '#3b82f6', '#10b981', '#f59e0b', '#a855f7', '#6366f1', 
-    '#ec4899', '#f97316', '#84cc16', '#06b6d4', '#db2777', 
-    '#94a3b8', '#ea580c', '#64748b', '#ef4444', '#9ca3af'
+    '#ff8a8a', '#ff6b6b', '#ff4d4d', '#e74c3c', '#e0342a', 
+    '#d1281f', '#c0392b', '#b22d1f', '#a52a1a', '#941f14', 
+    '#8b1a10', '#7a0000', '#6b0000', '#5c0000', '#4a0000'
 ];
 
-new Chart(document.getElementById('donutChart'), {
-    type: 'doughnut',
+window.donutChartInstance = new Chart(document.getElementById('donutChart'), {    type: 'doughnut',
     data: {
         labels: ['HTML','Python','Jupyter','Kotlin','PHP','CSS','Java','JavaScript','Dart','C++','QML','Swift','Hack','Scilab','C'],
         datasets: [{ 
