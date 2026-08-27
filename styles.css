@@ -37,7 +37,13 @@ body {
 }
 
 /* Configuration des grilles internes pour réautoriser le côte à côte */
-
+.projects-main-title {
+    text-align: center;
+    width: 100%;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+    padding: 0 1rem;
+}
 
 /* Ajustement responsive pour écran mobile/tablette */
 @media (max-width: 1024px) {
@@ -2149,9 +2155,10 @@ h3[data-translate="exp-diocese-title"] {
 /* Container principal du carousel */
 #projects .container {
     position: relative;
-    padding: 0 120px; /* Plus d'espace pour les flèches */
-    max-width: 900px; /* Limiter la largeur pour un meilleur centrage */
+    padding: 0 120px;
+    max-width: 900px;
     margin: 0 auto;
+    padding-top: 30px;
 }
 
 /* Wrapper pour le carousel */
@@ -2160,7 +2167,8 @@ h3[data-translate="exp-diocese-title"] {
     overflow: hidden;
     width: 100%;
     border-radius: 20px;
-    padding: 20px 0;
+    padding: 0;
+    margin-top: 10px;
 }
 
 /* Grid avec défilement - 1 projet centré à la fois */
