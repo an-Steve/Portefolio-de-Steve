@@ -37,13 +37,7 @@ body {
 }
 
 /* Configuration des grilles internes pour réautoriser le côte à côte */
-.projects-grid, 
-.dashboards-grid {
-    display: grid !important;
-    /* Reduit la taille minimale des cartes pour qu'elles puissent tenir à 2 par ligne */
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important; 
-    gap: 1.5rem;
-}
+
 
 /* Ajustement responsive pour écran mobile/tablette */
 @media (max-width: 1024px) {
@@ -2175,11 +2169,7 @@ h3[data-translate="exp-diocese-title"] {
     gap: 2rem; /* Gap réduit car on ne voit qu'un projet à la fois */
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.projects-grid, .dashboards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-}
+
 
 .project-card {
     min-width: 100%; /* Chaque projet prend 100% de la largeur */
