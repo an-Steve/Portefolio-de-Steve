@@ -2143,21 +2143,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-const buttons = document.querySelectorAll(".cta-buttons a");
-const container = document.querySelector(".cta-buttons");
 
-buttons.forEach((btn, index) => {
-
-    btn.addEventListener("mouseenter", () => {
-        let progress = ((index + 1) / buttons.length) * 100;
-        container.style.setProperty("--fill-width", progress + "%");
-    });
-
-    btn.addEventListener("mouseleave", () => {
-        container.style.setProperty("--fill-width", "0%");
-    });
-
-});
 
 // Fonction de zoom sur le texte
 document.addEventListener('DOMContentLoaded', function() {
