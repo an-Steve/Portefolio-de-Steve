@@ -2143,7 +2143,26 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Filtres Projets / Dashboards
+const filterButtons = document.querySelectorAll('.filter-btn');
+const filterableCards = document.querySelectorAll('.project-card, .dashboard-card');
 
+filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+
+        filterableCards.forEach(card => {
+            if (filter === 'all' || card.dataset.category === filter) {
+                card.classList.remove('filtered-out');
+            } else {
+                card.classList.add('filtered-out');
+            }
+        });
+    });
+});
 
 // Fonction de zoom sur le texte
 document.addEventListener('DOMContentLoaded', function() {

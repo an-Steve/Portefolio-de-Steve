@@ -779,6 +779,15 @@
 
 
 <h2 class="section-title projects-main-title" data-translate="section-projects">Projets Académiques</h2>
+
+<div class="project-filters">
+    <button class="filter-btn active" data-filter="all">Tous</button>
+    <button class="filter-btn" data-filter="ia">IA</button>
+    <button class="filter-btn" data-filter="web">Web</button>
+    <button class="filter-btn" data-filter="data">Data</button>
+    <button class="filter-btn" data-filter="jeux">Jeux</button>
+</div>
+
 <div class="main-sections-container">
 
     <!-- SECTION PROJETS -->
@@ -786,7 +795,7 @@
         <div class="container">
             <div class="projects-grid">
 
-                <div class="project-card">
+                <div class="project-card" data-category="ia">
                     <div class="project-card-content">
                         <img src="AgentIA.png" alt="data analysis" class="project-image">
                         <span class="project-badge">Agent IA</span>
@@ -801,7 +810,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-category="data">
                     <div class="project-card-content">
                         <img src="data.png" alt="data analysis" class="project-image">
                         <span class="project-badge">Data Analysis</span>
@@ -819,7 +828,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-category="ia">
                     <div class="project-card-content">
                         <img src="PreIA.png" alt="ml" class="project-image">
                         <span class="project-badge">Machine Learning</span>
@@ -840,7 +849,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-category="ia">
                     <div class="project-card-content">
                         <img src="cnn.png" alt="cnn" class="project-image">
                         <span class="project-badge">Deep Learning</span>
@@ -861,7 +870,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-category="jeux">
                     <div class="project-card-content">
                         <img src="mariojeux.png" alt="Mario" class="project-image">
                         <span class="project-badge" data-translate="project-game-badge">Jeux Python</span>
@@ -879,7 +888,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-category="web">
                     <div class="project-card-content">
                         <img src="siteparfum.png" alt="parfum" class="project-image">
                         <span class="project-badge" data-translate="project-web-badge">Site Web</span>
@@ -895,7 +904,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-category="web">
                     <div class="project-card-content">
                         <img src="avions.png" alt="android" class="project-image">
                         <span class="project-badge" data-translate="project-android-badge">Application Android</span>
@@ -912,7 +921,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-category="data">
                     <div class="project-card-content">
                         <img src="MétéoAPI.png" alt="Dashboard Météo" class="project-image">
                         <span class="project-badge" data-translate="project-meteo-badge">API Météo</span>
@@ -932,7 +941,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-category="web">
                     <div class="project-card-content">
                         <img src="formulaire.png" alt="authentification" class="project-image">
                         <span class="project-badge" data-translate="project-auth-badge">Base de donnée</span>
@@ -976,7 +985,7 @@
             <div class="dashboards-grid">
 
                 <!-- Dashboard Emploi Tech & IA -->
-                <a href="https://an-steve.github.io/Dashboard-Emploi-Tech-IA/" target="_blank" class="dashboard-card">
+                <a href="https://an-steve.github.io/Dashboard-Emploi-Tech-IA/" target="_blank" class="dashboard-card" data-category="ia">
                     <div class="dashboard-card-preview">
                         <img src="DashboardEmploie.png" alt="Aperçu Dashboard Emploi Tech & IA" onerror="this.parentElement.style.background='rgba(255,255,255,0.08)'; this.style.display='none';" />
                         <div class="dashboard-preview-overlay">
@@ -998,7 +1007,7 @@
                 </a>
 
                 <!-- Dashboard Santé Mondiale -->
-                <a href="https://an-steve.github.io/Dashboard-Sante-Mondiale-/" target="_blank" class="dashboard-card">
+                <a href="https://an-steve.github.io/Dashboard-Sante-Mondiale-/" target="_blank" class="dashboard-card" data-category="data">
                     <div class="dashboard-card-preview">
                         <img src="DashboardSanté.png" alt="Aperçu Dashboard Santé Mondiale" onerror="this.parentElement.style.background='rgba(255,255,255,0.08)'; this.style.display='none';" />
                         <div class="dashboard-preview-overlay">
@@ -1019,7 +1028,7 @@
                 </a>
 
                 <!-- Dashboard Economique -->
-                <a href="https://an-steve.github.io/Dashboard-Economie-Mondiale/" target="_blank" class="dashboard-card">
+                <a href="https://an-steve.github.io/Dashboard-Economie-Mondiale/" target="_blank" class="dashboard-card" data-category="data">
                     <div class="dashboard-card-preview">
                         <img src="DashboardEconomie.png" alt="Aperçu Dashboard Economique Mondiale" onerror="this.parentElement.style.background='rgba(255,255,255,0.08)'; this.style.display='none';" />
                         <div class="dashboard-preview-overlay">
@@ -1041,7 +1050,7 @@
                 </a>
 
                 <!-- Dashboard Astronomie -->
-                <a href="https://an-steve.github.io/Dashboard-Astronomie/" target="_blank" class="dashboard-card">
+                <a href="https://an-steve.github.io/Dashboard-Astronomie/" target="_blank" class="dashboard-card" data-category="data">
                     <div class="dashboard-card-preview">
                         <img src="DashboardAstronomie.png" alt="Aperçu Dashboard Exoplanètes - Référence Terre" onerror="this.parentElement.style.background='rgba(255,255,255,0.08)'; this.style.display='none';" />
                         <div class="dashboard-preview-overlay">
