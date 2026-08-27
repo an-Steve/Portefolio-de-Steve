@@ -20,6 +20,37 @@ body {
     overflow-x: hidden;
 }
 
+/* Conteneur principal qui s'étend sur toute la largeur */
+.main-sections-container {
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 100%; /* S'assure de prendre tout l'espace disponible */
+}
+
+/* Répartition équitable des 2 grandes sections */
+.main-sections-container > section#projects,
+.main-sections-container > .dashboards-section {
+    flex: 1;
+    min-width: 0; /* Évite que les grilles ne débordent */
+}
+
+/* Configuration des grilles internes pour réautoriser le côte à côte */
+.projects-grid, 
+.dashboards-grid {
+    display: grid !important;
+    /* Reduit la taille minimale des cartes pour qu'elles puissent tenir à 2 par ligne */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important; 
+    gap: 1.5rem;
+}
+
+/* Ajustement responsive pour écran mobile/tablette */
+@media (max-width: 1024px) {
+    .main-sections-container {
+        flex-direction: column;
+    }
+}
 
 /* Logo en haut du splash */
 /* Logo en grand filigrane derrière le contenu du splash */
@@ -1058,22 +1089,7 @@ nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button)::af
 }
 
 
-.projects-dashboards-split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
-    align-items: start;
-}
 
-.dashboards-column .dashboards-section {
-    margin-top: 0;
-}
-
-@media (max-width: 1100px) {
-    .projects-dashboards-split {
-        grid-template-columns: 1fr;
-    }
-}
 
 
 /* fond qui se remplit */
@@ -2158,6 +2174,11 @@ h3[data-translate="exp-diocese-title"] {
     display: flex;
     gap: 2rem; /* Gap réduit car on ne voit qu'un projet à la fois */
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.projects-grid, .dashboards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
 }
 
 .project-card {

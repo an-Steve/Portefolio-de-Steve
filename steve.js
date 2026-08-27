@@ -2359,3 +2359,37 @@ function scrollToSection(sectionId) {
     }
 }
 window.scrollToSection = scrollToSection;
+
+document.addEventListener("DOMContentLoaded", () => {
+    const projects = document.querySelectorAll(".project-card");
+    const nextBtn = document.getElementById("nextBtn");
+    const prevBtn = document.getElementById("prevBtn");
+    let currentIndex = 0;
+
+    function updateProjects() {
+        projects.forEach((project, index) => {
+            if (index === currentIndex) {
+                project.classList.add("active");
+                project.style.display = "block"; // Ou géré via la classe CSS .active
+            } else {
+                project.classList.remove("active");
+                project.style.display = "none";
+            }
+        });
+    }
+
+    if (nextBtn && prevBtn) {
+        nextBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % projects.length;
+            updateProjects();
+        });
+
+        prevBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + projects.length) % projects.length;
+            updateProjects();
+        });
+
+        // Initialisation
+        updateProjects();
+    }
+});
