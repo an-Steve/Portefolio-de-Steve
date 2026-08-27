@@ -622,37 +622,49 @@ let yOffset = 0;
 // Base de connaissances sur le portfolio
 const knowledgeBase = {
     nom: "Steve",
-    profession: "Etudiant en Big Data & Développeur Web/Mobile",
+    profession: "Étudiant en Big Data & Intelligence Artificielle",
     site: "https://an-steve.github.io/Portefolio-de-Steve/",
     
     competences: [
-        "HTML5", "CSS3", "JavaScript", 
-        "React", "Node.js", "Git",
-        "Responsive Design", "UI/UX", "MongoDB", "Express.js"
+        "Python", "Machine Learning", "Deep Learning",
+        "Big Data", "SQL / NoSQL", "Power BI",
+        "HTML5", "CSS3", "JavaScript", "Git"
+    ],
+    
+    certifications: [
+        "Introduction à l'IA moderne (Cisco Networking Academy)",
+        "CACES", "PIX", "TOEIC", "KET"
     ],
     
     contact: {
         email: "antonsteve05@gmail.com",
-        github: "an-steve",
+        github: "an-Steve",
         linkedin: "www.linkedin.com/in/ansteve"
     },
     
     sections: [
         "Accueil",
         "À propos",
+        "Formations",
         "Compétences",
+        "Expériences",
         "Projets",
+        "Certifications",
         "Contact"
     ],
     
     projets: [
-        "Sites web responsive",
-        "Applications web dynamiques",
-        "Interfaces utilisateur modernes",
-        "Intégrations API"
+        "Projets Big Data et analyse de données",
+        "Modèles de Machine Learning",
+        "Applications web et automatisation",
+        "Intégrations d'IA"
+    ],
+    
+    experiences: [
+        "Ingénieur Data & Automatisation IA — Capgemini",
+        "Développeur Web & Application — TiqTec"
     ]
 };
-
 // QCM disponibles
 const qcmQuestions = {
     decouverte: {
@@ -699,8 +711,7 @@ const qcmResponses = {
     
     projets: `Voici les types de projets réalisés par <strong>${knowledgeBase.nom}</strong> :<br><br>${knowledgeBase.projets.map(p => `• ${p}`).join('<br>')}<br><br>Consultez la section <strong>"Projets"</strong> pour voir le portfolio complet !`,
     
-    contact: `Pour contacter <strong>${knowledgeBase.nom}</strong> :<br><br><strong>Email :</strong> ${knowledgeBase.contact.email}<br><strong>LinkedIn :</strong> ${knowledgeBase.contact.linkedin}<br><strong>GitHub :</strong> github.com/${knowledgeBase.contact.github}<br><br>Rendez-vous dans la section <strong>"Contact"</strong> pour le formulaire !`,
-    
+    contact: `Pour contacter <strong>${knowledgeBase.nom}</strong> :<br><br><strong>Email :</strong> ${knowledgeBase.contact.email}<br><strong>LinkedIn :</strong> ${knowledgeBase.contact.linkedin}<br><strong>GitHub :</strong> github.com/${knowledgeBase.contact.github}<br><br><button class="chat-link-btn" onclick="scrollToSection('contact')">Aller à la section Contact →</button>`,    
     parcours: `<strong>${knowledgeBase.nom}</strong> est un <strong>${knowledgeBase.profession}</strong> passionné par le développement web moderne.<br><br>Retrouvez son parcours complet dans la section <strong>"À propos"</strong><br>Consultez ses réalisations dans <strong>"Projets"</strong><br><br>Que voulez-vous savoir d'autre ?`,
     
     explorer: `Explorons le portfolio ensemble !<br><br>Vous pouvez :<br>• Découvrir les compétences techniques<br>• Voir les projets réalisés<br>• En apprendre plus sur le parcours<br>• Obtenir les coordonnées<br><br>Par quoi voulez-vous commencer ?`,
@@ -762,16 +773,15 @@ function createQCM(qcmKey) {
 
 // Gérer la réponse au QCM
 function handleQCMResponse(responseKey, selectedText) {
-    // Afficher le choix de l'utilisateur
     addMessage(selectedText, true);
-    
-    // Répondre selon le choix
+    showTypingIndicator();
     setTimeout(() => {
+        removeTypingIndicator();
         const response = qcmResponses[responseKey];
         if (response) {
             addMessage(response, false);
         }
-    }, 500);
+    }, 900);
 }
 
 // Fonction pour analyser et répondre intelligemment
@@ -1012,6 +1022,25 @@ function addMessage(text, isUser = false) {
 }
 
 // Envoyer un message
+function showTypingIndicator() {
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'message bot-message';
+    typingDiv.id = 'typingIndicator';
+    typingDiv.innerHTML = `
+        <div class="message-avatar">🤖</div>
+        <div class="message-content">
+            <div class="typing-indicator"><span></span><span></span><span></span></div>
+        </div>
+    `;
+    chatboxMessages.appendChild(typingDiv);
+    chatboxMessages.scrollTop = chatboxMessages.scrollHeight;
+}
+
+function removeTypingIndicator() {
+    const typingDiv = document.getElementById('typingIndicator');
+    if (typingDiv) typingDiv.remove();
+}
+
 function sendMessage() {
     if (!chatInput || !chatboxMessages) return;
     
@@ -1019,11 +1048,20 @@ function sendMessage() {
     if (message) {
         addMessage(message, true);
         chatInput.value = '';
+        showTypingIndicator();
         
         setTimeout(() => {
+            removeTypingIndicator();
             const response = getBotResponse(message);
             addMessage(response, false);
-        }, 800);
+        }, 1200);
+
+        if (chatboxToggle && chatbox) {
+    chatboxToggle.addEventListener('click', () => {
+        chatbox.classList.toggle('hidden');
+        if (chatNotifBadge) chatNotifBadge.classList.add('hidden');
+    });
+    }
     }
 }
 
@@ -2302,3 +2340,36 @@ function drawRadar() {
 }
 
 document.addEventListener("DOMContentLoaded", drawRadar);
+
+
+const chatNotifBadge = document.getElementById('chatNotifBadge');
+
+// Affiche le badge après la première réponse du bot si le chat est fermé
+function maybeShowNotifBadge() {
+    if (chatbox.classList.contains('hidden') && chatNotifBadge) {
+        chatNotifBadge.classList.remove('hidden');
+    }
+}
+
+
+const chatboxReset = document.getElementById('chatboxReset');
+if (chatboxReset) {
+    chatboxReset.addEventListener('click', () => {
+        chatboxMessages.innerHTML = `
+            <div class="message bot-message">
+                <div class="message-avatar">🤖</div>
+                <div class="message-content">Bonjour ! Comment puis-je vous aider ?</div>
+            </div>
+        `;
+    });
+}
+
+
+function scrollToSection(sectionId) {
+    const el = document.getElementById(sectionId);
+    if (el) {
+        chatbox.classList.add('hidden');
+        el.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+window.scrollToSection = scrollToSection;

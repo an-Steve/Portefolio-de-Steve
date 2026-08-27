@@ -640,16 +640,30 @@ nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button):hov
     height: 40px;
 }
 
-.chat-button img {
-    width: 20px;
-    height: 20px;
-    filter: brightness(0) invert(1);
-}
+
 
 .chat-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(192, 57, 43, 0.4);
     background: linear-gradient(135deg, #e74c3c, #f9735f);
+}
+
+.chat-link-btn {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #c0392b, #7a0000);
+    color: #ffffff;
+    border: none;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.chat-link-btn:hover {
+    transform: translateY(-2px);
 }
 
 /* Bouton CV - même style que le bouton langue */
@@ -849,10 +863,7 @@ nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button):hov
         padding: 0.5rem;
     }
     
-    .chat-button img {
-        width: 18px;
-        height: 18px;
-    }
+
 }
 
 /* --- FORCE PALETTE: RED + WHITE + BLACK --- */
@@ -913,9 +924,8 @@ nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button)::af
     background: linear-gradient(90deg, var(--site-red), var(--site-red-soft)) !important;
 }
 
-svg, svg * {
-    fill: var(--site-red) !important;
-    stroke: var(--site-red) !important;
+.send-button svg {
+    stroke: #ffffff !important;
 }
 
 #simple-splash, #simple-splash * {
@@ -5123,13 +5133,7 @@ li[data-translate^="exp-diocese-task"]::before {
     box-shadow: 0 3px 15px rgba(220, 38, 38, 0.4);
 }
 
-.chat-button img {
-    width: 28px;
-    height: 28px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-}
+
 
 .chat-button:hover img {
     transform: rotate(10deg) scale(1.15);
@@ -5226,6 +5230,25 @@ li[data-translate^="exp-diocese-task"]::before {
     font-weight: 600;
 }
 
+.chatbox-header-buttons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.reset-button {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.reset-button:hover {
+    transform: rotate(-180deg);
+}
+
 .close-button {
     background: none;
     border: none;
@@ -5250,7 +5273,15 @@ li[data-translate^="exp-diocese-task"]::before {
     flex: 1;
     padding: 20px;
     overflow-y: auto;
-    background: #f9fafb;
+    background: linear-gradient(-45deg, #000000, #4a0000, #7a0000, #1a0000);
+    background-size: 400% 400%;
+    animation: chatBgShift 12s ease infinite;
+}
+
+@keyframes chatBgShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .message {
@@ -5306,9 +5337,7 @@ li[data-translate^="exp-diocese-task"]::before {
     color: #ffffff;
 }
 
-.user-message .message-content strong {
-    color: #1f2937;
-}
+
 
 .bot-message .message-content {
     background: #dc2626;
@@ -5320,15 +5349,15 @@ li[data-translate^="exp-diocese-task"]::before {
 }
 
 .user-message .message-content {
-    background: #e5e7eb;
-    color: #1f2937;
+    background: #000000;
+    color: #ffffff !important;
 }
 
 /* Input Area */
 .chatbox-input {
     padding: 12px;
-    background: white;
-    border-top: 1px solid #e5e7eb;
+    background: #000000;
+    border-top: 1px solid rgba(192, 57, 43, 0.4);
     display: flex;
     gap: 8px;
 }
@@ -5336,11 +5365,17 @@ li[data-translate^="exp-diocese-task"]::before {
 #chatInput {
     flex: 1;
     padding: 8px 12px;
-    border: 2px solid #e5e7eb;
+    border: 2px solid rgba(192, 57, 43, 0.4);
     border-radius: 20px;
     font-size: 13px;
     outline: none;
     transition: border-color 0.2s;
+    background: #1a1a1a;
+    color: #ffffff !important;
+}
+
+#chatInput::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
 }
 
 #chatInput:focus {
@@ -5373,20 +5408,20 @@ li[data-translate^="exp-diocese-task"]::before {
 
 /* Scrollbar personnalisée */
 .chatbox-messages::-webkit-scrollbar {
-    width: 6px;
+    width: 4px;
 }
 
 .chatbox-messages::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: transparent;
 }
 
 .chatbox-messages::-webkit-scrollbar-thumb {
-    background: #dc2626;
+    background: rgba(192, 57, 43, 0.5);
     border-radius: 10px;
 }
 
 .chatbox-messages::-webkit-scrollbar-thumb:hover {
-    background: #b91c1c;
+    background: rgba(192, 57, 43, 0.8);
 }
 
 .chatbox-header {
@@ -6759,3 +6794,49 @@ body.dark-mode .all-projects-button:hover {
     display: none;
 }
 
+
+/* entraind 'ecrire*/
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 10px 14px;
+}
+
+.typing-indicator span {
+    width: 7px;
+    height: 7px;
+    background: #c0392b;
+    border-radius: 50%;
+    animation: typingBounce 1.2s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+.typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typingBounce {
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
+    30% { transform: translateY(-6px); opacity: 1; }
+}
+
+
+.chat-notif-badge {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 12px;
+    height: 12px;
+    background: #ff0000;
+    border: 2px solid #000000;
+    border-radius: 50%;
+    animation: pulseBadge 1.5s infinite;
+}
+
+.chat-notif-badge.hidden {
+    display: none;
+}
+
+@keyframes pulseBadge {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+}

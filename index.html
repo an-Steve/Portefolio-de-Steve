@@ -106,7 +106,8 @@
 
         <li>
             <button id="chatboxToggle" class="chat-button">
-                <img src="robotIA.png" alt="Chat icon">
+                <img src="newlogosteve.png" alt="Chat icon">
+                <span id="chatNotifBadge" class="chat-notif-badge hidden"></span>
             </button>
         </li>
 
@@ -121,10 +122,13 @@
 
 <!-- Fenêtre chatbox -->
 <div id="chatbox" class="chatbox-container hidden">
-    <div class="chatbox-header">
-        <h3>Chat Support</h3>
-        <button id="chatboxClose" class="close-button">×</button>
-    </div>
+        <div class="chatbox-header">
+            <h3>Chat Support</h3>
+            <div class="chatbox-header-buttons">
+                <button id="chatboxReset" class="reset-button" title="Réinitialiser">↺</button>
+                <button id="chatboxClose" class="close-button">×</button>
+            </div>
+        </div>
     
     <div class="chatbox-messages" id="chatboxMessages">
         <div class="message bot-message">
