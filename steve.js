@@ -1974,54 +1974,67 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// ===== PAGINATION PROJETS (4 par page, comme les dashboards) =====
+// ===== PAGINATION PROJETS (4 par page, basée sur les cartes filtrées) =====
 document.addEventListener('DOMContentLoaded', function() {
     const grid = document.getElementById('projectsMiniGrid');
     if (!grid) return;
 
-    const cards = Array.from(grid.querySelectorAll('.project-mini-card'));
+    const allCards = Array.from(grid.querySelectorAll('.project-mini-card'));
     const perPage = 4;
-    const totalPages = Math.ceil(cards.length / perPage);
     let currentPage = 0;
+    let currentFilter = 'all';
 
     const prevBtn = document.getElementById('projectsPrevBtn');
     const nextBtn = document.getElementById('projectsNextBtn');
     const dotsContainer = document.getElementById('projectsPageDots');
 
-    // Créer les points de pagination
-    for (let i = 0; i < totalPages; i++) {
-        const dot = document.createElement('div');
-        dot.className = 'page-dot';
-        if (i === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => {
-            currentPage = i;
-            renderPage();
-        });
-        dotsContainer.appendChild(dot);
+    function getVisibleCards() {
+        return allCards.filter(card =>
+            currentFilter === 'all' || card.dataset.category === currentFilter
+        );
+    }
+
+    function rebuildDots(totalPages) {
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i < totalPages; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'page-dot';
+            if (i === currentPage) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                currentPage = i;
+                renderPage();
+            });
+            dotsContainer.appendChild(dot);
+        }
     }
 
     function renderPage() {
+        const visibleCards = getVisibleCards();
+        const totalPages = Math.max(1, Math.ceil(visibleCards.length / perPage));
+
+        // Sécurité : si on change de filtre et que la page actuelle n'existe plus
+        if (currentPage >= totalPages) currentPage = 0;
+
         const start = currentPage * perPage;
         const end = start + perPage;
 
-        cards.forEach((card, index) => {
-            // Ne montrer que les cartes de la page actuelle ET non filtrées
-            if (index >= start && index < end && !card.classList.contains('filtered-out')) {
-                card.classList.add('visible-page');
-            } else {
-                card.classList.remove('visible-page');
-            }
+        // D'abord, cacher toutes les cartes
+        allCards.forEach(card => card.classList.remove('visible-page'));
+
+        // Puis afficher uniquement celles de la page actuelle, parmi les cartes filtrées
+        visibleCards.slice(start, end).forEach(card => {
+            card.classList.add('visible-page');
         });
 
         prevBtn.classList.toggle('hidden', currentPage === 0);
         nextBtn.classList.toggle('hidden', currentPage === totalPages - 1);
 
-        document.querySelectorAll('.page-dot').forEach((dot, i) => {
-            dot.classList.toggle('active', i === currentPage);
-        });
+        rebuildDots(totalPages);
     }
 
     prevBtn.addEventListener('click', () => {
+        const visibleCards = getVisibleCards();
+        const totalPages = Math.max(1, Math.ceil(visibleCards.length / perPage));
         if (currentPage > 0) {
             currentPage--;
             renderPage();
@@ -2029,6 +2042,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     nextBtn.addEventListener('click', () => {
+        const visibleCards = getVisibleCards();
+        const totalPages = Math.max(1, Math.ceil(visibleCards.length / perPage));
         if (currentPage < totalPages - 1) {
             currentPage++;
             renderPage();
@@ -2046,25 +2061,18 @@ document.addEventListener('DOMContentLoaded', function() {
             filterButtons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
-            const filter = btn.dataset.filter;
-
-            cards.forEach(card => {
-                if (filter === 'all' || card.dataset.category === filter) {
-                    card.classList.remove('filtered-out');
-                } else {
-                    card.classList.add('filtered-out');
-                }
-            });
-
-            dashboardCards.forEach(card => {
-                if (filter === 'all' || card.dataset.category === filter) {
-                    card.classList.remove('filtered-out');
-                } else {
-                    card.classList.add('filtered-out');
-                }
-            });
-
+            currentFilter = btn.dataset.filter;
             currentPage = 0;
+
+            // Filtrer aussi les dashboards (affichage simple, pas de pagination dessus)
+            dashboardCards.forEach(card => {
+                if (currentFilter === 'all' || card.dataset.category === currentFilter) {
+                    card.classList.remove('filtered-out');
+                } else {
+                    card.classList.add('filtered-out');
+                }
+            });
+
             renderPage();
         });
     });
