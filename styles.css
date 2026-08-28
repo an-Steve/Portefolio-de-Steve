@@ -6942,6 +6942,19 @@ body.dark-mode .all-projects-button:hover {
 /*****************************
    GRILLE DES COMPÉTENCES (TON CODE)
 ******************************/
+.skill-category-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #c0392b, #7a0000);
+    color: #ffffff;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(192, 57, 43, 0.3);
+}
 
 /* ===== NOUVELLE GRILLE COMPÉTENCES (v2) ===== */
 .skills-grid-v2 {
