@@ -1273,6 +1273,11 @@ const translations = {
         'exp-diocese-task2': 'Organisation d\'événements',
         
         // Projets
+        'filter-all': 'Tous',
+        'filter-ia': 'IA',
+        'filter-web': 'Web',
+        'filter-data': 'Data',
+        'filter-jeux': 'Jeux',
 
         // Projet Agent IA
         "project-agentIA-title": "Agent IA",
@@ -1614,6 +1619,11 @@ const translations = {
         'exp-diocese-task2': 'Event organization',
         
         // Projets
+        'filter-all': 'All',
+        'filter-ia': 'AI',
+        'filter-web': 'Web',
+        'filter-data': 'Data',
+        'filter-jeux': 'Games',
 
         // AI Agent Project
         "project-agentIA-title": "AI Agent",

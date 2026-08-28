@@ -6944,9 +6944,9 @@ body.dark-mode .all-projects-button:hover {
 }
 
 .filter-btn.active {
-    background: #ffffff;
-    border-color: #ffffff;
-    color: #7a0000;
+    background: #ffffff !important;
+    border-color: #ffffff !important;
+    color: #7a0000 !important;
     box-shadow: 0 4px 15px rgba(255, 255, 255, 0.25);
     transform: translateY(-2px);
 }
