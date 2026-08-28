@@ -4063,11 +4063,31 @@ li[data-translate^="exp-diocese-task"]::before {
     align-items: flex-start;
     position: relative;
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1350px;
     padding: 60px 0 80px 0;
-    gap: 20px;
+    gap: 28px;
 }
 
+.timeline-horizontal .timeline-content {
+    background: linear-gradient(135deg, 
+        rgba(10, 10, 10, 0.95) 0%, 
+        rgba(20, 0, 0, 0.9) 100%
+    );
+    border: 2px solid rgba(192, 57, 43, 0.5);
+    border-radius: 20px;
+    padding: 28px 22px;
+    backdrop-filter: blur(15px);
+    position: relative;
+    z-index: 2;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-top: 35px;
+    min-height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
 /* Ligne horizontale centrale avec animation */
 .timeline-horizontal::before {
     content: "";
@@ -4309,14 +4329,7 @@ li[data-translate^="exp-diocese-task"]::before {
     100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
 }
 
-.timeline-horizontal .timeline-content:hover {
-    transform: translateY(-15px) scale(1.02);
-    border-color: #8b5cf6;
-    box-shadow: 
-        0 25px 50px rgba(99, 102, 241, 0.4),
-        0 0 0 1px rgba(139, 92, 246, 0.5),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-}
+
 
 /* Titre de formation avec effet gradient */
 .timeline-horizontal .formation-title {
@@ -4341,7 +4354,7 @@ li[data-translate^="exp-diocese-task"]::before {
 
 /* Dates avec icône intégrée */
 .timeline-horizontal .date {
-    color: #ec4899;
+    color: #ff6b6b;
     font-weight: 600;
     margin: 12px 0;
     display: inline-flex;
@@ -4349,9 +4362,9 @@ li[data-translate^="exp-diocese-task"]::before {
     justify-content: center;
     gap: 10px;
     padding: 8px 16px;
-    background: linear-gradient(135deg, rgba(236, 72, 153, 0.15), rgba(236, 72, 153, 0.05));
+    background: linear-gradient(135deg, rgba(192, 57, 43, 0.2), rgba(192, 57, 43, 0.05));
     border-radius: 25px;
-    border: 2px solid rgba(236, 72, 153, 0.4);
+    border: 2px solid rgba(192, 57, 43, 0.4);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -4362,27 +4375,27 @@ li[data-translate^="exp-diocese-task"]::before {
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
     font-size: 0.9rem;
-    color: #ec4899;
-    filter: drop-shadow(0 0 5px rgba(236, 72, 153, 0.5));
+    color: #ff6b6b;
+    filter: drop-shadow(0 0 5px rgba(192, 57, 43, 0.5));
 }
 
 .timeline-horizontal .timeline-content:hover .date {
-    background: linear-gradient(135deg, rgba(236, 72, 153, 0.25), rgba(236, 72, 153, 0.1));
-    border-color: #ec4899;
+    background: linear-gradient(135deg, rgba(192, 57, 43, 0.3), rgba(192, 57, 43, 0.15));
+    border-color: #ff6b6b;
     transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
+    box-shadow: 0 4px 15px rgba(192, 57, 43, 0.4);
 }
 
 /* Lieu avec icône intégrée */
 .timeline-horizontal .lieu {
-    color: #06b6d4;
+    color: #ffffff;
     font-weight: 500;
     margin-top: 12px;
     font-style: italic;
     padding: 8px 16px;
-    background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(6, 182, 212, 0.05));
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
     border-radius: 12px;
-    border: 2px dashed rgba(6, 182, 212, 0.4);
+    border: 2px dashed rgba(192, 57, 43, 0.4);
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
@@ -4394,16 +4407,16 @@ li[data-translate^="exp-diocese-task"]::before {
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
     font-size: 0.9rem;
-    color: #06b6d4;
-    filter: drop-shadow(0 0 5px rgba(6, 182, 212, 0.5));
+    color: #ff6b6b;
+    filter: drop-shadow(0 0 5px rgba(192, 57, 43, 0.5));
 }
 
 .timeline-horizontal .timeline-content:hover .lieu {
-    background: linear-gradient(135deg, rgba(6, 182, 212, 0.25), rgba(6, 182, 212, 0.1));
-    border-color: #06b6d4;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05));
+    border-color: #ff6b6b;
     border-style: solid;
     transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+    box-shadow: 0 4px 15px rgba(192, 57, 43, 0.3);
 }
 
 /* ============================================
