@@ -3658,15 +3658,15 @@ li[data-translate^="exp-diocese-task"]::before {
 }
 
 .certification-card {
-    background: linear-gradient(135deg, #f5f0ff 0%, #e8dcff 100%);
-    border-radius: 15px;
-    padding: 30px;
+    background: linear-gradient(145deg, rgba(20, 0, 0, 0.85) 0%, rgba(10, 0, 0, 0.95) 100%);
+    border-radius: 18px;
+    padding: 32px 28px;
     text-align: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 20px rgba(118, 75, 162, 0.15);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(118, 75, 162, 0.1);
+    border: 1.5px solid rgba(192, 57, 43, 0.3);
 }
 
 .certification-card::before {
@@ -3676,7 +3676,7 @@ li[data-translate^="exp-diocese-task"]::before {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 77, 77, 0.15), transparent);
     transition: left 0.5s ease;
 }
 
@@ -3686,31 +3686,31 @@ li[data-translate^="exp-diocese-task"]::before {
 
 .certification-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(118, 75, 162, 0.25);
-    background: linear-gradient(135deg, #f0e6ff 0%, #dcc9ff 100%);
+    box-shadow: 0 20px 40px rgba(192, 57, 43, 0.35);
+    border-color: rgba(255, 77, 77, 0.6);
 }
 
 .certification-icon {
-    width: 80px;
-    height: 80px;
+    width: 84px;
+    height: 84px;
     margin: 0 auto 20px;
-    background: linear-gradient(135deg, #ffffff 0%, #f8f7ff 100%); /* Dégradé subtil */
-    border: 3px solid #667eea;
+    background: linear-gradient(135deg, #1a0000 0%, #0a0000 100%);
+    border: 3px solid #c0392b;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-    padding: 12px;
+    box-shadow: 0 0 20px rgba(192, 57, 43, 0.5), inset 0 0 15px rgba(192, 57, 43, 0.15);
+    padding: 14px;
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Animation fluide */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
 }
 
 .certification-icon:hover {
-    transform: translateY(-8px) scale(1.08); /* Effet de levée */
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5); /* Ombre plus prononcée */
-    border-color: #5568d3; /* Bordure plus foncée */
+    transform: translateY(-8px) scale(1.1);
+    box-shadow: 0 0 30px rgba(255, 77, 77, 0.7), inset 0 0 20px rgba(255, 77, 77, 0.2);
+    border-color: #ff4d4d;
 }
 
 .certification-icon-img {
@@ -3718,14 +3718,14 @@ li[data-translate^="exp-diocese-task"]::before {
     height: 100%;
     object-fit: contain;
     object-position: center;
-    transition: transform 0.3s ease; /* Animation de l'image */
+    transition: transform 0.3s ease;
+    filter: brightness(1.1);
 }
 
 .certification-icon:hover .certification-icon-img {
-    transform: scale(1.1); /* Léger zoom de l'image au survol */
+    transform: scale(1.1);
 }
 
-/* Effet de brillance subtile */
 .certification-icon::before {
     content: '';
     position: absolute;
@@ -3733,101 +3733,83 @@ li[data-translate^="exp-diocese-task"]::before {
     left: 8%;
     width: 35%;
     height: 35%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 77, 77, 0.4) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
-    opacity: 0.6;
+    opacity: 0.7;
 }
 
-/* Pour les icônes Font Awesome (non-images) */
 .certification-icon i {
     font-size: 2rem;
-    color: #667eea;
+    color: #ff6b6b;
     transition: all 0.3s ease;
 }
 
 .certification-icon:hover i {
-    color: #5568d3;
+    color: #ff4d4d;
     transform: scale(1.15);
-}
-
-/* Animation au chargement */
-@keyframes certIconFadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.7) rotate(-10deg);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1) rotate(0deg);
-    }
-}
-
-.certification-icon {
-    animation: certIconFadeIn 0.6s ease-out;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .certification-icon {
-        width: 70px;
-        height: 70px;
-        padding: 10px;
-    }
-    
-    .certification-icon i {
-        font-size: 1.6rem;
-    }
 }
 
 .certification-card h3 {
     font-size: 1.5rem;
-    color: #c0392b !important;   /* titre en rouge */
+    color: #ffffff !important;
     margin-bottom: 10px;
     font-weight: 700;
 }
 
 .certification-issuer {
     font-size: 0.95rem;
-    color: #c0392b !important;   /* "Cisco Networking Academy" en rouge */
+    color: #ff8a8a !important;
     margin-bottom: 8px;
-    font-weight: 500;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .certification-date {
-    font-size: 0.9rem;
-    color: #c0392b !important;   /* "Obtenu en avril 2026" en rouge */
-    margin-bottom: 15px;
+    display: inline-block;
+    font-size: 0.85rem;
+    color: #ffffff !important;
+    margin-bottom: 18px;
     font-weight: 600;
+    padding: 5px 14px;
+    background: rgba(192, 57, 43, 0.2);
+    border: 1px solid rgba(192, 57, 43, 0.4);
+    border-radius: 999px;
 }
 
 .certification-description {
     font-size: 0.9rem;
-    color: #000000 !important;   /* le texte (liste des points) en noir */
-    line-height: 1.6;
-    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.75) !important;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    text-align: left;
 }
 
 .certification-link {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     margin-top: 10px;
-    padding: 8px 16px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 10px 22px;
+    background: linear-gradient(135deg, #c0392b 0%, #7a0000 100%);
     color: #fff;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 999px;
     font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: 700;
     transition: all 0.3s ease;
+    border: 1px solid transparent;
 }
 
 .certification-link:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(192, 57, 43, 0.5);
+    background: linear-gradient(135deg, #ff4d4d 0%, #c0392b 100%);
 }
 
 .certification-link i {
-    margin-right: 5px;
+    margin-right: 0;
 }
 
 /* Responsive Design */
@@ -5537,22 +5519,18 @@ body.dark-mode .all-projects-button:hover {
 }
 
 .interest-card {
-    background: rgba(255, 255, 255, 0.92);
+    background: linear-gradient(145deg, rgba(20, 0, 0, 0.85) 0%, rgba(10, 0, 0, 0.95) 100%);
     border-radius: 20px;
     padding: 35px;
-    box-shadow: 
-        0 8px 32px rgba(0, 0, 0, 0.08),
-        0 2px 8px rgba(0, 0, 0, 0.06),
-        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     text-align: center;
-    border: 2px solid transparent;
+    border: 1.5px solid rgba(192, 57, 43, 0.3);
     backdrop-filter: blur(12px);
     position: relative;
     overflow: hidden;
 }
 
-/* Effet de brillance au survol */
 .interest-card::before {
     content: '';
     position: absolute;
@@ -5563,13 +5541,14 @@ body.dark-mode .all-projects-button:hover {
     background: linear-gradient(
         45deg,
         transparent 30%,
-        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 77, 77, 0.15) 50%,
         transparent 70%
     );
     transform: rotate(45deg);
     transition: transform 0.6s ease;
     opacity: 0;
 }
+
 
 .interest-card:hover::before {
     opacity: 1;
@@ -5578,11 +5557,8 @@ body.dark-mode .all-projects-button:hover {
 
 .interest-card:hover {
     transform: translateY(-12px) scale(1.02);
-    box-shadow: 
-        0 20px 50px rgba(102, 126, 234, 0.15),
-        0 8px 24px rgba(0, 0, 0, 0.1);
-    border-color: #FFD700;
-    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 20px 50px rgba(192, 57, 43, 0.35);
+    border-color: #ff4d4d;
 }
 
 .interest-icon {
@@ -5595,12 +5571,14 @@ body.dark-mode .all-projects-button:hover {
     justify-content: center;
     overflow: hidden;
     border: 4px solid transparent;
-    background: linear-gradient(135deg, white, white) padding-box,
-                linear-gradient(135deg, #FFD700, #FFA500) border-box;
+    background: linear-gradient(135deg, #0a0000, #0a0000) padding-box,
+                linear-gradient(135deg, #c0392b, #7a0000) border-box;
     transition: all 0.4s ease;
     padding: 18px;
     position: relative;
+    box-shadow: 0 0 20px rgba(192, 57, 43, 0.3);
 }
+
 
 .interest-icon::after {
     content: '';
@@ -5610,8 +5588,8 @@ body.dark-mode .all-projects-button:hover {
     right: -6px;
     bottom: -6px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #FFD700, #FFA500);
-    opacity: 0.2;
+    background: linear-gradient(135deg, #c0392b, #ff4d4d);
+    opacity: 0.25;
     z-index: -1;
     transition: opacity 0.3s ease;
 }
@@ -5621,16 +5599,16 @@ body.dark-mode .all-projects-button:hover {
     height: 100%;
     object-fit: contain;
     transition: all 0.4s ease;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
 }
 
 .interest-card:hover .interest-icon {
     transform: scale(1.12) rotate(5deg);
-    box-shadow: 0 15px 30px rgba(255, 215, 0, 0.2);
+    box-shadow: 0 0 30px rgba(255, 77, 77, 0.5);
 }
 
 .interest-card:hover .interest-icon::after {
-    opacity: 0.4;
+    opacity: 0.5;
 }
 
 .interest-card:hover .interest-icon img {
@@ -5639,7 +5617,7 @@ body.dark-mode .all-projects-button:hover {
 
 .interest-card h3 {
     font-size: 1.6rem;
-    color: #c0392b !important;   /* titre "Bénévolat", "Jeux vidéo" etc. en rouge */
+    color: #ffffff !important;
     margin-bottom: 18px;
     font-weight: 700;
     position: relative;
@@ -5655,10 +5633,11 @@ body.dark-mode .all-projects-button:hover {
     transform: translateX(-50%);
     width: 40px;
     height: 3px;
-    background: linear-gradient(90deg, #FFD700, #FFA500);
+    background: linear-gradient(90deg, #c0392b, #ff4d4d);
     border-radius: 2px;
     transition: width 0.3s ease;
 }
+
 
 .interest-card:hover h3::after {
     width: 70px;
@@ -5666,7 +5645,7 @@ body.dark-mode .all-projects-button:hover {
 
 .interest-card p {
     font-size: 1.05rem;
-    color: #000000 !important;   /* le texte descriptif en noir */
+    color: rgba(255, 255, 255, 0.75) !important;
     line-height: 1.7;
     margin: 0;
     padding: 0 10px;
