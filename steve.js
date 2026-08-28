@@ -1974,175 +1974,101 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// ===== CAROUSEL DE PROJETS - 1 POINT ACTIF = 1 PROJET PRINCIPAL =====
-
+// ===== PAGINATION PROJETS (4 par page, comme les dashboards) =====
 document.addEventListener('DOMContentLoaded', function() {
-    const projectsGrid = document.querySelector('.projects-grid');
-    const projectCards = document.querySelectorAll('.project-card');
-    
-    if (!projectsGrid || projectCards.length <= 2) {
-        return;
-    }
-    
-    let currentProjectIndex = 0; // Index du projet principal visible (0 à 5)
-    
-    // Créer le wrapper du carousel
-    const carouselWrapper = document.createElement('div');
-    carouselWrapper.className = 'projects-carousel-wrapper';
-    projectsGrid.parentNode.insertBefore(carouselWrapper, projectsGrid);
-    carouselWrapper.appendChild(projectsGrid);
-    
-    // Créer les flèches
-    const leftArrow = document.createElement('button');
-    leftArrow.className = 'carousel-arrow left hidden';
-    leftArrow.innerHTML = '<i class="fas fa-chevron-left"></i>';
-    leftArrow.setAttribute('aria-label', 'Projet précédent');
-    
-    const rightArrow = document.createElement('button');
-    rightArrow.className = 'carousel-arrow right';
-    rightArrow.innerHTML = '<i class="fas fa-chevron-right"></i>';
-    rightArrow.setAttribute('aria-label', 'Projet suivant');
-    
-    // Créer les indicateurs (1 point par projet)
-    const indicators = document.createElement('div');
-    indicators.className = 'carousel-indicators';
-    
-    for (let i = 0; i < projectCards.length; i++) {
+    const grid = document.getElementById('projectsMiniGrid');
+    if (!grid) return;
+
+    const cards = Array.from(grid.querySelectorAll('.project-mini-card'));
+    const perPage = 4;
+    const totalPages = Math.ceil(cards.length / perPage);
+    let currentPage = 0;
+
+    const prevBtn = document.getElementById('projectsPrevBtn');
+    const nextBtn = document.getElementById('projectsNextBtn');
+    const dotsContainer = document.getElementById('projectsPageDots');
+
+    // Créer les points de pagination
+    for (let i = 0; i < totalPages; i++) {
         const dot = document.createElement('div');
-        dot.className = 'indicator-dot';
-        
-        // Premier projet actif au démarrage
-        if (i === 0) {
-            dot.classList.add('active');
-        }
-        
-        dot.setAttribute('data-project', i);
-        dot.setAttribute('aria-label', `Projet ${i + 1}`);
-        indicators.appendChild(dot);
-    }
-    
-    // Ajouter les éléments au DOM
-    const container = document.querySelector('#projects .container');
-    if (container) {
-        container.appendChild(leftArrow);
-        container.appendChild(rightArrow);
-    }
-    
-    const projectsSection = document.querySelector('#projects');
-    if (projectsSection) {
-        projectsSection.appendChild(indicators);
+        dot.className = 'page-dot';
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => {
+            currentPage = i;
+            renderPage();
+        });
+        dotsContainer.appendChild(dot);
     }
 
-    document.getElementById('cv-btn').addEventListener('click', () => {
-    window.open('CV ANTON NELCON Steve M1IBD 2026.pdf', '_blank'); // CV Master Javascript
+    function renderPage() {
+        const start = currentPage * perPage;
+        const end = start + perPage;
 
-});
-    
-    // Fonction pour mettre à jour le carousel
-    function updateCarousel() {
-        const wrapperWidth = carouselWrapper.offsetWidth;
-        const gap = parseFloat(getComputedStyle(projectsGrid).gap);
-        
-        // Chaque projet prend 100% de la largeur + gap
-        // Pour aller au projet N, on décale de N * (100% + gap)
-        const translateX = -(currentProjectIndex * (wrapperWidth + gap));
-        
-        projectsGrid.style.transform = `translateX(${translateX}px)`;
-        
-        // Mettre à jour les flèches
-        if (currentProjectIndex === 0) {
-            leftArrow.classList.add('hidden');
-        } else {
-            leftArrow.classList.remove('hidden');
-        }
-        
-        if (currentProjectIndex === projectCards.length - 1) {
-            rightArrow.classList.add('hidden');
-        } else {
-            rightArrow.classList.remove('hidden');
-        }
-        
-        // Mettre à jour les indicateurs (UN SEUL actif)
-        document.querySelectorAll('.indicator-dot').forEach((dot, index) => {
-            if (index === currentProjectIndex) {
-                dot.classList.add('active');
+        cards.forEach((card, index) => {
+            // Ne montrer que les cartes de la page actuelle ET non filtrées
+            if (index >= start && index < end && !card.classList.contains('filtered-out')) {
+                card.classList.add('visible-page');
             } else {
-                dot.classList.remove('active');
+                card.classList.remove('visible-page');
             }
         });
+
+        prevBtn.classList.toggle('hidden', currentPage === 0);
+        nextBtn.classList.toggle('hidden', currentPage === totalPages - 1);
+
+        document.querySelectorAll('.page-dot').forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentPage);
+        });
     }
-    
-    // Event listeners pour les flèches (navigation projet par projet)
-    leftArrow.addEventListener('click', function() {
-        if (currentProjectIndex > 0) {
-            currentProjectIndex--;
-            updateCarousel();
+
+    prevBtn.addEventListener('click', () => {
+        if (currentPage > 0) {
+            currentPage--;
+            renderPage();
         }
     });
-    
-    rightArrow.addEventListener('click', function() {
-        if (currentProjectIndex < projectCards.length - 1) {
-            currentProjectIndex++;
-            updateCarousel();
+
+    nextBtn.addEventListener('click', () => {
+        if (currentPage < totalPages - 1) {
+            currentPage++;
+            renderPage();
         }
     });
-    
-    // Event listeners pour les indicateurs (aller directement au projet cliqué)
-    document.querySelectorAll('.indicator-dot').forEach(dot => {
-        dot.addEventListener('click', function() {
-            currentProjectIndex = parseInt(this.getAttribute('data-project'));
-            updateCarousel();
+
+    renderPage();
+
+    // ===== FILTRES (Tous / IA / Web / Data / Jeux) =====
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const dashboardCards = document.querySelectorAll('.dashboard-card');
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.dataset.filter;
+
+            cards.forEach(card => {
+                if (filter === 'all' || card.dataset.category === filter) {
+                    card.classList.remove('filtered-out');
+                } else {
+                    card.classList.add('filtered-out');
+                }
+            });
+
+            dashboardCards.forEach(card => {
+                if (filter === 'all' || card.dataset.category === filter) {
+                    card.classList.remove('filtered-out');
+                } else {
+                    card.classList.add('filtered-out');
+                }
+            });
+
+            currentPage = 0;
+            renderPage();
         });
     });
-    
-    // Support du clavier (flèches gauche/droite)
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'ArrowLeft' && currentProjectIndex > 0) {
-            currentProjectIndex--;
-            updateCarousel();
-        } else if (e.key === 'ArrowRight' && currentProjectIndex < projectCards.length - 1) {
-            currentProjectIndex++;
-            updateCarousel();
-        }
-    });
-    
-    // Support du swipe sur mobile
-    let touchStartX = 0;
-    let touchEndX = 0;
-    
-    carouselWrapper.addEventListener('touchstart', function(e) {
-        touchStartX = e.changedTouches[0].screenX;
-    });
-    
-    carouselWrapper.addEventListener('touchend', function(e) {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    });
-    
-    function handleSwipe() {
-        const swipeThreshold = 50;
-        if (touchEndX < touchStartX - swipeThreshold && currentProjectIndex < projectCards.length - 1) {
-            // Swipe gauche - projet suivant
-            currentProjectIndex++;
-            updateCarousel();
-        }
-        if (touchEndX > touchStartX + swipeThreshold && currentProjectIndex > 0) {
-            // Swipe droite - projet précédent
-            currentProjectIndex--;
-            updateCarousel();
-        }
-    }
-    
-    // Recalculer lors du redimensionnement de la fenêtre
-    let resizeTimeout;
-    window.addEventListener('resize', function() {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(function() {
-            updateCarousel();
-        }, 250);
-    });
 });
-
 // Filtres Projets / Dashboards
 const filterButtons = document.querySelectorAll('.filter-btn');
 const filterableCards = document.querySelectorAll('.project-card, .dashboard-card');

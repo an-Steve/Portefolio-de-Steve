@@ -6955,3 +6955,241 @@ body.dark-mode .all-projects-button:hover {
 .dashboard-card.filtered-out {
     display: none !important;
 }
+
+/* ===== BOX PROJETS (miroir de .dashboards-wrapper) ===== */
+.projects-box {
+    background: linear-gradient(135deg, rgba(229, 115, 115, 0.18) 0%, rgba(211, 84, 84, 0.22) 100%);
+    border: 1.5px solid rgba(229, 115, 115, 0.5);
+    border-radius: 20px;
+    padding: 30px 28px 28px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    box-shadow: 0 4px 28px rgba(229, 115, 115, 0.12), inset 0 0 60px rgba(229, 115, 115, 0.04);
+    position: relative;
+}
+
+.projects-box-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.projects-box-header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.projects-box-icon {
+    font-size: 1.8rem;
+}
+
+.projects-box-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 4px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.projects-box-subtitle {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+.projects-box-badge {
+    background: rgba(230, 126, 34, 0.2);
+    border: 1px solid rgba(230, 126, 34, 0.5);
+    color: #f0a05a;
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+/* ===== GRILLE MINI-CARTES (2x2 visible, pagination JS) ===== */
+.projects-mini-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.project-mini-card {
+    display: none;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(230, 126, 34, 0.3);
+    border-radius: 12px;
+    color: #fff;
+    text-decoration: none;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+.project-mini-card.visible-page {
+    display: flex;
+}
+
+.project-mini-card.filtered-out {
+    display: none !important;
+}
+
+.project-mini-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(230, 126, 34, 0.7);
+    background: rgba(230, 126, 34, 0.1);
+    box-shadow: 0 8px 24px rgba(230, 126, 34, 0.2);
+}
+
+.project-mini-preview {
+    position: relative;
+    width: 100%;
+    height: 130px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+    flex-shrink: 0;
+}
+
+.project-mini-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.project-mini-card:hover .project-mini-preview img {
+    transform: scale(1.05);
+}
+
+.project-mini-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(139, 30, 30, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    color: #fff;
+}
+
+.project-mini-card:hover .project-mini-overlay {
+    opacity: 1;
+}
+
+.project-mini-body {
+    padding: 14px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-mini-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    color: #fff;
+    line-height: 1.3;
+}
+
+.project-mini-desc {
+    font-size: 0.78rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 12px;
+    flex-grow: 1;
+}
+
+.project-mini-techs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.project-mini-techs span {
+    background: rgba(230, 126, 34, 0.2);
+    border: 1px solid rgba(230, 126, 34, 0.35);
+    border-radius: 5px;
+    padding: 2px 8px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: #f0a05a;
+    letter-spacing: 0.2px;
+}
+
+/* ===== PAGINATION (flèches + points) ===== */
+.projects-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 24px;
+}
+
+.projects-page-arrow {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #c0392b, #7a0000);
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(192, 57, 43, 0.4);
+}
+
+.projects-page-arrow:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(192, 57, 43, 0.6);
+}
+
+.projects-page-arrow.hidden {
+    opacity: 0.25;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.projects-page-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.projects-page-dots .page-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.projects-page-dots .page-dot.active {
+    background: #ff6b6b;
+    width: 22px;
+    border-radius: 999px;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .projects-mini-grid {
+        grid-template-columns: 1fr;
+    }
+}
