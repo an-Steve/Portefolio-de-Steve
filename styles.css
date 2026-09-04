@@ -574,15 +574,11 @@ nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button):hov
     display: none;
     font-size: 1.1rem;
     opacity: 0;
-    transform: translateY(-10px);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     color: #c0392b; /* icônes : vert -> rouge */
 }
 
 /* Hover state - Animation icône */
 .nav-home:hover,
-.nav-contact:hover,
-.nav-about:hover,
 .nav-formations:hover,
 .nav-experience:hover,
 .nav-projects:hover,
@@ -995,7 +991,6 @@ nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button)::af
 .name-title, .hero h1 {
     -webkit-text-fill-color: var(--site-white) !important;
     background: none !important;
-    -webkit-background-clip: unset !important;
 }
 
 *[style*="#34d399"], *[style*="#4ade80"], *[style*="#6366f1"], *[style*="#8b5cf6"], *[style*="#f5c518"] {
@@ -7037,6 +7032,56 @@ body.dark-mode .all-projects-button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+    isolation: isolate;
+    background: linear-gradient(145deg, rgba(92, 0, 0, 0.82), rgba(18, 0, 0, 0.96));
+}
+
+.skill-category-radar::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(circle at center, rgba(255, 77, 77, 0.28), transparent 68%);
+    opacity: 0.28;
+    transform: scale(0.94);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    pointer-events: none;
+}
+
+.skill-category-radar:hover::after {
+    opacity: 0.86;
+    transform: scale(1.03);
+}
+
+.skill-category-radar:hover canvas {
+    animation: radarFocus 900ms ease-out both;
+    filter: drop-shadow(0 0 10px rgba(255, 77, 77, 0.48));
+}
+
+@keyframes radarFocus {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    55% {
+        transform: scale(1.045) rotate(1.2deg);
+    }
+    100% {
+        transform: scale(1.02) rotate(0deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .skill-category-radar::after {
+        transition: none;
+        opacity: 0.4;
+        transform: none;
+    }
+
+    .skill-category-radar:hover canvas {
+        animation: none;
+        filter: drop-shadow(0 0 8px rgba(255, 77, 77, 0.35));
+    }
 }
 
 .skill-category-radar canvas {

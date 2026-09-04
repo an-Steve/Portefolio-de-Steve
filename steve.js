@@ -2263,9 +2263,13 @@ function drawRadar() {
         i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y);
     }
     ctx.closePath();
-    ctx.fillStyle = "rgba(99, 179, 237, 0.25)";
+    const radarGradient = ctx.createLinearGradient(0, cy - radius, 0, cy + radius);
+    radarGradient.addColorStop(0, "rgba(255, 138, 138, 0.55)");
+    radarGradient.addColorStop(0.52, "rgba(231, 76, 60, 0.34)");
+    radarGradient.addColorStop(1, "rgba(122, 0, 0, 0.48)");
+    ctx.fillStyle = radarGradient;
     ctx.fill();
-    ctx.strokeStyle = "rgba(99, 179, 237, 0.85)";
+    ctx.strokeStyle = "rgba(255, 107, 107, 0.95)";
     ctx.lineWidth = 2;
     ctx.stroke();
 
@@ -2274,7 +2278,7 @@ function drawRadar() {
         const p = point(i, r);
         ctx.beginPath();
         ctx.arc(p.x, p.y, 4, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(99, 179, 237, 1)";
+        ctx.fillStyle = "rgba(255, 138, 138, 1)";
         ctx.fill();
     }
 
