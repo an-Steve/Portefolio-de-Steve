@@ -64,11 +64,22 @@ body {
     transform: translate(-50%, -50%);
     object-fit: contain;
     opacity: 0.08;
-    /*filter: grayscale(100%) brightness(3);*/
+    filter: drop-shadow(0 0 18px rgba(255, 77, 77, 0.65));
     z-index: 0;
     pointer-events: none;
     margin: 0;
-    animation: none;
+    animation: splashLogoDrift 14s ease-in-out infinite;
+}
+
+@keyframes splashLogoDrift {
+    0%, 100% {
+        transform: translate(-50%, -50%) rotate(-7deg) scale(0.96);
+        opacity: 0.06;
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(7deg) scale(1.04);
+        opacity: 0.13;
+    }
 }
 
 /* Réseaux sociaux sous le bouton Entrer */
@@ -257,6 +268,12 @@ body {
 #simple-splash .splash-highlight {
     color: #8B0000 !important;
     font-weight: 800;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .simple-splash-logo {
+        animation: none;
+    }
 }
 
 @keyframes simpleSplashIn{
