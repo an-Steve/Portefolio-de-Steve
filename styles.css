@@ -348,9 +348,68 @@ body {
 }
 
 .bar {
+    position: relative;
     width: 25px; /* Barres plus épaisses */
     border-radius: 10px 10px 2px 2px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Ajoute un peu de relief */
+    transform-origin: bottom center;
+    overflow: hidden;
+    animation: barRhythm 3.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.bar::after {
+    content: '';
+    position: absolute;
+    top: -45%;
+    left: 0;
+    width: 100%;
+    height: 32%;
+    background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+    transform: translateY(-120%);
+    animation: barShine 3.8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.bar:nth-child(2) { animation-delay: 0.22s; }
+.bar:nth-child(3) { animation-delay: 0.44s; }
+.bar:nth-child(4) { animation-delay: 0.66s; }
+.bar:nth-child(5) { animation-delay: 0.88s; }
+
+.bar:nth-child(2)::after { animation-delay: 0.22s; }
+.bar:nth-child(3)::after { animation-delay: 0.44s; }
+.bar:nth-child(4)::after { animation-delay: 0.66s; }
+.bar:nth-child(5)::after { animation-delay: 0.88s; }
+
+@keyframes barRhythm {
+    0%, 100% {
+        transform: scaleY(0.94) translateY(2px);
+        filter: brightness(0.92);
+    }
+    50% {
+        transform: scaleY(1.04) translateY(-2px);
+        filter: brightness(1.16);
+    }
+}
+
+@keyframes barShine {
+    0%, 35% {
+        transform: translateY(-120%);
+        opacity: 0;
+    }
+    55% {
+        opacity: 0.9;
+    }
+    75%, 100% {
+        transform: translateY(430%);
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bar,
+    .bar::after {
+        animation: none;
+    }
 }
 
 /* Adaptation mobile : On réduit la taille au lieu de supprimer */
@@ -437,8 +496,30 @@ footer p {
 
 
 #navbar .logo:hover {
-    transform: scale(1.1) rotate(5deg);
-    filter: brightness(0) invert(0.9) sepia(1) saturate(5) hue-rotate(120deg);
+    animation: logoOrbit 1.1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.75)) drop-shadow(0 0 18px rgba(0, 180, 255, 0.4));
+}
+
+@keyframes logoOrbit {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    45% {
+        transform: scale(1.12) rotate(180deg);
+    }
+    75% {
+        transform: scale(1.06) rotate(330deg);
+    }
+    100% {
+        transform: scale(1.08) rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #navbar .logo:hover {
+        animation: none;
+        transform: scale(1.06);
+    }
 }
 
 /* Navigation */
