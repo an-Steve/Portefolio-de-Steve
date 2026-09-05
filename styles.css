@@ -6477,14 +6477,25 @@ body.dark-mode .all-projects-button:hover {
 .chart-slot {
     position: relative;
     display: inline-block;
+    width: 0.9em;
+    height: 1em;
+    margin: 0 0.12em;
+    vertical-align: middle;
 }
 
 .chart-slot .skills-chart,
 .chart-slot .skills-chart-specific {
     position: absolute;
-    top: 50%;
+    top: 42%;
     left: 50%;
+    right: auto;
+    margin: 0;
     transform: translate(-50%, -50%);
+}
+
+.chart-slot .skills-chart {
+    transform: translate(-50%, -50%) scale(0.35);
+    transform-origin: center;
 }
 
 .dot {

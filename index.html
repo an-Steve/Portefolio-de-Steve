@@ -157,13 +157,32 @@
             <div class="bar" style="height: 80px; background: linear-gradient(180deg, #ff6b6b, #7a0000);"></div>
             <div class="bar" style="height: 140px; background: linear-gradient(180deg, #ff4d4d, #7a0000);"></div>
             <div class="bar" style="height: 90px; background: linear-gradient(180deg, #e74c3c, #4a0000);"></div>
-            <div class="bar" style="height: 180px; background: linear-gradient(180deg, #ff4d4d, #7a0000);"></div>
-            <div class="bar" style="height: 110px; background: linear-gradient(180deg, #ff6b6b, #7a0000);"></div>
         </div>
         <!-- Contenu central avec forçage de ligne unique -->
         <div class="hero-content">
                  <h1 class="name-title" tabindex="-1">
-                     <img class="hero-name-logo" src="Slogo.png" alt="S">teve ANT<span class="chart-slot" id="donutSlot">&nbsp;&nbsp;&nbsp;</span>N NELC<span class="chart-slot" id="pieSlot">&nbsp;&nbsp;&nbsp;</span>N
+                     <img class="hero-name-logo" src="Slogo.png" alt="S">teve ANT<span class="chart-slot" id="donutSlot">
+                        <span class="skills-chart">
+                            <span class="chart-legend">
+                                <span><span class="dot"></span></span>
+                                <span><span class="dot"></span></span>
+                                <span><span class="dot"></span></span>
+                                <span><span class="dot"></span></span>
+                                <span><span class="dot"></span></span>
+                            </span>
+                            <span class="chart-wrapper">
+                                <canvas id="skillsDonut" role="img" aria-label="Donut chart des compétences"></canvas>
+                                <span class="chart-center-label"></span>
+                            </span>
+                        </span>
+                    </span>N NELC<span class="chart-slot" id="pieSlot">
+                        <span class="skills-chart-specific">
+                            <span class="pie-chart-main"></span>
+                            <span class="callout callout-paseo"><span class="callout-line"></span></span>
+                            <span class="callout callout-m"><span class="callout-line"></span></span>
+                            <span class="chart-legend-bottom"><span class="dot"></span></span>
+                        </span>
+                    </span>N
             </h1>            
             <div class="hero-subtitle-badges">
                 <span class="subtitle-badge"><i class="fa-solid fa-graduation-cap"></i> Étudiant</span>
@@ -179,39 +198,10 @@
                 </a>
             </div>
         </div>
-             <!-- Donut chart des compétences -->
-            <div class="skills-chart">
-            <div class="chart-legend">
-                <span><span class="dot" ></span></span>
-                <span><span class="dot" ></span></span>
-                <span><span class="dot" ></span></span>
-                <span><span class="dot" ></span></span>
-                <span><span class="dot" ></span></span>
-            </div>
-            <div class="chart-wrapper">
-                <canvas id="skillsDonut" role="img" aria-label="Donut chart des compétences"></canvas>
-                <div class="chart-center-label"></div>
-            </div>
-            </div>
-        <!-- Cercle  complet -->
-        <div class="skills-chart-specific">
-            <div class="pie-chart-main"></div>
-            <div class="callout callout-paseo">
-                <span class="callout-line"></span>
-            </div>
-            <div class="callout callout-m">
-                <span class="callout-line"></span>
-            </div>
-            <div class="chart-legend-bottom">
-                <span class="dot" ></span> 
-            </div>
-        </div>
-
         <!-- Groupe de barres à droite -->
         <div class="bar-group right">
-            <div class="bar" style="height: 110px; background: linear-gradient(180deg, #ff4d4d, #7a0000);"></div>
             <div class="bar" style="height: 160px; background: linear-gradient(180deg, #e74c3c, #4a0000);"></div>
-            <div class="bar" style="height: 95px; background: linear-gradient(180deg, #ff6b6b, #7a0000);"></div>
+            <div class="bar" style="height: 80px; background: linear-gradient(180deg, #ff6b6b, #7a0000);"></div>
             <div class="bar" style="height: 130px; background: linear-gradient(180deg, #ff4d4d, #7a0000);"></div>
         </div>
     </div>
