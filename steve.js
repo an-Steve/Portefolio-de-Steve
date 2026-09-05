@@ -201,18 +201,28 @@ form.addEventListener('submit', (e) => {
 // Effet de typing pour le titre
 const heroTitle = document.querySelector('.hero h1');
 if (heroTitle) {
-    const originalText = heroTitle.textContent;
-    heroTitle.textContent = '';
-    let i = 0;
+    const textNodes = Array.from(heroTitle.childNodes)
+        .filter(node => node.nodeType === Node.TEXT_NODE);
+    const originalTexts = textNodes.map(node => node.textContent);
 
-    function typeWriter() {
-        if (i < originalText.length) {
-            heroTitle.textContent += originalText.charAt(i);
-            i++;
-            setTimeout(typeWriter, 100);
+    textNodes.forEach(node => {
+        node.textContent = '';
+    });
+
+    function typeTextNode(nodeIndex, characterIndex = 0) {
+        if (nodeIndex >= textNodes.length) return;
+
+        const text = originalTexts[nodeIndex];
+        textNodes[nodeIndex].textContent = text.slice(0, characterIndex + 1);
+
+        if (characterIndex < text.length - 1) {
+            setTimeout(() => typeTextNode(nodeIndex, characterIndex + 1), 100);
+        } else {
+            typeTextNode(nodeIndex + 1);
         }
     }
-    setTimeout(typeWriter, 500);
+
+    setTimeout(() => typeTextNode(0), 500);
 }
 
 // EFFET HOVER SUR LE TITRE
