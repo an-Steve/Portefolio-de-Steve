@@ -1275,12 +1275,13 @@ const translations = {
         
         // Diocèse
         'exp-diocese-badge': 'Bénévolat',
-        'exp-diocese-title': 'Animateur',
+        'exp-diocese-title': 'Catéchiste pour l\'aumônerie des collèges',
         'exp-diocese-date': 'Septembre 2024 - Actuel',
         'exp-diocese-company': 'Diocèse de Saint Denis',
         'exp-diocese-location': 'Saint Denis',
         'exp-diocese-task1': 'Animation et encadrement d\'activités pour enfants',
-        'exp-diocese-task2': 'Organisation d\'événements',
+        'exp-diocese-task2': 'Organisation d\'événements en lien avec le diocèse',
+        'exp-diocese-role': 'Coordinateur pastoral des jeunes',
         
         // Projets
         'filter-all': 'Tous',
@@ -1621,12 +1622,13 @@ const translations = {
         
         // Diocèse
         'exp-diocese-badge': 'Volunteering',
-        'exp-diocese-title': 'Activity Leader',
+        'exp-diocese-title': 'Catechist for middle school chaplaincy',
         'exp-diocese-date': 'September 2024 - Present',
         'exp-diocese-company': 'Diocese of Saint Denis',
         'exp-diocese-location': 'Saint Denis',
         'exp-diocese-task1': 'Children\'s activity facilitation and supervision',
-        'exp-diocese-task2': 'Event organization',
+        'exp-diocese-task2': 'Organization of events in connection with the diocese',
+        'exp-diocese-role': 'Youth pastoral coordinator',
         
         // Projets
         'filter-all': 'All',

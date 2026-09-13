@@ -1921,6 +1921,29 @@ h3[data-translate="exp-diocese-title"] {
     transform: translateY(-5px);
 }
 
+.volunteer-timeline {
+    padding-left: 0;
+}
+
+.volunteer-timeline::before {
+    left: 1.5rem;
+    top: 15px;
+    bottom: 15px;
+    z-index: 1;
+}
+
+.volunteer-timeline > .timeline-content {
+    padding-left: 4rem;
+}
+
+.volunteer-timeline > .timeline-content > .timeline-item {
+    padding-left: 0;
+}
+
+.volunteer-timeline > .timeline-content > .timeline-item::before {
+    left: -3rem;
+}
+
 .experience-icon {
     width: 100px;    
     height: 100px;   
@@ -2249,6 +2272,14 @@ h3[data-translate="exp-diocese-title"] {
 
 .timeline-content ul li {
     margin-bottom: 0.5rem;
+}
+
+.diocese-role {
+    color: #ff0000 !important;
+    text-decoration: underline;
+    text-decoration-color: #ff0000;
+    font-weight: 700;
+    margin: 0.5rem 0 1rem;
 }
 
 /* ===== CAROUSEL DE PROJETS - NAVIGATION PROJET PAR PROJET ===== */
