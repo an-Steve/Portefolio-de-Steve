@@ -3938,13 +3938,7 @@ li[data-translate^="exp-diocese-frat"]::before {
 }
 
 .certifications h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #764ba2;
     margin-bottom: 60px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
 }
 
 .certifications-grid {
