@@ -1401,6 +1401,29 @@ nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button)::af
     border-radius: 5px;
 }
 
+.formation-level-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    width: fit-content;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto 6px;
+    transform: translateX(-6px);
+    padding: 2px 7px;
+    border: 1px solid #f6d365;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #f6d365, #c28a20);
+    color: #241600;
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+    white-space: nowrap;
+    box-shadow: 0 2px 6px rgba(194, 138, 32, 0.3);
+}
+
 section {
     padding: 6rem 2rem;
     position: relative;
@@ -2274,11 +2297,13 @@ h3[data-translate="exp-diocese-title"] {
     margin-bottom: 0.5rem;
 }
 
-.diocese-role {
-    color: #ff0000 !important;
+.timeline-content .diocese-role {
+    color: #c0392b !important;
     text-decoration: underline;
-    text-decoration-color: #ff0000;
+    text-decoration-color: #c0392b !important;
     font-weight: 700;
+    font-size: 1.17em;
+    line-height: 1.2;
     margin: 0.5rem 0 1rem;
 }
 
