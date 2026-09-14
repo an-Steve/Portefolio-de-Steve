@@ -1203,6 +1203,7 @@ const translations = {
         'formation-master': 'Master  Informatique  Big Data et Ingenierie en Intelligence Artificielle',
         'formation-master2': 'Master 2 Ingénierie en Intelligence Artificielle',
         'formation-master-school': 'Université Paris 8',
+        'view-diploma': 'Voir le diplôme',
         "delegue-classe": "Délégué de Classe",
         
         // Expériences
@@ -1555,6 +1556,7 @@ const translations = {
         'formation-master': 'Master 1  in Computer Science  Big Data and Artificial Intelligence Engineering',
         'formation-master2': 'Master 2 in Artificial Intelligence Engineering',
         'formation-master-school': 'Paris 8 University',
+        'view-diploma': 'View diploma',
         "delegue-classe": "Class Representative",
         
         // Expériences
