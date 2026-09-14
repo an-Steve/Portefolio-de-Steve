@@ -2297,14 +2297,99 @@ h3[data-translate="exp-diocese-title"] {
     margin-bottom: 0.5rem;
 }
 
+.diocese-timeline-path {
+    position: relative;
+    padding-left: 28px;
+}
+
+.diocese-timeline-path::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    bottom: 12px;
+    left: 8px;
+    width: 2px;
+    background: #c0392b;
+}
+
+.diocese-timeline-path h3,
+.diocese-timeline-path .diocese-role {
+    position: relative;
+}
+
+.diocese-timeline-path h3::before,
+.diocese-timeline-path .diocese-role::before {
+    content: '';
+    position: absolute;
+    top: 0.45em;
+    left: -25px;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #c0392b;
+    border-radius: 50%;
+    background: #0b0b0b;
+    box-sizing: border-box;
+}
+
 .timeline-content .diocese-role {
-    color: #c0392b !important;
-    text-decoration: underline;
-    text-decoration-color: #c0392b !important;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
     font-weight: 700;
     font-size: 1.17em;
     line-height: 1.2;
     margin: 0.5rem 0 1rem;
+}
+
+.timeline-content .diocese-role > span[data-translate="exp-diocese-role"] {
+    color: #c0392b !important;
+    text-decoration: underline;
+    text-decoration-color: #c0392b !important;
+}
+
+.timeline-content .diocese-frat-role > span[data-translate="exp-diocese-frat-role"] {
+    color: #c0392b !important;
+    text-decoration: underline;
+    text-decoration-color: #c0392b !important;
+}
+
+.diocese-since-badge {
+    display: inline-block;
+    padding: 3px 9px;
+    border: 1px solid rgba(192, 57, 43, 0.7);
+    border-radius: 999px;
+    background: rgba(192, 57, 43, 0.18);
+    color: #ff8a8a;
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none !important;
+    white-space: nowrap;
+}
+
+.moocit-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border: 1px solid rgba(230, 126, 34, 0.8);
+    border-radius: 999px;
+    background: rgba(230, 126, 34, 0.2);
+    color: #ffc078;
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none !important;
+    white-space: nowrap;
+}
+
+.moocit-badge::before {
+    content: "\f0a3";
+    color: #f39c12;
+    font-family: "Font Awesome 6 Free";
+    font-size: 0.95em;
+    font-weight: 900;
 }
 
 /* ===== CAROUSEL DE PROJETS - NAVIGATION PROJET PAR PROJET ===== */
@@ -3702,7 +3787,8 @@ li[data-translate^="exp-capgemini-task"],
 li[data-translate^="exp-tiqtec-task"],
 li[data-translate^="exp-stream-task"],
 li[data-translate^="exp-carrefour-task"],
-li[data-translate^="exp-diocese-task"] {
+li[data-translate^="exp-diocese-task"],
+li[data-translate^="exp-diocese-frat"] {
     list-style: none;
     padding-left: 0;
 }
@@ -3711,12 +3797,36 @@ li[data-translate^="exp-capgemini-task"]::before,
 li[data-translate^="exp-tiqtec-task"]::before,
 li[data-translate^="exp-stream-task"]::before,
 li[data-translate^="exp-carrefour-task"]::before,
-li[data-translate^="exp-diocese-task"]::before {
+li[data-translate^="exp-diocese-task"]::before,
+li[data-translate^="exp-diocese-frat"]::before {
     content: "→ ";
     color: #3498db;
     font-weight: bold;
     font-size: 1.3em;
     margin-right: 8px;
+}
+
+.timeline-content li.caces-badge-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+    padding: 5px 12px;
+    border: 1px solid rgba(52, 152, 219, 0.75);
+    border-radius: 999px;
+    background: rgba(52, 152, 219, 0.18);
+    color: #8ed0ff;
+    font-weight: 700;
+    list-style: none;
+}
+
+.timeline-content li.caces-badge-item::before {
+    content: "\f0a3";
+    color: #3498db;
+    font-family: "Font Awesome 6 Free";
+    font-size: 0.95em;
+    font-weight: 900;
+    margin-right: 0;
 }
 
 

@@ -1282,6 +1282,11 @@ const translations = {
         'exp-diocese-task1': 'Animation et encadrement d\'activités pour enfants',
         'exp-diocese-task2': 'Organisation d\'événements en lien avec le diocèse',
         'exp-diocese-role': 'Coordinateur pastoral des jeunes',
+        'exp-diocese-since': 'Depuis septembre 2025',
+        'exp-diocese-frat-role': 'Animateur FRAT',
+        'exp-diocese-moocit': 'MOOCit obtenue en juin 2025',
+        'exp-diocese-frat-mont': 'FRAT du Mont Saint Michel (juin 2025)',
+        'exp-diocese-frat-jambville': 'FRAT de Jambville (mai 2026)',
         
         // Projets
         'filter-all': 'Tous',
@@ -1629,6 +1634,11 @@ const translations = {
         'exp-diocese-task1': 'Children\'s activity facilitation and supervision',
         'exp-diocese-task2': 'Organization of events in connection with the diocese',
         'exp-diocese-role': 'Youth pastoral coordinator',
+        'exp-diocese-since': 'Since September 2025',
+        'exp-diocese-frat-role': 'FRAT facilitator',
+        'exp-diocese-moocit': 'MOOCit obtained in June 2025',
+        'exp-diocese-frat-mont': 'FRAT of Mont Saint Michel (June 2025)',
+        'exp-diocese-frat-jambville': 'FRAT of Jambville (May 2026)',
         
         // Projets
         'filter-all': 'All',
