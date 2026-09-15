@@ -1454,6 +1454,17 @@ const translations = {
         'cert-ket-date': 'Obtenu en 2018',
         'cert-ket-desc': 'Niveau A2 du CECRL - Compétences de base en anglais',
 
+        'cert-flyers-title': 'Cambridge English Flyers',
+        'cert-flyers-date': 'Obtenu en juin 2016',
+        'cert-flyers-desc': 'Certification d\'anglais niveau Flyers',
+        'cert-movers-title': 'Cambridge English Movers',
+        'cert-movers-date': 'Obtenu en décembre 2014',
+        'cert-movers-desc': 'Certification d\'anglais niveau Movers',
+        'cert-starters-title': 'Cambridge English Starters',
+        'cert-starters-date': 'Obtenu en juin 2013',
+        'cert-starters-desc': 'Certification d\'anglais niveau Starters',
+        'cert-young-learners-issuer': 'Cambridge English - Young Learners',
+
         'cert-excel-title': 'Maîtrise d’Excel',
         'cert-excel-issuer': 'OpenClassrooms',
         'cert-excel-date': 'Obtenu en 2026',
@@ -1825,6 +1836,17 @@ const translations = {
         'cert-ket-issuer': 'Key English Test - Cambridge',
         'cert-ket-date': 'Obtenu en 2018',
         'cert-ket-desc': 'CEFR Level A2 - Basic English skills',
+
+        'cert-flyers-title': 'Cambridge English Flyers',
+        'cert-flyers-date': 'Obtained in June 2016',
+        'cert-flyers-desc': 'Flyers level English certification',
+        'cert-movers-title': 'Cambridge English Movers',
+        'cert-movers-date': 'Obtained in December 2014',
+        'cert-movers-desc': 'Movers level English certification',
+        'cert-starters-title': 'Cambridge English Starters',
+        'cert-starters-date': 'Obtained in June 2013',
+        'cert-starters-desc': 'Starters level English certification',
+        'cert-young-learners-issuer': 'Cambridge English - Young Learners',
 
         // Centres d'intérêt
         'section-interests': 'Interests',
