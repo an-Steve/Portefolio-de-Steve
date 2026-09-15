@@ -1477,6 +1477,11 @@ const translations = {
         'cert-sql-desc': '• Introduction à SQL et aux bases de données relationnelles<br>• Création et gestion de bases de données<br>• Requêtes SQL pour l\'extraction de données<br>• Manipulation des données avec SQL<br>• Optimisation des requêtes SQL',
         'cert-view-link': 'Voir le certificat',
 
+        'cert-powerbi-title': 'Power BI',
+        'cert-powerbi-issuer': 'OpenClassrooms',
+        'cert-powerbi-date': 'Obtenu en août 2026',
+        'cert-powerbi-desc': 'Réalisation de dahsboard avec Power BI',
+
         // Centres d'intérêt
         'section-interests': 'Centres d\'intérêt',
         'interest-volunteering-title': 'Bénévolat',
@@ -1804,6 +1809,11 @@ const translations = {
         'cert-sql-issuer': 'OpenClassrooms',
         'cert-sql-date': 'Issued in 2026',
         'cert-sql-desc': '• Advanced SQL queries<br>• Database management<br>• Performance optimization<br>• Data security',
+
+        'cert-powerbi-title': 'Power BI',
+        'cert-powerbi-issuer': 'OpenClassrooms',
+        'cert-powerbi-date': 'Issued in August 2026',
+        'cert-powerbi-desc': 'Creating dashboards with Power BI',
 
 
         "cert-permis-b": "Driving License B",
