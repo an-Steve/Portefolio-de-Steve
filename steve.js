@@ -1418,6 +1418,11 @@ const translations = {
         'cert-cisco-python-desc': '• Syntaxe et structures de contrôle Python<br>• Fonctions, modules et packages<br>• Programmation orientée objet (POO)<br>• Gestion des exceptions et des erreurs<br>• Manipulation des fichiers et des données',
         'cert-view-link': 'Voir le certificat',
 
+        'cert-cisco-cybersecurity-title': 'Introduction à la cybersécurité',
+        'cert-cisco-cybersecurity-issuer': 'Cisco Networking Academy',
+        'cert-cisco-cybersecurity-date': 'Obtenu en septembre 2026',
+        'cert-cisco-cybersecurity-desc': 'Introduction aux concepts fondamentaux de la cybersécurité',
+
         'cert-permis-b': 'Permis B',
         "cert-permis-b-issuer": "Permis de conduire catégorie B",
         "cert-permis-b-date": "Obtenu en 2026",
@@ -1772,6 +1777,11 @@ const translations = {
         'cert-cisco-python-date': 'Issued in April 2026',
         'cert-cisco-python-desc': '• Python syntax and control structures<br>• Functions, modules, and packages<br>• Object-oriented programming (OOP)<br>• Exception and error handling<br>• File and data handling',
         'cert-view-link': 'View certificate',
+
+        'cert-cisco-cybersecurity-title': 'Introduction to Cybersecurity',
+        'cert-cisco-cybersecurity-issuer': 'Cisco Networking Academy',
+        'cert-cisco-cybersecurity-date': 'Issued in September 2026',
+        'cert-cisco-cybersecurity-desc': 'Introduction to fundamental cybersecurity concepts',
 
         'cert-excel-title': 'Excel Proficiency',
         'cert-excel-issuer': 'OpenClassrooms',
