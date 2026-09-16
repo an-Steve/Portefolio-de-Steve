@@ -3863,107 +3863,78 @@ li[data-translate^="exp-thales-task"]::before {
 }
 
 
-/* Bouton voir le rapport de projet */
-.report-btn {
-    margin-top: 15px;
-    padding: 0;
-    background: linear-gradient(135deg, #f14b3b 0%, #d62d2d 100%);
-    color: #ffffff;
-    border: 2px solid #7a0d02;
-    border-radius: 999px;
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: 800;
-    letter-spacing: 0.01em;
-    display: inline-flex !important;
-    align-items: center;
+/* Bouton document partagé pour toutes les expériences */
+.doc-btn {
+    --doc-btn-bg: #c93b30;
+    --doc-btn-badge-bg: #650b06;
+    display: inline-flex;
+    align-items: stretch;
     justify-content: flex-start;
-    overflow: hidden;
-    min-height: 52px;
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
-    line-height: 1;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    vertical-align: middle;
-}
-
-.report-btn--stage {
     width: 100%;
-    max-width: 310px;
+    max-width: 340px;
+    min-height: 58px;
+    margin-top: 15px;
+    overflow: hidden;
+    border: 2px solid #e06457;
+    border-radius: 999px;
+    background: var(--doc-btn-bg);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    text-decoration: none;
+    transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
 }
 
-.report-btn:hover {
-    filter: brightness(1.04);
+.doc-btn:hover,
+.doc-btn:focus-visible {
+    filter: brightness(1.08);
     transform: translateY(-1px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+    text-decoration: none;
 }
 
-.report-btn .report-btn-icon,
-.report-btn i {
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
-    width: 76px;
-    min-width: 76px;
-    height: 52px;
-    padding: 0;
-    margin: 0;
-    background: linear-gradient(135deg, #9a1208 0%, #5d0906 100%);
-    color: #fff;
-    font-size: 12px;
-    font-weight: 900;
-    font-family: "Segoe UI", Arial, sans-serif;
-    border-radius: 999px 0 0 999px;
-    flex-shrink: 0;
-    box-shadow: inset -1px 0 0 rgba(255,255,255,0.12);
+.doc-btn:active {
+    transform: translateY(0);
 }
 
-.report-btn > span:last-child {
+.doc-btn__badge {
     display: inline-flex;
     align-items: center;
-    height: 52px;
-    padding: 0 22px 0 16px;
-    white-space: nowrap;
-    width: calc(100% - 76px);
     justify-content: center;
+    width: 78px;
+    min-width: 78px;
+    background: var(--doc-btn-badge-bg);
+    color: #ffffff;
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+    font-size: 14px;
+    font-weight: 900;
+    font-family: "Segoe UI", Arial, sans-serif;
+    text-transform: uppercase;
 }
 
-.report-btn .report-btn-icon {
-    text-transform: uppercase;
+.doc-btn__label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 0 16px;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 1.2;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.doc-btn--video {
+    --doc-btn-bg: linear-gradient(135deg, #90EE90 0%, #32CD32 45%, #228B22 100%);
+    --doc-btn-badge-bg: linear-gradient(135deg, #1a7d2c 0%, #0f5f20 100%);
+    border-color: rgba(13, 75, 26, 0.8);
 }
 
 
 /*******************************
    Vidéos intégrées (projets)
 *******************************/
-
-.video-button {
-        display: inline-block;
-        margin-top: 15px;
-        padding: 12px 30px;
-        background: linear-gradient(135deg, #90EE90, #32CD32, #228B22);
-        color: white;
-        text-decoration: none;
-        border-radius: 50px;
-        font-size: 16px;
-        font-weight: bold;
-        box-shadow: 0 4px 15px rgba(50, 205, 50, 0.4);
-        transition: all 0.3s ease;
-        text-align: center;
-    }
-
-    .video-button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(50, 205, 50, 0.6);
-        background: linear-gradient(135deg, #98FB98, #3CB371, #2E8B57);
-    }
-
-    .video-button:active {
-        transform: translateY(0);
-        box-shadow: 0 2px 10px rgba(50, 205, 50, 0.4);
-    }
-
-
 
 /* ===============================================
    SECTION CERTIFICATIONS - Styles
