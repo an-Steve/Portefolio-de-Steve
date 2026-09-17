@@ -2253,28 +2253,15 @@ filterButtons.forEach(btn => {
 // Fonction de zoom sur le texte
 document.addEventListener('DOMContentLoaded', function() {
     const zoomButton = document.getElementById('zoomText');
-    // Cible les principales sections de texte de VOTRE site
-    const textContainers = [
-        document.querySelector('#about'),
-        document.querySelector('#formations'),
-        document.querySelector('#experience'),
-        document.querySelector('#projects'),
-        document.querySelector('#skills'),
-        document.querySelector('#contact')
-    ].filter(section => section !== null); // Filtre les sections existantes
-
     let isZoomed = false;
 
     if (zoomButton) {
         zoomButton.addEventListener('click', function() {
             isZoomed = !isZoomed; // Bascule l'état
 
-            // Applique ou retire la classe 'text-zoomed' sur chaque section
-            textContainers.forEach(section => {
-                if (section) {
-                    section.classList.toggle('text-zoomed', isZoomed);
-                }
-            });
+            // Le zoom sur html englobe aussi les éléments fixes, absolus et injectés dynamiquement.
+            document.documentElement.style.setProperty('--site-zoom', isZoomed ? '1.1' : '1');
+            document.documentElement.classList.toggle('site-zoomed', isZoomed);
 
             // Change l'icône et l'état ARIA pour le feedback
             const icon = this.querySelector('i');
