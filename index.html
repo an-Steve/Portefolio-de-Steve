@@ -97,26 +97,25 @@
                 <i class="fa-solid fa-heart icon"></i>
                 </a>
             </li>
-            <li>
-            <a href="allprojets.html" class="all-projects-button">
-                <i class="fa-brands fa-github"></i>
-                <span class="button-text">Tous mes projets</span>
-            </a>
-        </li>
-
-        <li>
-            <button id="chatboxToggle" class="chat-button">
-                <img src="newlogosteve.png" alt="Chat icon">
-                <span id="chatNotifBadge" class="chat-notif-badge hidden"></span>
-            </button>
-        </li>
-
-        <li>
-            <button id="zoomText" class="accessibility-button" aria-label="Agrandir le texte du site" aria-pressed="false">
-             <i class="fa-solid fa-magnifying-glass-plus"></i>
-            <span class="tooltip">Agrandir le texte</span>
-            </button>
-</li>
+            <li class="support-menu">
+                <button id="supportMenuToggle" class="support-menu-toggle" aria-label="Ouvrir le menu d'aide" aria-expanded="false" aria-controls="supportMenuActions">
+                    <i class="fa-solid fa-question"></i>
+                </button>
+                <div id="supportMenuActions" class="support-menu-actions" aria-hidden="true">
+                    <a href="allprojets.html" class="all-projects-button" aria-label="Accéder à tous mes projets">
+                        <i class="fa-brands fa-github"></i>
+                        <span class="button-text">Tous mes projets</span>
+                    </a>
+                    <button id="chatboxToggle" class="chat-button" aria-label="Ouvrir le chat">
+                        <img src="newlogosteve.png" alt="Chat icon">
+                        <span id="chatNotifBadge" class="chat-notif-badge hidden"></span>
+                    </button>
+                    <button id="zoomText" class="accessibility-button" aria-label="Agrandir le texte du site" aria-pressed="false">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        <span class="tooltip">Agrandir le texte</span>
+                    </button>
+                </div>
+            </li>
     </nav>
 
 

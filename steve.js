@@ -83,6 +83,36 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Menu flottant des actions secondaires
+const supportMenu = document.querySelector('.support-menu');
+const supportMenuToggle = document.getElementById('supportMenuToggle');
+const supportMenuActions = document.getElementById('supportMenuActions');
+
+function closeSupportMenu() {
+    if (!supportMenu || !supportMenuToggle || !supportMenuActions) return;
+    supportMenu.classList.remove('is-open');
+    supportMenuToggle.setAttribute('aria-expanded', 'false');
+    supportMenuActions.setAttribute('aria-hidden', 'true');
+}
+
+if (supportMenu && supportMenuToggle && supportMenuActions) {
+    supportMenuToggle.addEventListener('click', (event) => {
+        event.stopPropagation();
+        const isOpen = supportMenu.classList.toggle('is-open');
+        supportMenuToggle.setAttribute('aria-expanded', String(isOpen));
+        supportMenuActions.setAttribute('aria-hidden', String(!isOpen));
+    });
+
+    supportMenuActions.addEventListener('click', (event) => {
+        event.stopPropagation();
+    });
+
+    document.addEventListener('click', closeSupportMenu);
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeSupportMenu();
+    });
+}
+
 // Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
