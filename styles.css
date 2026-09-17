@@ -2966,6 +2966,38 @@ h3[data-translate="exp-diocese-title"] {
     border-color: var(--primary);
 }
 
+.contact-item .icon-circle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 50px;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: transparent;
+    z-index: 1;
+}
+
+.contact-item .icon-circle::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    background-color: #D32F2F;
+    z-index: 0;
+}
+
+.contact-item .icon-circle > i {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+}
+
 .contact-item span {
     font-size: 1.5rem;
 }
@@ -3163,7 +3195,7 @@ footer p:hover {
     backdrop-filter: blur(10px);
     border-radius: 15px;
     padding: 20px;
-    margin-bottom: 15px;
+    margin-bottom: 65px;
     border: 1px solid rgba(192, 57, 43, 0.3);
     transition: all 0.3s ease;
 }
@@ -3182,6 +3214,10 @@ footer p:hover {
 }
 
 .plus-button {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: calc(50% + 20px);
+    transform: translateX(-50%);
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -3201,13 +3237,13 @@ footer p:hover {
 }
 
 .plus-button:hover {
-    transform: scale(1.15) rotate(90deg);
+    transform: translateX(-50%) scale(1.15) rotate(90deg);
     background: linear-gradient(135deg, #ff4d4d, #c0392b);
     box-shadow: 0 6px 20px rgba(192, 57, 43, 0.5);
 }
 
 .plus-button:active {
-    transform: scale(0.95) rotate(90deg);
+    transform: translateX(-50%) scale(0.95) rotate(90deg);
 }
 
 /* Panneau dépliable */
