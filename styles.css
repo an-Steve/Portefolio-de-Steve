@@ -1719,6 +1719,10 @@ h3[data-translate="project-web-title"] {
     text-decoration: underline;
 }
 
+h3[data-translate="exp-thales-title"] {
+    text-decoration: underline;
+}
+
 h3[data-translate="project-android-title"]{
     color: purple;
     display: inline-block;
