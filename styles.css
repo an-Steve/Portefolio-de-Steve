@@ -3195,7 +3195,7 @@ footer p:hover {
     backdrop-filter: blur(10px);
     border-radius: 15px;
     padding: 20px;
-    margin-bottom: 65px;
+    margin-bottom: 15px;
     border: 1px solid rgba(192, 57, 43, 0.3);
     transition: all 0.3s ease;
 }
