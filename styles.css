@@ -7596,3 +7596,110 @@ body.dark-mode .all-projects-button:hover {
 .skill-category-radar canvas {
     max-width: 100%;
 }
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: calc(100svh - 76px);
+        padding: 1.5rem 1rem;
+    }
+
+    .hero-container {
+        width: 100%;
+        min-height: 0;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+    }
+
+    .name-title {
+        position: relative;
+        z-index: 3;
+        isolation: isolate;
+        padding: 0.15em 0.25em;
+        border-radius: 0.2em;
+        background: rgba(0, 0, 0, 0.35) !important;
+        text-shadow:
+            0 0 4px #000,
+            0 0 12px rgba(255, 77, 77, 0.95),
+            0 0 24px rgba(192, 57, 43, 0.8) !important;
+    }
+
+    .bar-group {
+        display: none !important;
+    }
+
+    .chart-slot {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 0.9em;
+        height: 0.9em;
+        margin: 0 0.06em;
+        vertical-align: middle;
+    }
+
+    #donutSlot {
+        margin-left: 0;
+        margin-right: -0.25em;
+    }
+
+    .chart-slot .skills-chart,
+    .chart-slot .skills-chart-specific {
+        display: flex !important;
+        position: absolute !important;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        width: 1em;
+        height: 1em;
+        margin: 0;
+        transform: translate(-50%, -50%) scale(0.72);
+        transform-origin: center;
+        z-index: 1;
+    }
+
+    .chart-slot .skills-chart {
+        flex-direction: column;
+    }
+
+    #donutSlot .skills-chart {
+        transform: translate(calc(-50% - 0.08em), -50%) scale(0.72);
+    }
+
+    .chart-slot .skills-chart .chart-legend {
+        display: none;
+    }
+
+    .chart-slot .chart-wrapper,
+    .chart-slot .chart-wrapper canvas {
+        width: 1em !important;
+        height: 1em !important;
+    }
+
+    .chart-slot .chart-wrapper canvas {
+        display: block;
+    }
+
+    .chart-slot .skills-chart-specific {
+        width: 1em;
+        height: 1em;
+    }
+}
+
+@media (min-width: 769px) {
+    #donutSlot .skills-chart {
+        left: calc(50% - 0.08em);
+    }
+
+    #donutSlot {
+        margin-right: -0.08em;
+    }
+
+    #pieSlot {
+        margin-right: -0.08em;
+    }
+}
