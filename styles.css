@@ -1908,6 +1908,12 @@ h3[data-translate="exp-3eme-title"] {
     text-decoration: underline;
 }
 
+@media (max-width: 768px) {
+    h3[data-translate="exp-3eme-title"] {
+        margin-top: 15px;
+    }
+}
+
 h3[data-translate="exp-carrefour-title"] {
     text-decoration: underline;
 }
@@ -3936,6 +3942,12 @@ footer p:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
   opacity: 0.95;
+}
+
+@media (max-width: 768px) {
+    .github-btn {
+        margin: 15px auto;
+    }
 }
 
 /* Style de base commun pour tous les boutons */
@@ -7194,6 +7206,21 @@ body.dark-mode .all-projects-button:hover {
     color: #7a0000 !important;
     box-shadow: 0 4px 15px rgba(255, 255, 255, 0.25);
     transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .project-filters {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        padding: 0 1rem;
+    }
+
+    .project-filters .filter-btn {
+        width: 100%;
+        padding: 10px 8px;
+        font-size: 0.85rem;
+    }
 }
 
 .project-card.filtered-out,
