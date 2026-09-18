@@ -988,9 +988,25 @@ nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button):hov
     }
     
     nav ul {
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
         gap: 0.8rem;
-        justify-content: space-between;
+        justify-content: flex-start;
+        scrollbar-width: none;
+    }
+
+    nav ul::-webkit-scrollbar {
+        display: none;
+    }
+
+    nav ul > li:not(.support-menu) {
+        flex-shrink: 0;
+    }
+
+    nav ul > li > a {
+        white-space: nowrap;
+        flex-shrink: 0;
     }
     
     nav li:nth-child(n+9) {
@@ -3106,9 +3122,26 @@ footer p:hover {
 /* Responsive */
 @media (max-width: 768px) {
     nav ul {
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
         gap: 1rem;
         font-size: 0.9rem;
+        justify-content: flex-start;
+        scrollbar-width: none;
+    }
+
+    nav ul::-webkit-scrollbar {
+        display: none;
+    }
+
+    nav ul > li:not(.support-menu) {
+        flex-shrink: 0;
+    }
+
+    nav ul > li > a {
+        white-space: nowrap;
+        flex-shrink: 0;
     }
 
     nav a {
