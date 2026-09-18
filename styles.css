@@ -355,6 +355,10 @@ body {
     transform: translateX(12px) scale(1.45);
 }
 
+.mobile-name-break {
+    display: none;
+}
+
 .about-name {
     font-family: 'Poppins', sans-serif;
     font-size: 1.25rem;
@@ -485,6 +489,9 @@ body {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.mobile-home-logo {
+    display: none;
+}
 
 .footer-logo {
     position: absolute;
@@ -983,6 +990,24 @@ nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button):hov
 }
 
 @media (max-width: 768px) {
+    .footer-logo {
+        left: 0;
+    }
+
+    .footer-logo img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .mobile-home-logo {
+        display: inline-block;
+        width: 28px;
+        height: 28px;
+        object-fit: contain;
+        flex: 0 0 auto;
+        margin-right: 8px;
+    }
+
     nav {
         padding: 1rem;
     }
@@ -5036,6 +5061,31 @@ li[data-translate^="exp-thales-task"]::before {
         margin: 8px 0;
         justify-content: flex-start;
     }
+
+    .timeline-horizontal .date {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .timeline-horizontal .lieu {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .timeline-horizontal .date::before {
+        position: static;
+        transform: none;
+        flex: 0 0 auto;
+    }
+
+    .timeline-horizontal .lieu::before {
+        position: static;
+        transform: none;
+        flex: 0 0 auto;
+        align-self: center;
+    }
     
     .timeline-horizontal .date::before,
     .timeline-horizontal .lieu::before {
@@ -7598,6 +7648,10 @@ body.dark-mode .all-projects-button:hover {
 }
 
 @media (max-width: 768px) {
+    .timeline-horizontal::after {
+        display: none;
+    }
+
     .hero {
         min-height: calc(100svh - 76px);
         padding: 1.5rem 1rem;
@@ -7625,6 +7679,14 @@ body.dark-mode .all-projects-button:hover {
             0 0 4px #000,
             0 0 12px rgba(255, 77, 77, 0.95),
             0 0 24px rgba(192, 57, 43, 0.8) !important;
+    }
+
+    .mobile-name-break {
+        display: block;
+    }
+
+    .hero-name-logo {
+        transform: translateX(8px) scale(1.45);
     }
 
     .bar-group {
@@ -7667,7 +7729,15 @@ body.dark-mode .all-projects-button:hover {
     }
 
     #donutSlot .skills-chart {
-        transform: translate(calc(-50% - 0.08em), -50%) scale(0.72);
+        top: calc(50% + 0.03em);
+        left: calc(50% - 0.08em);
+        transform: translate(calc(-50% - 0.08em), calc(-50% - 4px)) scale(0.72);
+    }
+
+    #pieSlot .skills-chart-specific {
+        top: calc(50% + 0.03em);
+        left: calc(50% + 0.03em);
+        transform: translate(calc(-50% - 3px), calc(-50% - 4px)) scale(0.72);
     }
 
     .chart-slot .skills-chart .chart-legend {
@@ -7691,6 +7761,20 @@ body.dark-mode .all-projects-button:hover {
 }
 
 @media (min-width: 769px) {
+    .timeline-horizontal .lieu {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .timeline-horizontal .lieu::before {
+        position: static;
+        transform: none;
+        flex: 0 0 auto;
+    }
+
     #donutSlot .skills-chart {
         left: calc(50% - 0.08em);
     }
@@ -7701,5 +7785,9 @@ body.dark-mode .all-projects-button:hover {
 
     #pieSlot {
         margin-right: -0.08em;
+    }
+
+    #pieSlot .skills-chart-specific {
+        transform: translate(calc(-50% - 10px), -50%);
     }
 }
