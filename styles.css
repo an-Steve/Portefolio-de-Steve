@@ -2237,6 +2237,40 @@ h3[data-translate="exp-diocese-title"] {
         margin-top: 15px;
         margin-left: 10px;
     }
+
+    #experience .timeline .experience-heading {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        min-width: 0;
+        margin-top: -14px;
+    }
+
+    #experience .timeline .experience-heading > .experience-icon {
+        width: 60px;
+        height: 60px;
+        flex: 0 0 60px;
+        float: none;
+        position: static;
+        margin: 0;
+    }
+
+    #experience .timeline .experience-heading > h3 {
+        width: 100%;
+        min-width: 0;
+        margin: 10px 0 0;
+        padding-left: 0;
+        text-align: left;
+        overflow-wrap: anywhere;
+    }
+
+    #experience .timeline .timeline-badge {
+        right: 10px;
+        max-width: calc(100% - 20px);
+        box-sizing: border-box;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
 }
 
 .timeline-badge {
@@ -2253,7 +2287,6 @@ h3[data-translate="exp-diocese-title"] {
     backdrop-filter: blur(2px); 
     box-shadow: 0 0 6px rgba(192, 57, 43, 0.3); 
 }
-
 
 .timeline::before {
     content: '';
