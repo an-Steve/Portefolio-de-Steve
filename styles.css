@@ -6051,6 +6051,10 @@ body.dark-mode .all-projects-button:hover {
     box-shadow: 0 8px 30px rgba(0, 102, 255, 0.7);
 }
 
+body.dark-mode .navbar {
+    background-color: #87CEEB !important;
+}
+
 
 /* ====================================
    SECTION CENTRES D'INTÉRÊT / INTERESTS

@@ -369,28 +369,39 @@ class ThemeToggle {
     const style = document.createElement('style');
     style.id = 'dark-mode-styles';
     style.textContent = `
-      /* MODE SOMBRE NOIR */
+    
+      
+    MODE SOMBRE NOIR 
       body.dark-theme {
         background-color: #121212 !important;
         color: #e0e0e0 !important;
       }
       
       /* Header en mode sombre */
-      body.dark-theme header,
-      body.dark-theme nav {
-        background-color: #1e1e1e !important;
-        border-bottom: 1px solid #333 !important;
-      }
+        body.dark-theme header,
+        body.dark-theme nav {
+            background: linear-gradient(135deg, #006994 0%, #003f5c 100%) !important;
+            border-bottom: 1px solid #00a8cc !important;
+            box-shadow: 0 4px 20px rgba(0, 105, 148, 0.35) !important;
+        }
+
       
-      body.dark-theme nav a {
-        color: #cccccc !important;
-      }
-      
-      body.dark-theme nav a:hover,
-      body.dark-theme nav a.active {
-        color: #ffffff !important;
-        background-color: #333 !important;
-      }
+/* Navbar uniquement en mode sombre */
+body.dark-theme nav {
+    background: linear-gradient(
+        135deg,
+        #003f5c 0%,
+        #006994 50%,
+        #008fb3 100%
+    ) !important;
+
+    border-bottom: 1px solid rgba(0, 200, 230, 0.5) !important;
+
+    box-shadow:
+        0 4px 20px rgba(0, 105, 148, 0.35),
+        0 0 25px rgba(0, 180, 220, 0.15) !important;
+}
+
       
       /* Section Hero */
       body.dark-theme #home {
@@ -506,10 +517,32 @@ class ThemeToggle {
       
       /* Footer */
       body.dark-theme footer {
-        background-color: #1a1a1a !important;
-        border-top: 1px solid #333 !important;
-        color: #999 !important;
-      }
+    background: linear-gradient(
+        135deg,
+        #061923 0%,
+        #073B4C 50%,
+        #006994 100%
+    ) !important;
+
+    border-top: 1px solid #00A8CC !important;
+
+    color: #D9F7FF !important;
+
+    box-shadow:
+        0 -4px 20px rgba(0, 168, 204, 0.20) !important;
+}
+
+body.dark-theme footer .footer-bar-viz span {
+    background: #00D4FF !important;
+    box-shadow: 0 0 6px rgba(0, 212, 255, 0.7);
+}
+body.dark-theme footer p {
+    color: #BFEFFF !important;
+}
+body.dark-theme footer a {
+    
+}
+
       
       /* Scrollbar */
       body.dark-theme::-webkit-scrollbar {
