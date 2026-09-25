@@ -7882,3 +7882,43 @@ body.dark-theme #about .section-title::before {
         transform: translate(calc(-50% - 10px), -50%);
     }
 }
+
+/* ========================================
+   TITRES DES SECTIONS EN BLEU - MODE ☀️
+   ======================================== */
+
+body.dark-theme .section-title {
+    color: #38bdf8 !important;
+    -webkit-text-fill-color: #38bdf8 !important;
+    background: none !important;
+    text-shadow:
+        0 0 10px rgba(56, 189, 248, 0.8),
+        0 0 20px rgba(56, 189, 248, 0.5),
+        0 0 40px rgba(56, 189, 248, 0.3) !important;
+}
+
+/* Halo derrière le titre */
+body.dark-theme .section-title::before {
+    background: none !important;
+    -webkit-text-fill-color: #38bdf8 !important;
+    color: #38bdf8 !important;
+    filter: blur(10px);
+    opacity: 0.35;
+}
+
+/* Petite barre sous les titres */
+body.dark-theme .section-title::after {
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        #38bdf8 20%,
+        #60a5fa 50%,
+        #38bdf8 80%,
+        transparent 100%
+    ) !important;
+
+    box-shadow:
+        0 0 8px rgba(56, 189, 248, 0.7),
+        0 0 18px rgba(56, 189, 248, 0.4);
+}
+

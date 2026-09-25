@@ -408,10 +408,12 @@ body.dark-theme nav {
         background: transparent !important;
       }
       
-      body.dark-theme #home h1 {
-        color: #ffffff !important;
-      }
-      
+     /* Titre principal en mode soleil ☀️ */
+        body.dark-theme #home .name-title {
+            color: #000000 !important;
+            text-shadow: none !important;
+        }
+
       body.dark-theme #home p {
         color: #cccccc !important;
       }
@@ -589,6 +591,21 @@ body.dark-theme footer a {
       #theme-toggle:hover {
         background-color: #444;
       }
+    
+      /* ===== Graphique ORANGE en mode sombre / ☀️ ===== */
+body.dark-theme .bar {
+    background: linear-gradient(
+        180deg,
+        #ffb347 0%,
+        #ff8c00 50%,
+        #e67e22 100%
+    ) !important;
+
+    box-shadow:
+        0 4px 15px rgba(255, 140, 0, 0.35),
+        0 0 18px rgba(255, 165, 0, 0.15) !important;
+}
+
 
       /* ===== Accents ORANGE uniquement en mode sombre ===== */
       body.dark-theme .cta-buttons {
