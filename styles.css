@@ -6055,6 +6055,33 @@ body.dark-mode .navbar {
     background-color: #87CEEB !important;
 }
 
+/* ========================================
+   À PROPOS EN BLEU EN MODE SOMBRE
+   (mode où le soleil 🌞 apparaît)
+   ======================================== */
+
+body.dark-theme #about .section-title {
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+    -webkit-text-fill-color: #2563eb !important;
+    color: #2563eb !important;
+
+    /* Petit effet lumineux bleu */
+    text-shadow:
+        0 0 8px rgba(37, 99, 235, 0.5),
+        0 0 20px rgba(37, 99, 235, 0.3);
+}
+
+/* Halo derrière le titre */
+body.dark-theme #about .section-title::before {
+    background: none !important;
+    -webkit-text-fill-color: #2563eb !important;
+    color: #2563eb !important;
+    text-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+}
+
+
 
 /* ====================================
    SECTION CENTRES D'INTÉRÊT / INTERESTS
