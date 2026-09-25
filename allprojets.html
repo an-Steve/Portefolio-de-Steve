@@ -44,6 +44,64 @@
             overflow-x: hidden;
             position: relative;
             min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body.light-theme {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --accent: #0284c7;
+            --text: #172033;
+            --text-secondary: #475569;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --card-border: #bfdbfe;
+            --gradient: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            --gradient-2: #eff6ff;
+        }
+
+        body.light-theme::before {
+            background:
+                radial-gradient(circle at 20% 50%, rgba(96, 165, 250, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(249, 115, 22, 0.1) 0%, transparent 50%);
+        }
+
+        body.light-theme .grid-pattern {
+            background-image:
+                linear-gradient(rgba(37, 99, 235, 0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(37, 99, 235, 0.06) 1px, transparent 1px);
+        }
+
+        body.light-theme header {
+            background: rgba(255, 255, 255, 0.94);
+            border-bottom-color: #dbe4f0;
+        }
+
+        body.light-theme .mini-stat-card,
+        body.light-theme .viz-card,
+        body.light-theme .project-card,
+        body.light-theme .search-bar,
+        body.light-theme .filter-btn {
+            background: #ffffff;
+            border-color: #dbe4f0;
+        }
+
+        body.light-theme .theme-toggle {
+            background: #2563eb;
+            color: #ffffff;
+            border-color: #93c5fd;
+        }
+
+        .theme-toggle {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 42px;
+            height: 42px;
+            background: #1e293b;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
         
         /* Animated background */
@@ -696,6 +754,87 @@
             .mini-stat-number { font-size: 1.6rem; }
             .projects-grid { grid-template-columns: 1fr; gap: 1rem; }
         }
+
+        body.light-theme {
+            background: #ffffff !important;
+            color: #172033 !important;
+            transition: background-color .3s ease, color .3s ease;
+        }
+
+        body.light-theme::before,
+        body.light-theme .bg-gradient {
+            background: radial-gradient(circle at 20% 50%, rgba(96, 165, 250, .13), transparent 50%), radial-gradient(circle at 80% 80%, rgba(249, 115, 22, .1), transparent 50%), #ffffff !important;
+        }
+
+        body.light-theme .grid-pattern {
+            background-image: linear-gradient(rgba(37, 99, 235, .06) 1px, transparent 1px), linear-gradient(90deg, rgba(37, 99, 235, .06) 1px, transparent 1px) !important;
+        }
+
+        body.light-theme header {
+            background: rgba(219, 234, 254, .96) !important;
+            border-bottom-color: #93c5fd !important;
+        }
+
+        body.light-theme header,
+        body.light-theme header * {
+            color: #172033 !important;
+        }
+
+        body.light-theme .back-link,
+        body.light-theme .filter-btn.active,
+        body.light-theme .project-link.primary {
+            background: #f97316 !important;
+            border-color: #ea580c !important;
+            color: #ffffff !important;
+        }
+
+        body.light-theme .theme-toggle {
+            background: #2563eb !important;
+            color: #ffffff !important;
+            border-color: #1d4ed8 !important;
+        }
+
+        body.light-theme .hero h1,
+        body.light-theme .hero-gradient,
+        body.light-theme .stat-number,
+        body.light-theme .filter-label,
+        body.light-theme .viz-card h3 i,
+        body.light-theme .nav-link:hover {
+            color: #2563eb !important;
+            -webkit-text-fill-color: #2563eb !important;
+            background: none !important;
+        }
+
+        body.light-theme .hero p,
+        body.light-theme .stat-label,
+        body.light-theme .project-content,
+        body.light-theme .project-content * {
+            color: #172033 !important;
+        }
+
+        body.light-theme .mini-stat-card,
+        body.light-theme .viz-card,
+        body.light-theme .project-card,
+        body.light-theme .search-bar,
+        body.light-theme .filter-btn {
+            background: #f8fafc !important;
+            border-color: #bfdbfe !important;
+            color: #172033 !important;
+        }
+
+        body.light-theme .search-bar::placeholder {
+            color: #64748b !important;
+        }
+
+        body.light-theme footer {
+            background: #eff6ff !important;
+            color: #172033 !important;
+            border-top-color: #93c5fd !important;
+        }
+
+        body.light-theme footer i {
+            color: #f97316 !important;
+        }
     </style>
 </head>
 <body>
@@ -715,6 +854,7 @@
         <a href="index.html" class="back-link">
             <i class="fas fa-arrow-left"></i> Retour
         </a>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Activer le mode clair">🌙</button>
     </header>
 
     <section class="hero">
@@ -783,6 +923,20 @@
         let currentFilter = 'all';
         let donutChartInstance = null;
         let barChartInstance = null;
+        const themeToggle = document.getElementById('theme-toggle');
+
+        function applyTheme(theme) {
+            document.body.classList.toggle('light-theme', theme === 'light');
+            themeToggle.textContent = theme === 'dark' ? '🌙' : '☀️';
+            themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Activer le mode clair' : 'Activer le mode sombre');
+            localStorage.setItem('theme', theme);
+            if (allProjects.length) initCharts(allProjects.filter(repo => currentFilter === 'all' || repo.language === currentFilter));
+        }
+
+        applyTheme(localStorage.getItem('theme') || 'dark');
+        themeToggle.addEventListener('click', () => {
+            applyTheme(document.body.classList.contains('light-theme') ? 'dark' : 'light');
+        });
         
         const languageColors = {
             'JavaScript': '#f1e05a', 'TypeScript': '#3178c6', 'Python': '#3572A5',
@@ -854,7 +1008,7 @@
                     responsive: true,
                     maintainAspectRatio: false,
                     plugins: {
-                        legend: { position: 'right', labels: { color: '#94a3b8', font: { family: 'Inter', size: 11 } } }
+                        legend: { position: 'right', labels: { color: getComputedStyle(document.body).getPropertyValue('--text-secondary'), font: { family: 'Inter', size: 11 } } }
                     }
                 }
             });
@@ -876,19 +1030,19 @@
                 data: {
                     labels: barLabels,
                     datasets: [
-                        { label: 'Étoiles', data: starData, backgroundColor: '#6366f1' },
-                        { label: 'Forks', data: forkData, backgroundColor: '#06b6d4' }
+                        { label: 'Étoiles', data: starData, backgroundColor: getComputedStyle(document.body).getPropertyValue('--primary') },
+                        { label: 'Forks', data: forkData, backgroundColor: getComputedStyle(document.body).getPropertyValue('--accent') }
                     ]
                 },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
                     scales: {
-                        x: { grid: { display: false }, ticks: { color: '#94a3b8' } },
-                        y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#94a3b8' } }
+                        x: { grid: { display: false }, ticks: { color: getComputedStyle(document.body).getPropertyValue('--text-secondary') } },
+                        y: { grid: { color: 'rgba(100,116,139,0.16)' }, ticks: { color: getComputedStyle(document.body).getPropertyValue('--text-secondary') } }
                     },
                     plugins: {
-                        legend: { labels: { color: '#94a3b8' } }
+                        legend: { labels: { color: getComputedStyle(document.body).getPropertyValue('--text-secondary') } }
                     }
                 }
             });

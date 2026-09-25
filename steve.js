@@ -556,6 +556,24 @@ class ThemeToggle {
       #theme-toggle:hover {
         background-color: #444;
       }
+
+      /* ===== Accents ORANGE uniquement en mode sombre ===== */
+      body.dark-theme .cta-buttons {
+        border-color: rgba(230, 126, 34, 0.6) !important;
+      }
+
+      body.dark-theme nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button)::after {
+        background: linear-gradient(90deg, #f39c12, #e67e22) !important;
+      }
+
+      body.dark-theme .subtitle-badge {
+        border-color: rgba(230, 126, 34, 0.35) !important;
+      }
+
+      body.dark-theme .subtitle-badge.highlight {
+        background: linear-gradient(135deg, rgba(230, 126, 34, 0.25), rgba(243, 156, 18, 0.25)) !important;
+        border-color: rgba(243, 156, 18, 0.5) !important;
+      }
     `;
     
     document.head.appendChild(style);
