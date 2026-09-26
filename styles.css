@@ -351,9 +351,28 @@ body {
     height: 1em;
     vertical-align: -0.2em;
     object-fit: contain;
-    mix-blend-mode: screen;
+
+    /* Important : ne pas mélanger le logo avec le fond */
+    mix-blend-mode: normal;
+
+    /* Toujours visible */
+    opacity: 1;
+    visibility: visible;
+    filter: none;
+
     transform: translateX(12px) scale(1.45);
 }
+
+/* Correction spécifique au mode ☀️ */
+body.dark-theme .hero-name-logo {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    mix-blend-mode: normal !important;
+    filter: none !important;
+    border: none !important;
+}
+
 
 .mobile-name-break {
     display: none;
@@ -7882,6 +7901,43 @@ body.dark-theme #about .section-title::before {
         transform: translate(calc(-50% - 10px), -50%);
     }
 }
+
+/* ========================================
+   DIAGRAMMES DU NOM - MODE SOLEIL ☀️
+   ======================================== */
+
+/* Diagramme circulaire de droite */
+body.dark-theme .pie-chart-main {
+    background: conic-gradient(
+        #0f172a 0% 45%,
+        #2563eb 45% 73.5%,
+        #38bdf8 73.5% 100%
+    ) !important;
+}
+
+/* Lignes autour du diagramme */
+body.dark-theme .callout-line {
+    background-color: #2563eb !important;
+}
+
+/* Petit point/élément de légende */
+body.dark-theme .chart-legend-bottom .dot,
+body.dark-theme .chart-legend .dot {
+    background-color: #2563eb !important;
+    box-shadow: 0 0 8px rgba(37, 99, 235, 0.7);
+}
+
+/* Diagramme Canvas de gauche */
+body.dark-theme #skillsDonut {
+    filter: hue-rotate(210deg) saturate(1.25);
+}
+body.dark-theme .hero-name-logo {
+    filter: brightness(0) saturate(100%)
+            invert(35%) sepia(98%)
+            saturate(2500%) hue-rotate(210deg)
+            brightness(95%) contrast(100%);
+}
+
 
 /* ========================================
    TITRES DES SECTIONS EN BLEU - MODE ☀️
