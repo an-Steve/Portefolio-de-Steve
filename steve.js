@@ -403,10 +403,35 @@ body.dark-theme nav {
 }
 
       
-      /* Section Hero */
-      body.dark-theme #home {
-        background: transparent !important;
-      }
+       /* Section Hero - MODE CLAIR ☀️ */
+body.dark-theme #home,
+body.dark-theme #home.hero,
+body.dark-theme #home .hero-container,
+body.dark-theme #home .hero-content {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+}
+
+body.dark-theme #home .name-title {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+    text-shadow: none !important;
+}
+
+body.dark-theme #home .hero-subtitle-badges {
+    color: #000000 !important;
+}
+
+body.dark-theme #home .subtitle-badge {
+    color: #333333 !important;
+}
+
+
+            body.dark-theme #home .name-title {
+            color: #000000 !important;
+            text-shadow: none !important;
+        }
+
       
      /* Titre principal en mode soleil ☀️ */
         body.dark-theme #home .name-title {
