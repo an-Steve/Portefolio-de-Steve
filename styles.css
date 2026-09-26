@@ -7887,6 +7887,23 @@ body.dark-theme #about .section-title::before {
    TITRES DES SECTIONS EN BLEU - MODE ☀️
    ======================================== */
 
+
+body.dark-theme {
+    background-color: #ffffff !important;
+    color: #111111 !important;
+}
+
+
+
+body.dark-theme #home {
+    background: #ffffff !important;
+}
+
+body.dark-theme #particles {
+    background: #ffffff;
+}
+
+
 body.dark-theme .section-title {
     color: #38bdf8 !important;
     -webkit-text-fill-color: #38bdf8 !important;
