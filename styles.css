@@ -7784,7 +7784,7 @@ body.dark-theme #about .section-title::before {
         isolation: isolate;
         padding: 0.15em 0.25em;
         border-radius: 0.2em;
-        background: rgba(0, 0, 0, 0.35) !important;
+        background: transparent !important;
         text-shadow:
             0 0 4px #000,
             0 0 12px rgba(255, 77, 77, 0.95),
@@ -8010,3 +8010,75 @@ body.dark-theme .hero-name-logo {
 
     mix-blend-mode: normal !important;
 }
+
+/* ========================================
+   BOUTONS ORANGE - MODE SOLEIL ☀️
+   ======================================== */
+
+body.dark-theme .cta-buttons .btn {
+    background: linear-gradient(135deg, #ff9800, #ff6d00) !important;
+    color: #ffffff !important;
+    border: 1px solid #ff9800 !important;
+    box-shadow: 0 6px 18px rgba(255, 152, 0, 0.30) !important;
+}
+
+/* Effet au survol */
+body.dark-theme .cta-buttons .btn:hover {
+    background: linear-gradient(135deg, #ffad33, #ff7b00) !important;
+    color: #ffffff !important;
+    border-color: #ff9800 !important;
+    box-shadow: 0 10px 25px rgba(255, 152, 0, 0.45) !important;
+    transform: translateY(-4px);
+}
+
+/* Icône du bouton CV */
+body.dark-theme .cta-buttons .btn-download i {
+    color: #ffffff !important;
+}
+
+/* ========================================
+   BADGES DU HAUT - MODE SOLEIL ☀️
+   ======================================== */
+
+body.dark-theme .badges .badge {
+    background: #fff3df !important;
+    border-color: #ffb45c !important;
+    color: #d97706 !important;
+    box-shadow: 0 4px 12px rgba(255, 152, 0, 0.12) !important;
+}
+
+/* Icônes des badges */
+body.dark-theme .badges .badge i {
+    color: #e68a00 !important;
+}
+
+/* Effet au survol */
+body.dark-theme .badges .badge:hover {
+    background: #ffe8c2 !important;
+    border-color: #ff9d2e !important;
+    color: #c96b00 !important;
+}
+/* ========================================
+   BADGES DU HAUT - MODE SOLEIL ☀️
+   ======================================== */
+
+body.dark-theme .badges .badge {
+    background: #fff3df !important;
+    border-color: #ffb45c !important;
+    color: #d97706 !important;
+    box-shadow: 0 4px 12px rgba(255, 152, 0, 0.12) !important;
+}
+
+/* Icônes des badges */
+body.dark-theme .badges .badge i {
+    color: #e68a00 !important;
+}
+
+/* Effet au survol */
+body.dark-theme .badges .badge:hover {
+    background: #ffe8c2 !important;
+    border-color: #ff9d2e !important;
+    color: #c96b00 !important;
+}
+
+
