@@ -7995,3 +7995,18 @@ body.dark-theme .section-title::after {
         0 0 18px rgba(56, 189, 248, 0.4);
 }
 
+/* =====================================================
+   Slogo BLEU uniquement en mode ☀️
+   ===================================================== */
+
+body.dark-theme .hero-name-logo {
+    filter: brightness(0) saturate(100%)
+            invert(73%)
+            sepia(65%)
+            saturate(1800%)
+            hue-rotate(165deg)
+            brightness(102%)
+            contrast(96%) !important;
+
+    mix-blend-mode: normal !important;
+}
