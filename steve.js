@@ -25,7 +25,8 @@ class Particle {
     }
 
     draw() {
-        ctx.fillStyle = 'rgba(99, 102, 241, 0.5)';
+        const modeSoleil = document.body.classList.contains('dark-theme');
+        ctx.fillStyle = modeSoleil ? 'rgba(255, 140, 0, 0.6)' : 'rgba(99, 102, 241, 0.5)';
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
@@ -52,7 +53,10 @@ function animateParticles() {
             const distance = Math.sqrt(dx * dx + dy * dy);
 
             if (distance < 100) {
-                ctx.strokeStyle = `rgba(99, 102, 241, ${0.2 * (1 - distance / 100)})`;
+                const modeSoleil = document.body.classList.contains('dark-theme');
+                ctx.strokeStyle = modeSoleil
+                    ? `rgba(255, 140, 0, ${0.25 * (1 - distance / 100)})`
+                    : `rgba(99, 102, 241, ${0.2 * (1 - distance / 100)})`;
                 ctx.lineWidth = 1;
                 ctx.beginPath();
                 ctx.moveTo(p1.x, p1.y);
@@ -355,7 +359,7 @@ setTimeout(addHoverEffect, 1000);
 
 class ThemeToggle {
   constructor() {
-    this.currentTheme = localStorage.getItem('theme') || 'light';
+    this.currentTheme = localStorage.getItem('theme') || 'dark';
     this.init();
   }
 
@@ -403,7 +407,7 @@ body.dark-theme nav {
 }
 
       
-       /* Section Hero - MODE CLAIR ☀️ */
+/* Section Hero - MODE CLAIR ☀️ */
 body.dark-theme #home,
 body.dark-theme #home.hero,
 body.dark-theme #home .hero-container,
@@ -443,23 +447,217 @@ body.dark-theme #home .subtitle-badge {
         color: #cccccc !important;
       }
       
-      /* Boutons */
-      body.dark-theme .btn,
-      body.dark-theme button:not(#theme-toggle) {
-        background-color: #333 !important;
-        border: 1px solid #555 !important;
-        color: #ffffff !important;
-      }
+/* Boutons génériques (hors filtres et toggle thème) */
+body.dark-theme .btn,
+body.dark-theme button:not(#theme-toggle):not(.filter-btn) {
+  background-color: #333 !important;
+  border: 1px solid #555 !important;
+  color: #ffffff !important;
+}
+
+body.dark-theme .btn:hover,
+body.dark-theme button:not(#theme-toggle):not(.filter-btn):hover {
+  background-color: #444 !important;
+}
+
+/* Boutons de filtre : TOUJOURS orange, même non sélectionnés */
+body.dark-theme .filter-btn {
+  background: #e67e22 !important;
+  background-color: #e67e22 !important;
+  border: 1.5px solid #cf711b !important;
+  color: #ffffff !important;
+}
+
+body.dark-theme .filter-btn:hover {
+  background: #f39c12 !important;
+  background-color: #f39c12 !important;
+  border-color: #d35400 !important;
+  color: #ffffff !important;
+}
+
+body.dark-theme .filter-btn.active {
+  background: #d35400 !important;
+  background-color: #d35400 !important;
+  border-color: #a84300 !important;
+  color: #ffffff !important;
+}
       
-      body.dark-theme .btn:hover,
-      body.dark-theme button:not(#theme-toggle):hover {
-        background-color: #444 !important;
-      }
-      
-      /* Sections */
-      body.dark-theme section {
-        background-color: rgba(30, 30, 30, 0.8) !important;
-      }
+   /* Sections */
+body.dark-theme section {
+  background-color: rgba(30, 30, 30, 0.8) !important;
+}
+
+/* Exception : "À propos" en fond blanc translucide (laisse voir les particules) */
+body.dark-theme #about {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+}
+/* Exception : "Formations Scolaires" en fond blanc translucide */
+body.dark-theme #formations {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Exception : "Expérience" en fond blanc translucide */
+body.dark-theme #experience {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Exception : "Projets" en fond blanc translucide */
+body.dark-theme #projects {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Exception : "Compétences" en fond blanc translucide */
+body.dark-theme #skills {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Exception : "Certifications" en fond blanc translucide */
+body.dark-theme #certifications {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Exception : "Centres d'intérêt" en fond blanc translucide */
+body.dark-theme #interests {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Exception : "Contact" en fond blanc translucide */
+body.dark-theme #contact {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Exception : carte "Projets Académiques" en orange foncé */
+body.dark-theme .projects-box {
+  background: linear-gradient(
+    135deg,
+    #a1440a 0%,
+    #6b2900 100%
+  ) !important;
+  border: 1.5px solid #7a3300 !important;
+  box-shadow:
+    0 4px 28px rgba(122, 51, 0, 0.4),
+    inset 0 0 60px rgba(122, 51, 0, 0.15) !important;
+}
+
+
+/* Exception : carte "Dashboards Interactifs" en rouge foncé */
+body.dark-theme .dashboards-wrapper {
+  background: linear-gradient(
+    135deg,
+    #7a0c0c 0%,
+    #450707 100%
+  ) !important;
+  border: 1.5px solid #5c0a0a !important;
+  box-shadow:
+    0 4px 28px rgba(90, 10, 10, 0.4),
+    inset 0 0 60px rgba(90, 10, 10, 0.15) !important;
+}
+
+/* Exception : cartes d'expérience (timeline) en bleu mer foncé */
+body.dark-theme .timeline-content {
+  background: linear-gradient(
+    135deg,
+    #003f5c 0%,
+    #001f2e 100%
+  ) !important;
+  border: 1px solid #006994 !important;
+  box-shadow:
+    0 4px 28px rgba(0, 105, 148, 0.35),
+    inset 0 0 60px rgba(0, 105, 148, 0.1) !important;
+}
+
+
+body.dark-theme .skill-category-v2 {
+  background: linear-gradient(145deg, #3b0764 0%, #1e0836 100%) !important;
+  border: 1px solid #6d28d9 !important;
+  box-shadow: 0 4px 20px rgba(109, 40, 217, 0.35), inset 0 0 60px rgba(109, 40, 217, 0.08) !important;
+}
+
+body.dark-theme .skill-category-header {
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+body.dark-theme .skill-category-header h3 {
+  color: #ffffff !important;
+}
+
+body.dark-theme .skill-tag-v2 {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+body.dark-theme .skill-tag-v2 i {
+  color: #c4b5fd !important;
+}
+
+body.dark-theme .skill-tag-v2:hover {
+  background: rgba(124, 58, 237, 0.3) !important;
+  border-color: #a78bfa !important;
+  color: #ffffff !important;
+}
+
+body.dark-theme .certification-card {
+  background: linear-gradient(145deg, #052e16 0%, #01190b 100%) !important;
+  border: 1.5px solid #15803d !important;
+  box-shadow: 0 8px 25px rgba(21, 128, 61, 0.35) !important;
+}
+
+body.dark-theme .certification-card:hover {
+  border-color: #22c55e !important;
+  box-shadow: 0 20px 40px rgba(21, 128, 61, 0.4) !important;
+}
+
+body.dark-theme .interest-card {
+  background: linear-gradient(145deg, #fef9c3 0%, #fde047 100%) !important;
+  border: 1.5px solid #eab308 !important;
+  box-shadow: 0 8px 32px rgba(234, 179, 8, 0.35) !important;
+}
+
+body.dark-theme .interest-card:hover {
+  border-color: #ca8a04 !important;
+  box-shadow: 0 20px 50px rgba(202, 138, 4, 0.4) !important;
+}
+
+body.dark-theme .interest-card h3 {
+  color: #713f12 !important;
+}
+
+body.dark-theme .interest-card h3::after {
+  background: linear-gradient(90deg, #ca8a04, #eab308) !important;
+}
+
+body.dark-theme .interest-card p {
+  color: rgba(113, 63, 18, 0.85) !important;
+}
+
+/* Exception : blocs de contact en fond noir */
+body.dark-theme .contact-item {
+  background-color: #000000 !important;
+  border: 1px solid #1a1a1a !important;
+}
+
+body.dark-theme .contact-item:hover {
+  border-color: #D32F2F !important;
+}
+
+/* Exception : grand cadre "À propos" en violet */
+body.dark-theme .about-wrapper {
+  background: linear-gradient(135deg, #2e1065 0%, #4c1d95 100%) !important;
+}
+
+body.dark-theme .about-wrapper::before {
+  background: radial-gradient(circle, rgba(167, 139, 250, 0.25) 0%, transparent 70%) !important;
+}
+
+/* Assortir la carte LinkedIn au violet */
+body.dark-theme .info-card {
+  border-color: rgba(124, 58, 237, 0.4) !important;
+}
+
+body.dark-theme .info-card:hover {
+  box-shadow: 0 5px 15px rgba(76, 29, 149, 0.35) !important;
+}
       
       /* Cartes */
       body.dark-theme .card,
