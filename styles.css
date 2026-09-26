@@ -7313,15 +7313,22 @@ body.dark-theme #about .section-title::before {
 
 /* ===== BOX PROJETS (miroir de .dashboards-wrapper) ===== */
 .projects-box {
-    background: linear-gradient(135deg, rgba(229, 115, 115, 0.18) 0%, rgba(211, 84, 84, 0.22) 100%);
-    border: 1.5px solid rgba(229, 115, 115, 0.5);
+    background: linear-gradient(
+        135deg,
+        rgba(255, 140, 0, 0.25) 0%,
+        rgba(255, 69, 0, 0.22) 100%
+    );
+    border: 1.5px solid rgba(255, 140, 0, 0.7);
     border-radius: 20px;
     padding: 30px 28px 28px;
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
-    box-shadow: 0 4px 28px rgba(229, 115, 115, 0.12), inset 0 0 60px rgba(229, 115, 115, 0.04);
+    box-shadow:
+        0 4px 28px rgba(255, 140, 0, 0.25),
+        inset 0 0 60px rgba(255, 140, 0, 0.08);
     position: relative;
 }
+
 
 .projects-box-header {
     display: flex;
