@@ -1351,7 +1351,15 @@ nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button)::af
 }
 
 
+/* Titre "Expériences Académiques" : texte noir, icône rouge */
+body.dark-theme .experience-subtitle,
+body.dark-theme .experience-subtitle span {
+    color: #000000 !important;
+}
 
+body.dark-theme .experience-subtitle i {
+    color: #e74c3c !important;   /* rouge - change le code si tu veux une autre nuance */
+}
 
 
 /* fond qui se remplit */
@@ -1461,11 +1469,8 @@ nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button)::af
 
 /* Contenu */
 .timeline-horizontal .timeline-content {
-    background: linear-gradient(135deg, 
-        rgba(10, 10, 10, 0.95) 0%, 
-        rgba(20, 0, 0, 0.9) 100%
-    );
-    border: 2px solid rgba(192, 57, 43, 0.5);
+    background: #000000;
+    border: 2px solid #222222;
     border-radius: 20px;
     padding: 24px;
     backdrop-filter: blur(15px);
@@ -1481,6 +1486,8 @@ nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button)::af
     overflow: hidden;
 }
 
+
+
 .timeline-horizontal .timeline-content:hover {
     transform: translateY(-15px) scale(1.02);
     border-color: #ff4d4d;
@@ -1492,11 +1499,17 @@ nav a:not(.all-projects-button):not(.chat-button):not(.accessibility-button)::af
 
 /* Titre de formation */
 .formation-title {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #1e3a8a;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 8px;
     margin-bottom: 8px;
+    display: inline-block;
+    border: 1px solid #222222;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
 }
+
 
 .formation-image{
     width: 130px;
@@ -7266,14 +7279,21 @@ body.dark-theme #about .section-title::before {
 .filter-btn {
     padding: 10px 26px;
     border-radius: 999px;
-    border: 1.5px solid rgba(192, 57, 43, 0.5);
-    background: transparent;
-    color: #ff8a8a;
+    border: 1.5px solid #c0392b;
+    background: rgba(192, 57, 43, 0.15);
+    color: #ffffff;
     font-weight: 700;
     font-size: 0.9rem;
     cursor: pointer;
     transition: all 0.3s ease;
     letter-spacing: 0.3px;
+}
+
+.filter-btn:hover {
+    border-color: #ff6b6b;
+    background: rgba(192, 57, 43, 0.35);
+    color: #ffffff;
+    transform: translateY(-2px);
 }
 
 .filter-btn:hover {
@@ -8089,3 +8109,50 @@ body.dark-theme .badges .badge:hover {
 }
 
 
+/* ========================================
+   CARTES D'EXPÉRIENCE NOIRES - MODE ☀️
+   ======================================== */
+
+body.dark-theme .timeline-content {
+    background: #000000 !important;
+    color: #ffffff !important;
+    border: 1px solid #222222 !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* Texte à l'intérieur des cartes */
+body.dark-theme .timeline-content h3,
+body.dark-theme .timeline-content h4,
+body.dark-theme .timeline-content p,
+body.dark-theme .timeline-content li,
+body.dark-theme .timeline-content span {
+    color: #ffffff;
+}
+
+/* Petits blocs date / entreprise / lieu */
+body.dark-theme .timeline-content .date,
+body.dark-theme .timeline-content .company,
+body.dark-theme .timeline-content .lieu {
+    color: #dddddd;
+}
+
+/* Bordures des petits éléments */
+body.dark-theme .timeline-content .date,
+body.dark-theme .timeline-content .company,
+body.dark-theme .timeline-content .lieu {
+    border-color: #444444 !important;
+    background: #111111 !important;
+}
+
+/* Flèches des missions */
+body.dark-theme .timeline-content li[data-translate^="exp-"]::before {
+    color: #ffffff !important;
+}
+body.dark-theme .timeline-content {
+    background: #050505 !important;
+    color: #ffffff !important;
+    border: 1px solid #222222 !important;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03) !important;
+}

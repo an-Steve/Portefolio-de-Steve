@@ -449,15 +449,13 @@ body.dark-theme #home .subtitle-badge {
       
 /* Boutons génériques (hors filtres et toggle thème) */
 body.dark-theme .btn,
-body.dark-theme button:not(#theme-toggle):not(.filter-btn) {
-  background-color: #333 !important;
+body.dark-theme button:not(#theme-toggle):not(.filter-btn):not(#linkedin-btn):not(#cv-btn):not(#languageToggle) {  background-color: #333 !important;
   border: 1px solid #555 !important;
   color: #ffffff !important;
 }
 
 body.dark-theme .btn:hover,
-body.dark-theme button:not(#theme-toggle):not(.filter-btn):hover {
-  background-color: #444 !important;
+body.dark-theme button:not(#theme-toggle):not(.filter-btn):not(#linkedin-btn):not(#cv-btn):not(#languageToggle):hover {  background-color: #444 !important;
 }
 
 /* Boutons de filtre : TOUJOURS orange, même non sélectionnés */
