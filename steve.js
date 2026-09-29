@@ -2653,6 +2653,13 @@ function drawRadar() {
         return { x: cx + r * Math.cos(angleOf(i)), y: cy + r * Math.sin(angleOf(i)) };
     }
 
+const themeBtn = document.getElementById('theme-toggle');
+
+themeBtn.addEventListener('click', () => {
+    themeBtn.classList.add('spin');
+    setTimeout(() => themeBtn.classList.remove('spin'), 600);
+});
+
     ctx.strokeStyle = "rgba(255,255,255,0.1)";
     ctx.lineWidth = 1;
     for (let l = 1; l <= levels; l++) {

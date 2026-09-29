@@ -8157,12 +8157,31 @@ body.dark-theme .timeline-content {
         inset 0 1px 0 rgba(255, 255, 255, 0.03) !important;
 }
 
+#theme-toggle i {
+    display: inline-block;
+}
 
+#theme-toggle.spin i {
+    animation: theme-icon-swap 0.6s ease;
+}
+
+@keyframes theme-icon-swap {
+    0%   { transform: rotate(0deg) scale(1); opacity: 1; }
+    50%  { transform: rotate(180deg) scale(0); opacity: 0; }
+    100% { transform: rotate(360deg) scale(1); opacity: 1; }
+}
+
+.tools-title {
+    border-bottom: 2px solid #ffffff;   /* plus épais (3px pour encore plus visible) */
+    padding-bottom: 20px;               /* descend le trait */
+    margin-bottom: 25px;                /* espace entre le trait et les boutons */
+}
 
 .contact-container {
-    border: 3px solid #e3262e;
+    border: 3px solid #444444;      /* bordure gris foncé (mettez #e3262e pour garder le rouge) */
     border-radius: 15px;
     padding: 20px;
     box-sizing: border-box;
-    background-color: #8b0000; /* rouge foncé */
+    background-color: #2b2b2b;      /* noir clair */
+    color: #ffffff;
 }
