@@ -8156,3 +8156,13 @@ body.dark-theme .timeline-content {
         0 10px 30px rgba(0, 0, 0, 0.25),
         inset 0 1px 0 rgba(255, 255, 255, 0.03) !important;
 }
+
+
+
+.contact-container {
+    border: 3px solid #e3262e;
+    border-radius: 15px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #8b0000; /* rouge foncé */
+}
