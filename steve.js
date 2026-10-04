@@ -359,7 +359,7 @@ setTimeout(addHoverEffect, 1000);
 
 class ThemeToggle {
   constructor() {
-    this.currentTheme = localStorage.getItem('theme') || 'dark';
+        this.currentTheme = localStorage.getItem('theme') || 'light';
     this.init();
   }
 
@@ -458,27 +458,6 @@ body.dark-theme .btn:hover,
 body.dark-theme button:not(#theme-toggle):not(.filter-btn):not(#linkedin-btn):not(#cv-btn):not(#languageToggle):hover {  background-color: #444 !important;
 }
 
-/* Boutons de filtre : TOUJOURS orange, même non sélectionnés */
-body.dark-theme .filter-btn {
-  background: #e67e22 !important;
-  background-color: #e67e22 !important;
-  border: 1.5px solid #cf711b !important;
-  color: #ffffff !important;
-}
-
-body.dark-theme .filter-btn:hover {
-  background: #f39c12 !important;
-  background-color: #f39c12 !important;
-  border-color: #d35400 !important;
-  color: #ffffff !important;
-}
-
-body.dark-theme .filter-btn.active {
-  background: #d35400 !important;
-  background-color: #d35400 !important;
-  border-color: #a84300 !important;
-  color: #ffffff !important;
-}
       
    /* Sections */
 body.dark-theme section {
