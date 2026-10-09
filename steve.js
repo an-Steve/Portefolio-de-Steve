@@ -79,13 +79,57 @@ window.addEventListener('resize', () => {
 
 // Navigation scrollée
 const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
+const navScrollProgress = document.getElementById('navScrollProgress');
+const navMenuToggle = document.getElementById('navMenuToggle');
+const primaryNavigation = document.getElementById('primaryNavigation');
+
+function closeNavigationMenu() {
+    if (!navbar || !navMenuToggle) return;
+    navbar.classList.remove('is-menu-open');
+    navMenuToggle.setAttribute('aria-expanded', 'false');
+    navMenuToggle.setAttribute('aria-label', 'Ouvrir le menu de navigation');
+    navMenuToggle.querySelector('i')?.classList.replace('fa-xmark', 'fa-bars');
+}
+
+if (navbar && navMenuToggle) {
+    navMenuToggle.addEventListener('click', () => {
+        const isOpen = navbar.classList.toggle('is-menu-open');
+        navMenuToggle.setAttribute('aria-expanded', String(isOpen));
+        navMenuToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu de navigation' : 'Ouvrir le menu de navigation');
+        navMenuToggle.querySelector('i')?.classList.toggle('fa-bars', !isOpen);
+        navMenuToggle.querySelector('i')?.classList.toggle('fa-xmark', isOpen);
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!navbar.contains(event.target)) closeNavigationMenu();
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && navbar.classList.contains('is-menu-open')) {
+            closeNavigationMenu();
+            navMenuToggle.focus();
+        }
+    });
+}
+
+let scrollUpdatePending = false;
+function updateNavbarScrollState() {
+    if (scrollUpdatePending) return;
+    scrollUpdatePending = true;
+    requestAnimationFrame(() => {
+        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0;
+        if (navScrollProgress) {
+            navScrollProgress.style.transform = `scaleX(${Math.min(1, Math.max(0, progress))})`;
+        }
+        navbar?.classList.toggle('scrolled', window.scrollY > 40);
+        scrollUpdatePending = false;
+    });
+}
+
+window.addEventListener('scroll', updateNavbarScrollState, { passive: true });
+window.addEventListener('resize', updateNavbarScrollState);
+updateNavbarScrollState();
 
 // Menu flottant des actions secondaires
 const supportMenu = document.querySelector('.support-menu');
@@ -123,10 +167,38 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
+            closeNavigationMenu();
         }
     });
 });
+
+const navigationLinks = [...document.querySelectorAll('#primaryNavigation a[href^="#"]')];
+const navigationSections = navigationLinks
+    .map(link => document.querySelector(link.getAttribute('href')))
+    .filter(Boolean);
+
+if ('IntersectionObserver' in window && navigationSections.length) {
+    const navigationObserver = new IntersectionObserver((entries) => {
+        const activeEntry = entries
+            .filter(entry => entry.isIntersecting)
+            .sort((first, second) => second.intersectionRatio - first.intersectionRatio)[0];
+        if (!activeEntry) return;
+
+        navigationLinks.forEach(link => {
+            const isActive = link.hash === `#${activeEntry.target.id}`;
+            link.classList.toggle('is-active', isActive);
+            if (isActive) {
+                link.setAttribute('aria-current', 'location');
+            } else {
+                link.removeAttribute('aria-current');
+            }
+        });
+    }, { rootMargin: '-20% 0px -65% 0px', threshold: [0, 0.15, 0.4, 0.7] });
+
+    navigationSections.forEach(section => navigationObserver.observe(section));
+}
 
 // Animation timeline au scroll
 const observerOptions = {
