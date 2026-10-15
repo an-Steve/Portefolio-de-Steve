@@ -8778,6 +8778,10 @@ body.dark-theme #experience .timeline--stages > .timeline-item:first-child > .ti
     padding: 7px;
 }
 
+#experience .timeline--stages > .timeline-item:nth-child(2) .experience-icon {
+    top: 55px;
+}
+
 #experience .timeline-item > .timeline-content .timeline-badge {
     top: 22px;
     right: 30px;
