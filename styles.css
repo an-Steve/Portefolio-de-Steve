@@ -43,6 +43,10 @@ body {
     min-width: 0; /* Évite que les grilles ne débordent */
 }
 
+.main-sections-container > section#projects {
+    padding-top: 0;
+}
+
 /* Configuration des grilles internes pour réautoriser le côte à côte */
 .projects-main-title {
     text-align: center;
@@ -2642,7 +2646,7 @@ h3[data-translate="exp-diocese-title"] {
     padding: 0 120px;
     max-width: 900px;
     margin: 0 auto;
-    padding-top: 30px;
+    padding-top: 0;
 }
 
 /* Wrapper pour le carousel */
@@ -6495,7 +6499,7 @@ body.dark-theme #about .section-title::before {
 
 /* ===== DASHBOARDS SECTION ===== */
 .dashboards-section {
-  margin-top: 60px;
+    margin-top: 0;
   padding: 0 10px;
 }
 
@@ -7563,6 +7567,7 @@ footer.site-footer::before {
 }
 
 .projects-box-icon {
+    color: #000;
     font-size: 1.8rem;
 }
 
@@ -8547,6 +8552,7 @@ body.dark-theme .project-mini-links .link-github:hover {
     flex: 0 0 auto;
     color: #fff !important;
     font-size: 1.05em;
+    transition: transform 0.25s ease, color 0.25s ease;
 }
 
 #experience .timeline--stages > .timeline-item:first-child .experience-icon {
@@ -8708,9 +8714,9 @@ body.dark-theme #experience .timeline--stages > .timeline-item:first-child > .ti
 }
 
 #experience .timeline-item > .timeline-content:hover {
-    transform: translateY(-3px);
-    border-color: rgba(224, 100, 87, 0.72);
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.3), inset 3px 0 0 #c0392b;
+    transform: translateY(-5px);
+    border-color: rgba(255, 119, 119, 0.85);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.38), 0 0 22px rgba(192, 57, 43, 0.16), inset 3px 0 0 #c0392b;
 }
 
 #experience .timeline-item > .timeline-content .experience-heading {
@@ -8776,6 +8782,16 @@ body.dark-theme #experience .timeline--stages > .timeline-item:first-child > .ti
     height: 100px;
     margin: 0;
     padding: 7px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+#experience .timeline-item > .timeline-content:hover .experience-heading > .experience-icon {
+    transform: scale(1.06) rotate(2deg);
+    filter: drop-shadow(0 5px 10px rgba(224, 100, 87, 0.35));
+}
+
+#experience .timeline-item > .timeline-content:hover .experience-role-icon {
+    transform: scale(1.16) rotate(-8deg);
 }
 
 #experience .timeline--stages > .timeline-item:nth-child(2) .experience-icon {
@@ -8899,6 +8915,14 @@ body.dark-theme #experience .timeline--stages > .timeline-item:first-child > .ti
 
 body.dark-theme #experience .timeline-item > .timeline-content {
     background-color: #080808;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #experience .timeline-item > .timeline-content,
+    #experience .timeline-item > .timeline-content .experience-heading > .experience-icon,
+    #experience .experience-role-icon {
+        transition: none;
+    }
 }
 
 @media (max-width: 768px) {
