@@ -1746,7 +1746,12 @@ const translations = {
 
         // Dashboards 
         'dashboards-title':       'Dashboards Interactifs',
-        'dashboards-subtitle':    'Visualisations de données réalisées avec HTML, JS & Chart.js',
+        'projects-count-label':  'réalisations',
+        'project-domain-ai':     'IA',
+        'project-domain-data':   'Data',
+        'project-domain-web':    'Web',
+        'project-domain-dev':    'Dév.',
+        'dashboards-subtitle':    'Visualisations de données avec',
         'dashboards-badge':       'Visualisation de données',
         'dashboard-cta':          'Voir le dashboard ↗',
         'dashboard-emploi-title': 'Emploi Tech & IA',
@@ -2146,7 +2151,12 @@ const translations = {
 
         // Dashboards
         'dashboards-title':       'Interactive Dashboards',
-        'dashboards-subtitle':    'Data visualizations built with HTML, JS & Chart.js',
+        'projects-count-label':  'projects',
+        'project-domain-ai':     'AI',
+        'project-domain-data':   'Data',
+        'project-domain-web':    'Web',
+        'project-domain-dev':    'Dev',
+        'dashboards-subtitle':    'Data visualizations with',
         'dashboards-badge':       'Data Visualization',
         'dashboard-cta':          'View dashboard ↗',
         'dashboard-emploi-title': ' Tech & AI Jobs',
