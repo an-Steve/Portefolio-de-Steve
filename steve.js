@@ -1792,6 +1792,10 @@ const translations = {
         "skill-personal": "Compétences personnelles",
         
         // Certifications
+        'cert-agent-ia-title': 'Agent IA',
+        'cert-agent-ia-issuer': 'Hugging Face',
+        'cert-agent-ia-date': 'Obtenu en octobre 2026',
+        'cert-agent-ia-desc': 'Découverte des agents d’intelligence artificielle et de leurs applications.',
         'cert-cisco-ai-title': 'Introduction à l’IA moderne',
         'cert-cisco-ai-issuer': 'Cisco Networking Academy',
         'cert-cisco-ai-date': 'Obtenu en avril 2026',
@@ -2220,6 +2224,10 @@ const translations = {
         'cert-cisco-python-desc': '• Python syntax and control structures<br>• Functions, modules, and packages<br>• Object-oriented programming (OOP)<br>• Exception and error handling<br>• File and data handling',
         'cert-view-link': 'View certificate',
 
+        'cert-agent-ia-title': 'AI Agent',
+        'cert-agent-ia-issuer': 'Hugging Face',
+        'cert-agent-ia-date': 'Obtained in October 2026',
+        'cert-agent-ia-desc': 'An introduction to AI agents and their applications.',
         'cert-cisco-cybersecurity-title': 'Introduction to Cybersecurity',
         'cert-cisco-cybersecurity-issuer': 'Cisco Networking Academy',
         'cert-cisco-cybersecurity-date': 'Issued in September 2026',
